@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset='utf-8'/>
+  <title>
+   Emoji & Pictographs
+  </title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<style type="text/css">
+		table,th,tr,td	{	padding:			0px;
+							border:				solid black 1px;
+							border-spacing:		0px;
+						}
+		td+td			{
+							padding-left:		4px;
+							padding-right:		4px;
+							font-family:		sans-serif;	
+						}
+		td+td+td		{
+							word-break:			break-all;
+							font-family:		serif;	
+						}
+		body			{
+							margin-left:		0px;
+							margin-right:		0px;
+							padding-left:		0px;
+							padding-right:		0px;
+							background-color:	#fcfcfc;
+						}
+		.margined_hdr	{
+							margin:				10px;
+						}
+		.margined		{
+							margin:				10px;
+						}
+		.wholearea		{
+							margin:				0px;
+							padding:			0px;
+						}
+		.wholearea		{	line-height: 		1em;	font-family:	sans-serif;	font-family: 'Segoe UI Emoji'; }
+		.titlearea		{	line-height: 		1.4em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.hbar_area		{	line-height: 		1em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.xcopyarea		{	line-height: 		1.2em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.main			{	line-height:		30px;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+
+		.box			{
+							float:				left;
+
+							line-height:		1;
+						/*	line-spacing:		0;	*/
+
+						/*	height:				30px; */
+							height:				50px;
+							min-width:			50px;
+						}
+		.box, .xbutton
+						{
+							box-sizing:			border-box;
+
+							font-family:		'Segoe UI Emoji';
+
+						    cursor:				pointer;
+						    text-decoration:	none;
+
+						    background-color:	#eeeeee;
+						    color:				black;
+
+						    text-align:			center;
+							vertical-align:		middle;
+						    font-size:			24px;
+
+						    border:				1px solid #000000;
+						    margin:				0px 0px 0px 0px;
+						    padding:			5px 5px 5px 5px;
+
+						    border:				1px solid #aaa;
+						    padding:			10px 5px;
+						}
+		.box:hover, .xbutton:hover
+						{
+							background-color: #ffffff
+						}
+		.box:active, .xbutton:active
+						{
+							background-color:	#eeeeee;
+							box-shadow:			0 4px #666;
+							transform:			translateY(-4px);
+						}
+		.testsvg		{
+							text-align:			center;
+							vertical-align:		middle;
+						}
+		/* -------------------------------------------------*/
+		/* CATEGORY HEADERS									*/
+		/* -------------------------------------------------*/
+		h1					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				black;
+								background-color:	cyan;
+
+								left:				0;
+								text-align:			center;
+
+								margin-top:			10px;
+								padding-top:		12px;
+								padding-bottom:		12px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		h2					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				white;
+								background-color:	#202020;
+
+								left:				0;
+								text-align:			center;
+								text-align:			left;
+
+								margin-top:			10px;
+								padding-top:		8px;
+								padding-bottom:		8px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		/* SUBCATEGORY */
+		h3					{ 
+							/*	font-family:		serif; */
+								font-family:		'Segoe UI Emoji';
+								font-family:		sans-serif;
+								font-weight:		normal;
+
+								margin-top:			10px;
+								padding-top:		0px;
+								padding-bottom:		0px;
+								margin-bottom:		4px;
+							}
+		.catlink			{
+								display:			inline-block;
+								padding:			5px 4px;
+								color:				#FCFCFC;
+								background:			#5050A0;
+								text-align:			center;
+								cursor:				pointer;
+								margin-left:		10px;
+							}
+		.catlink:hover		{
+								font-weight:		bold;
+							}
+		.codevalue			{
+								font-size:			20px;
+							}
+</style>
+	<script>
+		function goback()
+		{
+			window.history.back();
+		}
+		function cp(txt)
+		{
+			var a							= document.createElement ('textarea');
+			a.style.position				= 'fixed';
+			a.style.left					= '-100%';
+			a.value							= txt;
+			a.selectionStart				= 0;
+			a.selectionEnd					= a.value.length;
+
+			document.body.appendChild		(a);
+		//	a.focus							();		// 2017-11-02 del
+			a.select						();		// 2017-11-02 add
+			document.execCommand			('copy');
+			document.body.removeChild		(a);
+			var e							= document.getElementById ('copybuf');
+			e.value							+= txt;
+		};
+
+		function areacopy()
+		{
+			var a							= document.activeElement;
+			var box							= document.getElementById	('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function areaerase()
+		{
+			var a = document.activeElement;
+			var box							= document.getElementById ('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+			box.value						= '';
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function jmpl(location)
+		{
+			var old_name	= document.getElementById (location).getAttribute('name');
+			document.getElementById (location).setAttribute('name', location);
+			window.location.hash			= location;
+			var ret = window.scrollBy		(0, -62);
+			document.getElementById (location).setAttribute('name', old_name);
+		}
+		function jmphome()
+		{
+			window.location.hash				= '';
+		    document.body.scrollTop				= 0; // For Chrome, Safari and Opera
+		    document.documentElement.scrollTop	= 0; // For IE and Firefox
+		}
+	</script>
+ </head>
+ <body>
+  <div class='wholearea'>
+    <div class='testsvg'>
+     <svg class='testsvg' xmlns='http://www.w3.org/2000/svg' version='1.1' width='100%' height='100' stroke='black' stroke-width='0px' style='font-size:32px; text-align:center; font-family: serif; font-family:Segoe UI Emoji;'>
+      <defs>
+       <linearGradient id='grad1'>
+        <stop offset='0%' stop-color='cyan'/>
+        <stop offset='40%' stop-color='cyan'/>
+        <stop offset='70%' stop-color='#777777'/>
+        <stop offset='100%' stop-color='#333333'/>
+       </linearGradient>
+      </defs>
+      <rect x='0' y='0' width='100%' height='100' fill='url(#grad1)'/>
+      <text x='5%' y='55%'>
+       Emoji & Pictographs
+      </text>
+     </svg>
+    </div>
+   <a href='javascript:history.back()'>
+    Back
+   </a>
+   <hr/>
+   <div>
+    <h2 style='color: white; background-color: #25f; id=#;'>Dingbats (U+2700 - U+27BF)</h2>
+<div class='margined'>
+<a class='box' title='[U+2700] BLACK SAFETY SCISSORS' onClick='cp("✀")'>&#x2700;</a>
+<a class='box' title='[U+2701] UPPER BLADE SCISSORS' onClick='cp("✁")'>&#x2701;</a>
+<a class='box' title='[U+2702] BLACK SCISSORS' onClick='cp("✂")'>&#x2702;</a>
+<a class='box' title='[U+2703] LOWER BLADE SCISSORS' onClick='cp("✃")'>&#x2703;</a>
+<a class='box' title='[U+2704] WHITE SCISSORS' onClick='cp("✄")'>&#x2704;</a>
+<a class='box' title='[U+2705] WHITE HEAVY CHECK MARK' onClick='cp("✅")'>&#x2705;</a>
+<a class='box' title='[U+2706] TELEPHONE LOCATION SIGN' onClick='cp("✆")'>&#x2706;</a>
+<a class='box' title='[U+2707] TAPE DRIVE' onClick='cp("✇")'>&#x2707;</a>
+<a class='box' title='[U+2708] AIRPLANE' onClick='cp("✈")'>&#x2708;</a>
+<a class='box' title='[U+2709] ENVELOPE' onClick='cp("✉")'>&#x2709;</a>
+<a class='box' title='[U+270A] RAISED FIST' onClick='cp("✊")'>&#x270A;</a>
+<a class='box' title='[U+270B] RAISED HAND' onClick='cp("✋")'>&#x270B;</a>
+<a class='box' title='[U+270C] VICTORY HAND' onClick='cp("✌")'>&#x270C;</a>
+<a class='box' title='[U+270D] WRITING HAND' onClick='cp("✍")'>&#x270D;</a>
+<a class='box' title='[U+270E] LOWER RIGHT PENCIL' onClick='cp("✎")'>&#x270E;</a>
+<a class='box' title='[U+270F] PENCIL' onClick='cp("✏")'>&#x270F;</a>
+<a class='box' title='[U+2710] UPPER RIGHT PENCIL' onClick='cp("✐")'>&#x2710;</a>
+<a class='box' title='[U+2711] WHITE NIB' onClick='cp("✑")'>&#x2711;</a>
+<a class='box' title='[U+2712] BLACK NIB' onClick='cp("✒")'>&#x2712;</a>
+<a class='box' title='[U+2713] CHECK MARK' onClick='cp("✓")'>&#x2713;</a>
+<a class='box' title='[U+2714] HEAVY CHECK MARK' onClick='cp("✔")'>&#x2714;</a>
+<a class='box' title='[U+2715] MULTIPLICATION X' onClick='cp("✕")'>&#x2715;</a>
+<a class='box' title='[U+2716] HEAVY MULTIPLICATION X' onClick='cp("✖")'>&#x2716;</a>
+<a class='box' title='[U+2717] BALLOT X' onClick='cp("✗")'>&#x2717;</a>
+<a class='box' title='[U+2718] HEAVY BALLOT X' onClick='cp("✘")'>&#x2718;</a>
+<a class='box' title='[U+2719] OUTLINED GREEK CROSS' onClick='cp("✙")'>&#x2719;</a>
+<a class='box' title='[U+271A] HEAVY GREEK CROSS' onClick='cp("✚")'>&#x271A;</a>
+<a class='box' title='[U+271B] OPEN CENTRE CROSS
+= OPEN CENTER CROSS' onClick='cp("✛")'>&#x271B;</a>
+<a class='box' title='[U+271C] HEAVY OPEN CENTRE CROSS
+= HEAVY OPEN CENTER CROSS' onClick='cp("✜")'>&#x271C;</a>
+<a class='box' title='[U+271D] LATIN CROSS' onClick='cp("✝")'>&#x271D;</a>
+<a class='box' title='[U+271E] SHADOWED WHITE LATIN CROSS' onClick='cp("✞")'>&#x271E;</a>
+<a class='box' title='[U+271F] OUTLINED LATIN CROSS' onClick='cp("✟")'>&#x271F;</a>
+<a class='box' title='[U+2720] MALTESE CROSS' onClick='cp("✠")'>&#x2720;</a>
+<a class='box' title='[U+2721] STAR OF DAVID' onClick='cp("✡")'>&#x2721;</a>
+<a class='box' title='[U+2722] FOUR TEARDROP-SPOKED ASTERISK' onClick='cp("✢")'>&#x2722;</a>
+<a class='box' title='[U+2723] FOUR BALLOON-SPOKED ASTERISK' onClick='cp("✣")'>&#x2723;</a>
+<a class='box' title='[U+2724] HEAVY FOUR BALLOON-SPOKED ASTERISK' onClick='cp("✤")'>&#x2724;</a>
+<a class='box' title='[U+2725] FOUR CLUB-SPOKED ASTERISK' onClick='cp("✥")'>&#x2725;</a>
+<a class='box' title='[U+2726] BLACK FOUR POINTED STAR' onClick='cp("✦")'>&#x2726;</a>
+<a class='box' title='[U+2727] WHITE FOUR POINTED STAR' onClick='cp("✧")'>&#x2727;</a>
+<a class='box' title='[U+2728] SPARKLES' onClick='cp("✨")'>&#x2728;</a>
+<a class='box' title='[U+2729] STRESS OUTLINED WHITE STAR' onClick='cp("✩")'>&#x2729;</a>
+<a class='box' title='[U+272A] CIRCLED WHITE STAR' onClick='cp("✪")'>&#x272A;</a>
+<a class='box' title='[U+272B] OPEN CENTRE BLACK STAR
+= OPEN CENTER BLACK STAR' onClick='cp("✫")'>&#x272B;</a>
+<a class='box' title='[U+272C] BLACK CENTRE WHITE STAR
+= BLACK CENTER WHITE STAR' onClick='cp("✬")'>&#x272C;</a>
+<a class='box' title='[U+272D] OUTLINED BLACK STAR' onClick='cp("✭")'>&#x272D;</a>
+<a class='box' title='[U+272E] HEAVY OUTLINED BLACK STAR' onClick='cp("✮")'>&#x272E;</a>
+<a class='box' title='[U+272F] PINWHEEL STAR' onClick='cp("✯")'>&#x272F;</a>
+<a class='box' title='[U+2730] SHADOWED WHITE STAR' onClick='cp("✰")'>&#x2730;</a>
+<a class='box' title='[U+2731] HEAVY ASTERISK' onClick='cp("✱")'>&#x2731;</a>
+<a class='box' title='[U+2732] OPEN CENTRE ASTERISK
+= OPEN CENTER ASTERISK' onClick='cp("✲")'>&#x2732;</a>
+<a class='box' title='[U+2733] EIGHT SPOKED ASTERISK' onClick='cp("✳")'>&#x2733;</a>
+<a class='box' title='[U+2734] EIGHT POINTED BLACK STAR' onClick='cp("✴")'>&#x2734;</a>
+<a class='box' title='[U+2735] EIGHT POINTED PINWHEEL STAR' onClick='cp("✵")'>&#x2735;</a>
+<a class='box' title='[U+2736] SIX POINTED BLACK STAR' onClick='cp("✶")'>&#x2736;</a>
+<a class='box' title='[U+2737] EIGHT POINTED RECTILINEAR BLACK STAR' onClick='cp("✷")'>&#x2737;</a>
+<a class='box' title='[U+2738] HEAVY EIGHT POINTED RECTILINEAR BLACK STAR' onClick='cp("✸")'>&#x2738;</a>
+<a class='box' title='[U+2739] TWELVE POINTED BLACK STAR' onClick='cp("✹")'>&#x2739;</a>
+<a class='box' title='[U+273A] SIXTEEN POINTED ASTERISK' onClick='cp("✺")'>&#x273A;</a>
+<a class='box' title='[U+273B] TEARDROP-SPOKED ASTERISK' onClick='cp("✻")'>&#x273B;</a>
+<a class='box' title='[U+273C] OPEN CENTRE TEARDROP-SPOKED ASTERISK
+= OPEN CENTER TEARDROP-SPOKED ASTERISK' onClick='cp("✼")'>&#x273C;</a>
+<a class='box' title='[U+273D] HEAVY TEARDROP-SPOKED ASTERISK' onClick='cp("✽")'>&#x273D;</a>
+<a class='box' title='[U+273E] SIX PETALLED BLACK AND WHITE FLORETTE' onClick='cp("✾")'>&#x273E;</a>
+<a class='box' title='[U+273F] BLACK FLORETTE' onClick='cp("✿")'>&#x273F;</a>
+<a class='box' title='[U+2740] WHITE FLORETTE' onClick='cp("❀")'>&#x2740;</a>
+<a class='box' title='[U+2741] EIGHT PETALLED OUTLINED BLACK FLORETTE' onClick='cp("❁")'>&#x2741;</a>
+<a class='box' title='[U+2742] CIRCLED OPEN CENTRE EIGHT POINTED STAR
+= CIRCLED OPEN CENTER EIGHT POINTED STAR' onClick='cp("❂")'>&#x2742;</a>
+<a class='box' title='[U+2743] HEAVY TEARDROP-SPOKED PINWHEEL ASTERISK' onClick='cp("❃")'>&#x2743;</a>
+<a class='box' title='[U+2744] SNOWFLAKE' onClick='cp("❄")'>&#x2744;</a>
+<a class='box' title='[U+2745] TIGHT TRIFOLIATE SNOWFLAKE' onClick='cp("❅")'>&#x2745;</a>
+<a class='box' title='[U+2746] HEAVY CHEVRON SNOWFLAKE' onClick='cp("❆")'>&#x2746;</a>
+<a class='box' title='[U+2747] SPARKLE' onClick='cp("❇")'>&#x2747;</a>
+<a class='box' title='[U+2748] HEAVY SPARKLE' onClick='cp("❈")'>&#x2748;</a>
+<a class='box' title='[U+2749] BALLOON-SPOKED ASTERISK' onClick='cp("❉")'>&#x2749;</a>
+<a class='box' title='[U+274A] EIGHT TEARDROP-SPOKED PROPELLER ASTERISK' onClick='cp("❊")'>&#x274A;</a>
+<a class='box' title='[U+274B] HEAVY EIGHT TEARDROP-SPOKED PROPELLER ASTERISK' onClick='cp("❋")'>&#x274B;</a>
+<a class='box' title='[U+274C] CROSS MARK' onClick='cp("❌")'>&#x274C;</a>
+<a class='box' title='[U+274D] SHADOWED WHITE CIRCLE' onClick='cp("❍")'>&#x274D;</a>
+<a class='box' title='[U+274E] NEGATIVE SQUARED CROSS MARK' onClick='cp("❎")'>&#x274E;</a>
+<a class='box' title='[U+274F] LOWER RIGHT DROP-SHADOWED WHITE SQUARE' onClick='cp("❏")'>&#x274F;</a>
+<a class='box' title='[U+2750] UPPER RIGHT DROP-SHADOWED WHITE SQUARE' onClick='cp("❐")'>&#x2750;</a>
+<a class='box' title='[U+2751] LOWER RIGHT SHADOWED WHITE SQUARE' onClick='cp("❑")'>&#x2751;</a>
+<a class='box' title='[U+2752] UPPER RIGHT SHADOWED WHITE SQUARE' onClick='cp("❒")'>&#x2752;</a>
+<a class='box' title='[U+2753] BLACK QUESTION MARK ORNAMENT' onClick='cp("❓")'>&#x2753;</a>
+<a class='box' title='[U+2754] WHITE QUESTION MARK ORNAMENT' onClick='cp("❔")'>&#x2754;</a>
+<a class='box' title='[U+2755] WHITE EXCLAMATION MARK ORNAMENT' onClick='cp("❕")'>&#x2755;</a>
+<a class='box' title='[U+2756] BLACK DIAMOND MINUS WHITE X' onClick='cp("❖")'>&#x2756;</a>
+<a class='box' title='[U+2757] HEAVY EXCLAMATION MARK SYMBOL' onClick='cp("❗")'>&#x2757;</a>
+<a class='box' title='[U+2758] LIGHT VERTICAL BAR' onClick='cp("❘")'>&#x2758;</a>
+<a class='box' title='[U+2759] MEDIUM VERTICAL BAR' onClick='cp("❙")'>&#x2759;</a>
+<a class='box' title='[U+275A] HEAVY VERTICAL BAR' onClick='cp("❚")'>&#x275A;</a>
+<a class='box' title='[U+275B] HEAVY SINGLE TURNED COMMA QUOTATION MARK ORNAMENT' onClick='cp("❛")'>&#x275B;</a>
+<a class='box' title='[U+275C] HEAVY SINGLE COMMA QUOTATION MARK ORNAMENT' onClick='cp("❜")'>&#x275C;</a>
+<a class='box' title='[U+275D] HEAVY DOUBLE TURNED COMMA QUOTATION MARK ORNAMENT' onClick='cp("❝")'>&#x275D;</a>
+<a class='box' title='[U+275E] HEAVY DOUBLE COMMA QUOTATION MARK ORNAMENT' onClick='cp("❞")'>&#x275E;</a>
+<a class='box' title='[U+275F] HEAVY LOW SINGLE COMMA QUOTATION MARK ORNAMENT' onClick='cp("❟")'>&#x275F;</a>
+<a class='box' title='[U+2760] HEAVY LOW DOUBLE COMMA QUOTATION MARK ORNAMENT' onClick='cp("❠")'>&#x2760;</a>
+<a class='box' title='[U+2761] CURVED STEM PARAGRAPH SIGN ORNAMENT' onClick='cp("❡")'>&#x2761;</a>
+<a class='box' title='[U+2762] HEAVY EXCLAMATION MARK ORNAMENT' onClick='cp("❢")'>&#x2762;</a>
+<a class='box' title='[U+2763] HEAVY HEART EXCLAMATION MARK ORNAMENT' onClick='cp("❣")'>&#x2763;</a>
+<a class='box' title='[U+2764] HEAVY BLACK HEART' onClick='cp("❤")'>&#x2764;</a>
+<a class='box' title='[U+2765] ROTATED HEAVY BLACK HEART BULLET' onClick='cp("❥")'>&#x2765;</a>
+<a class='box' title='[U+2766] FLORAL HEART' onClick='cp("❦")'>&#x2766;</a>
+<a class='box' title='[U+2767] ROTATED FLORAL HEART BULLET' onClick='cp("❧")'>&#x2767;</a>
+<a class='box' title='[U+2768] MEDIUM LEFT PARENTHESIS ORNAMENT' onClick='cp("❨")'>&#x2768;</a>
+<a class='box' title='[U+2769] MEDIUM RIGHT PARENTHESIS ORNAMENT' onClick='cp("❩")'>&#x2769;</a>
+<a class='box' title='[U+276A] MEDIUM FLATTENED LEFT PARENTHESIS ORNAMENT' onClick='cp("❪")'>&#x276A;</a>
+<a class='box' title='[U+276B] MEDIUM FLATTENED RIGHT PARENTHESIS ORNAMENT' onClick='cp("❫")'>&#x276B;</a>
+<a class='box' title='[U+276C] MEDIUM LEFT-POINTING ANGLE BRACKET ORNAMENT' onClick='cp("❬")'>&#x276C;</a>
+<a class='box' title='[U+276D] MEDIUM RIGHT-POINTING ANGLE BRACKET ORNAMENT' onClick='cp("❭")'>&#x276D;</a>
+<a class='box' title='[U+276E] HEAVY LEFT-POINTING ANGLE QUOTATION MARK ORNAMENT' onClick='cp("❮")'>&#x276E;</a>
+<a class='box' title='[U+276F] HEAVY RIGHT-POINTING ANGLE QUOTATION MARK ORNAMENT' onClick='cp("❯")'>&#x276F;</a>
+<a class='box' title='[U+2770] HEAVY LEFT-POINTING ANGLE BRACKET ORNAMENT' onClick='cp("❰")'>&#x2770;</a>
+<a class='box' title='[U+2771] HEAVY RIGHT-POINTING ANGLE BRACKET ORNAMENT' onClick='cp("❱")'>&#x2771;</a>
+<a class='box' title='[U+2772] LIGHT LEFT TORTOISE SHELL BRACKET ORNAMENT' onClick='cp("❲")'>&#x2772;</a>
+<a class='box' title='[U+2773] LIGHT RIGHT TORTOISE SHELL BRACKET ORNAMENT' onClick='cp("❳")'>&#x2773;</a>
+<a class='box' title='[U+2774] MEDIUM LEFT CURLY BRACKET ORNAMENT' onClick='cp("❴")'>&#x2774;</a>
+<a class='box' title='[U+2775] MEDIUM RIGHT CURLY BRACKET ORNAMENT' onClick='cp("❵")'>&#x2775;</a>
+<a class='box' title='[U+2776] DINGBAT NEGATIVE CIRCLED DIGIT ONE
+= INVERSE CIRCLED DIGIT ONE' onClick='cp("❶")'>&#x2776;</a>
+<a class='box' title='[U+2777] DINGBAT NEGATIVE CIRCLED DIGIT TWO
+= INVERSE CIRCLED DIGIT TWO' onClick='cp("❷")'>&#x2777;</a>
+<a class='box' title='[U+2778] DINGBAT NEGATIVE CIRCLED DIGIT THREE
+= INVERSE CIRCLED DIGIT THREE' onClick='cp("❸")'>&#x2778;</a>
+<a class='box' title='[U+2779] DINGBAT NEGATIVE CIRCLED DIGIT FOUR
+= INVERSE CIRCLED DIGIT FOUR' onClick='cp("❹")'>&#x2779;</a>
+<a class='box' title='[U+277A] DINGBAT NEGATIVE CIRCLED DIGIT FIVE
+= INVERSE CIRCLED DIGIT FIVE' onClick='cp("❺")'>&#x277A;</a>
+<a class='box' title='[U+277B] DINGBAT NEGATIVE CIRCLED DIGIT SIX
+= INVERSE CIRCLED DIGIT SIX' onClick='cp("❻")'>&#x277B;</a>
+<a class='box' title='[U+277C] DINGBAT NEGATIVE CIRCLED DIGIT SEVEN
+= INVERSE CIRCLED DIGIT SEVEN' onClick='cp("❼")'>&#x277C;</a>
+<a class='box' title='[U+277D] DINGBAT NEGATIVE CIRCLED DIGIT EIGHT
+= INVERSE CIRCLED DIGIT EIGHT' onClick='cp("❽")'>&#x277D;</a>
+<a class='box' title='[U+277E] DINGBAT NEGATIVE CIRCLED DIGIT NINE
+= INVERSE CIRCLED DIGIT NINE' onClick='cp("❾")'>&#x277E;</a>
+<a class='box' title='[U+277F] DINGBAT NEGATIVE CIRCLED NUMBER TEN
+= INVERSE CIRCLED NUMBER TEN' onClick='cp("❿")'>&#x277F;</a>
+<a class='box' title='[U+2780] DINGBAT CIRCLED SANS-SERIF DIGIT ONE
+= CIRCLED SANS-SERIF DIGIT ONE' onClick='cp("➀")'>&#x2780;</a>
+<a class='box' title='[U+2781] DINGBAT CIRCLED SANS-SERIF DIGIT TWO
+= CIRCLED SANS-SERIF DIGIT TWO' onClick='cp("➁")'>&#x2781;</a>
+<a class='box' title='[U+2782] DINGBAT CIRCLED SANS-SERIF DIGIT THREE
+= CIRCLED SANS-SERIF DIGIT THREE' onClick='cp("➂")'>&#x2782;</a>
+<a class='box' title='[U+2783] DINGBAT CIRCLED SANS-SERIF DIGIT FOUR
+= CIRCLED SANS-SERIF DIGIT FOUR' onClick='cp("➃")'>&#x2783;</a>
+<a class='box' title='[U+2784] DINGBAT CIRCLED SANS-SERIF DIGIT FIVE
+= CIRCLED SANS-SERIF DIGIT FIVE' onClick='cp("➄")'>&#x2784;</a>
+<a class='box' title='[U+2785] DINGBAT CIRCLED SANS-SERIF DIGIT SIX
+= CIRCLED SANS-SERIF DIGIT SIX' onClick='cp("➅")'>&#x2785;</a>
+<a class='box' title='[U+2786] DINGBAT CIRCLED SANS-SERIF DIGIT SEVEN
+= CIRCLED SANS-SERIF DIGIT SEVEN' onClick='cp("➆")'>&#x2786;</a>
+<a class='box' title='[U+2787] DINGBAT CIRCLED SANS-SERIF DIGIT EIGHT
+= CIRCLED SANS-SERIF DIGIT EIGHT' onClick='cp("➇")'>&#x2787;</a>
+<a class='box' title='[U+2788] DINGBAT CIRCLED SANS-SERIF DIGIT NINE
+= CIRCLED SANS-SERIF DIGIT NINE' onClick='cp("➈")'>&#x2788;</a>
+<a class='box' title='[U+2789] DINGBAT CIRCLED SANS-SERIF NUMBER TEN
+= CIRCLED SANS-SERIF NUMBER TEN' onClick='cp("➉")'>&#x2789;</a>
+<a class='box' title='[U+278A] DINGBAT NEGATIVE CIRCLED SANS-SERIF DIGIT ONE
+= INVERSE CIRCLED SANS-SERIF DIGIT ONE' onClick='cp("➊")'>&#x278A;</a>
+<a class='box' title='[U+278B] DINGBAT NEGATIVE CIRCLED SANS-SERIF DIGIT TWO
+= INVERSE CIRCLED SANS-SERIF DIGIT TWO' onClick='cp("➋")'>&#x278B;</a>
+<a class='box' title='[U+278C] DINGBAT NEGATIVE CIRCLED SANS-SERIF DIGIT THREE
+= INVERSE CIRCLED SANS-SERIF DIGIT THREE' onClick='cp("➌")'>&#x278C;</a>
+<a class='box' title='[U+278D] DINGBAT NEGATIVE CIRCLED SANS-SERIF DIGIT FOUR
+= INVERSE CIRCLED SANS-SERIF DIGIT FOUR' onClick='cp("➍")'>&#x278D;</a>
+<a class='box' title='[U+278E] DINGBAT NEGATIVE CIRCLED SANS-SERIF DIGIT FIVE
+= INVERSE CIRCLED SANS-SERIF DIGIT FIVE' onClick='cp("➎")'>&#x278E;</a>
+<a class='box' title='[U+278F] DINGBAT NEGATIVE CIRCLED SANS-SERIF DIGIT SIX
+= INVERSE CIRCLED SANS-SERIF DIGIT SIX' onClick='cp("➏")'>&#x278F;</a>
+<a class='box' title='[U+2790] DINGBAT NEGATIVE CIRCLED SANS-SERIF DIGIT SEVEN
+= INVERSE CIRCLED SANS-SERIF DIGIT SEVEN' onClick='cp("➐")'>&#x2790;</a>
+<a class='box' title='[U+2791] DINGBAT NEGATIVE CIRCLED SANS-SERIF DIGIT EIGHT
+= INVERSE CIRCLED SANS-SERIF DIGIT EIGHT' onClick='cp("➑")'>&#x2791;</a>
+<a class='box' title='[U+2792] DINGBAT NEGATIVE CIRCLED SANS-SERIF DIGIT NINE
+= INVERSE CIRCLED SANS-SERIF DIGIT NINE' onClick='cp("➒")'>&#x2792;</a>
+<a class='box' title='[U+2793] DINGBAT NEGATIVE CIRCLED SANS-SERIF NUMBER TEN
+= INVERSE CIRCLED SANS-SERIF NUMBER TEN' onClick='cp("➓")'>&#x2793;</a>
+<a class='box' title='[U+2794] HEAVY WIDE-HEADED RIGHTWARDS ARROW
+= HEAVY WIDE-HEADED RIGHT ARROW' onClick='cp("➔")'>&#x2794;</a>
+<a class='box' title='[U+2795] HEAVY PLUS SIGN' onClick='cp("➕")'>&#x2795;</a>
+<a class='box' title='[U+2796] HEAVY MINUS SIGN' onClick='cp("➖")'>&#x2796;</a>
+<a class='box' title='[U+2797] HEAVY DIVISION SIGN' onClick='cp("➗")'>&#x2797;</a>
+<a class='box' title='[U+2798] HEAVY SOUTH EAST ARROW
+= HEAVY LOWER RIGHT ARROW' onClick='cp("➘")'>&#x2798;</a>
+<a class='box' title='[U+2799] HEAVY RIGHTWARDS ARROW
+= HEAVY RIGHT ARROW' onClick='cp("➙")'>&#x2799;</a>
+<a class='box' title='[U+279A] HEAVY NORTH EAST ARROW
+= HEAVY UPPER RIGHT ARROW' onClick='cp("➚")'>&#x279A;</a>
+<a class='box' title='[U+279B] DRAFTING POINT RIGHTWARDS ARROW
+= DRAFTING POINT RIGHT ARROW' onClick='cp("➛")'>&#x279B;</a>
+<a class='box' title='[U+279C] HEAVY ROUND-TIPPED RIGHTWARDS ARROW
+= HEAVY ROUND-TIPPED RIGHT ARROW' onClick='cp("➜")'>&#x279C;</a>
+<a class='box' title='[U+279D] TRIANGLE-HEADED RIGHTWARDS ARROW
+= TRIANGLE-HEADED RIGHT ARROW' onClick='cp("➝")'>&#x279D;</a>
+<a class='box' title='[U+279E] HEAVY TRIANGLE-HEADED RIGHTWARDS ARROW
+= HEAVY TRIANGLE-HEADED RIGHT ARROW' onClick='cp("➞")'>&#x279E;</a>
+<a class='box' title='[U+279F] DASHED TRIANGLE-HEADED RIGHTWARDS ARROW
+= DASHED TRIANGLE-HEADED RIGHT ARROW' onClick='cp("➟")'>&#x279F;</a>
+<a class='box' title='[U+27A0] HEAVY DASHED TRIANGLE-HEADED RIGHTWARDS ARROW
+= HEAVY DASHED TRIANGLE-HEADED RIGHT ARROW' onClick='cp("➠")'>&#x27A0;</a>
+<a class='box' title='[U+27A1] BLACK RIGHTWARDS ARROW
+= BLACK RIGHT ARROW' onClick='cp("➡")'>&#x27A1;</a>
+<a class='box' title='[U+27A2] THREE-D TOP-LIGHTED RIGHTWARDS ARROWHEAD
+= THREE-D TOP-LIGHTED RIGHT ARROWHEAD' onClick='cp("➢")'>&#x27A2;</a>
+<a class='box' title='[U+27A3] THREE-D BOTTOM-LIGHTED RIGHTWARDS ARROWHEAD
+= THREE-D BOTTOM-LIGHTED RIGHT ARROWHEAD' onClick='cp("➣")'>&#x27A3;</a>
+<a class='box' title='[U+27A4] BLACK RIGHTWARDS ARROWHEAD
+= BLACK RIGHT ARROWHEAD' onClick='cp("➤")'>&#x27A4;</a>
+<a class='box' title='[U+27A5] HEAVY BLACK CURVED DOWNWARDS AND RIGHTWARDS ARROW
+= HEAVY BLACK CURVED DOWN AND RIGHT ARROW' onClick='cp("➥")'>&#x27A5;</a>
+<a class='box' title='[U+27A6] HEAVY BLACK CURVED UPWARDS AND RIGHTWARDS ARROW
+= HEAVY BLACK CURVED UP AND RIGHT ARROW' onClick='cp("➦")'>&#x27A6;</a>
+<a class='box' title='[U+27A7] SQUAT BLACK RIGHTWARDS ARROW
+= SQUAT BLACK RIGHT ARROW' onClick='cp("➧")'>&#x27A7;</a>
+<a class='box' title='[U+27A8] HEAVY CONCAVE-POINTED BLACK RIGHTWARDS ARROW
+= HEAVY CONCAVE-POINTED BLACK RIGHT ARROW' onClick='cp("➨")'>&#x27A8;</a>
+<a class='box' title='[U+27A9] RIGHT-SHADED WHITE RIGHTWARDS ARROW
+= RIGHT-SHADED WHITE RIGHT ARROW' onClick='cp("➩")'>&#x27A9;</a>
+<a class='box' title='[U+27AA] LEFT-SHADED WHITE RIGHTWARDS ARROW
+= LEFT-SHADED WHITE RIGHT ARROW' onClick='cp("➪")'>&#x27AA;</a>
+<a class='box' title='[U+27AB] BACK-TILTED SHADOWED WHITE RIGHTWARDS ARROW
+= BACK-TILTED SHADOWED WHITE RIGHT ARROW' onClick='cp("➫")'>&#x27AB;</a>
+<a class='box' title='[U+27AC] FRONT-TILTED SHADOWED WHITE RIGHTWARDS ARROW
+= FRONT-TILTED SHADOWED WHITE RIGHT ARROW' onClick='cp("➬")'>&#x27AC;</a>
+<a class='box' title='[U+27AD] HEAVY LOWER RIGHT-SHADOWED WHITE RIGHTWARDS ARROW
+= HEAVY LOWER RIGHT-SHADOWED WHITE RIGHT ARROW' onClick='cp("➭")'>&#x27AD;</a>
+<a class='box' title='[U+27AE] HEAVY UPPER RIGHT-SHADOWED WHITE RIGHTWARDS ARROW
+= HEAVY UPPER RIGHT-SHADOWED WHITE RIGHT ARROW' onClick='cp("➮")'>&#x27AE;</a>
+<a class='box' title='[U+27AF] NOTCHED LOWER RIGHT-SHADOWED WHITE RIGHTWARDS ARROW
+= NOTCHED LOWER RIGHT-SHADOWED WHITE RIGHT ARROW' onClick='cp("➯")'>&#x27AF;</a>
+<a class='box' title='[U+27B0] CURLY LOOP' onClick='cp("➰")'>&#x27B0;</a>
+<a class='box' title='[U+27B1] NOTCHED UPPER RIGHT-SHADOWED WHITE RIGHTWARDS ARROW
+= NOTCHED UPPER RIGHT-SHADOWED WHITE RIGHT ARROW' onClick='cp("➱")'>&#x27B1;</a>
+<a class='box' title='[U+27B2] CIRCLED HEAVY WHITE RIGHTWARDS ARROW
+= CIRCLED HEAVY WHITE RIGHT ARROW' onClick='cp("➲")'>&#x27B2;</a>
+<a class='box' title='[U+27B3] WHITE-FEATHERED RIGHTWARDS ARROW
+= WHITE-FEATHERED RIGHT ARROW' onClick='cp("➳")'>&#x27B3;</a>
+<a class='box' title='[U+27B4] BLACK-FEATHERED SOUTH EAST ARROW
+= BLACK-FEATHERED LOWER RIGHT ARROW' onClick='cp("➴")'>&#x27B4;</a>
+<a class='box' title='[U+27B5] BLACK-FEATHERED RIGHTWARDS ARROW
+= BLACK-FEATHERED RIGHT ARROW' onClick='cp("➵")'>&#x27B5;</a>
+<a class='box' title='[U+27B6] BLACK-FEATHERED NORTH EAST ARROW
+= BLACK-FEATHERED UPPER RIGHT ARROW' onClick='cp("➶")'>&#x27B6;</a>
+<a class='box' title='[U+27B7] HEAVY BLACK-FEATHERED SOUTH EAST ARROW
+= HEAVY BLACK-FEATHERED LOWER RIGHT ARROW' onClick='cp("➷")'>&#x27B7;</a>
+<a class='box' title='[U+27B8] HEAVY BLACK-FEATHERED RIGHTWARDS ARROW
+= HEAVY BLACK-FEATHERED RIGHT ARROW' onClick='cp("➸")'>&#x27B8;</a>
+<a class='box' title='[U+27B9] HEAVY BLACK-FEATHERED NORTH EAST ARROW
+= HEAVY BLACK-FEATHERED UPPER RIGHT ARROW' onClick='cp("➹")'>&#x27B9;</a>
+<a class='box' title='[U+27BA] TEARDROP-BARBED RIGHTWARDS ARROW
+= TEARDROP-BARBED RIGHT ARROW' onClick='cp("➺")'>&#x27BA;</a>
+<a class='box' title='[U+27BB] HEAVY TEARDROP-SHANKED RIGHTWARDS ARROW
+= HEAVY TEARDROP-SHANKED RIGHT ARROW' onClick='cp("➻")'>&#x27BB;</a>
+<a class='box' title='[U+27BC] WEDGE-TAILED RIGHTWARDS ARROW
+= WEDGE-TAILED RIGHT ARROW' onClick='cp("➼")'>&#x27BC;</a>
+<a class='box' title='[U+27BD] HEAVY WEDGE-TAILED RIGHTWARDS ARROW
+= HEAVY WEDGE-TAILED RIGHT ARROW' onClick='cp("➽")'>&#x27BD;</a>
+<a class='box' title='[U+27BE] OPEN-OUTLINED RIGHTWARDS ARROW
+= OPEN-OUTLINED RIGHT ARROW' onClick='cp("➾")'>&#x27BE;</a>
+<a class='box' title='[U+27BF] DOUBLE CURLY LOOP' onClick='cp("➿")'>&#x27BF;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: green; id=#;'>Ornamental Dingbats (U+1F650 - U+1F67F)</h2>
+<div class='margined'>
+<a class='box' title='[U+1F650] NORTH WEST POINTING LEAF' onClick='cp("🙐")'>&#x1F650;</a>
+<a class='box' title='[U+1F651] SOUTH WEST POINTING LEAF' onClick='cp("🙑")'>&#x1F651;</a>
+<a class='box' title='[U+1F652] NORTH EAST POINTING LEAF' onClick='cp("🙒")'>&#x1F652;</a>
+<a class='box' title='[U+1F653] SOUTH EAST POINTING LEAF' onClick='cp("🙓")'>&#x1F653;</a>
+<a class='box' title='[U+1F654] TURNED NORTH WEST POINTING LEAF' onClick='cp("🙔")'>&#x1F654;</a>
+<a class='box' title='[U+1F655] TURNED SOUTH WEST POINTING LEAF' onClick='cp("🙕")'>&#x1F655;</a>
+<a class='box' title='[U+1F656] TURNED NORTH EAST POINTING LEAF' onClick='cp("🙖")'>&#x1F656;</a>
+<a class='box' title='[U+1F657] TURNED SOUTH EAST POINTING LEAF' onClick='cp("🙗")'>&#x1F657;</a>
+<a class='box' title='[U+1F658] NORTH WEST POINTING VINE LEAF' onClick='cp("🙘")'>&#x1F658;</a>
+<a class='box' title='[U+1F659] SOUTH WEST POINTING VINE LEAF' onClick='cp("🙙")'>&#x1F659;</a>
+<a class='box' title='[U+1F65A] NORTH EAST POINTING VINE LEAF' onClick='cp("🙚")'>&#x1F65A;</a>
+<a class='box' title='[U+1F65B] SOUTH EAST POINTING VINE LEAF' onClick='cp("🙛")'>&#x1F65B;</a>
+<a class='box' title='[U+1F65C] HEAVY NORTH WEST POINTING VINE LEAF' onClick='cp("🙜")'>&#x1F65C;</a>
+<a class='box' title='[U+1F65D] HEAVY SOUTH WEST POINTING VINE LEAF' onClick='cp("🙝")'>&#x1F65D;</a>
+<a class='box' title='[U+1F65E] HEAVY NORTH EAST POINTING VINE LEAF' onClick='cp("🙞")'>&#x1F65E;</a>
+<a class='box' title='[U+1F65F] HEAVY SOUTH EAST POINTING VINE LEAF' onClick='cp("🙟")'>&#x1F65F;</a>
+<a class='box' title='[U+1F660] NORTH WEST POINTING BUD' onClick='cp("🙠")'>&#x1F660;</a>
+<a class='box' title='[U+1F661] SOUTH WEST POINTING BUD' onClick='cp("🙡")'>&#x1F661;</a>
+<a class='box' title='[U+1F662] NORTH EAST POINTING BUD' onClick='cp("🙢")'>&#x1F662;</a>
+<a class='box' title='[U+1F663] SOUTH EAST POINTING BUD' onClick='cp("🙣")'>&#x1F663;</a>
+<a class='box' title='[U+1F664] HEAVY NORTH WEST POINTING BUD' onClick='cp("🙤")'>&#x1F664;</a>
+<a class='box' title='[U+1F665] HEAVY SOUTH WEST POINTING BUD' onClick='cp("🙥")'>&#x1F665;</a>
+<a class='box' title='[U+1F666] HEAVY NORTH EAST POINTING BUD' onClick='cp("🙦")'>&#x1F666;</a>
+<a class='box' title='[U+1F667] HEAVY SOUTH EAST POINTING BUD' onClick='cp("🙧")'>&#x1F667;</a>
+<a class='box' title='[U+1F668] HOLLOW QUILT SQUARE ORNAMENT' onClick='cp("🙨")'>&#x1F668;</a>
+<a class='box' title='[U+1F669] HOLLOW QUILT SQUARE ORNAMENT IN BLACK SQUARE' onClick='cp("🙩")'>&#x1F669;</a>
+<a class='box' title='[U+1F66A] SOLID QUILT SQUARE ORNAMENT' onClick='cp("🙪")'>&#x1F66A;</a>
+<a class='box' title='[U+1F66B] SOLID QUILT SQUARE ORNAMENT IN BLACK SQUARE' onClick='cp("🙫")'>&#x1F66B;</a>
+<a class='box' title='[U+1F66C] LEFTWARDS ROCKET' onClick='cp("🙬")'>&#x1F66C;</a>
+<a class='box' title='[U+1F66D] UPWARDS ROCKET' onClick='cp("🙭")'>&#x1F66D;</a>
+<a class='box' title='[U+1F66E] RIGHTWARDS ROCKET' onClick='cp("🙮")'>&#x1F66E;</a>
+<a class='box' title='[U+1F66F] DOWNWARDS ROCKET' onClick='cp("🙯")'>&#x1F66F;</a>
+<a class='box' title='[U+1F670] SCRIPT LIGATURE ET ORNAMENT' onClick='cp("🙰")'>&#x1F670;</a>
+<a class='box' title='[U+1F671] HEAVY SCRIPT LIGATURE ET ORNAMENT' onClick='cp("🙱")'>&#x1F671;</a>
+<a class='box' title='[U+1F672] LIGATURE OPEN ET ORNAMENT' onClick='cp("🙲")'>&#x1F672;</a>
+<a class='box' title='[U+1F673] HEAVY LIGATURE OPEN ET ORNAMENT' onClick='cp("🙳")'>&#x1F673;</a>
+<a class='box' title='[U+1F674] HEAVY AMPERSAND ORNAMENT' onClick='cp("🙴")'>&#x1F674;</a>
+<a class='box' title='[U+1F675] SWASH AMPERSAND ORNAMENT' onClick='cp("🙵")'>&#x1F675;</a>
+<a class='box' title='[U+1F676] SANS-SERIF HEAVY DOUBLE TURNED COMMA QUOTATION MARK ORNAMENT' onClick='cp("🙶")'>&#x1F676;</a>
+<a class='box' title='[U+1F677] SANS-SERIF HEAVY DOUBLE COMMA QUOTATION MARK ORNAMENT' onClick='cp("🙷")'>&#x1F677;</a>
+<a class='box' title='[U+1F678] SANS-SERIF HEAVY LOW DOUBLE COMMA QUOTATION MARK ORNAMENT' onClick='cp("🙸")'>&#x1F678;</a>
+<a class='box' title='[U+1F679] HEAVY INTERROBANG ORNAMENT' onClick='cp("🙹")'>&#x1F679;</a>
+<a class='box' title='[U+1F67A] SANS-SERIF INTERROBANG ORNAMENT' onClick='cp("🙺")'>&#x1F67A;</a>
+<a class='box' title='[U+1F67B] HEAVY SANS-SERIF INTERROBANG ORNAMENT' onClick='cp("🙻")'>&#x1F67B;</a>
+<a class='box' title='[U+1F67C] VERY HEAVY SOLIDUS' onClick='cp("🙼")'>&#x1F67C;</a>
+<a class='box' title='[U+1F67D] VERY HEAVY REVERSE SOLIDUS' onClick='cp("🙽")'>&#x1F67D;</a>
+<a class='box' title='[U+1F67E] CHECKER BOARD' onClick='cp("🙾")'>&#x1F67E;</a>
+<a class='box' title='[U+1F67F] REVERSE CHECKER BOARD' onClick='cp("🙿")'>&#x1F67F;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: orangered; id=#;'>Emoticons (U+1F600 - U+1F64F)</h2>
+<div class='margined'>
+<a class='box' title='[U+1F600] GRINNING FACE' onClick='cp("😀")'>&#x1F600;</a>
+<a class='box' title='[U+1F601] GRINNING FACE WITH SMILING EYES' onClick='cp("😁")'>&#x1F601;</a>
+<a class='box' title='[U+1F602] FACE WITH TEARS OF JOY' onClick='cp("😂")'>&#x1F602;</a>
+<a class='box' title='[U+1F603] SMILING FACE WITH OPEN MOUTH' onClick='cp("😃")'>&#x1F603;</a>
+<a class='box' title='[U+1F604] SMILING FACE WITH OPEN MOUTH AND SMILING EYES' onClick='cp("😄")'>&#x1F604;</a>
+<a class='box' title='[U+1F605] SMILING FACE WITH OPEN MOUTH AND COLD SWEAT' onClick='cp("😅")'>&#x1F605;</a>
+<a class='box' title='[U+1F606] SMILING FACE WITH OPEN MOUTH AND TIGHTLY-CLOSED EYES' onClick='cp("😆")'>&#x1F606;</a>
+<a class='box' title='[U+1F607] SMILING FACE WITH HALO' onClick='cp("😇")'>&#x1F607;</a>
+<a class='box' title='[U+1F608] SMILING FACE WITH HORNS' onClick='cp("😈")'>&#x1F608;</a>
+<a class='box' title='[U+1F609] WINKING FACE' onClick='cp("😉")'>&#x1F609;</a>
+<a class='box' title='[U+1F60A] SMILING FACE WITH SMILING EYES' onClick='cp("😊")'>&#x1F60A;</a>
+<a class='box' title='[U+1F60B] FACE SAVOURING DELICIOUS FOOD' onClick='cp("😋")'>&#x1F60B;</a>
+<a class='box' title='[U+1F60C] RELIEVED FACE' onClick='cp("😌")'>&#x1F60C;</a>
+<a class='box' title='[U+1F60D] SMILING FACE WITH HEART-SHAPED EYES' onClick='cp("😍")'>&#x1F60D;</a>
+<a class='box' title='[U+1F60E] SMILING FACE WITH SUNGLASSES' onClick='cp("😎")'>&#x1F60E;</a>
+<a class='box' title='[U+1F60F] SMIRKING FACE' onClick='cp("😏")'>&#x1F60F;</a>
+<a class='box' title='[U+1F610] NEUTRAL FACE' onClick='cp("😐")'>&#x1F610;</a>
+<a class='box' title='[U+1F611] EXPRESSIONLESS FACE' onClick='cp("😑")'>&#x1F611;</a>
+<a class='box' title='[U+1F612] UNAMUSED FACE' onClick='cp("😒")'>&#x1F612;</a>
+<a class='box' title='[U+1F613] FACE WITH COLD SWEAT' onClick='cp("😓")'>&#x1F613;</a>
+<a class='box' title='[U+1F614] PENSIVE FACE' onClick='cp("😔")'>&#x1F614;</a>
+<a class='box' title='[U+1F615] CONFUSED FACE' onClick='cp("😕")'>&#x1F615;</a>
+<a class='box' title='[U+1F616] CONFOUNDED FACE' onClick='cp("😖")'>&#x1F616;</a>
+<a class='box' title='[U+1F617] KISSING FACE' onClick='cp("😗")'>&#x1F617;</a>
+<a class='box' title='[U+1F618] FACE THROWING A KISS' onClick='cp("😘")'>&#x1F618;</a>
+<a class='box' title='[U+1F619] KISSING FACE WITH SMILING EYES' onClick='cp("😙")'>&#x1F619;</a>
+<a class='box' title='[U+1F61A] KISSING FACE WITH CLOSED EYES' onClick='cp("😚")'>&#x1F61A;</a>
+<a class='box' title='[U+1F61B] FACE WITH STUCK-OUT TONGUE' onClick='cp("😛")'>&#x1F61B;</a>
+<a class='box' title='[U+1F61C] FACE WITH STUCK-OUT TONGUE AND WINKING EYE' onClick='cp("😜")'>&#x1F61C;</a>
+<a class='box' title='[U+1F61D] FACE WITH STUCK-OUT TONGUE AND TIGHTLY-CLOSED EYES' onClick='cp("😝")'>&#x1F61D;</a>
+<a class='box' title='[U+1F61E] DISAPPOINTED FACE' onClick='cp("😞")'>&#x1F61E;</a>
+<a class='box' title='[U+1F61F] WORRIED FACE' onClick='cp("😟")'>&#x1F61F;</a>
+<a class='box' title='[U+1F620] ANGRY FACE' onClick='cp("😠")'>&#x1F620;</a>
+<a class='box' title='[U+1F621] POUTING FACE' onClick='cp("😡")'>&#x1F621;</a>
+<a class='box' title='[U+1F622] CRYING FACE' onClick='cp("😢")'>&#x1F622;</a>
+<a class='box' title='[U+1F623] PERSEVERING FACE' onClick='cp("😣")'>&#x1F623;</a>
+<a class='box' title='[U+1F624] FACE WITH LOOK OF TRIUMPH' onClick='cp("😤")'>&#x1F624;</a>
+<a class='box' title='[U+1F625] DISAPPOINTED BUT RELIEVED FACE' onClick='cp("😥")'>&#x1F625;</a>
+<a class='box' title='[U+1F626] FROWNING FACE WITH OPEN MOUTH' onClick='cp("😦")'>&#x1F626;</a>
+<a class='box' title='[U+1F627] ANGUISHED FACE' onClick='cp("😧")'>&#x1F627;</a>
+<a class='box' title='[U+1F628] FEARFUL FACE' onClick='cp("😨")'>&#x1F628;</a>
+<a class='box' title='[U+1F629] WEARY FACE' onClick='cp("😩")'>&#x1F629;</a>
+<a class='box' title='[U+1F62A] SLEEPY FACE' onClick='cp("😪")'>&#x1F62A;</a>
+<a class='box' title='[U+1F62B] TIRED FACE' onClick='cp("😫")'>&#x1F62B;</a>
+<a class='box' title='[U+1F62C] GRIMACING FACE' onClick='cp("😬")'>&#x1F62C;</a>
+<a class='box' title='[U+1F62D] LOUDLY CRYING FACE' onClick='cp("😭")'>&#x1F62D;</a>
+<a class='box' title='[U+1F62E] FACE WITH OPEN MOUTH' onClick='cp("😮")'>&#x1F62E;</a>
+<a class='box' title='[U+1F62F] HUSHED FACE' onClick='cp("😯")'>&#x1F62F;</a>
+<a class='box' title='[U+1F630] FACE WITH OPEN MOUTH AND COLD SWEAT' onClick='cp("😰")'>&#x1F630;</a>
+<a class='box' title='[U+1F631] FACE SCREAMING IN FEAR' onClick='cp("😱")'>&#x1F631;</a>
+<a class='box' title='[U+1F632] ASTONISHED FACE' onClick='cp("😲")'>&#x1F632;</a>
+<a class='box' title='[U+1F633] FLUSHED FACE' onClick='cp("😳")'>&#x1F633;</a>
+<a class='box' title='[U+1F634] SLEEPING FACE' onClick='cp("😴")'>&#x1F634;</a>
+<a class='box' title='[U+1F635] DIZZY FACE' onClick='cp("😵")'>&#x1F635;</a>
+<a class='box' title='[U+1F636] FACE WITHOUT MOUTH' onClick='cp("😶")'>&#x1F636;</a>
+<a class='box' title='[U+1F637] FACE WITH MEDICAL MASK' onClick='cp("😷")'>&#x1F637;</a>
+<a class='box' title='[U+1F638] GRINNING CAT FACE WITH SMILING EYES' onClick='cp("😸")'>&#x1F638;</a>
+<a class='box' title='[U+1F639] CAT FACE WITH TEARS OF JOY' onClick='cp("😹")'>&#x1F639;</a>
+<a class='box' title='[U+1F63A] SMILING CAT FACE WITH OPEN MOUTH' onClick='cp("😺")'>&#x1F63A;</a>
+<a class='box' title='[U+1F63B] SMILING CAT FACE WITH HEART-SHAPED EYES' onClick='cp("😻")'>&#x1F63B;</a>
+<a class='box' title='[U+1F63C] CAT FACE WITH WRY SMILE' onClick='cp("😼")'>&#x1F63C;</a>
+<a class='box' title='[U+1F63D] KISSING CAT FACE WITH CLOSED EYES' onClick='cp("😽")'>&#x1F63D;</a>
+<a class='box' title='[U+1F63E] POUTING CAT FACE' onClick='cp("😾")'>&#x1F63E;</a>
+<a class='box' title='[U+1F63F] CRYING CAT FACE' onClick='cp("😿")'>&#x1F63F;</a>
+<a class='box' title='[U+1F640] WEARY CAT FACE' onClick='cp("🙀")'>&#x1F640;</a>
+<a class='box' title='[U+1F641] SLIGHTLY FROWNING FACE' onClick='cp("🙁")'>&#x1F641;</a>
+<a class='box' title='[U+1F642] SLIGHTLY SMILING FACE' onClick='cp("🙂")'>&#x1F642;</a>
+<a class='box' title='[U+1F643] UPSIDE-DOWN FACE' onClick='cp("🙃")'>&#x1F643;</a>
+<a class='box' title='[U+1F644] FACE WITH ROLLING EYES' onClick='cp("🙄")'>&#x1F644;</a>
+<a class='box' title='[U+1F645] FACE WITH NO GOOD GESTURE' onClick='cp("🙅")'>&#x1F645;</a>
+<a class='box' title='[U+1F646] FACE WITH OK GESTURE' onClick='cp("🙆")'>&#x1F646;</a>
+<a class='box' title='[U+1F647] PERSON BOWING DEEPLY' onClick='cp("🙇")'>&#x1F647;</a>
+<a class='box' title='[U+1F648] SEE-NO-EVIL MONKEY' onClick='cp("🙈")'>&#x1F648;</a>
+<a class='box' title='[U+1F649] HEAR-NO-EVIL MONKEY' onClick='cp("🙉")'>&#x1F649;</a>
+<a class='box' title='[U+1F64A] SPEAK-NO-EVIL MONKEY' onClick='cp("🙊")'>&#x1F64A;</a>
+<a class='box' title='[U+1F64B] HAPPY PERSON RAISING ONE HAND' onClick='cp("🙋")'>&#x1F64B;</a>
+<a class='box' title='[U+1F64C] PERSON RAISING BOTH HANDS IN CELEBRATION' onClick='cp("🙌")'>&#x1F64C;</a>
+<a class='box' title='[U+1F64D] PERSON FROWNING' onClick='cp("🙍")'>&#x1F64D;</a>
+<a class='box' title='[U+1F64E] PERSON WITH POUTING FACE' onClick='cp("🙎")'>&#x1F64E;</a>
+<a class='box' title='[U+1F64F] PERSON WITH FOLDED HANDS' onClick='cp("🙏")'>&#x1F64F;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #27e; id=#;'>Miscellaneous Symbols (U+2600 - U+26FF)</h2>
+<div class='margined'>
+<a class='box' title='[U+2600] BLACK SUN WITH RAYS' onClick='cp("☀")'>&#x2600;</a>
+<a class='box' title='[U+2601] CLOUD' onClick='cp("☁")'>&#x2601;</a>
+<a class='box' title='[U+2602] UMBRELLA' onClick='cp("☂")'>&#x2602;</a>
+<a class='box' title='[U+2603] SNOWMAN' onClick='cp("☃")'>&#x2603;</a>
+<a class='box' title='[U+2604] COMET' onClick='cp("☄")'>&#x2604;</a>
+<a class='box' title='[U+2605] BLACK STAR' onClick='cp("★")'>&#x2605;</a>
+<a class='box' title='[U+2606] WHITE STAR' onClick='cp("☆")'>&#x2606;</a>
+<a class='box' title='[U+2607] LIGHTNING' onClick='cp("☇")'>&#x2607;</a>
+<a class='box' title='[U+2608] THUNDERSTORM' onClick='cp("☈")'>&#x2608;</a>
+<a class='box' title='[U+2609] SUN' onClick='cp("☉")'>&#x2609;</a>
+<a class='box' title='[U+260A] ASCENDING NODE' onClick='cp("☊")'>&#x260A;</a>
+<a class='box' title='[U+260B] DESCENDING NODE' onClick='cp("☋")'>&#x260B;</a>
+<a class='box' title='[U+260C] CONJUNCTION' onClick='cp("☌")'>&#x260C;</a>
+<a class='box' title='[U+260D] OPPOSITION' onClick='cp("☍")'>&#x260D;</a>
+<a class='box' title='[U+260E] BLACK TELEPHONE' onClick='cp("☎")'>&#x260E;</a>
+<a class='box' title='[U+260F] WHITE TELEPHONE' onClick='cp("☏")'>&#x260F;</a>
+<a class='box' title='[U+2610] BALLOT BOX' onClick='cp("☐")'>&#x2610;</a>
+<a class='box' title='[U+2611] BALLOT BOX WITH CHECK' onClick='cp("☑")'>&#x2611;</a>
+<a class='box' title='[U+2612] BALLOT BOX WITH X' onClick='cp("☒")'>&#x2612;</a>
+<a class='box' title='[U+2613] SALTIRE' onClick='cp("☓")'>&#x2613;</a>
+<a class='box' title='[U+2614] UMBRELLA WITH RAIN DROPS' onClick='cp("☔")'>&#x2614;</a>
+<a class='box' title='[U+2615] HOT BEVERAGE' onClick='cp("☕")'>&#x2615;</a>
+<a class='box' title='[U+2616] WHITE SHOGI PIECE' onClick='cp("☖")'>&#x2616;</a>
+<a class='box' title='[U+2617] BLACK SHOGI PIECE' onClick='cp("☗")'>&#x2617;</a>
+<a class='box' title='[U+2618] SHAMROCK' onClick='cp("☘")'>&#x2618;</a>
+<a class='box' title='[U+2619] REVERSED ROTATED FLORAL HEART BULLET' onClick='cp("☙")'>&#x2619;</a>
+<a class='box' title='[U+261A] BLACK LEFT POINTING INDEX' onClick='cp("☚")'>&#x261A;</a>
+<a class='box' title='[U+261B] BLACK RIGHT POINTING INDEX' onClick='cp("☛")'>&#x261B;</a>
+<a class='box' title='[U+261C] WHITE LEFT POINTING INDEX' onClick='cp("☜")'>&#x261C;</a>
+<a class='box' title='[U+261D] WHITE UP POINTING INDEX' onClick='cp("☝")'>&#x261D;</a>
+<a class='box' title='[U+261E] WHITE RIGHT POINTING INDEX' onClick='cp("☞")'>&#x261E;</a>
+<a class='box' title='[U+261F] WHITE DOWN POINTING INDEX' onClick='cp("☟")'>&#x261F;</a>
+<a class='box' title='[U+2620] SKULL AND CROSSBONES' onClick='cp("☠")'>&#x2620;</a>
+<a class='box' title='[U+2621] CAUTION SIGN' onClick='cp("☡")'>&#x2621;</a>
+<a class='box' title='[U+2622] RADIOACTIVE SIGN' onClick='cp("☢")'>&#x2622;</a>
+<a class='box' title='[U+2623] BIOHAZARD SIGN' onClick='cp("☣")'>&#x2623;</a>
+<a class='box' title='[U+2624] CADUCEUS' onClick='cp("☤")'>&#x2624;</a>
+<a class='box' title='[U+2625] ANKH' onClick='cp("☥")'>&#x2625;</a>
+<a class='box' title='[U+2626] ORTHODOX CROSS' onClick='cp("☦")'>&#x2626;</a>
+<a class='box' title='[U+2627] CHI RHO' onClick='cp("☧")'>&#x2627;</a>
+<a class='box' title='[U+2628] CROSS OF LORRAINE' onClick='cp("☨")'>&#x2628;</a>
+<a class='box' title='[U+2629] CROSS OF JERUSALEM' onClick='cp("☩")'>&#x2629;</a>
+<a class='box' title='[U+262A] STAR AND CRESCENT' onClick='cp("☪")'>&#x262A;</a>
+<a class='box' title='[U+262B] FARSI SYMBOL
+= SYMBOL OF IRAN' onClick='cp("☫")'>&#x262B;</a>
+<a class='box' title='[U+262C] ADI SHAKTI' onClick='cp("☬")'>&#x262C;</a>
+<a class='box' title='[U+262D] HAMMER AND SICKLE' onClick='cp("☭")'>&#x262D;</a>
+<a class='box' title='[U+262E] PEACE SYMBOL' onClick='cp("☮")'>&#x262E;</a>
+<a class='box' title='[U+262F] YIN YANG' onClick='cp("☯")'>&#x262F;</a>
+<a class='box' title='[U+2630] TRIGRAM FOR HEAVEN' onClick='cp("☰")'>&#x2630;</a>
+<a class='box' title='[U+2631] TRIGRAM FOR LAKE' onClick='cp("☱")'>&#x2631;</a>
+<a class='box' title='[U+2632] TRIGRAM FOR FIRE' onClick='cp("☲")'>&#x2632;</a>
+<a class='box' title='[U+2633] TRIGRAM FOR THUNDER' onClick='cp("☳")'>&#x2633;</a>
+<a class='box' title='[U+2634] TRIGRAM FOR WIND' onClick='cp("☴")'>&#x2634;</a>
+<a class='box' title='[U+2635] TRIGRAM FOR WATER' onClick='cp("☵")'>&#x2635;</a>
+<a class='box' title='[U+2636] TRIGRAM FOR MOUNTAIN' onClick='cp("☶")'>&#x2636;</a>
+<a class='box' title='[U+2637] TRIGRAM FOR EARTH' onClick='cp("☷")'>&#x2637;</a>
+<a class='box' title='[U+2638] WHEEL OF DHARMA' onClick='cp("☸")'>&#x2638;</a>
+<a class='box' title='[U+2639] WHITE FROWNING FACE' onClick='cp("☹")'>&#x2639;</a>
+<a class='box' title='[U+263A] WHITE SMILING FACE' onClick='cp("☺")'>&#x263A;</a>
+<a class='box' title='[U+263B] BLACK SMILING FACE' onClick='cp("☻")'>&#x263B;</a>
+<a class='box' title='[U+263C] WHITE SUN WITH RAYS' onClick='cp("☼")'>&#x263C;</a>
+<a class='box' title='[U+263D] FIRST QUARTER MOON' onClick='cp("☽")'>&#x263D;</a>
+<a class='box' title='[U+263E] LAST QUARTER MOON' onClick='cp("☾")'>&#x263E;</a>
+<a class='box' title='[U+263F] MERCURY' onClick='cp("☿")'>&#x263F;</a>
+<a class='box' title='[U+2640] FEMALE SIGN' onClick='cp("♀")'>&#x2640;</a>
+<a class='box' title='[U+2641] EARTH' onClick='cp("♁")'>&#x2641;</a>
+<a class='box' title='[U+2642] MALE SIGN' onClick='cp("♂")'>&#x2642;</a>
+<a class='box' title='[U+2643] JUPITER' onClick='cp("♃")'>&#x2643;</a>
+<a class='box' title='[U+2644] SATURN' onClick='cp("♄")'>&#x2644;</a>
+<a class='box' title='[U+2645] URANUS' onClick='cp("♅")'>&#x2645;</a>
+<a class='box' title='[U+2646] NEPTUNE' onClick='cp("♆")'>&#x2646;</a>
+<a class='box' title='[U+2647] PLUTO' onClick='cp("♇")'>&#x2647;</a>
+<a class='box' title='[U+2648] ARIES' onClick='cp("♈")'>&#x2648;</a>
+<a class='box' title='[U+2649] TAURUS' onClick='cp("♉")'>&#x2649;</a>
+<a class='box' title='[U+264A] GEMINI' onClick='cp("♊")'>&#x264A;</a>
+<a class='box' title='[U+264B] CANCER' onClick='cp("♋")'>&#x264B;</a>
+<a class='box' title='[U+264C] LEO' onClick='cp("♌")'>&#x264C;</a>
+<a class='box' title='[U+264D] VIRGO' onClick='cp("♍")'>&#x264D;</a>
+<a class='box' title='[U+264E] LIBRA' onClick='cp("♎")'>&#x264E;</a>
+<a class='box' title='[U+264F] SCORPIUS' onClick='cp("♏")'>&#x264F;</a>
+<a class='box' title='[U+2650] SAGITTARIUS' onClick='cp("♐")'>&#x2650;</a>
+<a class='box' title='[U+2651] CAPRICORN' onClick='cp("♑")'>&#x2651;</a>
+<a class='box' title='[U+2652] AQUARIUS' onClick='cp("♒")'>&#x2652;</a>
+<a class='box' title='[U+2653] PISCES' onClick='cp("♓")'>&#x2653;</a>
+<a class='box' title='[U+2654] WHITE CHESS KING' onClick='cp("♔")'>&#x2654;</a>
+<a class='box' title='[U+2655] WHITE CHESS QUEEN' onClick='cp("♕")'>&#x2655;</a>
+<a class='box' title='[U+2656] WHITE CHESS ROOK' onClick='cp("♖")'>&#x2656;</a>
+<a class='box' title='[U+2657] WHITE CHESS BISHOP' onClick='cp("♗")'>&#x2657;</a>
+<a class='box' title='[U+2658] WHITE CHESS KNIGHT' onClick='cp("♘")'>&#x2658;</a>
+<a class='box' title='[U+2659] WHITE CHESS PAWN' onClick='cp("♙")'>&#x2659;</a>
+<a class='box' title='[U+265A] BLACK CHESS KING' onClick='cp("♚")'>&#x265A;</a>
+<a class='box' title='[U+265B] BLACK CHESS QUEEN' onClick='cp("♛")'>&#x265B;</a>
+<a class='box' title='[U+265C] BLACK CHESS ROOK' onClick='cp("♜")'>&#x265C;</a>
+<a class='box' title='[U+265D] BLACK CHESS BISHOP' onClick='cp("♝")'>&#x265D;</a>
+<a class='box' title='[U+265E] BLACK CHESS KNIGHT' onClick='cp("♞")'>&#x265E;</a>
+<a class='box' title='[U+265F] BLACK CHESS PAWN' onClick='cp("♟")'>&#x265F;</a>
+<a class='box' title='[U+2660] BLACK SPADE SUIT' onClick='cp("♠")'>&#x2660;</a>
+<a class='box' title='[U+2661] WHITE HEART SUIT' onClick='cp("♡")'>&#x2661;</a>
+<a class='box' title='[U+2662] WHITE DIAMOND SUIT' onClick='cp("♢")'>&#x2662;</a>
+<a class='box' title='[U+2663] BLACK CLUB SUIT' onClick='cp("♣")'>&#x2663;</a>
+<a class='box' title='[U+2664] WHITE SPADE SUIT' onClick='cp("♤")'>&#x2664;</a>
+<a class='box' title='[U+2665] BLACK HEART SUIT' onClick='cp("♥")'>&#x2665;</a>
+<a class='box' title='[U+2666] BLACK DIAMOND SUIT' onClick='cp("♦")'>&#x2666;</a>
+<a class='box' title='[U+2667] WHITE CLUB SUIT' onClick='cp("♧")'>&#x2667;</a>
+<a class='box' title='[U+2668] HOT SPRINGS' onClick='cp("♨")'>&#x2668;</a>
+<a class='box' title='[U+2669] QUARTER NOTE' onClick='cp("♩")'>&#x2669;</a>
+<a class='box' title='[U+266A] EIGHTH NOTE' onClick='cp("♪")'>&#x266A;</a>
+<a class='box' title='[U+266B] BEAMED EIGHTH NOTES
+= BARRED EIGHTH NOTES' onClick='cp("♫")'>&#x266B;</a>
+<a class='box' title='[U+266C] BEAMED SIXTEENTH NOTES
+= BARRED SIXTEENTH NOTES' onClick='cp("♬")'>&#x266C;</a>
+<a class='box' title='[U+266D] MUSIC FLAT SIGN
+= FLAT' onClick='cp("♭")'>&#x266D;</a>
+<a class='box' title='[U+266E] MUSIC NATURAL SIGN
+= NATURAL' onClick='cp("♮")'>&#x266E;</a>
+<a class='box' title='[U+266F] MUSIC SHARP SIGN
+= SHARP' onClick='cp("♯")'>&#x266F;</a>
+<a class='box' title='[U+2670] WEST SYRIAC CROSS' onClick='cp("♰")'>&#x2670;</a>
+<a class='box' title='[U+2671] EAST SYRIAC CROSS' onClick='cp("♱")'>&#x2671;</a>
+<a class='box' title='[U+2672] UNIVERSAL RECYCLING SYMBOL' onClick='cp("♲")'>&#x2672;</a>
+<a class='box' title='[U+2673] RECYCLING SYMBOL FOR TYPE-1 PLASTICS' onClick='cp("♳")'>&#x2673;</a>
+<a class='box' title='[U+2674] RECYCLING SYMBOL FOR TYPE-2 PLASTICS' onClick='cp("♴")'>&#x2674;</a>
+<a class='box' title='[U+2675] RECYCLING SYMBOL FOR TYPE-3 PLASTICS' onClick='cp("♵")'>&#x2675;</a>
+<a class='box' title='[U+2676] RECYCLING SYMBOL FOR TYPE-4 PLASTICS' onClick='cp("♶")'>&#x2676;</a>
+<a class='box' title='[U+2677] RECYCLING SYMBOL FOR TYPE-5 PLASTICS' onClick='cp("♷")'>&#x2677;</a>
+<a class='box' title='[U+2678] RECYCLING SYMBOL FOR TYPE-6 PLASTICS' onClick='cp("♸")'>&#x2678;</a>
+<a class='box' title='[U+2679] RECYCLING SYMBOL FOR TYPE-7 PLASTICS' onClick='cp("♹")'>&#x2679;</a>
+<a class='box' title='[U+267A] RECYCLING SYMBOL FOR GENERIC MATERIALS' onClick='cp("♺")'>&#x267A;</a>
+<a class='box' title='[U+267B] BLACK UNIVERSAL RECYCLING SYMBOL' onClick='cp("♻")'>&#x267B;</a>
+<a class='box' title='[U+267C] RECYCLED PAPER SYMBOL' onClick='cp("♼")'>&#x267C;</a>
+<a class='box' title='[U+267D] PARTIALLY-RECYCLED PAPER SYMBOL' onClick='cp("♽")'>&#x267D;</a>
+<a class='box' title='[U+267E] PERMANENT PAPER SIGN' onClick='cp("♾")'>&#x267E;</a>
+<a class='box' title='[U+267F] WHEELCHAIR SYMBOL' onClick='cp("♿")'>&#x267F;</a>
+<a class='box' title='[U+2680] DIE FACE-1' onClick='cp("⚀")'>&#x2680;</a>
+<a class='box' title='[U+2681] DIE FACE-2' onClick='cp("⚁")'>&#x2681;</a>
+<a class='box' title='[U+2682] DIE FACE-3' onClick='cp("⚂")'>&#x2682;</a>
+<a class='box' title='[U+2683] DIE FACE-4' onClick='cp("⚃")'>&#x2683;</a>
+<a class='box' title='[U+2684] DIE FACE-5' onClick='cp("⚄")'>&#x2684;</a>
+<a class='box' title='[U+2685] DIE FACE-6' onClick='cp("⚅")'>&#x2685;</a>
+<a class='box' title='[U+2686] WHITE CIRCLE WITH DOT RIGHT' onClick='cp("⚆")'>&#x2686;</a>
+<a class='box' title='[U+2687] WHITE CIRCLE WITH TWO DOTS' onClick='cp("⚇")'>&#x2687;</a>
+<a class='box' title='[U+2688] BLACK CIRCLE WITH WHITE DOT RIGHT' onClick='cp("⚈")'>&#x2688;</a>
+<a class='box' title='[U+2689] BLACK CIRCLE WITH TWO WHITE DOTS' onClick='cp("⚉")'>&#x2689;</a>
+<a class='box' title='[U+268A] MONOGRAM FOR YANG' onClick='cp("⚊")'>&#x268A;</a>
+<a class='box' title='[U+268B] MONOGRAM FOR YIN' onClick='cp("⚋")'>&#x268B;</a>
+<a class='box' title='[U+268C] DIGRAM FOR GREATER YANG' onClick='cp("⚌")'>&#x268C;</a>
+<a class='box' title='[U+268D] DIGRAM FOR LESSER YIN' onClick='cp("⚍")'>&#x268D;</a>
+<a class='box' title='[U+268E] DIGRAM FOR LESSER YANG' onClick='cp("⚎")'>&#x268E;</a>
+<a class='box' title='[U+268F] DIGRAM FOR GREATER YIN' onClick='cp("⚏")'>&#x268F;</a>
+<a class='box' title='[U+2690] WHITE FLAG' onClick='cp("⚐")'>&#x2690;</a>
+<a class='box' title='[U+2691] BLACK FLAG' onClick='cp("⚑")'>&#x2691;</a>
+<a class='box' title='[U+2692] HAMMER AND PICK' onClick='cp("⚒")'>&#x2692;</a>
+<a class='box' title='[U+2693] ANCHOR' onClick='cp("⚓")'>&#x2693;</a>
+<a class='box' title='[U+2694] CROSSED SWORDS' onClick='cp("⚔")'>&#x2694;</a>
+<a class='box' title='[U+2695] STAFF OF AESCULAPIUS' onClick='cp("⚕")'>&#x2695;</a>
+<a class='box' title='[U+2696] SCALES' onClick='cp("⚖")'>&#x2696;</a>
+<a class='box' title='[U+2697] ALEMBIC' onClick='cp("⚗")'>&#x2697;</a>
+<a class='box' title='[U+2698] FLOWER' onClick='cp("⚘")'>&#x2698;</a>
+<a class='box' title='[U+2699] GEAR' onClick='cp("⚙")'>&#x2699;</a>
+<a class='box' title='[U+269A] STAFF OF HERMES' onClick='cp("⚚")'>&#x269A;</a>
+<a class='box' title='[U+269B] ATOM SYMBOL' onClick='cp("⚛")'>&#x269B;</a>
+<a class='box' title='[U+269C] FLEUR-DE-LIS' onClick='cp("⚜")'>&#x269C;</a>
+<a class='box' title='[U+269D] OUTLINED WHITE STAR' onClick='cp("⚝")'>&#x269D;</a>
+<a class='box' title='[U+269E] THREE LINES CONVERGING RIGHT' onClick='cp("⚞")'>&#x269E;</a>
+<a class='box' title='[U+269F] THREE LINES CONVERGING LEFT' onClick='cp("⚟")'>&#x269F;</a>
+<a class='box' title='[U+26A0] WARNING SIGN' onClick='cp("⚠")'>&#x26A0;</a>
+<a class='box' title='[U+26A1] HIGH VOLTAGE SIGN' onClick='cp("⚡")'>&#x26A1;</a>
+<a class='box' title='[U+26A2] DOUBLED FEMALE SIGN' onClick='cp("⚢")'>&#x26A2;</a>
+<a class='box' title='[U+26A3] DOUBLED MALE SIGN' onClick='cp("⚣")'>&#x26A3;</a>
+<a class='box' title='[U+26A4] INTERLOCKED FEMALE AND MALE SIGN' onClick='cp("⚤")'>&#x26A4;</a>
+<a class='box' title='[U+26A5] MALE AND FEMALE SIGN' onClick='cp("⚥")'>&#x26A5;</a>
+<a class='box' title='[U+26A6] MALE WITH STROKE SIGN' onClick='cp("⚦")'>&#x26A6;</a>
+<a class='box' title='[U+26A7] MALE WITH STROKE AND MALE AND FEMALE SIGN' onClick='cp("⚧")'>&#x26A7;</a>
+<a class='box' title='[U+26A8] VERTICAL MALE WITH STROKE SIGN' onClick='cp("⚨")'>&#x26A8;</a>
+<a class='box' title='[U+26A9] HORIZONTAL MALE WITH STROKE SIGN' onClick='cp("⚩")'>&#x26A9;</a>
+<a class='box' title='[U+26AA] MEDIUM WHITE CIRCLE' onClick='cp("⚪")'>&#x26AA;</a>
+<a class='box' title='[U+26AB] MEDIUM BLACK CIRCLE' onClick='cp("⚫")'>&#x26AB;</a>
+<a class='box' title='[U+26AC] MEDIUM SMALL WHITE CIRCLE' onClick='cp("⚬")'>&#x26AC;</a>
+<a class='box' title='[U+26AD] MARRIAGE SYMBOL' onClick='cp("⚭")'>&#x26AD;</a>
+<a class='box' title='[U+26AE] DIVORCE SYMBOL' onClick='cp("⚮")'>&#x26AE;</a>
+<a class='box' title='[U+26AF] UNMARRIED PARTNERSHIP SYMBOL' onClick='cp("⚯")'>&#x26AF;</a>
+<a class='box' title='[U+26B0] COFFIN' onClick='cp("⚰")'>&#x26B0;</a>
+<a class='box' title='[U+26B1] FUNERAL URN' onClick='cp("⚱")'>&#x26B1;</a>
+<a class='box' title='[U+26B2] NEUTER' onClick='cp("⚲")'>&#x26B2;</a>
+<a class='box' title='[U+26B3] CERES' onClick='cp("⚳")'>&#x26B3;</a>
+<a class='box' title='[U+26B4] PALLAS' onClick='cp("⚴")'>&#x26B4;</a>
+<a class='box' title='[U+26B5] JUNO' onClick='cp("⚵")'>&#x26B5;</a>
+<a class='box' title='[U+26B6] VESTA' onClick='cp("⚶")'>&#x26B6;</a>
+<a class='box' title='[U+26B7] CHIRON' onClick='cp("⚷")'>&#x26B7;</a>
+<a class='box' title='[U+26B8] BLACK MOON LILITH' onClick='cp("⚸")'>&#x26B8;</a>
+<a class='box' title='[U+26B9] SEXTILE' onClick='cp("⚹")'>&#x26B9;</a>
+<a class='box' title='[U+26BA] SEMISEXTILE' onClick='cp("⚺")'>&#x26BA;</a>
+<a class='box' title='[U+26BB] QUINCUNX' onClick='cp("⚻")'>&#x26BB;</a>
+<a class='box' title='[U+26BC] SESQUIQUADRATE' onClick='cp("⚼")'>&#x26BC;</a>
+<a class='box' title='[U+26BD] SOCCER BALL' onClick='cp("⚽")'>&#x26BD;</a>
+<a class='box' title='[U+26BE] BASEBALL' onClick='cp("⚾")'>&#x26BE;</a>
+<a class='box' title='[U+26BF] SQUARED KEY' onClick='cp("⚿")'>&#x26BF;</a>
+<a class='box' title='[U+26C0] WHITE DRAUGHTS MAN' onClick='cp("⛀")'>&#x26C0;</a>
+<a class='box' title='[U+26C1] WHITE DRAUGHTS KING' onClick='cp("⛁")'>&#x26C1;</a>
+<a class='box' title='[U+26C2] BLACK DRAUGHTS MAN' onClick='cp("⛂")'>&#x26C2;</a>
+<a class='box' title='[U+26C3] BLACK DRAUGHTS KING' onClick='cp("⛃")'>&#x26C3;</a>
+<a class='box' title='[U+26C4] SNOWMAN WITHOUT SNOW' onClick='cp("⛄")'>&#x26C4;</a>
+<a class='box' title='[U+26C5] SUN BEHIND CLOUD' onClick='cp("⛅")'>&#x26C5;</a>
+<a class='box' title='[U+26C6] RAIN' onClick='cp("⛆")'>&#x26C6;</a>
+<a class='box' title='[U+26C7] BLACK SNOWMAN' onClick='cp("⛇")'>&#x26C7;</a>
+<a class='box' title='[U+26C8] THUNDER CLOUD AND RAIN' onClick='cp("⛈")'>&#x26C8;</a>
+<a class='box' title='[U+26C9] TURNED WHITE SHOGI PIECE' onClick='cp("⛉")'>&#x26C9;</a>
+<a class='box' title='[U+26CA] TURNED BLACK SHOGI PIECE' onClick='cp("⛊")'>&#x26CA;</a>
+<a class='box' title='[U+26CB] WHITE DIAMOND IN SQUARE' onClick='cp("⛋")'>&#x26CB;</a>
+<a class='box' title='[U+26CC] CROSSING LANES' onClick='cp("⛌")'>&#x26CC;</a>
+<a class='box' title='[U+26CD] DISABLED CAR' onClick='cp("⛍")'>&#x26CD;</a>
+<a class='box' title='[U+26CE] OPHIUCHUS' onClick='cp("⛎")'>&#x26CE;</a>
+<a class='box' title='[U+26CF] PICK' onClick='cp("⛏")'>&#x26CF;</a>
+<a class='box' title='[U+26D0] CAR SLIDING' onClick='cp("⛐")'>&#x26D0;</a>
+<a class='box' title='[U+26D1] HELMET WITH WHITE CROSS' onClick='cp("⛑")'>&#x26D1;</a>
+<a class='box' title='[U+26D2] CIRCLED CROSSING LANES' onClick='cp("⛒")'>&#x26D2;</a>
+<a class='box' title='[U+26D3] CHAINS' onClick='cp("⛓")'>&#x26D3;</a>
+<a class='box' title='[U+26D4] NO ENTRY' onClick='cp("⛔")'>&#x26D4;</a>
+<a class='box' title='[U+26D5] ALTERNATE ONE-WAY LEFT WAY TRAFFIC' onClick='cp("⛕")'>&#x26D5;</a>
+<a class='box' title='[U+26D6] BLACK TWO-WAY LEFT WAY TRAFFIC' onClick='cp("⛖")'>&#x26D6;</a>
+<a class='box' title='[U+26D7] WHITE TWO-WAY LEFT WAY TRAFFIC' onClick='cp("⛗")'>&#x26D7;</a>
+<a class='box' title='[U+26D8] BLACK LEFT LANE MERGE' onClick='cp("⛘")'>&#x26D8;</a>
+<a class='box' title='[U+26D9] WHITE LEFT LANE MERGE' onClick='cp("⛙")'>&#x26D9;</a>
+<a class='box' title='[U+26DA] DRIVE SLOW SIGN' onClick='cp("⛚")'>&#x26DA;</a>
+<a class='box' title='[U+26DB] HEAVY WHITE DOWN-POINTING TRIANGLE' onClick='cp("⛛")'>&#x26DB;</a>
+<a class='box' title='[U+26DC] LEFT CLOSED ENTRY' onClick='cp("⛜")'>&#x26DC;</a>
+<a class='box' title='[U+26DD] SQUARED SALTIRE' onClick='cp("⛝")'>&#x26DD;</a>
+<a class='box' title='[U+26DE] FALLING DIAGONAL IN WHITE CIRCLE IN BLACK SQUARE' onClick='cp("⛞")'>&#x26DE;</a>
+<a class='box' title='[U+26DF] BLACK TRUCK' onClick='cp("⛟")'>&#x26DF;</a>
+<a class='box' title='[U+26E0] RESTRICTED LEFT ENTRY-1' onClick='cp("⛠")'>&#x26E0;</a>
+<a class='box' title='[U+26E1] RESTRICTED LEFT ENTRY-2' onClick='cp("⛡")'>&#x26E1;</a>
+<a class='box' title='[U+26E2] ASTRONOMICAL SYMBOL FOR URANUS' onClick='cp("⛢")'>&#x26E2;</a>
+<a class='box' title='[U+26E3] HEAVY CIRCLE WITH STROKE AND TWO DOTS ABOVE' onClick='cp("⛣")'>&#x26E3;</a>
+<a class='box' title='[U+26E4] PENTAGRAM' onClick='cp("⛤")'>&#x26E4;</a>
+<a class='box' title='[U+26E5] RIGHT-HANDED INTERLACED PENTAGRAM' onClick='cp("⛥")'>&#x26E5;</a>
+<a class='box' title='[U+26E6] LEFT-HANDED INTERLACED PENTAGRAM' onClick='cp("⛦")'>&#x26E6;</a>
+<a class='box' title='[U+26E7] INVERTED PENTAGRAM' onClick='cp("⛧")'>&#x26E7;</a>
+<a class='box' title='[U+26E8] BLACK CROSS ON SHIELD' onClick='cp("⛨")'>&#x26E8;</a>
+<a class='box' title='[U+26E9] SHINTO SHRINE' onClick='cp("⛩")'>&#x26E9;</a>
+<a class='box' title='[U+26EA] CHURCH' onClick='cp("⛪")'>&#x26EA;</a>
+<a class='box' title='[U+26EB] CASTLE' onClick='cp("⛫")'>&#x26EB;</a>
+<a class='box' title='[U+26EC] HISTORIC SITE' onClick='cp("⛬")'>&#x26EC;</a>
+<a class='box' title='[U+26ED] GEAR WITHOUT HUB' onClick='cp("⛭")'>&#x26ED;</a>
+<a class='box' title='[U+26EE] GEAR WITH HANDLES' onClick='cp("⛮")'>&#x26EE;</a>
+<a class='box' title='[U+26EF] MAP SYMBOL FOR LIGHTHOUSE' onClick='cp("⛯")'>&#x26EF;</a>
+<a class='box' title='[U+26F0] MOUNTAIN' onClick='cp("⛰")'>&#x26F0;</a>
+<a class='box' title='[U+26F1] UMBRELLA ON GROUND' onClick='cp("⛱")'>&#x26F1;</a>
+<a class='box' title='[U+26F2] FOUNTAIN' onClick='cp("⛲")'>&#x26F2;</a>
+<a class='box' title='[U+26F3] FLAG IN HOLE' onClick='cp("⛳")'>&#x26F3;</a>
+<a class='box' title='[U+26F4] FERRY' onClick='cp("⛴")'>&#x26F4;</a>
+<a class='box' title='[U+26F5] SAILBOAT' onClick='cp("⛵")'>&#x26F5;</a>
+<a class='box' title='[U+26F6] SQUARE FOUR CORNERS' onClick='cp("⛶")'>&#x26F6;</a>
+<a class='box' title='[U+26F7] SKIER' onClick='cp("⛷")'>&#x26F7;</a>
+<a class='box' title='[U+26F8] ICE SKATE' onClick='cp("⛸")'>&#x26F8;</a>
+<a class='box' title='[U+26F9] PERSON WITH BALL' onClick='cp("⛹")'>&#x26F9;</a>
+<a class='box' title='[U+26FA] TENT' onClick='cp("⛺")'>&#x26FA;</a>
+<a class='box' title='[U+26FB] JAPANESE BANK SYMBOL' onClick='cp("⛻")'>&#x26FB;</a>
+<a class='box' title='[U+26FC] HEADSTONE GRAVEYARD SYMBOL' onClick='cp("⛼")'>&#x26FC;</a>
+<a class='box' title='[U+26FD] FUEL PUMP' onClick='cp("⛽")'>&#x26FD;</a>
+<a class='box' title='[U+26FE] CUP ON BLACK SQUARE' onClick='cp("⛾")'>&#x26FE;</a>
+<a class='box' title='[U+26FF] WHITE FLAG WITH HORIZONTAL MIDDLE BLACK STRIPE' onClick='cp("⛿")'>&#x26FF;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #f44; id=#;'>Miscellaneous Symbols And Pictographs (U+1F300 - U+1F5FF)</h2>
+<div class='margined'>
+<a class='box' title='[U+1F300] CYCLONE' onClick='cp("🌀")'>&#x1F300;</a>
+<a class='box' title='[U+1F301] FOGGY' onClick='cp("🌁")'>&#x1F301;</a>
+<a class='box' title='[U+1F302] CLOSED UMBRELLA' onClick='cp("🌂")'>&#x1F302;</a>
+<a class='box' title='[U+1F303] NIGHT WITH STARS' onClick='cp("🌃")'>&#x1F303;</a>
+<a class='box' title='[U+1F304] SUNRISE OVER MOUNTAINS' onClick='cp("🌄")'>&#x1F304;</a>
+<a class='box' title='[U+1F305] SUNRISE' onClick='cp("🌅")'>&#x1F305;</a>
+<a class='box' title='[U+1F306] CITYSCAPE AT DUSK' onClick='cp("🌆")'>&#x1F306;</a>
+<a class='box' title='[U+1F307] SUNSET OVER BUILDINGS' onClick='cp("🌇")'>&#x1F307;</a>
+<a class='box' title='[U+1F308] RAINBOW' onClick='cp("🌈")'>&#x1F308;</a>
+<a class='box' title='[U+1F309] BRIDGE AT NIGHT' onClick='cp("🌉")'>&#x1F309;</a>
+<a class='box' title='[U+1F30A] WATER WAVE' onClick='cp("🌊")'>&#x1F30A;</a>
+<a class='box' title='[U+1F30B] VOLCANO' onClick='cp("🌋")'>&#x1F30B;</a>
+<a class='box' title='[U+1F30C] MILKY WAY' onClick='cp("🌌")'>&#x1F30C;</a>
+<a class='box' title='[U+1F30D] EARTH GLOBE EUROPE-AFRICA' onClick='cp("🌍")'>&#x1F30D;</a>
+<a class='box' title='[U+1F30E] EARTH GLOBE AMERICAS' onClick='cp("🌎")'>&#x1F30E;</a>
+<a class='box' title='[U+1F30F] EARTH GLOBE ASIA-AUSTRALIA' onClick='cp("🌏")'>&#x1F30F;</a>
+<a class='box' title='[U+1F310] GLOBE WITH MERIDIANS' onClick='cp("🌐")'>&#x1F310;</a>
+<a class='box' title='[U+1F311] NEW MOON SYMBOL' onClick='cp("🌑")'>&#x1F311;</a>
+<a class='box' title='[U+1F312] WAXING CRESCENT MOON SYMBOL' onClick='cp("🌒")'>&#x1F312;</a>
+<a class='box' title='[U+1F313] FIRST QUARTER MOON SYMBOL' onClick='cp("🌓")'>&#x1F313;</a>
+<a class='box' title='[U+1F314] WAXING GIBBOUS MOON SYMBOL' onClick='cp("🌔")'>&#x1F314;</a>
+<a class='box' title='[U+1F315] FULL MOON SYMBOL' onClick='cp("🌕")'>&#x1F315;</a>
+<a class='box' title='[U+1F316] WANING GIBBOUS MOON SYMBOL' onClick='cp("🌖")'>&#x1F316;</a>
+<a class='box' title='[U+1F317] LAST QUARTER MOON SYMBOL' onClick='cp("🌗")'>&#x1F317;</a>
+<a class='box' title='[U+1F318] WANING CRESCENT MOON SYMBOL' onClick='cp("🌘")'>&#x1F318;</a>
+<a class='box' title='[U+1F319] CRESCENT MOON' onClick='cp("🌙")'>&#x1F319;</a>
+<a class='box' title='[U+1F31A] NEW MOON WITH FACE' onClick='cp("🌚")'>&#x1F31A;</a>
+<a class='box' title='[U+1F31B] FIRST QUARTER MOON WITH FACE' onClick='cp("🌛")'>&#x1F31B;</a>
+<a class='box' title='[U+1F31C] LAST QUARTER MOON WITH FACE' onClick='cp("🌜")'>&#x1F31C;</a>
+<a class='box' title='[U+1F31D] FULL MOON WITH FACE' onClick='cp("🌝")'>&#x1F31D;</a>
+<a class='box' title='[U+1F31E] SUN WITH FACE' onClick='cp("🌞")'>&#x1F31E;</a>
+<a class='box' title='[U+1F31F] GLOWING STAR' onClick='cp("🌟")'>&#x1F31F;</a>
+<a class='box' title='[U+1F320] SHOOTING STAR' onClick='cp("🌠")'>&#x1F320;</a>
+<a class='box' title='[U+1F321] THERMOMETER' onClick='cp("🌡")'>&#x1F321;</a>
+<a class='box' title='[U+1F322] BLACK DROPLET' onClick='cp("🌢")'>&#x1F322;</a>
+<a class='box' title='[U+1F323] WHITE SUN' onClick='cp("🌣")'>&#x1F323;</a>
+<a class='box' title='[U+1F324] WHITE SUN WITH SMALL CLOUD' onClick='cp("🌤")'>&#x1F324;</a>
+<a class='box' title='[U+1F325] WHITE SUN BEHIND CLOUD' onClick='cp("🌥")'>&#x1F325;</a>
+<a class='box' title='[U+1F326] WHITE SUN BEHIND CLOUD WITH RAIN' onClick='cp("🌦")'>&#x1F326;</a>
+<a class='box' title='[U+1F327] CLOUD WITH RAIN' onClick='cp("🌧")'>&#x1F327;</a>
+<a class='box' title='[U+1F328] CLOUD WITH SNOW' onClick='cp("🌨")'>&#x1F328;</a>
+<a class='box' title='[U+1F329] CLOUD WITH LIGHTNING' onClick='cp("🌩")'>&#x1F329;</a>
+<a class='box' title='[U+1F32A] CLOUD WITH TORNADO' onClick='cp("🌪")'>&#x1F32A;</a>
+<a class='box' title='[U+1F32B] FOG' onClick='cp("🌫")'>&#x1F32B;</a>
+<a class='box' title='[U+1F32C] WIND BLOWING FACE' onClick='cp("🌬")'>&#x1F32C;</a>
+<a class='box' title='[U+1F32D] HOT DOG' onClick='cp("🌭")'>&#x1F32D;</a>
+<a class='box' title='[U+1F32E] TACO' onClick='cp("🌮")'>&#x1F32E;</a>
+<a class='box' title='[U+1F32F] BURRITO' onClick='cp("🌯")'>&#x1F32F;</a>
+<a class='box' title='[U+1F330] CHESTNUT' onClick='cp("🌰")'>&#x1F330;</a>
+<a class='box' title='[U+1F331] SEEDLING' onClick='cp("🌱")'>&#x1F331;</a>
+<a class='box' title='[U+1F332] EVERGREEN TREE' onClick='cp("🌲")'>&#x1F332;</a>
+<a class='box' title='[U+1F333] DECIDUOUS TREE' onClick='cp("🌳")'>&#x1F333;</a>
+<a class='box' title='[U+1F334] PALM TREE' onClick='cp("🌴")'>&#x1F334;</a>
+<a class='box' title='[U+1F335] CACTUS' onClick='cp("🌵")'>&#x1F335;</a>
+<a class='box' title='[U+1F336] HOT PEPPER' onClick='cp("🌶")'>&#x1F336;</a>
+<a class='box' title='[U+1F337] TULIP' onClick='cp("🌷")'>&#x1F337;</a>
+<a class='box' title='[U+1F338] CHERRY BLOSSOM' onClick='cp("🌸")'>&#x1F338;</a>
+<a class='box' title='[U+1F339] ROSE' onClick='cp("🌹")'>&#x1F339;</a>
+<a class='box' title='[U+1F33A] HIBISCUS' onClick='cp("🌺")'>&#x1F33A;</a>
+<a class='box' title='[U+1F33B] SUNFLOWER' onClick='cp("🌻")'>&#x1F33B;</a>
+<a class='box' title='[U+1F33C] BLOSSOM' onClick='cp("🌼")'>&#x1F33C;</a>
+<a class='box' title='[U+1F33D] EAR OF MAIZE' onClick='cp("🌽")'>&#x1F33D;</a>
+<a class='box' title='[U+1F33E] EAR OF RICE' onClick='cp("🌾")'>&#x1F33E;</a>
+<a class='box' title='[U+1F33F] HERB' onClick='cp("🌿")'>&#x1F33F;</a>
+<a class='box' title='[U+1F340] FOUR LEAF CLOVER' onClick='cp("🍀")'>&#x1F340;</a>
+<a class='box' title='[U+1F341] MAPLE LEAF' onClick='cp("🍁")'>&#x1F341;</a>
+<a class='box' title='[U+1F342] FALLEN LEAF' onClick='cp("🍂")'>&#x1F342;</a>
+<a class='box' title='[U+1F343] LEAF FLUTTERING IN WIND' onClick='cp("🍃")'>&#x1F343;</a>
+<a class='box' title='[U+1F344] MUSHROOM' onClick='cp("🍄")'>&#x1F344;</a>
+<a class='box' title='[U+1F345] TOMATO' onClick='cp("🍅")'>&#x1F345;</a>
+<a class='box' title='[U+1F346] AUBERGINE' onClick='cp("🍆")'>&#x1F346;</a>
+<a class='box' title='[U+1F347] GRAPES' onClick='cp("🍇")'>&#x1F347;</a>
+<a class='box' title='[U+1F348] MELON' onClick='cp("🍈")'>&#x1F348;</a>
+<a class='box' title='[U+1F349] WATERMELON' onClick='cp("🍉")'>&#x1F349;</a>
+<a class='box' title='[U+1F34A] TANGERINE' onClick='cp("🍊")'>&#x1F34A;</a>
+<a class='box' title='[U+1F34B] LEMON' onClick='cp("🍋")'>&#x1F34B;</a>
+<a class='box' title='[U+1F34C] BANANA' onClick='cp("🍌")'>&#x1F34C;</a>
+<a class='box' title='[U+1F34D] PINEAPPLE' onClick='cp("🍍")'>&#x1F34D;</a>
+<a class='box' title='[U+1F34E] RED APPLE' onClick='cp("🍎")'>&#x1F34E;</a>
+<a class='box' title='[U+1F34F] GREEN APPLE' onClick='cp("🍏")'>&#x1F34F;</a>
+<a class='box' title='[U+1F350] PEAR' onClick='cp("🍐")'>&#x1F350;</a>
+<a class='box' title='[U+1F351] PEACH' onClick='cp("🍑")'>&#x1F351;</a>
+<a class='box' title='[U+1F352] CHERRIES' onClick='cp("🍒")'>&#x1F352;</a>
+<a class='box' title='[U+1F353] STRAWBERRY' onClick='cp("🍓")'>&#x1F353;</a>
+<a class='box' title='[U+1F354] HAMBURGER' onClick='cp("🍔")'>&#x1F354;</a>
+<a class='box' title='[U+1F355] SLICE OF PIZZA' onClick='cp("🍕")'>&#x1F355;</a>
+<a class='box' title='[U+1F356] MEAT ON BONE' onClick='cp("🍖")'>&#x1F356;</a>
+<a class='box' title='[U+1F357] POULTRY LEG' onClick='cp("🍗")'>&#x1F357;</a>
+<a class='box' title='[U+1F358] RICE CRACKER' onClick='cp("🍘")'>&#x1F358;</a>
+<a class='box' title='[U+1F359] RICE BALL' onClick='cp("🍙")'>&#x1F359;</a>
+<a class='box' title='[U+1F35A] COOKED RICE' onClick='cp("🍚")'>&#x1F35A;</a>
+<a class='box' title='[U+1F35B] CURRY AND RICE' onClick='cp("🍛")'>&#x1F35B;</a>
+<a class='box' title='[U+1F35C] STEAMING BOWL' onClick='cp("🍜")'>&#x1F35C;</a>
+<a class='box' title='[U+1F35D] SPAGHETTI' onClick='cp("🍝")'>&#x1F35D;</a>
+<a class='box' title='[U+1F35E] BREAD' onClick='cp("🍞")'>&#x1F35E;</a>
+<a class='box' title='[U+1F35F] FRENCH FRIES' onClick='cp("🍟")'>&#x1F35F;</a>
+<a class='box' title='[U+1F360] ROASTED SWEET POTATO' onClick='cp("🍠")'>&#x1F360;</a>
+<a class='box' title='[U+1F361] DANGO' onClick='cp("🍡")'>&#x1F361;</a>
+<a class='box' title='[U+1F362] ODEN' onClick='cp("🍢")'>&#x1F362;</a>
+<a class='box' title='[U+1F363] SUSHI' onClick='cp("🍣")'>&#x1F363;</a>
+<a class='box' title='[U+1F364] FRIED SHRIMP' onClick='cp("🍤")'>&#x1F364;</a>
+<a class='box' title='[U+1F365] FISH CAKE WITH SWIRL DESIGN' onClick='cp("🍥")'>&#x1F365;</a>
+<a class='box' title='[U+1F366] SOFT ICE CREAM' onClick='cp("🍦")'>&#x1F366;</a>
+<a class='box' title='[U+1F367] SHAVED ICE' onClick='cp("🍧")'>&#x1F367;</a>
+<a class='box' title='[U+1F368] ICE CREAM' onClick='cp("🍨")'>&#x1F368;</a>
+<a class='box' title='[U+1F369] DOUGHNUT' onClick='cp("🍩")'>&#x1F369;</a>
+<a class='box' title='[U+1F36A] COOKIE' onClick='cp("🍪")'>&#x1F36A;</a>
+<a class='box' title='[U+1F36B] CHOCOLATE BAR' onClick='cp("🍫")'>&#x1F36B;</a>
+<a class='box' title='[U+1F36C] CANDY' onClick='cp("🍬")'>&#x1F36C;</a>
+<a class='box' title='[U+1F36D] LOLLIPOP' onClick='cp("🍭")'>&#x1F36D;</a>
+<a class='box' title='[U+1F36E] CUSTARD' onClick='cp("🍮")'>&#x1F36E;</a>
+<a class='box' title='[U+1F36F] HONEY POT' onClick='cp("🍯")'>&#x1F36F;</a>
+<a class='box' title='[U+1F370] SHORTCAKE' onClick='cp("🍰")'>&#x1F370;</a>
+<a class='box' title='[U+1F371] BENTO BOX' onClick='cp("🍱")'>&#x1F371;</a>
+<a class='box' title='[U+1F372] POT OF FOOD' onClick='cp("🍲")'>&#x1F372;</a>
+<a class='box' title='[U+1F373] COOKING' onClick='cp("🍳")'>&#x1F373;</a>
+<a class='box' title='[U+1F374] FORK AND KNIFE' onClick='cp("🍴")'>&#x1F374;</a>
+<a class='box' title='[U+1F375] TEACUP WITHOUT HANDLE' onClick='cp("🍵")'>&#x1F375;</a>
+<a class='box' title='[U+1F376] SAKE BOTTLE AND CUP' onClick='cp("🍶")'>&#x1F376;</a>
+<a class='box' title='[U+1F377] WINE GLASS' onClick='cp("🍷")'>&#x1F377;</a>
+<a class='box' title='[U+1F378] COCKTAIL GLASS' onClick='cp("🍸")'>&#x1F378;</a>
+<a class='box' title='[U+1F379] TROPICAL DRINK' onClick='cp("🍹")'>&#x1F379;</a>
+<a class='box' title='[U+1F37A] BEER MUG' onClick='cp("🍺")'>&#x1F37A;</a>
+<a class='box' title='[U+1F37B] CLINKING BEER MUGS' onClick='cp("🍻")'>&#x1F37B;</a>
+<a class='box' title='[U+1F37C] BABY BOTTLE' onClick='cp("🍼")'>&#x1F37C;</a>
+<a class='box' title='[U+1F37D] FORK AND KNIFE WITH PLATE' onClick='cp("🍽")'>&#x1F37D;</a>
+<a class='box' title='[U+1F37E] BOTTLE WITH POPPING CORK' onClick='cp("🍾")'>&#x1F37E;</a>
+<a class='box' title='[U+1F37F] POPCORN' onClick='cp("🍿")'>&#x1F37F;</a>
+<a class='box' title='[U+1F380] RIBBON' onClick='cp("🎀")'>&#x1F380;</a>
+<a class='box' title='[U+1F381] WRAPPED PRESENT' onClick='cp("🎁")'>&#x1F381;</a>
+<a class='box' title='[U+1F382] BIRTHDAY CAKE' onClick='cp("🎂")'>&#x1F382;</a>
+<a class='box' title='[U+1F383] JACK-O-LANTERN' onClick='cp("🎃")'>&#x1F383;</a>
+<a class='box' title='[U+1F384] CHRISTMAS TREE' onClick='cp("🎄")'>&#x1F384;</a>
+<a class='box' title='[U+1F385] FATHER CHRISTMAS' onClick='cp("🎅")'>&#x1F385;</a>
+<a class='box' title='[U+1F386] FIREWORKS' onClick='cp("🎆")'>&#x1F386;</a>
+<a class='box' title='[U+1F387] FIREWORK SPARKLER' onClick='cp("🎇")'>&#x1F387;</a>
+<a class='box' title='[U+1F388] BALLOON' onClick='cp("🎈")'>&#x1F388;</a>
+<a class='box' title='[U+1F389] PARTY POPPER' onClick='cp("🎉")'>&#x1F389;</a>
+<a class='box' title='[U+1F38A] CONFETTI BALL' onClick='cp("🎊")'>&#x1F38A;</a>
+<a class='box' title='[U+1F38B] TANABATA TREE' onClick='cp("🎋")'>&#x1F38B;</a>
+<a class='box' title='[U+1F38C] CROSSED FLAGS' onClick='cp("🎌")'>&#x1F38C;</a>
+<a class='box' title='[U+1F38D] PINE DECORATION' onClick='cp("🎍")'>&#x1F38D;</a>
+<a class='box' title='[U+1F38E] JAPANESE DOLLS' onClick='cp("🎎")'>&#x1F38E;</a>
+<a class='box' title='[U+1F38F] CARP STREAMER' onClick='cp("🎏")'>&#x1F38F;</a>
+<a class='box' title='[U+1F390] WIND CHIME' onClick='cp("🎐")'>&#x1F390;</a>
+<a class='box' title='[U+1F391] MOON VIEWING CEREMONY' onClick='cp("🎑")'>&#x1F391;</a>
+<a class='box' title='[U+1F392] SCHOOL SATCHEL' onClick='cp("🎒")'>&#x1F392;</a>
+<a class='box' title='[U+1F393] GRADUATION CAP' onClick='cp("🎓")'>&#x1F393;</a>
+<a class='box' title='[U+1F394] HEART WITH TIP ON THE LEFT' onClick='cp("🎔")'>&#x1F394;</a>
+<a class='box' title='[U+1F395] BOUQUET OF FLOWERS' onClick='cp("🎕")'>&#x1F395;</a>
+<a class='box' title='[U+1F396] MILITARY MEDAL' onClick='cp("🎖")'>&#x1F396;</a>
+<a class='box' title='[U+1F397] REMINDER RIBBON' onClick='cp("🎗")'>&#x1F397;</a>
+<a class='box' title='[U+1F398] MUSICAL KEYBOARD WITH JACKS' onClick='cp("🎘")'>&#x1F398;</a>
+<a class='box' title='[U+1F399] STUDIO MICROPHONE' onClick='cp("🎙")'>&#x1F399;</a>
+<a class='box' title='[U+1F39A] LEVEL SLIDER' onClick='cp("🎚")'>&#x1F39A;</a>
+<a class='box' title='[U+1F39B] CONTROL KNOBS' onClick='cp("🎛")'>&#x1F39B;</a>
+<a class='box' title='[U+1F39C] BEAMED ASCENDING MUSICAL NOTES' onClick='cp("🎜")'>&#x1F39C;</a>
+<a class='box' title='[U+1F39D] BEAMED DESCENDING MUSICAL NOTES' onClick='cp("🎝")'>&#x1F39D;</a>
+<a class='box' title='[U+1F39E] FILM FRAMES' onClick='cp("🎞")'>&#x1F39E;</a>
+<a class='box' title='[U+1F39F] ADMISSION TICKETS' onClick='cp("🎟")'>&#x1F39F;</a>
+<a class='box' title='[U+1F3A0] CAROUSEL HORSE' onClick='cp("🎠")'>&#x1F3A0;</a>
+<a class='box' title='[U+1F3A1] FERRIS WHEEL' onClick='cp("🎡")'>&#x1F3A1;</a>
+<a class='box' title='[U+1F3A2] ROLLER COASTER' onClick='cp("🎢")'>&#x1F3A2;</a>
+<a class='box' title='[U+1F3A3] FISHING POLE AND FISH' onClick='cp("🎣")'>&#x1F3A3;</a>
+<a class='box' title='[U+1F3A4] MICROPHONE' onClick='cp("🎤")'>&#x1F3A4;</a>
+<a class='box' title='[U+1F3A5] MOVIE CAMERA' onClick='cp("🎥")'>&#x1F3A5;</a>
+<a class='box' title='[U+1F3A6] CINEMA' onClick='cp("🎦")'>&#x1F3A6;</a>
+<a class='box' title='[U+1F3A7] HEADPHONE' onClick='cp("🎧")'>&#x1F3A7;</a>
+<a class='box' title='[U+1F3A8] ARTIST PALETTE' onClick='cp("🎨")'>&#x1F3A8;</a>
+<a class='box' title='[U+1F3A9] TOP HAT' onClick='cp("🎩")'>&#x1F3A9;</a>
+<a class='box' title='[U+1F3AA] CIRCUS TENT' onClick='cp("🎪")'>&#x1F3AA;</a>
+<a class='box' title='[U+1F3AB] TICKET' onClick='cp("🎫")'>&#x1F3AB;</a>
+<a class='box' title='[U+1F3AC] CLAPPER BOARD' onClick='cp("🎬")'>&#x1F3AC;</a>
+<a class='box' title='[U+1F3AD] PERFORMING ARTS' onClick='cp("🎭")'>&#x1F3AD;</a>
+<a class='box' title='[U+1F3AE] VIDEO GAME' onClick='cp("🎮")'>&#x1F3AE;</a>
+<a class='box' title='[U+1F3AF] DIRECT HIT' onClick='cp("🎯")'>&#x1F3AF;</a>
+<a class='box' title='[U+1F3B0] SLOT MACHINE' onClick='cp("🎰")'>&#x1F3B0;</a>
+<a class='box' title='[U+1F3B1] BILLIARDS' onClick='cp("🎱")'>&#x1F3B1;</a>
+<a class='box' title='[U+1F3B2] GAME DIE' onClick='cp("🎲")'>&#x1F3B2;</a>
+<a class='box' title='[U+1F3B3] BOWLING' onClick='cp("🎳")'>&#x1F3B3;</a>
+<a class='box' title='[U+1F3B4] FLOWER PLAYING CARDS' onClick='cp("🎴")'>&#x1F3B4;</a>
+<a class='box' title='[U+1F3B5] MUSICAL NOTE' onClick='cp("🎵")'>&#x1F3B5;</a>
+<a class='box' title='[U+1F3B6] MULTIPLE MUSICAL NOTES' onClick='cp("🎶")'>&#x1F3B6;</a>
+<a class='box' title='[U+1F3B7] SAXOPHONE' onClick='cp("🎷")'>&#x1F3B7;</a>
+<a class='box' title='[U+1F3B8] GUITAR' onClick='cp("🎸")'>&#x1F3B8;</a>
+<a class='box' title='[U+1F3B9] MUSICAL KEYBOARD' onClick='cp("🎹")'>&#x1F3B9;</a>
+<a class='box' title='[U+1F3BA] TRUMPET' onClick='cp("🎺")'>&#x1F3BA;</a>
+<a class='box' title='[U+1F3BB] VIOLIN' onClick='cp("🎻")'>&#x1F3BB;</a>
+<a class='box' title='[U+1F3BC] MUSICAL SCORE' onClick='cp("🎼")'>&#x1F3BC;</a>
+<a class='box' title='[U+1F3BD] RUNNING SHIRT WITH SASH' onClick='cp("🎽")'>&#x1F3BD;</a>
+<a class='box' title='[U+1F3BE] TENNIS RACQUET AND BALL' onClick='cp("🎾")'>&#x1F3BE;</a>
+<a class='box' title='[U+1F3BF] SKI AND SKI BOOT' onClick='cp("🎿")'>&#x1F3BF;</a>
+<a class='box' title='[U+1F3C0] BASKETBALL AND HOOP' onClick='cp("🏀")'>&#x1F3C0;</a>
+<a class='box' title='[U+1F3C1] CHEQUERED FLAG' onClick='cp("🏁")'>&#x1F3C1;</a>
+<a class='box' title='[U+1F3C2] SNOWBOARDER' onClick='cp("🏂")'>&#x1F3C2;</a>
+<a class='box' title='[U+1F3C3] RUNNER' onClick='cp("🏃")'>&#x1F3C3;</a>
+<a class='box' title='[U+1F3C4] SURFER' onClick='cp("🏄")'>&#x1F3C4;</a>
+<a class='box' title='[U+1F3C5] SPORTS MEDAL' onClick='cp("🏅")'>&#x1F3C5;</a>
+<a class='box' title='[U+1F3C6] TROPHY' onClick='cp("🏆")'>&#x1F3C6;</a>
+<a class='box' title='[U+1F3C7] HORSE RACING' onClick='cp("🏇")'>&#x1F3C7;</a>
+<a class='box' title='[U+1F3C8] AMERICAN FOOTBALL' onClick='cp("🏈")'>&#x1F3C8;</a>
+<a class='box' title='[U+1F3C9] RUGBY FOOTBALL' onClick='cp("🏉")'>&#x1F3C9;</a>
+<a class='box' title='[U+1F3CA] SWIMMER' onClick='cp("🏊")'>&#x1F3CA;</a>
+<a class='box' title='[U+1F3CB] WEIGHT LIFTER' onClick='cp("🏋")'>&#x1F3CB;</a>
+<a class='box' title='[U+1F3CC] GOLFER' onClick='cp("🏌")'>&#x1F3CC;</a>
+<a class='box' title='[U+1F3CD] RACING MOTORCYCLE' onClick='cp("🏍")'>&#x1F3CD;</a>
+<a class='box' title='[U+1F3CE] RACING CAR' onClick='cp("🏎")'>&#x1F3CE;</a>
+<a class='box' title='[U+1F3CF] CRICKET BAT AND BALL' onClick='cp("🏏")'>&#x1F3CF;</a>
+<a class='box' title='[U+1F3D0] VOLLEYBALL' onClick='cp("🏐")'>&#x1F3D0;</a>
+<a class='box' title='[U+1F3D1] FIELD HOCKEY STICK AND BALL' onClick='cp("🏑")'>&#x1F3D1;</a>
+<a class='box' title='[U+1F3D2] ICE HOCKEY STICK AND PUCK' onClick='cp("🏒")'>&#x1F3D2;</a>
+<a class='box' title='[U+1F3D3] TABLE TENNIS PADDLE AND BALL' onClick='cp("🏓")'>&#x1F3D3;</a>
+<a class='box' title='[U+1F3D4] SNOW CAPPED MOUNTAIN' onClick='cp("🏔")'>&#x1F3D4;</a>
+<a class='box' title='[U+1F3D5] CAMPING' onClick='cp("🏕")'>&#x1F3D5;</a>
+<a class='box' title='[U+1F3D6] BEACH WITH UMBRELLA' onClick='cp("🏖")'>&#x1F3D6;</a>
+<a class='box' title='[U+1F3D7] BUILDING CONSTRUCTION' onClick='cp("🏗")'>&#x1F3D7;</a>
+<a class='box' title='[U+1F3D8] HOUSE BUILDINGS' onClick='cp("🏘")'>&#x1F3D8;</a>
+<a class='box' title='[U+1F3D9] CITYSCAPE' onClick='cp("🏙")'>&#x1F3D9;</a>
+<a class='box' title='[U+1F3DA] DERELICT HOUSE BUILDING' onClick='cp("🏚")'>&#x1F3DA;</a>
+<a class='box' title='[U+1F3DB] CLASSICAL BUILDING' onClick='cp("🏛")'>&#x1F3DB;</a>
+<a class='box' title='[U+1F3DC] DESERT' onClick='cp("🏜")'>&#x1F3DC;</a>
+<a class='box' title='[U+1F3DD] DESERT ISLAND' onClick='cp("🏝")'>&#x1F3DD;</a>
+<a class='box' title='[U+1F3DE] NATIONAL PARK' onClick='cp("🏞")'>&#x1F3DE;</a>
+<a class='box' title='[U+1F3DF] STADIUM' onClick='cp("🏟")'>&#x1F3DF;</a>
+<a class='box' title='[U+1F3E0] HOUSE BUILDING' onClick='cp("🏠")'>&#x1F3E0;</a>
+<a class='box' title='[U+1F3E1] HOUSE WITH GARDEN' onClick='cp("🏡")'>&#x1F3E1;</a>
+<a class='box' title='[U+1F3E2] OFFICE BUILDING' onClick='cp("🏢")'>&#x1F3E2;</a>
+<a class='box' title='[U+1F3E3] JAPANESE POST OFFICE' onClick='cp("🏣")'>&#x1F3E3;</a>
+<a class='box' title='[U+1F3E4] EUROPEAN POST OFFICE' onClick='cp("🏤")'>&#x1F3E4;</a>
+<a class='box' title='[U+1F3E5] HOSPITAL' onClick='cp("🏥")'>&#x1F3E5;</a>
+<a class='box' title='[U+1F3E6] BANK' onClick='cp("🏦")'>&#x1F3E6;</a>
+<a class='box' title='[U+1F3E7] AUTOMATED TELLER MACHINE' onClick='cp("🏧")'>&#x1F3E7;</a>
+<a class='box' title='[U+1F3E8] HOTEL' onClick='cp("🏨")'>&#x1F3E8;</a>
+<a class='box' title='[U+1F3E9] LOVE HOTEL' onClick='cp("🏩")'>&#x1F3E9;</a>
+<a class='box' title='[U+1F3EA] CONVENIENCE STORE' onClick='cp("🏪")'>&#x1F3EA;</a>
+<a class='box' title='[U+1F3EB] SCHOOL' onClick='cp("🏫")'>&#x1F3EB;</a>
+<a class='box' title='[U+1F3EC] DEPARTMENT STORE' onClick='cp("🏬")'>&#x1F3EC;</a>
+<a class='box' title='[U+1F3ED] FACTORY' onClick='cp("🏭")'>&#x1F3ED;</a>
+<a class='box' title='[U+1F3EE] IZAKAYA LANTERN' onClick='cp("🏮")'>&#x1F3EE;</a>
+<a class='box' title='[U+1F3EF] JAPANESE CASTLE' onClick='cp("🏯")'>&#x1F3EF;</a>
+<a class='box' title='[U+1F3F0] EUROPEAN CASTLE' onClick='cp("🏰")'>&#x1F3F0;</a>
+<a class='box' title='[U+1F3F1] WHITE PENNANT' onClick='cp("🏱")'>&#x1F3F1;</a>
+<a class='box' title='[U+1F3F2] BLACK PENNANT' onClick='cp("🏲")'>&#x1F3F2;</a>
+<a class='box' title='[U+1F3F3] WAVING WHITE FLAG' onClick='cp("🏳")'>&#x1F3F3;</a>
+<a class='box' title='[U+1F3F4] WAVING BLACK FLAG' onClick='cp("🏴")'>&#x1F3F4;</a>
+<a class='box' title='[U+1F3F5] ROSETTE' onClick='cp("🏵")'>&#x1F3F5;</a>
+<a class='box' title='[U+1F3F6] BLACK ROSETTE' onClick='cp("🏶")'>&#x1F3F6;</a>
+<a class='box' title='[U+1F3F7] LABEL' onClick='cp("🏷")'>&#x1F3F7;</a>
+<a class='box' title='[U+1F3F8] BADMINTON RACQUET AND SHUTTLECOCK' onClick='cp("🏸")'>&#x1F3F8;</a>
+<a class='box' title='[U+1F3F9] BOW AND ARROW' onClick='cp("🏹")'>&#x1F3F9;</a>
+<a class='box' title='[U+1F3FA] AMPHORA' onClick='cp("🏺")'>&#x1F3FA;</a>
+<a class='box' title='[U+1F3FB] EMOJI MODIFIER FITZPATRICK TYPE-1-2' onClick='cp("🏻")'>&#x1F3FB;</a>
+<a class='box' title='[U+1F3FC] EMOJI MODIFIER FITZPATRICK TYPE-3' onClick='cp("🏼")'>&#x1F3FC;</a>
+<a class='box' title='[U+1F3FD] EMOJI MODIFIER FITZPATRICK TYPE-4' onClick='cp("🏽")'>&#x1F3FD;</a>
+<a class='box' title='[U+1F3FE] EMOJI MODIFIER FITZPATRICK TYPE-5' onClick='cp("🏾")'>&#x1F3FE;</a>
+<a class='box' title='[U+1F3FF] EMOJI MODIFIER FITZPATRICK TYPE-6' onClick='cp("🏿")'>&#x1F3FF;</a>
+<a class='box' title='[U+1F400] RAT' onClick='cp("🐀")'>&#x1F400;</a>
+<a class='box' title='[U+1F401] MOUSE' onClick='cp("🐁")'>&#x1F401;</a>
+<a class='box' title='[U+1F402] OX' onClick='cp("🐂")'>&#x1F402;</a>
+<a class='box' title='[U+1F403] WATER BUFFALO' onClick='cp("🐃")'>&#x1F403;</a>
+<a class='box' title='[U+1F404] COW' onClick='cp("🐄")'>&#x1F404;</a>
+<a class='box' title='[U+1F405] TIGER' onClick='cp("🐅")'>&#x1F405;</a>
+<a class='box' title='[U+1F406] LEOPARD' onClick='cp("🐆")'>&#x1F406;</a>
+<a class='box' title='[U+1F407] RABBIT' onClick='cp("🐇")'>&#x1F407;</a>
+<a class='box' title='[U+1F408] CAT' onClick='cp("🐈")'>&#x1F408;</a>
+<a class='box' title='[U+1F409] DRAGON' onClick='cp("🐉")'>&#x1F409;</a>
+<a class='box' title='[U+1F40A] CROCODILE' onClick='cp("🐊")'>&#x1F40A;</a>
+<a class='box' title='[U+1F40B] WHALE' onClick='cp("🐋")'>&#x1F40B;</a>
+<a class='box' title='[U+1F40C] SNAIL' onClick='cp("🐌")'>&#x1F40C;</a>
+<a class='box' title='[U+1F40D] SNAKE' onClick='cp("🐍")'>&#x1F40D;</a>
+<a class='box' title='[U+1F40E] HORSE' onClick='cp("🐎")'>&#x1F40E;</a>
+<a class='box' title='[U+1F40F] RAM' onClick='cp("🐏")'>&#x1F40F;</a>
+<a class='box' title='[U+1F410] GOAT' onClick='cp("🐐")'>&#x1F410;</a>
+<a class='box' title='[U+1F411] SHEEP' onClick='cp("🐑")'>&#x1F411;</a>
+<a class='box' title='[U+1F412] MONKEY' onClick='cp("🐒")'>&#x1F412;</a>
+<a class='box' title='[U+1F413] ROOSTER' onClick='cp("🐓")'>&#x1F413;</a>
+<a class='box' title='[U+1F414] CHICKEN' onClick='cp("🐔")'>&#x1F414;</a>
+<a class='box' title='[U+1F415] DOG' onClick='cp("🐕")'>&#x1F415;</a>
+<a class='box' title='[U+1F416] PIG' onClick='cp("🐖")'>&#x1F416;</a>
+<a class='box' title='[U+1F417] BOAR' onClick='cp("🐗")'>&#x1F417;</a>
+<a class='box' title='[U+1F418] ELEPHANT' onClick='cp("🐘")'>&#x1F418;</a>
+<a class='box' title='[U+1F419] OCTOPUS' onClick='cp("🐙")'>&#x1F419;</a>
+<a class='box' title='[U+1F41A] SPIRAL SHELL' onClick='cp("🐚")'>&#x1F41A;</a>
+<a class='box' title='[U+1F41B] BUG' onClick='cp("🐛")'>&#x1F41B;</a>
+<a class='box' title='[U+1F41C] ANT' onClick='cp("🐜")'>&#x1F41C;</a>
+<a class='box' title='[U+1F41D] HONEYBEE' onClick='cp("🐝")'>&#x1F41D;</a>
+<a class='box' title='[U+1F41E] LADY BEETLE' onClick='cp("🐞")'>&#x1F41E;</a>
+<a class='box' title='[U+1F41F] FISH' onClick='cp("🐟")'>&#x1F41F;</a>
+<a class='box' title='[U+1F420] TROPICAL FISH' onClick='cp("🐠")'>&#x1F420;</a>
+<a class='box' title='[U+1F421] BLOWFISH' onClick='cp("🐡")'>&#x1F421;</a>
+<a class='box' title='[U+1F422] TURTLE' onClick='cp("🐢")'>&#x1F422;</a>
+<a class='box' title='[U+1F423] HATCHING CHICK' onClick='cp("🐣")'>&#x1F423;</a>
+<a class='box' title='[U+1F424] BABY CHICK' onClick='cp("🐤")'>&#x1F424;</a>
+<a class='box' title='[U+1F425] FRONT-FACING BABY CHICK' onClick='cp("🐥")'>&#x1F425;</a>
+<a class='box' title='[U+1F426] BIRD' onClick='cp("🐦")'>&#x1F426;</a>
+<a class='box' title='[U+1F427] PENGUIN' onClick='cp("🐧")'>&#x1F427;</a>
+<a class='box' title='[U+1F428] KOALA' onClick='cp("🐨")'>&#x1F428;</a>
+<a class='box' title='[U+1F429] POODLE' onClick='cp("🐩")'>&#x1F429;</a>
+<a class='box' title='[U+1F42A] DROMEDARY CAMEL' onClick='cp("🐪")'>&#x1F42A;</a>
+<a class='box' title='[U+1F42B] BACTRIAN CAMEL' onClick='cp("🐫")'>&#x1F42B;</a>
+<a class='box' title='[U+1F42C] DOLPHIN' onClick='cp("🐬")'>&#x1F42C;</a>
+<a class='box' title='[U+1F42D] MOUSE FACE' onClick='cp("🐭")'>&#x1F42D;</a>
+<a class='box' title='[U+1F42E] COW FACE' onClick='cp("🐮")'>&#x1F42E;</a>
+<a class='box' title='[U+1F42F] TIGER FACE' onClick='cp("🐯")'>&#x1F42F;</a>
+<a class='box' title='[U+1F430] RABBIT FACE' onClick='cp("🐰")'>&#x1F430;</a>
+<a class='box' title='[U+1F431] CAT FACE' onClick='cp("🐱")'>&#x1F431;</a>
+<a class='box' title='[U+1F432] DRAGON FACE' onClick='cp("🐲")'>&#x1F432;</a>
+<a class='box' title='[U+1F433] SPOUTING WHALE' onClick='cp("🐳")'>&#x1F433;</a>
+<a class='box' title='[U+1F434] HORSE FACE' onClick='cp("🐴")'>&#x1F434;</a>
+<a class='box' title='[U+1F435] MONKEY FACE' onClick='cp("🐵")'>&#x1F435;</a>
+<a class='box' title='[U+1F436] DOG FACE' onClick='cp("🐶")'>&#x1F436;</a>
+<a class='box' title='[U+1F437] PIG FACE' onClick='cp("🐷")'>&#x1F437;</a>
+<a class='box' title='[U+1F438] FROG FACE' onClick='cp("🐸")'>&#x1F438;</a>
+<a class='box' title='[U+1F439] HAMSTER FACE' onClick='cp("🐹")'>&#x1F439;</a>
+<a class='box' title='[U+1F43A] WOLF FACE' onClick='cp("🐺")'>&#x1F43A;</a>
+<a class='box' title='[U+1F43B] BEAR FACE' onClick='cp("🐻")'>&#x1F43B;</a>
+<a class='box' title='[U+1F43C] PANDA FACE' onClick='cp("🐼")'>&#x1F43C;</a>
+<a class='box' title='[U+1F43D] PIG NOSE' onClick='cp("🐽")'>&#x1F43D;</a>
+<a class='box' title='[U+1F43E] PAW PRINTS' onClick='cp("🐾")'>&#x1F43E;</a>
+<a class='box' title='[U+1F43F] CHIPMUNK' onClick='cp("🐿")'>&#x1F43F;</a>
+<a class='box' title='[U+1F440] EYES' onClick='cp("👀")'>&#x1F440;</a>
+<a class='box' title='[U+1F441] EYE' onClick='cp("👁")'>&#x1F441;</a>
+<a class='box' title='[U+1F442] EAR' onClick='cp("👂")'>&#x1F442;</a>
+<a class='box' title='[U+1F443] NOSE' onClick='cp("👃")'>&#x1F443;</a>
+<a class='box' title='[U+1F444] MOUTH' onClick='cp("👄")'>&#x1F444;</a>
+<a class='box' title='[U+1F445] TONGUE' onClick='cp("👅")'>&#x1F445;</a>
+<a class='box' title='[U+1F446] WHITE UP POINTING BACKHAND INDEX' onClick='cp("👆")'>&#x1F446;</a>
+<a class='box' title='[U+1F447] WHITE DOWN POINTING BACKHAND INDEX' onClick='cp("👇")'>&#x1F447;</a>
+<a class='box' title='[U+1F448] WHITE LEFT POINTING BACKHAND INDEX' onClick='cp("👈")'>&#x1F448;</a>
+<a class='box' title='[U+1F449] WHITE RIGHT POINTING BACKHAND INDEX' onClick='cp("👉")'>&#x1F449;</a>
+<a class='box' title='[U+1F44A] FISTED HAND SIGN' onClick='cp("👊")'>&#x1F44A;</a>
+<a class='box' title='[U+1F44B] WAVING HAND SIGN' onClick='cp("👋")'>&#x1F44B;</a>
+<a class='box' title='[U+1F44C] OK HAND SIGN' onClick='cp("👌")'>&#x1F44C;</a>
+<a class='box' title='[U+1F44D] THUMBS UP SIGN' onClick='cp("👍")'>&#x1F44D;</a>
+<a class='box' title='[U+1F44E] THUMBS DOWN SIGN' onClick='cp("👎")'>&#x1F44E;</a>
+<a class='box' title='[U+1F44F] CLAPPING HANDS SIGN' onClick='cp("👏")'>&#x1F44F;</a>
+<a class='box' title='[U+1F450] OPEN HANDS SIGN' onClick='cp("👐")'>&#x1F450;</a>
+<a class='box' title='[U+1F451] CROWN' onClick='cp("👑")'>&#x1F451;</a>
+<a class='box' title='[U+1F452] WOMANS HAT' onClick='cp("👒")'>&#x1F452;</a>
+<a class='box' title='[U+1F453] EYEGLASSES' onClick='cp("👓")'>&#x1F453;</a>
+<a class='box' title='[U+1F454] NECKTIE' onClick='cp("👔")'>&#x1F454;</a>
+<a class='box' title='[U+1F455] T-SHIRT' onClick='cp("👕")'>&#x1F455;</a>
+<a class='box' title='[U+1F456] JEANS' onClick='cp("👖")'>&#x1F456;</a>
+<a class='box' title='[U+1F457] DRESS' onClick='cp("👗")'>&#x1F457;</a>
+<a class='box' title='[U+1F458] KIMONO' onClick='cp("👘")'>&#x1F458;</a>
+<a class='box' title='[U+1F459] BIKINI' onClick='cp("👙")'>&#x1F459;</a>
+<a class='box' title='[U+1F45A] WOMANS CLOTHES' onClick='cp("👚")'>&#x1F45A;</a>
+<a class='box' title='[U+1F45B] PURSE' onClick='cp("👛")'>&#x1F45B;</a>
+<a class='box' title='[U+1F45C] HANDBAG' onClick='cp("👜")'>&#x1F45C;</a>
+<a class='box' title='[U+1F45D] POUCH' onClick='cp("👝")'>&#x1F45D;</a>
+<a class='box' title='[U+1F45E] MANS SHOE' onClick='cp("👞")'>&#x1F45E;</a>
+<a class='box' title='[U+1F45F] ATHLETIC SHOE' onClick='cp("👟")'>&#x1F45F;</a>
+<a class='box' title='[U+1F460] HIGH-HEELED SHOE' onClick='cp("👠")'>&#x1F460;</a>
+<a class='box' title='[U+1F461] WOMANS SANDAL' onClick='cp("👡")'>&#x1F461;</a>
+<a class='box' title='[U+1F462] WOMANS BOOTS' onClick='cp("👢")'>&#x1F462;</a>
+<a class='box' title='[U+1F463] FOOTPRINTS' onClick='cp("👣")'>&#x1F463;</a>
+<a class='box' title='[U+1F464] BUST IN SILHOUETTE' onClick='cp("👤")'>&#x1F464;</a>
+<a class='box' title='[U+1F465] BUSTS IN SILHOUETTE' onClick='cp("👥")'>&#x1F465;</a>
+<a class='box' title='[U+1F466] BOY' onClick='cp("👦")'>&#x1F466;</a>
+<a class='box' title='[U+1F467] GIRL' onClick='cp("👧")'>&#x1F467;</a>
+<a class='box' title='[U+1F468] MAN' onClick='cp("👨")'>&#x1F468;</a>
+<a class='box' title='[U+1F469] WOMAN' onClick='cp("👩")'>&#x1F469;</a>
+<a class='box' title='[U+1F46A] FAMILY' onClick='cp("👪")'>&#x1F46A;</a>
+<a class='box' title='[U+1F46B] MAN AND WOMAN HOLDING HANDS' onClick='cp("👫")'>&#x1F46B;</a>
+<a class='box' title='[U+1F46C] TWO MEN HOLDING HANDS' onClick='cp("👬")'>&#x1F46C;</a>
+<a class='box' title='[U+1F46D] TWO WOMEN HOLDING HANDS' onClick='cp("👭")'>&#x1F46D;</a>
+<a class='box' title='[U+1F46E] POLICE OFFICER' onClick='cp("👮")'>&#x1F46E;</a>
+<a class='box' title='[U+1F46F] WOMAN WITH BUNNY EARS' onClick='cp("👯")'>&#x1F46F;</a>
+<a class='box' title='[U+1F470] BRIDE WITH VEIL' onClick='cp("👰")'>&#x1F470;</a>
+<a class='box' title='[U+1F471] PERSON WITH BLOND HAIR' onClick='cp("👱")'>&#x1F471;</a>
+<a class='box' title='[U+1F472] MAN WITH GUA PI MAO' onClick='cp("👲")'>&#x1F472;</a>
+<a class='box' title='[U+1F473] MAN WITH TURBAN' onClick='cp("👳")'>&#x1F473;</a>
+<a class='box' title='[U+1F474] OLDER MAN' onClick='cp("👴")'>&#x1F474;</a>
+<a class='box' title='[U+1F475] OLDER WOMAN' onClick='cp("👵")'>&#x1F475;</a>
+<a class='box' title='[U+1F476] BABY' onClick='cp("👶")'>&#x1F476;</a>
+<a class='box' title='[U+1F477] CONSTRUCTION WORKER' onClick='cp("👷")'>&#x1F477;</a>
+<a class='box' title='[U+1F478] PRINCESS' onClick='cp("👸")'>&#x1F478;</a>
+<a class='box' title='[U+1F479] JAPANESE OGRE' onClick='cp("👹")'>&#x1F479;</a>
+<a class='box' title='[U+1F47A] JAPANESE GOBLIN' onClick='cp("👺")'>&#x1F47A;</a>
+<a class='box' title='[U+1F47B] GHOST' onClick='cp("👻")'>&#x1F47B;</a>
+<a class='box' title='[U+1F47C] BABY ANGEL' onClick='cp("👼")'>&#x1F47C;</a>
+<a class='box' title='[U+1F47D] EXTRATERRESTRIAL ALIEN' onClick='cp("👽")'>&#x1F47D;</a>
+<a class='box' title='[U+1F47E] ALIEN MONSTER' onClick='cp("👾")'>&#x1F47E;</a>
+<a class='box' title='[U+1F47F] IMP' onClick='cp("👿")'>&#x1F47F;</a>
+<a class='box' title='[U+1F480] SKULL' onClick='cp("💀")'>&#x1F480;</a>
+<a class='box' title='[U+1F481] INFORMATION DESK PERSON' onClick='cp("💁")'>&#x1F481;</a>
+<a class='box' title='[U+1F482] GUARDSMAN' onClick='cp("💂")'>&#x1F482;</a>
+<a class='box' title='[U+1F483] DANCER' onClick='cp("💃")'>&#x1F483;</a>
+<a class='box' title='[U+1F484] LIPSTICK' onClick='cp("💄")'>&#x1F484;</a>
+<a class='box' title='[U+1F485] NAIL POLISH' onClick='cp("💅")'>&#x1F485;</a>
+<a class='box' title='[U+1F486] FACE MASSAGE' onClick='cp("💆")'>&#x1F486;</a>
+<a class='box' title='[U+1F487] HAIRCUT' onClick='cp("💇")'>&#x1F487;</a>
+<a class='box' title='[U+1F488] BARBER POLE' onClick='cp("💈")'>&#x1F488;</a>
+<a class='box' title='[U+1F489] SYRINGE' onClick='cp("💉")'>&#x1F489;</a>
+<a class='box' title='[U+1F48A] PILL' onClick='cp("💊")'>&#x1F48A;</a>
+<a class='box' title='[U+1F48B] KISS MARK' onClick='cp("💋")'>&#x1F48B;</a>
+<a class='box' title='[U+1F48C] LOVE LETTER' onClick='cp("💌")'>&#x1F48C;</a>
+<a class='box' title='[U+1F48D] RING' onClick='cp("💍")'>&#x1F48D;</a>
+<a class='box' title='[U+1F48E] GEM STONE' onClick='cp("💎")'>&#x1F48E;</a>
+<a class='box' title='[U+1F48F] KISS' onClick='cp("💏")'>&#x1F48F;</a>
+<a class='box' title='[U+1F490] BOUQUET' onClick='cp("💐")'>&#x1F490;</a>
+<a class='box' title='[U+1F491] COUPLE WITH HEART' onClick='cp("💑")'>&#x1F491;</a>
+<a class='box' title='[U+1F492] WEDDING' onClick='cp("💒")'>&#x1F492;</a>
+<a class='box' title='[U+1F493] BEATING HEART' onClick='cp("💓")'>&#x1F493;</a>
+<a class='box' title='[U+1F494] BROKEN HEART' onClick='cp("💔")'>&#x1F494;</a>
+<a class='box' title='[U+1F495] TWO HEARTS' onClick='cp("💕")'>&#x1F495;</a>
+<a class='box' title='[U+1F496] SPARKLING HEART' onClick='cp("💖")'>&#x1F496;</a>
+<a class='box' title='[U+1F497] GROWING HEART' onClick='cp("💗")'>&#x1F497;</a>
+<a class='box' title='[U+1F498] HEART WITH ARROW' onClick='cp("💘")'>&#x1F498;</a>
+<a class='box' title='[U+1F499] BLUE HEART' onClick='cp("💙")'>&#x1F499;</a>
+<a class='box' title='[U+1F49A] GREEN HEART' onClick='cp("💚")'>&#x1F49A;</a>
+<a class='box' title='[U+1F49B] YELLOW HEART' onClick='cp("💛")'>&#x1F49B;</a>
+<a class='box' title='[U+1F49C] PURPLE HEART' onClick='cp("💜")'>&#x1F49C;</a>
+<a class='box' title='[U+1F49D] HEART WITH RIBBON' onClick='cp("💝")'>&#x1F49D;</a>
+<a class='box' title='[U+1F49E] REVOLVING HEARTS' onClick='cp("💞")'>&#x1F49E;</a>
+<a class='box' title='[U+1F49F] HEART DECORATION' onClick='cp("💟")'>&#x1F49F;</a>
+<a class='box' title='[U+1F4A0] DIAMOND SHAPE WITH A DOT INSIDE' onClick='cp("💠")'>&#x1F4A0;</a>
+<a class='box' title='[U+1F4A1] ELECTRIC LIGHT BULB' onClick='cp("💡")'>&#x1F4A1;</a>
+<a class='box' title='[U+1F4A2] ANGER SYMBOL' onClick='cp("💢")'>&#x1F4A2;</a>
+<a class='box' title='[U+1F4A3] BOMB' onClick='cp("💣")'>&#x1F4A3;</a>
+<a class='box' title='[U+1F4A4] SLEEPING SYMBOL' onClick='cp("💤")'>&#x1F4A4;</a>
+<a class='box' title='[U+1F4A5] COLLISION SYMBOL' onClick='cp("💥")'>&#x1F4A5;</a>
+<a class='box' title='[U+1F4A6] SPLASHING SWEAT SYMBOL' onClick='cp("💦")'>&#x1F4A6;</a>
+<a class='box' title='[U+1F4A7] DROPLET' onClick='cp("💧")'>&#x1F4A7;</a>
+<a class='box' title='[U+1F4A8] DASH SYMBOL' onClick='cp("💨")'>&#x1F4A8;</a>
+<a class='box' title='[U+1F4A9] PILE OF POO' onClick='cp("💩")'>&#x1F4A9;</a>
+<a class='box' title='[U+1F4AA] FLEXED BICEPS' onClick='cp("💪")'>&#x1F4AA;</a>
+<a class='box' title='[U+1F4AB] DIZZY SYMBOL' onClick='cp("💫")'>&#x1F4AB;</a>
+<a class='box' title='[U+1F4AC] SPEECH BALLOON' onClick='cp("💬")'>&#x1F4AC;</a>
+<a class='box' title='[U+1F4AD] THOUGHT BALLOON' onClick='cp("💭")'>&#x1F4AD;</a>
+<a class='box' title='[U+1F4AE] WHITE FLOWER' onClick='cp("💮")'>&#x1F4AE;</a>
+<a class='box' title='[U+1F4AF] HUNDRED POINTS SYMBOL' onClick='cp("💯")'>&#x1F4AF;</a>
+<a class='box' title='[U+1F4B0] MONEY BAG' onClick='cp("💰")'>&#x1F4B0;</a>
+<a class='box' title='[U+1F4B1] CURRENCY EXCHANGE' onClick='cp("💱")'>&#x1F4B1;</a>
+<a class='box' title='[U+1F4B2] HEAVY DOLLAR SIGN' onClick='cp("💲")'>&#x1F4B2;</a>
+<a class='box' title='[U+1F4B3] CREDIT CARD' onClick='cp("💳")'>&#x1F4B3;</a>
+<a class='box' title='[U+1F4B4] BANKNOTE WITH YEN SIGN' onClick='cp("💴")'>&#x1F4B4;</a>
+<a class='box' title='[U+1F4B5] BANKNOTE WITH DOLLAR SIGN' onClick='cp("💵")'>&#x1F4B5;</a>
+<a class='box' title='[U+1F4B6] BANKNOTE WITH EURO SIGN' onClick='cp("💶")'>&#x1F4B6;</a>
+<a class='box' title='[U+1F4B7] BANKNOTE WITH POUND SIGN' onClick='cp("💷")'>&#x1F4B7;</a>
+<a class='box' title='[U+1F4B8] MONEY WITH WINGS' onClick='cp("💸")'>&#x1F4B8;</a>
+<a class='box' title='[U+1F4B9] CHART WITH UPWARDS TREND AND YEN SIGN' onClick='cp("💹")'>&#x1F4B9;</a>
+<a class='box' title='[U+1F4BA] SEAT' onClick='cp("💺")'>&#x1F4BA;</a>
+<a class='box' title='[U+1F4BB] PERSONAL COMPUTER' onClick='cp("💻")'>&#x1F4BB;</a>
+<a class='box' title='[U+1F4BC] BRIEFCASE' onClick='cp("💼")'>&#x1F4BC;</a>
+<a class='box' title='[U+1F4BD] MINIDISC' onClick='cp("💽")'>&#x1F4BD;</a>
+<a class='box' title='[U+1F4BE] FLOPPY DISK' onClick='cp("💾")'>&#x1F4BE;</a>
+<a class='box' title='[U+1F4BF] OPTICAL DISC' onClick='cp("💿")'>&#x1F4BF;</a>
+<a class='box' title='[U+1F4C0] DVD' onClick='cp("📀")'>&#x1F4C0;</a>
+<a class='box' title='[U+1F4C1] FILE FOLDER' onClick='cp("📁")'>&#x1F4C1;</a>
+<a class='box' title='[U+1F4C2] OPEN FILE FOLDER' onClick='cp("📂")'>&#x1F4C2;</a>
+<a class='box' title='[U+1F4C3] PAGE WITH CURL' onClick='cp("📃")'>&#x1F4C3;</a>
+<a class='box' title='[U+1F4C4] PAGE FACING UP' onClick='cp("📄")'>&#x1F4C4;</a>
+<a class='box' title='[U+1F4C5] CALENDAR' onClick='cp("📅")'>&#x1F4C5;</a>
+<a class='box' title='[U+1F4C6] TEAR-OFF CALENDAR' onClick='cp("📆")'>&#x1F4C6;</a>
+<a class='box' title='[U+1F4C7] CARD INDEX' onClick='cp("📇")'>&#x1F4C7;</a>
+<a class='box' title='[U+1F4C8] CHART WITH UPWARDS TREND' onClick='cp("📈")'>&#x1F4C8;</a>
+<a class='box' title='[U+1F4C9] CHART WITH DOWNWARDS TREND' onClick='cp("📉")'>&#x1F4C9;</a>
+<a class='box' title='[U+1F4CA] BAR CHART' onClick='cp("📊")'>&#x1F4CA;</a>
+<a class='box' title='[U+1F4CB] CLIPBOARD' onClick='cp("📋")'>&#x1F4CB;</a>
+<a class='box' title='[U+1F4CC] PUSHPIN' onClick='cp("📌")'>&#x1F4CC;</a>
+<a class='box' title='[U+1F4CD] ROUND PUSHPIN' onClick='cp("📍")'>&#x1F4CD;</a>
+<a class='box' title='[U+1F4CE] PAPERCLIP' onClick='cp("📎")'>&#x1F4CE;</a>
+<a class='box' title='[U+1F4CF] STRAIGHT RULER' onClick='cp("📏")'>&#x1F4CF;</a>
+<a class='box' title='[U+1F4D0] TRIANGULAR RULER' onClick='cp("📐")'>&#x1F4D0;</a>
+<a class='box' title='[U+1F4D1] BOOKMARK TABS' onClick='cp("📑")'>&#x1F4D1;</a>
+<a class='box' title='[U+1F4D2] LEDGER' onClick='cp("📒")'>&#x1F4D2;</a>
+<a class='box' title='[U+1F4D3] NOTEBOOK' onClick='cp("📓")'>&#x1F4D3;</a>
+<a class='box' title='[U+1F4D4] NOTEBOOK WITH DECORATIVE COVER' onClick='cp("📔")'>&#x1F4D4;</a>
+<a class='box' title='[U+1F4D5] CLOSED BOOK' onClick='cp("📕")'>&#x1F4D5;</a>
+<a class='box' title='[U+1F4D6] OPEN BOOK' onClick='cp("📖")'>&#x1F4D6;</a>
+<a class='box' title='[U+1F4D7] GREEN BOOK' onClick='cp("📗")'>&#x1F4D7;</a>
+<a class='box' title='[U+1F4D8] BLUE BOOK' onClick='cp("📘")'>&#x1F4D8;</a>
+<a class='box' title='[U+1F4D9] ORANGE BOOK' onClick='cp("📙")'>&#x1F4D9;</a>
+<a class='box' title='[U+1F4DA] BOOKS' onClick='cp("📚")'>&#x1F4DA;</a>
+<a class='box' title='[U+1F4DB] NAME BADGE' onClick='cp("📛")'>&#x1F4DB;</a>
+<a class='box' title='[U+1F4DC] SCROLL' onClick='cp("📜")'>&#x1F4DC;</a>
+<a class='box' title='[U+1F4DD] MEMO' onClick='cp("📝")'>&#x1F4DD;</a>
+<a class='box' title='[U+1F4DE] TELEPHONE RECEIVER' onClick='cp("📞")'>&#x1F4DE;</a>
+<a class='box' title='[U+1F4DF] PAGER' onClick='cp("📟")'>&#x1F4DF;</a>
+<a class='box' title='[U+1F4E0] FAX MACHINE' onClick='cp("📠")'>&#x1F4E0;</a>
+<a class='box' title='[U+1F4E1] SATELLITE ANTENNA' onClick='cp("📡")'>&#x1F4E1;</a>
+<a class='box' title='[U+1F4E2] PUBLIC ADDRESS LOUDSPEAKER' onClick='cp("📢")'>&#x1F4E2;</a>
+<a class='box' title='[U+1F4E3] CHEERING MEGAPHONE' onClick='cp("📣")'>&#x1F4E3;</a>
+<a class='box' title='[U+1F4E4] OUTBOX TRAY' onClick='cp("📤")'>&#x1F4E4;</a>
+<a class='box' title='[U+1F4E5] INBOX TRAY' onClick='cp("📥")'>&#x1F4E5;</a>
+<a class='box' title='[U+1F4E6] PACKAGE' onClick='cp("📦")'>&#x1F4E6;</a>
+<a class='box' title='[U+1F4E7] E-MAIL SYMBOL' onClick='cp("📧")'>&#x1F4E7;</a>
+<a class='box' title='[U+1F4E8] INCOMING ENVELOPE' onClick='cp("📨")'>&#x1F4E8;</a>
+<a class='box' title='[U+1F4E9] ENVELOPE WITH DOWNWARDS ARROW ABOVE' onClick='cp("📩")'>&#x1F4E9;</a>
+<a class='box' title='[U+1F4EA] CLOSED MAILBOX WITH LOWERED FLAG' onClick='cp("📪")'>&#x1F4EA;</a>
+<a class='box' title='[U+1F4EB] CLOSED MAILBOX WITH RAISED FLAG' onClick='cp("📫")'>&#x1F4EB;</a>
+<a class='box' title='[U+1F4EC] OPEN MAILBOX WITH RAISED FLAG' onClick='cp("📬")'>&#x1F4EC;</a>
+<a class='box' title='[U+1F4ED] OPEN MAILBOX WITH LOWERED FLAG' onClick='cp("📭")'>&#x1F4ED;</a>
+<a class='box' title='[U+1F4EE] POSTBOX' onClick='cp("📮")'>&#x1F4EE;</a>
+<a class='box' title='[U+1F4EF] POSTAL HORN' onClick='cp("📯")'>&#x1F4EF;</a>
+<a class='box' title='[U+1F4F0] NEWSPAPER' onClick='cp("📰")'>&#x1F4F0;</a>
+<a class='box' title='[U+1F4F1] MOBILE PHONE' onClick='cp("📱")'>&#x1F4F1;</a>
+<a class='box' title='[U+1F4F2] MOBILE PHONE WITH RIGHTWARDS ARROW AT LEFT' onClick='cp("📲")'>&#x1F4F2;</a>
+<a class='box' title='[U+1F4F3] VIBRATION MODE' onClick='cp("📳")'>&#x1F4F3;</a>
+<a class='box' title='[U+1F4F4] MOBILE PHONE OFF' onClick='cp("📴")'>&#x1F4F4;</a>
+<a class='box' title='[U+1F4F5] NO MOBILE PHONES' onClick='cp("📵")'>&#x1F4F5;</a>
+<a class='box' title='[U+1F4F6] ANTENNA WITH BARS' onClick='cp("📶")'>&#x1F4F6;</a>
+<a class='box' title='[U+1F4F7] CAMERA' onClick='cp("📷")'>&#x1F4F7;</a>
+<a class='box' title='[U+1F4F8] CAMERA WITH FLASH' onClick='cp("📸")'>&#x1F4F8;</a>
+<a class='box' title='[U+1F4F9] VIDEO CAMERA' onClick='cp("📹")'>&#x1F4F9;</a>
+<a class='box' title='[U+1F4FA] TELEVISION' onClick='cp("📺")'>&#x1F4FA;</a>
+<a class='box' title='[U+1F4FB] RADIO' onClick='cp("📻")'>&#x1F4FB;</a>
+<a class='box' title='[U+1F4FC] VIDEOCASSETTE' onClick='cp("📼")'>&#x1F4FC;</a>
+<a class='box' title='[U+1F4FD] FILM PROJECTOR' onClick='cp("📽")'>&#x1F4FD;</a>
+<a class='box' title='[U+1F4FE] PORTABLE STEREO' onClick='cp("📾")'>&#x1F4FE;</a>
+<a class='box' title='[U+1F4FF] PRAYER BEADS' onClick='cp("📿")'>&#x1F4FF;</a>
+<a class='box' title='[U+1F500] TWISTED RIGHTWARDS ARROWS' onClick='cp("🔀")'>&#x1F500;</a>
+<a class='box' title='[U+1F501] CLOCKWISE RIGHTWARDS AND LEFTWARDS OPEN CIRCLE ARROWS' onClick='cp("🔁")'>&#x1F501;</a>
+<a class='box' title='[U+1F502] CLOCKWISE RIGHTWARDS AND LEFTWARDS OPEN CIRCLE ARROWS WITH CIRCLED ONE OVERLAY' onClick='cp("🔂")'>&#x1F502;</a>
+<a class='box' title='[U+1F503] CLOCKWISE DOWNWARDS AND UPWARDS OPEN CIRCLE ARROWS' onClick='cp("🔃")'>&#x1F503;</a>
+<a class='box' title='[U+1F504] ANTICLOCKWISE DOWNWARDS AND UPWARDS OPEN CIRCLE ARROWS' onClick='cp("🔄")'>&#x1F504;</a>
+<a class='box' title='[U+1F505] LOW BRIGHTNESS SYMBOL' onClick='cp("🔅")'>&#x1F505;</a>
+<a class='box' title='[U+1F506] HIGH BRIGHTNESS SYMBOL' onClick='cp("🔆")'>&#x1F506;</a>
+<a class='box' title='[U+1F507] SPEAKER WITH CANCELLATION STROKE' onClick='cp("🔇")'>&#x1F507;</a>
+<a class='box' title='[U+1F508] SPEAKER' onClick='cp("🔈")'>&#x1F508;</a>
+<a class='box' title='[U+1F509] SPEAKER WITH ONE SOUND WAVE' onClick='cp("🔉")'>&#x1F509;</a>
+<a class='box' title='[U+1F50A] SPEAKER WITH THREE SOUND WAVES' onClick='cp("🔊")'>&#x1F50A;</a>
+<a class='box' title='[U+1F50B] BATTERY' onClick='cp("🔋")'>&#x1F50B;</a>
+<a class='box' title='[U+1F50C] ELECTRIC PLUG' onClick='cp("🔌")'>&#x1F50C;</a>
+<a class='box' title='[U+1F50D] LEFT-POINTING MAGNIFYING GLASS' onClick='cp("🔍")'>&#x1F50D;</a>
+<a class='box' title='[U+1F50E] RIGHT-POINTING MAGNIFYING GLASS' onClick='cp("🔎")'>&#x1F50E;</a>
+<a class='box' title='[U+1F50F] LOCK WITH INK PEN' onClick='cp("🔏")'>&#x1F50F;</a>
+<a class='box' title='[U+1F510] CLOSED LOCK WITH KEY' onClick='cp("🔐")'>&#x1F510;</a>
+<a class='box' title='[U+1F511] KEY' onClick='cp("🔑")'>&#x1F511;</a>
+<a class='box' title='[U+1F512] LOCK' onClick='cp("🔒")'>&#x1F512;</a>
+<a class='box' title='[U+1F513] OPEN LOCK' onClick='cp("🔓")'>&#x1F513;</a>
+<a class='box' title='[U+1F514] BELL' onClick='cp("🔔")'>&#x1F514;</a>
+<a class='box' title='[U+1F515] BELL WITH CANCELLATION STROKE' onClick='cp("🔕")'>&#x1F515;</a>
+<a class='box' title='[U+1F516] BOOKMARK' onClick='cp("🔖")'>&#x1F516;</a>
+<a class='box' title='[U+1F517] LINK SYMBOL' onClick='cp("🔗")'>&#x1F517;</a>
+<a class='box' title='[U+1F518] RADIO BUTTON' onClick='cp("🔘")'>&#x1F518;</a>
+<a class='box' title='[U+1F519] BACK WITH LEFTWARDS ARROW ABOVE' onClick='cp("🔙")'>&#x1F519;</a>
+<a class='box' title='[U+1F51A] END WITH LEFTWARDS ARROW ABOVE' onClick='cp("🔚")'>&#x1F51A;</a>
+<a class='box' title='[U+1F51B] ON WITH EXCLAMATION MARK WITH LEFT RIGHT ARROW ABOVE' onClick='cp("🔛")'>&#x1F51B;</a>
+<a class='box' title='[U+1F51C] SOON WITH RIGHTWARDS ARROW ABOVE' onClick='cp("🔜")'>&#x1F51C;</a>
+<a class='box' title='[U+1F51D] TOP WITH UPWARDS ARROW ABOVE' onClick='cp("🔝")'>&#x1F51D;</a>
+<a class='box' title='[U+1F51E] NO ONE UNDER EIGHTEEN SYMBOL' onClick='cp("🔞")'>&#x1F51E;</a>
+<a class='box' title='[U+1F51F] KEYCAP TEN' onClick='cp("🔟")'>&#x1F51F;</a>
+<a class='box' title='[U+1F520] INPUT SYMBOL FOR LATIN CAPITAL LETTERS' onClick='cp("🔠")'>&#x1F520;</a>
+<a class='box' title='[U+1F521] INPUT SYMBOL FOR LATIN SMALL LETTERS' onClick='cp("🔡")'>&#x1F521;</a>
+<a class='box' title='[U+1F522] INPUT SYMBOL FOR NUMBERS' onClick='cp("🔢")'>&#x1F522;</a>
+<a class='box' title='[U+1F523] INPUT SYMBOL FOR SYMBOLS' onClick='cp("🔣")'>&#x1F523;</a>
+<a class='box' title='[U+1F524] INPUT SYMBOL FOR LATIN LETTERS' onClick='cp("🔤")'>&#x1F524;</a>
+<a class='box' title='[U+1F525] FIRE' onClick='cp("🔥")'>&#x1F525;</a>
+<a class='box' title='[U+1F526] ELECTRIC TORCH' onClick='cp("🔦")'>&#x1F526;</a>
+<a class='box' title='[U+1F527] WRENCH' onClick='cp("🔧")'>&#x1F527;</a>
+<a class='box' title='[U+1F528] HAMMER' onClick='cp("🔨")'>&#x1F528;</a>
+<a class='box' title='[U+1F529] NUT AND BOLT' onClick='cp("🔩")'>&#x1F529;</a>
+<a class='box' title='[U+1F52A] HOCHO' onClick='cp("🔪")'>&#x1F52A;</a>
+<a class='box' title='[U+1F52B] PISTOL' onClick='cp("🔫")'>&#x1F52B;</a>
+<a class='box' title='[U+1F52C] MICROSCOPE' onClick='cp("🔬")'>&#x1F52C;</a>
+<a class='box' title='[U+1F52D] TELESCOPE' onClick='cp("🔭")'>&#x1F52D;</a>
+<a class='box' title='[U+1F52E] CRYSTAL BALL' onClick='cp("🔮")'>&#x1F52E;</a>
+<a class='box' title='[U+1F52F] SIX POINTED STAR WITH MIDDLE DOT' onClick='cp("🔯")'>&#x1F52F;</a>
+<a class='box' title='[U+1F530] JAPANESE SYMBOL FOR BEGINNER' onClick='cp("🔰")'>&#x1F530;</a>
+<a class='box' title='[U+1F531] TRIDENT EMBLEM' onClick='cp("🔱")'>&#x1F531;</a>
+<a class='box' title='[U+1F532] BLACK SQUARE BUTTON' onClick='cp("🔲")'>&#x1F532;</a>
+<a class='box' title='[U+1F533] WHITE SQUARE BUTTON' onClick='cp("🔳")'>&#x1F533;</a>
+<a class='box' title='[U+1F534] LARGE RED CIRCLE' onClick='cp("🔴")'>&#x1F534;</a>
+<a class='box' title='[U+1F535] LARGE BLUE CIRCLE' onClick='cp("🔵")'>&#x1F535;</a>
+<a class='box' title='[U+1F536] LARGE ORANGE DIAMOND' onClick='cp("🔶")'>&#x1F536;</a>
+<a class='box' title='[U+1F537] LARGE BLUE DIAMOND' onClick='cp("🔷")'>&#x1F537;</a>
+<a class='box' title='[U+1F538] SMALL ORANGE DIAMOND' onClick='cp("🔸")'>&#x1F538;</a>
+<a class='box' title='[U+1F539] SMALL BLUE DIAMOND' onClick='cp("🔹")'>&#x1F539;</a>
+<a class='box' title='[U+1F53A] UP-POINTING RED TRIANGLE' onClick='cp("🔺")'>&#x1F53A;</a>
+<a class='box' title='[U+1F53B] DOWN-POINTING RED TRIANGLE' onClick='cp("🔻")'>&#x1F53B;</a>
+<a class='box' title='[U+1F53C] UP-POINTING SMALL RED TRIANGLE' onClick='cp("🔼")'>&#x1F53C;</a>
+<a class='box' title='[U+1F53D] DOWN-POINTING SMALL RED TRIANGLE' onClick='cp("🔽")'>&#x1F53D;</a>
+<a class='box' title='[U+1F53E] LOWER RIGHT SHADOWED WHITE CIRCLE' onClick='cp("🔾")'>&#x1F53E;</a>
+<a class='box' title='[U+1F53F] UPPER RIGHT SHADOWED WHITE CIRCLE' onClick='cp("🔿")'>&#x1F53F;</a>
+<a class='box' title='[U+1F540] CIRCLED CROSS POMMEE' onClick='cp("🕀")'>&#x1F540;</a>
+<a class='box' title='[U+1F541] CROSS POMMEE WITH HALF-CIRCLE BELOW' onClick='cp("🕁")'>&#x1F541;</a>
+<a class='box' title='[U+1F542] CROSS POMMEE' onClick='cp("🕂")'>&#x1F542;</a>
+<a class='box' title='[U+1F543] NOTCHED LEFT SEMICIRCLE WITH THREE DOTS' onClick='cp("🕃")'>&#x1F543;</a>
+<a class='box' title='[U+1F544] NOTCHED RIGHT SEMICIRCLE WITH THREE DOTS' onClick='cp("🕄")'>&#x1F544;</a>
+<a class='box' title='[U+1F545] SYMBOL FOR MARKS CHAPTER' onClick='cp("🕅")'>&#x1F545;</a>
+<a class='box' title='[U+1F546] WHITE LATIN CROSS' onClick='cp("🕆")'>&#x1F546;</a>
+<a class='box' title='[U+1F547] HEAVY LATIN CROSS' onClick='cp("🕇")'>&#x1F547;</a>
+<a class='box' title='[U+1F548] CELTIC CROSS' onClick='cp("🕈")'>&#x1F548;</a>
+<a class='box' title='[U+1F549] OM SYMBOL' onClick='cp("🕉")'>&#x1F549;</a>
+<a class='box' title='[U+1F54A] DOVE OF PEACE' onClick='cp("🕊")'>&#x1F54A;</a>
+<a class='box' title='[U+1F54B] KAABA' onClick='cp("🕋")'>&#x1F54B;</a>
+<a class='box' title='[U+1F54C] MOSQUE' onClick='cp("🕌")'>&#x1F54C;</a>
+<a class='box' title='[U+1F54D] SYNAGOGUE' onClick='cp("🕍")'>&#x1F54D;</a>
+<a class='box' title='[U+1F54E] MENORAH WITH NINE BRANCHES' onClick='cp("🕎")'>&#x1F54E;</a>
+<a class='box' title='[U+1F54F] BOWL OF HYGIEIA' onClick='cp("🕏")'>&#x1F54F;</a>
+<a class='box' title='[U+1F550] CLOCK FACE ONE OCLOCK' onClick='cp("🕐")'>&#x1F550;</a>
+<a class='box' title='[U+1F551] CLOCK FACE TWO OCLOCK' onClick='cp("🕑")'>&#x1F551;</a>
+<a class='box' title='[U+1F552] CLOCK FACE THREE OCLOCK' onClick='cp("🕒")'>&#x1F552;</a>
+<a class='box' title='[U+1F553] CLOCK FACE FOUR OCLOCK' onClick='cp("🕓")'>&#x1F553;</a>
+<a class='box' title='[U+1F554] CLOCK FACE FIVE OCLOCK' onClick='cp("🕔")'>&#x1F554;</a>
+<a class='box' title='[U+1F555] CLOCK FACE SIX OCLOCK' onClick='cp("🕕")'>&#x1F555;</a>
+<a class='box' title='[U+1F556] CLOCK FACE SEVEN OCLOCK' onClick='cp("🕖")'>&#x1F556;</a>
+<a class='box' title='[U+1F557] CLOCK FACE EIGHT OCLOCK' onClick='cp("🕗")'>&#x1F557;</a>
+<a class='box' title='[U+1F558] CLOCK FACE NINE OCLOCK' onClick='cp("🕘")'>&#x1F558;</a>
+<a class='box' title='[U+1F559] CLOCK FACE TEN OCLOCK' onClick='cp("🕙")'>&#x1F559;</a>
+<a class='box' title='[U+1F55A] CLOCK FACE ELEVEN OCLOCK' onClick='cp("🕚")'>&#x1F55A;</a>
+<a class='box' title='[U+1F55B] CLOCK FACE TWELVE OCLOCK' onClick='cp("🕛")'>&#x1F55B;</a>
+<a class='box' title='[U+1F55C] CLOCK FACE ONE-THIRTY' onClick='cp("🕜")'>&#x1F55C;</a>
+<a class='box' title='[U+1F55D] CLOCK FACE TWO-THIRTY' onClick='cp("🕝")'>&#x1F55D;</a>
+<a class='box' title='[U+1F55E] CLOCK FACE THREE-THIRTY' onClick='cp("🕞")'>&#x1F55E;</a>
+<a class='box' title='[U+1F55F] CLOCK FACE FOUR-THIRTY' onClick='cp("🕟")'>&#x1F55F;</a>
+<a class='box' title='[U+1F560] CLOCK FACE FIVE-THIRTY' onClick='cp("🕠")'>&#x1F560;</a>
+<a class='box' title='[U+1F561] CLOCK FACE SIX-THIRTY' onClick='cp("🕡")'>&#x1F561;</a>
+<a class='box' title='[U+1F562] CLOCK FACE SEVEN-THIRTY' onClick='cp("🕢")'>&#x1F562;</a>
+<a class='box' title='[U+1F563] CLOCK FACE EIGHT-THIRTY' onClick='cp("🕣")'>&#x1F563;</a>
+<a class='box' title='[U+1F564] CLOCK FACE NINE-THIRTY' onClick='cp("🕤")'>&#x1F564;</a>
+<a class='box' title='[U+1F565] CLOCK FACE TEN-THIRTY' onClick='cp("🕥")'>&#x1F565;</a>
+<a class='box' title='[U+1F566] CLOCK FACE ELEVEN-THIRTY' onClick='cp("🕦")'>&#x1F566;</a>
+<a class='box' title='[U+1F567] CLOCK FACE TWELVE-THIRTY' onClick='cp("🕧")'>&#x1F567;</a>
+<a class='box' title='[U+1F568] RIGHT SPEAKER' onClick='cp("🕨")'>&#x1F568;</a>
+<a class='box' title='[U+1F569] RIGHT SPEAKER WITH ONE SOUND WAVE' onClick='cp("🕩")'>&#x1F569;</a>
+<a class='box' title='[U+1F56A] RIGHT SPEAKER WITH THREE SOUND WAVES' onClick='cp("🕪")'>&#x1F56A;</a>
+<a class='box' title='[U+1F56B] BULLHORN' onClick='cp("🕫")'>&#x1F56B;</a>
+<a class='box' title='[U+1F56C] BULLHORN WITH SOUND WAVES' onClick='cp("🕬")'>&#x1F56C;</a>
+<a class='box' title='[U+1F56D] RINGING BELL' onClick='cp("🕭")'>&#x1F56D;</a>
+<a class='box' title='[U+1F56E] BOOK' onClick='cp("🕮")'>&#x1F56E;</a>
+<a class='box' title='[U+1F56F] CANDLE' onClick='cp("🕯")'>&#x1F56F;</a>
+<a class='box' title='[U+1F570] MANTELPIECE CLOCK' onClick='cp("🕰")'>&#x1F570;</a>
+<a class='box' title='[U+1F571] BLACK SKULL AND CROSSBONES' onClick='cp("🕱")'>&#x1F571;</a>
+<a class='box' title='[U+1F572] NO PIRACY' onClick='cp("🕲")'>&#x1F572;</a>
+<a class='box' title='[U+1F573] HOLE' onClick='cp("🕳")'>&#x1F573;</a>
+<a class='box' title='[U+1F574] MAN IN BUSINESS SUIT LEVITATING' onClick='cp("🕴")'>&#x1F574;</a>
+<a class='box' title='[U+1F575] SLEUTH OR SPY' onClick='cp("🕵")'>&#x1F575;</a>
+<a class='box' title='[U+1F576] DARK SUNGLASSES' onClick='cp("🕶")'>&#x1F576;</a>
+<a class='box' title='[U+1F577] SPIDER' onClick='cp("🕷")'>&#x1F577;</a>
+<a class='box' title='[U+1F578] SPIDER WEB' onClick='cp("🕸")'>&#x1F578;</a>
+<a class='box' title='[U+1F579] JOYSTICK' onClick='cp("🕹")'>&#x1F579;</a>
+<a class='box' title='[U+1F57A] MAN DANCING' onClick='cp("🕺")'>&#x1F57A;</a>
+<a class='box' title='[U+1F57B] LEFT HAND TELEPHONE RECEIVER' onClick='cp("🕻")'>&#x1F57B;</a>
+<a class='box' title='[U+1F57C] TELEPHONE RECEIVER WITH PAGE' onClick='cp("🕼")'>&#x1F57C;</a>
+<a class='box' title='[U+1F57D] RIGHT HAND TELEPHONE RECEIVER' onClick='cp("🕽")'>&#x1F57D;</a>
+<a class='box' title='[U+1F57E] WHITE TOUCHTONE TELEPHONE' onClick='cp("🕾")'>&#x1F57E;</a>
+<a class='box' title='[U+1F57F] BLACK TOUCHTONE TELEPHONE' onClick='cp("🕿")'>&#x1F57F;</a>
+<a class='box' title='[U+1F580] TELEPHONE ON TOP OF MODEM' onClick='cp("🖀")'>&#x1F580;</a>
+<a class='box' title='[U+1F581] CLAMSHELL MOBILE PHONE' onClick='cp("🖁")'>&#x1F581;</a>
+<a class='box' title='[U+1F582] BACK OF ENVELOPE' onClick='cp("🖂")'>&#x1F582;</a>
+<a class='box' title='[U+1F583] STAMPED ENVELOPE' onClick='cp("🖃")'>&#x1F583;</a>
+<a class='box' title='[U+1F584] ENVELOPE WITH LIGHTNING' onClick='cp("🖄")'>&#x1F584;</a>
+<a class='box' title='[U+1F585] FLYING ENVELOPE' onClick='cp("🖅")'>&#x1F585;</a>
+<a class='box' title='[U+1F586] PEN OVER STAMPED ENVELOPE' onClick='cp("🖆")'>&#x1F586;</a>
+<a class='box' title='[U+1F587] LINKED PAPERCLIPS' onClick='cp("🖇")'>&#x1F587;</a>
+<a class='box' title='[U+1F588] BLACK PUSHPIN' onClick='cp("🖈")'>&#x1F588;</a>
+<a class='box' title='[U+1F589] LOWER LEFT PENCIL' onClick='cp("🖉")'>&#x1F589;</a>
+<a class='box' title='[U+1F58A] LOWER LEFT BALLPOINT PEN' onClick='cp("🖊")'>&#x1F58A;</a>
+<a class='box' title='[U+1F58B] LOWER LEFT FOUNTAIN PEN' onClick='cp("🖋")'>&#x1F58B;</a>
+<a class='box' title='[U+1F58C] LOWER LEFT PAINTBRUSH' onClick='cp("🖌")'>&#x1F58C;</a>
+<a class='box' title='[U+1F58D] LOWER LEFT CRAYON' onClick='cp("🖍")'>&#x1F58D;</a>
+<a class='box' title='[U+1F58E] LEFT WRITING HAND' onClick='cp("🖎")'>&#x1F58E;</a>
+<a class='box' title='[U+1F58F] TURNED OK HAND SIGN' onClick='cp("🖏")'>&#x1F58F;</a>
+<a class='box' title='[U+1F590] RAISED HAND WITH FINGERS SPLAYED' onClick='cp("🖐")'>&#x1F590;</a>
+<a class='box' title='[U+1F591] REVERSED RAISED HAND WITH FINGERS SPLAYED' onClick='cp("🖑")'>&#x1F591;</a>
+<a class='box' title='[U+1F592] REVERSED THUMBS UP SIGN' onClick='cp("🖒")'>&#x1F592;</a>
+<a class='box' title='[U+1F593] REVERSED THUMBS DOWN SIGN' onClick='cp("🖓")'>&#x1F593;</a>
+<a class='box' title='[U+1F594] REVERSED VICTORY HAND' onClick='cp("🖔")'>&#x1F594;</a>
+<a class='box' title='[U+1F595] REVERSED HAND WITH MIDDLE FINGER EXTENDED' onClick='cp("🖕")'>&#x1F595;</a>
+<a class='box' title='[U+1F596] RAISED HAND WITH PART BETWEEN MIDDLE AND RING FINGERS' onClick='cp("🖖")'>&#x1F596;</a>
+<a class='box' title='[U+1F597] WHITE DOWN POINTING LEFT HAND INDEX' onClick='cp("🖗")'>&#x1F597;</a>
+<a class='box' title='[U+1F598] SIDEWAYS WHITE LEFT POINTING INDEX' onClick='cp("🖘")'>&#x1F598;</a>
+<a class='box' title='[U+1F599] SIDEWAYS WHITE RIGHT POINTING INDEX' onClick='cp("🖙")'>&#x1F599;</a>
+<a class='box' title='[U+1F59A] SIDEWAYS BLACK LEFT POINTING INDEX' onClick='cp("🖚")'>&#x1F59A;</a>
+<a class='box' title='[U+1F59B] SIDEWAYS BLACK RIGHT POINTING INDEX' onClick='cp("🖛")'>&#x1F59B;</a>
+<a class='box' title='[U+1F59C] BLACK LEFT POINTING BACKHAND INDEX' onClick='cp("🖜")'>&#x1F59C;</a>
+<a class='box' title='[U+1F59D] BLACK RIGHT POINTING BACKHAND INDEX' onClick='cp("🖝")'>&#x1F59D;</a>
+<a class='box' title='[U+1F59E] SIDEWAYS WHITE UP POINTING INDEX' onClick='cp("🖞")'>&#x1F59E;</a>
+<a class='box' title='[U+1F59F] SIDEWAYS WHITE DOWN POINTING INDEX' onClick='cp("🖟")'>&#x1F59F;</a>
+<a class='box' title='[U+1F5A0] SIDEWAYS BLACK UP POINTING INDEX' onClick='cp("🖠")'>&#x1F5A0;</a>
+<a class='box' title='[U+1F5A1] SIDEWAYS BLACK DOWN POINTING INDEX' onClick='cp("🖡")'>&#x1F5A1;</a>
+<a class='box' title='[U+1F5A2] BLACK UP POINTING BACKHAND INDEX' onClick='cp("🖢")'>&#x1F5A2;</a>
+<a class='box' title='[U+1F5A3] BLACK DOWN POINTING BACKHAND INDEX' onClick='cp("🖣")'>&#x1F5A3;</a>
+<a class='box' title='[U+1F5A4] BLACK HEART' onClick='cp("🖤")'>&#x1F5A4;</a>
+<a class='box' title='[U+1F5A5] DESKTOP COMPUTER' onClick='cp("🖥")'>&#x1F5A5;</a>
+<a class='box' title='[U+1F5A6] KEYBOARD AND MOUSE' onClick='cp("🖦")'>&#x1F5A6;</a>
+<a class='box' title='[U+1F5A7] THREE NETWORKED COMPUTERS' onClick='cp("🖧")'>&#x1F5A7;</a>
+<a class='box' title='[U+1F5A8] PRINTER' onClick='cp("🖨")'>&#x1F5A8;</a>
+<a class='box' title='[U+1F5A9] POCKET CALCULATOR' onClick='cp("🖩")'>&#x1F5A9;</a>
+<a class='box' title='[U+1F5AA] BLACK HARD SHELL FLOPPY DISK' onClick='cp("🖪")'>&#x1F5AA;</a>
+<a class='box' title='[U+1F5AB] WHITE HARD SHELL FLOPPY DISK' onClick='cp("🖫")'>&#x1F5AB;</a>
+<a class='box' title='[U+1F5AC] SOFT SHELL FLOPPY DISK' onClick='cp("🖬")'>&#x1F5AC;</a>
+<a class='box' title='[U+1F5AD] TAPE CARTRIDGE' onClick='cp("🖭")'>&#x1F5AD;</a>
+<a class='box' title='[U+1F5AE] WIRED KEYBOARD' onClick='cp("🖮")'>&#x1F5AE;</a>
+<a class='box' title='[U+1F5AF] ONE BUTTON MOUSE' onClick='cp("🖯")'>&#x1F5AF;</a>
+<a class='box' title='[U+1F5B0] TWO BUTTON MOUSE' onClick='cp("🖰")'>&#x1F5B0;</a>
+<a class='box' title='[U+1F5B1] THREE BUTTON MOUSE' onClick='cp("🖱")'>&#x1F5B1;</a>
+<a class='box' title='[U+1F5B2] TRACKBALL' onClick='cp("🖲")'>&#x1F5B2;</a>
+<a class='box' title='[U+1F5B3] OLD PERSONAL COMPUTER' onClick='cp("🖳")'>&#x1F5B3;</a>
+<a class='box' title='[U+1F5B4] HARD DISK' onClick='cp("🖴")'>&#x1F5B4;</a>
+<a class='box' title='[U+1F5B5] SCREEN' onClick='cp("🖵")'>&#x1F5B5;</a>
+<a class='box' title='[U+1F5B6] PRINTER ICON' onClick='cp("🖶")'>&#x1F5B6;</a>
+<a class='box' title='[U+1F5B7] FAX ICON' onClick='cp("🖷")'>&#x1F5B7;</a>
+<a class='box' title='[U+1F5B8] OPTICAL DISC ICON' onClick='cp("🖸")'>&#x1F5B8;</a>
+<a class='box' title='[U+1F5B9] DOCUMENT WITH TEXT' onClick='cp("🖹")'>&#x1F5B9;</a>
+<a class='box' title='[U+1F5BA] DOCUMENT WITH TEXT AND PICTURE' onClick='cp("🖺")'>&#x1F5BA;</a>
+<a class='box' title='[U+1F5BB] DOCUMENT WITH PICTURE' onClick='cp("🖻")'>&#x1F5BB;</a>
+<a class='box' title='[U+1F5BC] FRAME WITH PICTURE' onClick='cp("🖼")'>&#x1F5BC;</a>
+<a class='box' title='[U+1F5BD] FRAME WITH TILES' onClick='cp("🖽")'>&#x1F5BD;</a>
+<a class='box' title='[U+1F5BE] FRAME WITH AN X' onClick='cp("🖾")'>&#x1F5BE;</a>
+<a class='box' title='[U+1F5BF] BLACK FOLDER' onClick='cp("🖿")'>&#x1F5BF;</a>
+<a class='box' title='[U+1F5C0] FOLDER' onClick='cp("🗀")'>&#x1F5C0;</a>
+<a class='box' title='[U+1F5C1] OPEN FOLDER' onClick='cp("🗁")'>&#x1F5C1;</a>
+<a class='box' title='[U+1F5C2] CARD INDEX DIVIDERS' onClick='cp("🗂")'>&#x1F5C2;</a>
+<a class='box' title='[U+1F5C3] CARD FILE BOX' onClick='cp("🗃")'>&#x1F5C3;</a>
+<a class='box' title='[U+1F5C4] FILE CABINET' onClick='cp("🗄")'>&#x1F5C4;</a>
+<a class='box' title='[U+1F5C5] EMPTY NOTE' onClick='cp("🗅")'>&#x1F5C5;</a>
+<a class='box' title='[U+1F5C6] EMPTY NOTE PAGE' onClick='cp("🗆")'>&#x1F5C6;</a>
+<a class='box' title='[U+1F5C7] EMPTY NOTE PAD' onClick='cp("🗇")'>&#x1F5C7;</a>
+<a class='box' title='[U+1F5C8] NOTE' onClick='cp("🗈")'>&#x1F5C8;</a>
+<a class='box' title='[U+1F5C9] NOTE PAGE' onClick='cp("🗉")'>&#x1F5C9;</a>
+<a class='box' title='[U+1F5CA] NOTE PAD' onClick='cp("🗊")'>&#x1F5CA;</a>
+<a class='box' title='[U+1F5CB] EMPTY DOCUMENT' onClick='cp("🗋")'>&#x1F5CB;</a>
+<a class='box' title='[U+1F5CC] EMPTY PAGE' onClick='cp("🗌")'>&#x1F5CC;</a>
+<a class='box' title='[U+1F5CD] EMPTY PAGES' onClick='cp("🗍")'>&#x1F5CD;</a>
+<a class='box' title='[U+1F5CE] DOCUMENT' onClick='cp("🗎")'>&#x1F5CE;</a>
+<a class='box' title='[U+1F5CF] PAGE' onClick='cp("🗏")'>&#x1F5CF;</a>
+<a class='box' title='[U+1F5D0] PAGES' onClick='cp("🗐")'>&#x1F5D0;</a>
+<a class='box' title='[U+1F5D1] WASTEBASKET' onClick='cp("🗑")'>&#x1F5D1;</a>
+<a class='box' title='[U+1F5D2] SPIRAL NOTE PAD' onClick='cp("🗒")'>&#x1F5D2;</a>
+<a class='box' title='[U+1F5D3] SPIRAL CALENDAR PAD' onClick='cp("🗓")'>&#x1F5D3;</a>
+<a class='box' title='[U+1F5D4] DESKTOP WINDOW' onClick='cp("🗔")'>&#x1F5D4;</a>
+<a class='box' title='[U+1F5D5] MINIMIZE' onClick='cp("🗕")'>&#x1F5D5;</a>
+<a class='box' title='[U+1F5D6] MAXIMIZE' onClick='cp("🗖")'>&#x1F5D6;</a>
+<a class='box' title='[U+1F5D7] OVERLAP' onClick='cp("🗗")'>&#x1F5D7;</a>
+<a class='box' title='[U+1F5D8] CLOCKWISE RIGHT AND LEFT SEMICIRCLE ARROWS' onClick='cp("🗘")'>&#x1F5D8;</a>
+<a class='box' title='[U+1F5D9] CANCELLATION X' onClick='cp("🗙")'>&#x1F5D9;</a>
+<a class='box' title='[U+1F5DA] INCREASE FONT SIZE SYMBOL' onClick='cp("🗚")'>&#x1F5DA;</a>
+<a class='box' title='[U+1F5DB] DECREASE FONT SIZE SYMBOL' onClick='cp("🗛")'>&#x1F5DB;</a>
+<a class='box' title='[U+1F5DC] COMPRESSION' onClick='cp("🗜")'>&#x1F5DC;</a>
+<a class='box' title='[U+1F5DD] OLD KEY' onClick='cp("🗝")'>&#x1F5DD;</a>
+<a class='box' title='[U+1F5DE] ROLLED-UP NEWSPAPER' onClick='cp("🗞")'>&#x1F5DE;</a>
+<a class='box' title='[U+1F5DF] PAGE WITH CIRCLED TEXT' onClick='cp("🗟")'>&#x1F5DF;</a>
+<a class='box' title='[U+1F5E0] STOCK CHART' onClick='cp("🗠")'>&#x1F5E0;</a>
+<a class='box' title='[U+1F5E1] DAGGER KNIFE' onClick='cp("🗡")'>&#x1F5E1;</a>
+<a class='box' title='[U+1F5E2] LIPS' onClick='cp("🗢")'>&#x1F5E2;</a>
+<a class='box' title='[U+1F5E3] SPEAKING HEAD IN SILHOUETTE' onClick='cp("🗣")'>&#x1F5E3;</a>
+<a class='box' title='[U+1F5E4] THREE RAYS ABOVE' onClick='cp("🗤")'>&#x1F5E4;</a>
+<a class='box' title='[U+1F5E5] THREE RAYS BELOW' onClick='cp("🗥")'>&#x1F5E5;</a>
+<a class='box' title='[U+1F5E6] THREE RAYS LEFT' onClick='cp("🗦")'>&#x1F5E6;</a>
+<a class='box' title='[U+1F5E7] THREE RAYS RIGHT' onClick='cp("🗧")'>&#x1F5E7;</a>
+<a class='box' title='[U+1F5E8] LEFT SPEECH BUBBLE' onClick='cp("🗨")'>&#x1F5E8;</a>
+<a class='box' title='[U+1F5E9] RIGHT SPEECH BUBBLE' onClick='cp("🗩")'>&#x1F5E9;</a>
+<a class='box' title='[U+1F5EA] TWO SPEECH BUBBLES' onClick='cp("🗪")'>&#x1F5EA;</a>
+<a class='box' title='[U+1F5EB] THREE SPEECH BUBBLES' onClick='cp("🗫")'>&#x1F5EB;</a>
+<a class='box' title='[U+1F5EC] LEFT THOUGHT BUBBLE' onClick='cp("🗬")'>&#x1F5EC;</a>
+<a class='box' title='[U+1F5ED] RIGHT THOUGHT BUBBLE' onClick='cp("🗭")'>&#x1F5ED;</a>
+<a class='box' title='[U+1F5EE] LEFT ANGER BUBBLE' onClick='cp("🗮")'>&#x1F5EE;</a>
+<a class='box' title='[U+1F5EF] RIGHT ANGER BUBBLE' onClick='cp("🗯")'>&#x1F5EF;</a>
+<a class='box' title='[U+1F5F0] MOOD BUBBLE' onClick='cp("🗰")'>&#x1F5F0;</a>
+<a class='box' title='[U+1F5F1] LIGHTNING MOOD BUBBLE' onClick='cp("🗱")'>&#x1F5F1;</a>
+<a class='box' title='[U+1F5F2] LIGHTNING MOOD' onClick='cp("🗲")'>&#x1F5F2;</a>
+<a class='box' title='[U+1F5F3] BALLOT BOX WITH BALLOT' onClick='cp("🗳")'>&#x1F5F3;</a>
+<a class='box' title='[U+1F5F4] BALLOT SCRIPT X' onClick='cp("🗴")'>&#x1F5F4;</a>
+<a class='box' title='[U+1F5F5] BALLOT BOX WITH SCRIPT X' onClick='cp("🗵")'>&#x1F5F5;</a>
+<a class='box' title='[U+1F5F6] BALLOT BOLD SCRIPT X' onClick='cp("🗶")'>&#x1F5F6;</a>
+<a class='box' title='[U+1F5F7] BALLOT BOX WITH BOLD SCRIPT X' onClick='cp("🗷")'>&#x1F5F7;</a>
+<a class='box' title='[U+1F5F8] LIGHT CHECK MARK' onClick='cp("🗸")'>&#x1F5F8;</a>
+<a class='box' title='[U+1F5F9] BALLOT BOX WITH BOLD CHECK' onClick='cp("🗹")'>&#x1F5F9;</a>
+<a class='box' title='[U+1F5FA] WORLD MAP' onClick='cp("🗺")'>&#x1F5FA;</a>
+<a class='box' title='[U+1F5FB] MOUNT FUJI' onClick='cp("🗻")'>&#x1F5FB;</a>
+<a class='box' title='[U+1F5FC] TOKYO TOWER' onClick='cp("🗼")'>&#x1F5FC;</a>
+<a class='box' title='[U+1F5FD] STATUE OF LIBERTY' onClick='cp("🗽")'>&#x1F5FD;</a>
+<a class='box' title='[U+1F5FE] SILHOUETTE OF JAPAN' onClick='cp("🗾")'>&#x1F5FE;</a>
+<a class='box' title='[U+1F5FF] MOYAI' onClick='cp("🗿")'>&#x1F5FF;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #222; id=#;'>Supplemental Symbols and Pictographs (U+1F900 - U+1F9FF)</h2>
+<div class='margined'>
+<a class='box' title='[U+1F900] CIRCLED CROSS FORMEE WITH FOUR DOTS' onClick='cp("🤀")'>&#x1F900;</a>
+<a class='box' title='[U+1F901] CIRCLED CROSS FORMEE WITH TWO DOTS' onClick='cp("🤁")'>&#x1F901;</a>
+<a class='box' title='[U+1F902] CIRCLED CROSS FORMEE' onClick='cp("🤂")'>&#x1F902;</a>
+<a class='box' title='[U+1F903] LEFT HALF CIRCLE WITH FOUR DOTS' onClick='cp("🤃")'>&#x1F903;</a>
+<a class='box' title='[U+1F904] LEFT HALF CIRCLE WITH THREE DOTS' onClick='cp("🤄")'>&#x1F904;</a>
+<a class='box' title='[U+1F905] LEFT HALF CIRCLE WITH TWO DOTS' onClick='cp("🤅")'>&#x1F905;</a>
+<a class='box' title='[U+1F906] LEFT HALF CIRCLE WITH DOT' onClick='cp("🤆")'>&#x1F906;</a>
+<a class='box' title='[U+1F907] LEFT HALF CIRCLE' onClick='cp("🤇")'>&#x1F907;</a>
+<a class='box' title='[U+1F908] DOWNWARD FACING HOOK' onClick='cp("🤈")'>&#x1F908;</a>
+<a class='box' title='[U+1F909] DOWNWARD FACING NOTCHED HOOK' onClick='cp("🤉")'>&#x1F909;</a>
+<a class='box' title='[U+1F90A] DOWNWARD FACING HOOK WITH DOT' onClick='cp("🤊")'>&#x1F90A;</a>
+<a class='box' title='[U+1F90B] DOWNWARD FACING NOTCHED HOOK WITH DOT' onClick='cp("🤋")'>&#x1F90B;</a>
+<a class='box' title='[U+1F90C] PINCHED FINGERS' onClick='cp("🤌")'>&#x1F90C;</a>
+<a class='box' title='[U+1F90D] WHITE HEART' onClick='cp("🤍")'>&#x1F90D;</a>
+<a class='box' title='[U+1F90E] BROWN HEART' onClick='cp("🤎")'>&#x1F90E;</a>
+<a class='box' title='[U+1F90F] PINCHING HAND' onClick='cp("🤏")'>&#x1F90F;</a>
+<a class='box' title='[U+1F910] ZIPPER-MOUTH FACE' onClick='cp("🤐")'>&#x1F910;</a>
+<a class='box' title='[U+1F911] MONEY-MOUTH FACE' onClick='cp("🤑")'>&#x1F911;</a>
+<a class='box' title='[U+1F912] FACE WITH THERMOMETER' onClick='cp("🤒")'>&#x1F912;</a>
+<a class='box' title='[U+1F913] NERD FACE' onClick='cp("🤓")'>&#x1F913;</a>
+<a class='box' title='[U+1F914] THINKING FACE' onClick='cp("🤔")'>&#x1F914;</a>
+<a class='box' title='[U+1F915] FACE WITH HEAD-BANDAGE' onClick='cp("🤕")'>&#x1F915;</a>
+<a class='box' title='[U+1F916] ROBOT FACE' onClick='cp("🤖")'>&#x1F916;</a>
+<a class='box' title='[U+1F917] HUGGING FACE' onClick='cp("🤗")'>&#x1F917;</a>
+<a class='box' title='[U+1F918] SIGN OF THE HORNS' onClick='cp("🤘")'>&#x1F918;</a>
+<a class='box' title='[U+1F919] CALL ME HAND' onClick='cp("🤙")'>&#x1F919;</a>
+<a class='box' title='[U+1F91A] RAISED BACK OF HAND' onClick='cp("🤚")'>&#x1F91A;</a>
+<a class='box' title='[U+1F91B] LEFT-FACING FIST' onClick='cp("🤛")'>&#x1F91B;</a>
+<a class='box' title='[U+1F91C] RIGHT-FACING FIST' onClick='cp("🤜")'>&#x1F91C;</a>
+<a class='box' title='[U+1F91D] HANDSHAKE' onClick='cp("🤝")'>&#x1F91D;</a>
+<a class='box' title='[U+1F91E] HAND WITH INDEX AND MIDDLE FINGERS CROSSED' onClick='cp("🤞")'>&#x1F91E;</a>
+<a class='box' title='[U+1F91F] I LOVE YOU HAND SIGN' onClick='cp("🤟")'>&#x1F91F;</a>
+<a class='box' title='[U+1F920] FACE WITH COWBOY HAT' onClick='cp("🤠")'>&#x1F920;</a>
+<a class='box' title='[U+1F921] CLOWN FACE' onClick='cp("🤡")'>&#x1F921;</a>
+<a class='box' title='[U+1F922] NAUSEATED FACE' onClick='cp("🤢")'>&#x1F922;</a>
+<a class='box' title='[U+1F923] ROLLING ON THE FLOOR LAUGHING' onClick='cp("🤣")'>&#x1F923;</a>
+<a class='box' title='[U+1F924] DROOLING FACE' onClick='cp("🤤")'>&#x1F924;</a>
+<a class='box' title='[U+1F925] LYING FACE' onClick='cp("🤥")'>&#x1F925;</a>
+<a class='box' title='[U+1F926] FACE PALM' onClick='cp("🤦")'>&#x1F926;</a>
+<a class='box' title='[U+1F927] SNEEZING FACE' onClick='cp("🤧")'>&#x1F927;</a>
+<a class='box' title='[U+1F928] FACE WITH ONE EYEBROW RAISED' onClick='cp("🤨")'>&#x1F928;</a>
+<a class='box' title='[U+1F929] GRINNING FACE WITH STAR EYES' onClick='cp("🤩")'>&#x1F929;</a>
+<a class='box' title='[U+1F92A] GRINNING FACE WITH ONE LARGE AND ONE SMALL EYE' onClick='cp("🤪")'>&#x1F92A;</a>
+<a class='box' title='[U+1F92B] FACE WITH FINGER COVERING CLOSED LIPS' onClick='cp("🤫")'>&#x1F92B;</a>
+<a class='box' title='[U+1F92C] SERIOUS FACE WITH SYMBOLS COVERING MOUTH' onClick='cp("🤬")'>&#x1F92C;</a>
+<a class='box' title='[U+1F92D] SMILING FACE WITH SMILING EYES AND HAND COVERING MOUTH' onClick='cp("🤭")'>&#x1F92D;</a>
+<a class='box' title='[U+1F92E] FACE WITH OPEN MOUTH VOMITING' onClick='cp("🤮")'>&#x1F92E;</a>
+<a class='box' title='[U+1F92F] SHOCKED FACE WITH EXPLODING HEAD' onClick='cp("🤯")'>&#x1F92F;</a>
+<a class='box' title='[U+1F930] PREGNANT WOMAN' onClick='cp("🤰")'>&#x1F930;</a>
+<a class='box' title='[U+1F931] BREAST-FEEDING' onClick='cp("🤱")'>&#x1F931;</a>
+<a class='box' title='[U+1F932] PALMS UP TOGETHER' onClick='cp("🤲")'>&#x1F932;</a>
+<a class='box' title='[U+1F933] SELFIE' onClick='cp("🤳")'>&#x1F933;</a>
+<a class='box' title='[U+1F934] PRINCE' onClick='cp("🤴")'>&#x1F934;</a>
+<a class='box' title='[U+1F935] MAN IN TUXEDO' onClick='cp("🤵")'>&#x1F935;</a>
+<a class='box' title='[U+1F936] MOTHER CHRISTMAS' onClick='cp("🤶")'>&#x1F936;</a>
+<a class='box' title='[U+1F937] SHRUG' onClick='cp("🤷")'>&#x1F937;</a>
+<a class='box' title='[U+1F938] PERSON DOING CARTWHEEL' onClick='cp("🤸")'>&#x1F938;</a>
+<a class='box' title='[U+1F939] JUGGLING' onClick='cp("🤹")'>&#x1F939;</a>
+<a class='box' title='[U+1F93A] FENCER' onClick='cp("🤺")'>&#x1F93A;</a>
+<a class='box' title='[U+1F93B] MODERN PENTATHLON' onClick='cp("🤻")'>&#x1F93B;</a>
+<a class='box' title='[U+1F93C] WRESTLERS' onClick='cp("🤼")'>&#x1F93C;</a>
+<a class='box' title='[U+1F93D] WATER POLO' onClick='cp("🤽")'>&#x1F93D;</a>
+<a class='box' title='[U+1F93E] HANDBALL' onClick='cp("🤾")'>&#x1F93E;</a>
+<a class='box' title='[U+1F93F] DIVING MASK' onClick='cp("🤿")'>&#x1F93F;</a>
+<a class='box' title='[U+1F940] WILTED FLOWER' onClick='cp("🥀")'>&#x1F940;</a>
+<a class='box' title='[U+1F941] DRUM WITH DRUMSTICKS' onClick='cp("🥁")'>&#x1F941;</a>
+<a class='box' title='[U+1F942] CLINKING GLASSES' onClick='cp("🥂")'>&#x1F942;</a>
+<a class='box' title='[U+1F943] TUMBLER GLASS' onClick='cp("🥃")'>&#x1F943;</a>
+<a class='box' title='[U+1F944] SPOON' onClick='cp("🥄")'>&#x1F944;</a>
+<a class='box' title='[U+1F945] GOAL NET' onClick='cp("🥅")'>&#x1F945;</a>
+<a class='box' title='[U+1F946] RIFLE' onClick='cp("🥆")'>&#x1F946;</a>
+<a class='box' title='[U+1F947] FIRST PLACE MEDAL' onClick='cp("🥇")'>&#x1F947;</a>
+<a class='box' title='[U+1F948] SECOND PLACE MEDAL' onClick='cp("🥈")'>&#x1F948;</a>
+<a class='box' title='[U+1F949] THIRD PLACE MEDAL' onClick='cp("🥉")'>&#x1F949;</a>
+<a class='box' title='[U+1F94A] BOXING GLOVE' onClick='cp("🥊")'>&#x1F94A;</a>
+<a class='box' title='[U+1F94B] MARTIAL ARTS UNIFORM' onClick='cp("🥋")'>&#x1F94B;</a>
+<a class='box' title='[U+1F94C] CURLING STONE' onClick='cp("🥌")'>&#x1F94C;</a>
+<a class='box' title='[U+1F94D] LACROSSE STICK AND BALL' onClick='cp("🥍")'>&#x1F94D;</a>
+<a class='box' title='[U+1F94E] SOFTBALL' onClick='cp("🥎")'>&#x1F94E;</a>
+<a class='box' title='[U+1F94F] FLYING DISC' onClick='cp("🥏")'>&#x1F94F;</a>
+<a class='box' title='[U+1F950] CROISSANT' onClick='cp("🥐")'>&#x1F950;</a>
+<a class='box' title='[U+1F951] AVOCADO' onClick='cp("🥑")'>&#x1F951;</a>
+<a class='box' title='[U+1F952] CUCUMBER' onClick='cp("🥒")'>&#x1F952;</a>
+<a class='box' title='[U+1F953] BACON' onClick='cp("🥓")'>&#x1F953;</a>
+<a class='box' title='[U+1F954] POTATO' onClick='cp("🥔")'>&#x1F954;</a>
+<a class='box' title='[U+1F955] CARROT' onClick='cp("🥕")'>&#x1F955;</a>
+<a class='box' title='[U+1F956] BAGUETTE BREAD' onClick='cp("🥖")'>&#x1F956;</a>
+<a class='box' title='[U+1F957] GREEN SALAD' onClick='cp("🥗")'>&#x1F957;</a>
+<a class='box' title='[U+1F958] SHALLOW PAN OF FOOD' onClick='cp("🥘")'>&#x1F958;</a>
+<a class='box' title='[U+1F959] STUFFED FLATBREAD' onClick='cp("🥙")'>&#x1F959;</a>
+<a class='box' title='[U+1F95A] EGG' onClick='cp("🥚")'>&#x1F95A;</a>
+<a class='box' title='[U+1F95B] GLASS OF MILK' onClick='cp("🥛")'>&#x1F95B;</a>
+<a class='box' title='[U+1F95C] PEANUTS' onClick='cp("🥜")'>&#x1F95C;</a>
+<a class='box' title='[U+1F95D] KIWIFRUIT' onClick='cp("🥝")'>&#x1F95D;</a>
+<a class='box' title='[U+1F95E] PANCAKES' onClick='cp("🥞")'>&#x1F95E;</a>
+<a class='box' title='[U+1F95F] DUMPLING' onClick='cp("🥟")'>&#x1F95F;</a>
+<a class='box' title='[U+1F960] FORTUNE COOKIE' onClick='cp("🥠")'>&#x1F960;</a>
+<a class='box' title='[U+1F961] TAKEOUT BOX' onClick='cp("🥡")'>&#x1F961;</a>
+<a class='box' title='[U+1F962] CHOPSTICKS' onClick='cp("🥢")'>&#x1F962;</a>
+<a class='box' title='[U+1F963] BOWL WITH SPOON' onClick='cp("🥣")'>&#x1F963;</a>
+<a class='box' title='[U+1F964] CUP WITH STRAW' onClick='cp("🥤")'>&#x1F964;</a>
+<a class='box' title='[U+1F965] COCONUT' onClick='cp("🥥")'>&#x1F965;</a>
+<a class='box' title='[U+1F966] BROCCOLI' onClick='cp("🥦")'>&#x1F966;</a>
+<a class='box' title='[U+1F967] PIE' onClick='cp("🥧")'>&#x1F967;</a>
+<a class='box' title='[U+1F968] PRETZEL' onClick='cp("🥨")'>&#x1F968;</a>
+<a class='box' title='[U+1F969] CUT OF MEAT' onClick='cp("🥩")'>&#x1F969;</a>
+<a class='box' title='[U+1F96A] SANDWICH' onClick='cp("🥪")'>&#x1F96A;</a>
+<a class='box' title='[U+1F96B] CANNED FOOD' onClick='cp("🥫")'>&#x1F96B;</a>
+<a class='box' title='[U+1F96C] LEAFY GREEN' onClick='cp("🥬")'>&#x1F96C;</a>
+<a class='box' title='[U+1F96D] MANGO' onClick='cp("🥭")'>&#x1F96D;</a>
+<a class='box' title='[U+1F96E] MOON CAKE' onClick='cp("🥮")'>&#x1F96E;</a>
+<a class='box' title='[U+1F96F] BAGEL' onClick='cp("🥯")'>&#x1F96F;</a>
+<a class='box' title='[U+1F970] SMILING FACE WITH SMILING EYES AND THREE HEARTS' onClick='cp("🥰")'>&#x1F970;</a>
+<a class='box' title='[U+1F971] YAWNING FACE' onClick='cp("🥱")'>&#x1F971;</a>
+<a class='box' title='[U+1F972] SMILING FACE WITH TEAR' onClick='cp("🥲")'>&#x1F972;</a>
+<a class='box' title='[U+1F973] FACE WITH PARTY HORN AND PARTY HAT' onClick='cp("🥳")'>&#x1F973;</a>
+<a class='box' title='[U+1F974] FACE WITH UNEVEN EYES AND WAVY MOUTH' onClick='cp("🥴")'>&#x1F974;</a>
+<a class='box' title='[U+1F975] OVERHEATED FACE' onClick='cp("🥵")'>&#x1F975;</a>
+<a class='box' title='[U+1F976] FREEZING FACE' onClick='cp("🥶")'>&#x1F976;</a>
+<a class='box' title='[U+1F977] NINJA' onClick='cp("🥷")'>&#x1F977;</a>
+<a class='box' title='[U+1F978] DISGUISED FACE' onClick='cp("🥸")'>&#x1F978;</a>
+<a class='box' title='[U+1F97A] FACE WITH PLEADING EYES' onClick='cp("🥺")'>&#x1F97A;</a>
+<a class='box' title='[U+1F97B] SARI' onClick='cp("🥻")'>&#x1F97B;</a>
+<a class='box' title='[U+1F97C] LAB COAT' onClick='cp("🥼")'>&#x1F97C;</a>
+<a class='box' title='[U+1F97D] GOGGLES' onClick='cp("🥽")'>&#x1F97D;</a>
+<a class='box' title='[U+1F97E] HIKING BOOT' onClick='cp("🥾")'>&#x1F97E;</a>
+<a class='box' title='[U+1F97F] FLAT SHOE' onClick='cp("🥿")'>&#x1F97F;</a>
+<a class='box' title='[U+1F980] CRAB' onClick='cp("🦀")'>&#x1F980;</a>
+<a class='box' title='[U+1F981] LION FACE' onClick='cp("🦁")'>&#x1F981;</a>
+<a class='box' title='[U+1F982] SCORPION' onClick='cp("🦂")'>&#x1F982;</a>
+<a class='box' title='[U+1F983] TURKEY' onClick='cp("🦃")'>&#x1F983;</a>
+<a class='box' title='[U+1F984] UNICORN FACE' onClick='cp("🦄")'>&#x1F984;</a>
+<a class='box' title='[U+1F985] EAGLE' onClick='cp("🦅")'>&#x1F985;</a>
+<a class='box' title='[U+1F986] DUCK' onClick='cp("🦆")'>&#x1F986;</a>
+<a class='box' title='[U+1F987] BAT' onClick='cp("🦇")'>&#x1F987;</a>
+<a class='box' title='[U+1F988] SHARK' onClick='cp("🦈")'>&#x1F988;</a>
+<a class='box' title='[U+1F989] OWL' onClick='cp("🦉")'>&#x1F989;</a>
+<a class='box' title='[U+1F98A] FOX FACE' onClick='cp("🦊")'>&#x1F98A;</a>
+<a class='box' title='[U+1F98B] BUTTERFLY' onClick='cp("🦋")'>&#x1F98B;</a>
+<a class='box' title='[U+1F98C] DEER' onClick='cp("🦌")'>&#x1F98C;</a>
+<a class='box' title='[U+1F98D] GORILLA' onClick='cp("🦍")'>&#x1F98D;</a>
+<a class='box' title='[U+1F98E] LIZARD' onClick='cp("🦎")'>&#x1F98E;</a>
+<a class='box' title='[U+1F98F] RHINOCEROS' onClick='cp("🦏")'>&#x1F98F;</a>
+<a class='box' title='[U+1F990] SHRIMP' onClick='cp("🦐")'>&#x1F990;</a>
+<a class='box' title='[U+1F991] SQUID' onClick='cp("🦑")'>&#x1F991;</a>
+<a class='box' title='[U+1F992] GIRAFFE FACE' onClick='cp("🦒")'>&#x1F992;</a>
+<a class='box' title='[U+1F993] ZEBRA FACE' onClick='cp("🦓")'>&#x1F993;</a>
+<a class='box' title='[U+1F994] HEDGEHOG' onClick='cp("🦔")'>&#x1F994;</a>
+<a class='box' title='[U+1F995] SAUROPOD' onClick='cp("🦕")'>&#x1F995;</a>
+<a class='box' title='[U+1F996] T-REX' onClick='cp("🦖")'>&#x1F996;</a>
+<a class='box' title='[U+1F997] CRICKET' onClick='cp("🦗")'>&#x1F997;</a>
+<a class='box' title='[U+1F998] KANGAROO' onClick='cp("🦘")'>&#x1F998;</a>
+<a class='box' title='[U+1F999] LLAMA' onClick='cp("🦙")'>&#x1F999;</a>
+<a class='box' title='[U+1F99A] PEACOCK' onClick='cp("🦚")'>&#x1F99A;</a>
+<a class='box' title='[U+1F99B] HIPPOPOTAMUS' onClick='cp("🦛")'>&#x1F99B;</a>
+<a class='box' title='[U+1F99C] PARROT' onClick='cp("🦜")'>&#x1F99C;</a>
+<a class='box' title='[U+1F99D] RACCOON' onClick='cp("🦝")'>&#x1F99D;</a>
+<a class='box' title='[U+1F99E] LOBSTER' onClick='cp("🦞")'>&#x1F99E;</a>
+<a class='box' title='[U+1F99F] MOSQUITO' onClick='cp("🦟")'>&#x1F99F;</a>
+<a class='box' title='[U+1F9A0] MICROBE' onClick='cp("🦠")'>&#x1F9A0;</a>
+<a class='box' title='[U+1F9A1] BADGER' onClick='cp("🦡")'>&#x1F9A1;</a>
+<a class='box' title='[U+1F9A2] SWAN' onClick='cp("🦢")'>&#x1F9A2;</a>
+<a class='box' title='[U+1F9A3] MAMMOTH' onClick='cp("🦣")'>&#x1F9A3;</a>
+<a class='box' title='[U+1F9A4] DODO' onClick='cp("🦤")'>&#x1F9A4;</a>
+<a class='box' title='[U+1F9A5] SLOTH' onClick='cp("🦥")'>&#x1F9A5;</a>
+<a class='box' title='[U+1F9A6] OTTER' onClick='cp("🦦")'>&#x1F9A6;</a>
+<a class='box' title='[U+1F9A7] ORANGUTAN' onClick='cp("🦧")'>&#x1F9A7;</a>
+<a class='box' title='[U+1F9A8] SKUNK' onClick='cp("🦨")'>&#x1F9A8;</a>
+<a class='box' title='[U+1F9A9] FLAMINGO' onClick='cp("🦩")'>&#x1F9A9;</a>
+<a class='box' title='[U+1F9AA] OYSTER' onClick='cp("🦪")'>&#x1F9AA;</a>
+<a class='box' title='[U+1F9AB] BEAVER' onClick='cp("🦫")'>&#x1F9AB;</a>
+<a class='box' title='[U+1F9AC] BISON' onClick='cp("🦬")'>&#x1F9AC;</a>
+<a class='box' title='[U+1F9AD] SEAL' onClick='cp("🦭")'>&#x1F9AD;</a>
+<a class='box' title='[U+1F9AE] GUIDE DOG' onClick='cp("🦮")'>&#x1F9AE;</a>
+<a class='box' title='[U+1F9AF] PROBING CANE' onClick='cp("🦯")'>&#x1F9AF;</a>
+<a class='box' title='[U+1F9B0] EMOJI COMPONENT RED HAIR' onClick='cp("🦰")'>&#x1F9B0;</a>
+<a class='box' title='[U+1F9B1] EMOJI COMPONENT CURLY HAIR' onClick='cp("🦱")'>&#x1F9B1;</a>
+<a class='box' title='[U+1F9B2] EMOJI COMPONENT BALD' onClick='cp("🦲")'>&#x1F9B2;</a>
+<a class='box' title='[U+1F9B3] EMOJI COMPONENT WHITE HAIR' onClick='cp("🦳")'>&#x1F9B3;</a>
+<a class='box' title='[U+1F9B4] BONE' onClick='cp("🦴")'>&#x1F9B4;</a>
+<a class='box' title='[U+1F9B5] LEG' onClick='cp("🦵")'>&#x1F9B5;</a>
+<a class='box' title='[U+1F9B6] FOOT' onClick='cp("🦶")'>&#x1F9B6;</a>
+<a class='box' title='[U+1F9B7] TOOTH' onClick='cp("🦷")'>&#x1F9B7;</a>
+<a class='box' title='[U+1F9B8] SUPERHERO' onClick='cp("🦸")'>&#x1F9B8;</a>
+<a class='box' title='[U+1F9B9] SUPERVILLAIN' onClick='cp("🦹")'>&#x1F9B9;</a>
+<a class='box' title='[U+1F9BA] SAFETY VEST' onClick='cp("🦺")'>&#x1F9BA;</a>
+<a class='box' title='[U+1F9BB] EAR WITH HEARING AID' onClick='cp("🦻")'>&#x1F9BB;</a>
+<a class='box' title='[U+1F9BC] MOTORIZED WHEELCHAIR' onClick='cp("🦼")'>&#x1F9BC;</a>
+<a class='box' title='[U+1F9BD] MANUAL WHEELCHAIR' onClick='cp("🦽")'>&#x1F9BD;</a>
+<a class='box' title='[U+1F9BE] MECHANICAL ARM' onClick='cp("🦾")'>&#x1F9BE;</a>
+<a class='box' title='[U+1F9BF] MECHANICAL LEG' onClick='cp("🦿")'>&#x1F9BF;</a>
+<a class='box' title='[U+1F9C0] CHEESE WEDGE' onClick='cp("🧀")'>&#x1F9C0;</a>
+<a class='box' title='[U+1F9C1] CUPCAKE' onClick='cp("🧁")'>&#x1F9C1;</a>
+<a class='box' title='[U+1F9C2] SALT SHAKER' onClick='cp("🧂")'>&#x1F9C2;</a>
+<a class='box' title='[U+1F9C3] BEVERAGE BOX' onClick='cp("🧃")'>&#x1F9C3;</a>
+<a class='box' title='[U+1F9C4] GARLIC' onClick='cp("🧄")'>&#x1F9C4;</a>
+<a class='box' title='[U+1F9C5] ONION' onClick='cp("🧅")'>&#x1F9C5;</a>
+<a class='box' title='[U+1F9C6] FALAFEL' onClick='cp("🧆")'>&#x1F9C6;</a>
+<a class='box' title='[U+1F9C7] WAFFLE' onClick='cp("🧇")'>&#x1F9C7;</a>
+<a class='box' title='[U+1F9C8] BUTTER' onClick='cp("🧈")'>&#x1F9C8;</a>
+<a class='box' title='[U+1F9C9] MATE DRINK' onClick='cp("🧉")'>&#x1F9C9;</a>
+<a class='box' title='[U+1F9CA] ICE CUBE' onClick='cp("🧊")'>&#x1F9CA;</a>
+<a class='box' title='[U+1F9CB] BUBBLE TEA' onClick='cp("🧋")'>&#x1F9CB;</a>
+<a class='box' title='[U+1F9CD] STANDING PERSON' onClick='cp("🧍")'>&#x1F9CD;</a>
+<a class='box' title='[U+1F9CE] KNEELING PERSON' onClick='cp("🧎")'>&#x1F9CE;</a>
+<a class='box' title='[U+1F9CF] DEAF PERSON' onClick='cp("🧏")'>&#x1F9CF;</a>
+<a class='box' title='[U+1F9D0] FACE WITH MONOCLE' onClick='cp("🧐")'>&#x1F9D0;</a>
+<a class='box' title='[U+1F9D1] ADULT' onClick='cp("🧑")'>&#x1F9D1;</a>
+<a class='box' title='[U+1F9D2] CHILD' onClick='cp("🧒")'>&#x1F9D2;</a>
+<a class='box' title='[U+1F9D3] OLDER ADULT' onClick='cp("🧓")'>&#x1F9D3;</a>
+<a class='box' title='[U+1F9D4] BEARDED PERSON' onClick='cp("🧔")'>&#x1F9D4;</a>
+<a class='box' title='[U+1F9D5] PERSON WITH HEADSCARF' onClick='cp("🧕")'>&#x1F9D5;</a>
+<a class='box' title='[U+1F9D6] PERSON IN STEAMY ROOM' onClick='cp("🧖")'>&#x1F9D6;</a>
+<a class='box' title='[U+1F9D7] PERSON CLIMBING' onClick='cp("🧗")'>&#x1F9D7;</a>
+<a class='box' title='[U+1F9D8] PERSON IN LOTUS POSITION' onClick='cp("🧘")'>&#x1F9D8;</a>
+<a class='box' title='[U+1F9D9] MAGE' onClick='cp("🧙")'>&#x1F9D9;</a>
+<a class='box' title='[U+1F9DA] FAIRY' onClick='cp("🧚")'>&#x1F9DA;</a>
+<a class='box' title='[U+1F9DB] VAMPIRE' onClick='cp("🧛")'>&#x1F9DB;</a>
+<a class='box' title='[U+1F9DC] MERPERSON' onClick='cp("🧜")'>&#x1F9DC;</a>
+<a class='box' title='[U+1F9DD] ELF' onClick='cp("🧝")'>&#x1F9DD;</a>
+<a class='box' title='[U+1F9DE] GENIE' onClick='cp("🧞")'>&#x1F9DE;</a>
+<a class='box' title='[U+1F9DF] ZOMBIE' onClick='cp("🧟")'>&#x1F9DF;</a>
+<a class='box' title='[U+1F9E0] BRAIN' onClick='cp("🧠")'>&#x1F9E0;</a>
+<a class='box' title='[U+1F9E1] ORANGE HEART' onClick='cp("🧡")'>&#x1F9E1;</a>
+<a class='box' title='[U+1F9E2] BILLED CAP' onClick='cp("🧢")'>&#x1F9E2;</a>
+<a class='box' title='[U+1F9E3] SCARF' onClick='cp("🧣")'>&#x1F9E3;</a>
+<a class='box' title='[U+1F9E4] GLOVES' onClick='cp("🧤")'>&#x1F9E4;</a>
+<a class='box' title='[U+1F9E5] COAT' onClick='cp("🧥")'>&#x1F9E5;</a>
+<a class='box' title='[U+1F9E6] SOCKS' onClick='cp("🧦")'>&#x1F9E6;</a>
+<a class='box' title='[U+1F9E7] RED GIFT ENVELOPE' onClick='cp("🧧")'>&#x1F9E7;</a>
+<a class='box' title='[U+1F9E8] FIRECRACKER' onClick='cp("🧨")'>&#x1F9E8;</a>
+<a class='box' title='[U+1F9E9] JIGSAW PUZZLE PIECE' onClick='cp("🧩")'>&#x1F9E9;</a>
+<a class='box' title='[U+1F9EA] TEST TUBE' onClick='cp("🧪")'>&#x1F9EA;</a>
+<a class='box' title='[U+1F9EB] PETRI DISH' onClick='cp("🧫")'>&#x1F9EB;</a>
+<a class='box' title='[U+1F9EC] DNA DOUBLE HELIX' onClick='cp("🧬")'>&#x1F9EC;</a>
+<a class='box' title='[U+1F9ED] COMPASS' onClick='cp("🧭")'>&#x1F9ED;</a>
+<a class='box' title='[U+1F9EE] ABACUS' onClick='cp("🧮")'>&#x1F9EE;</a>
+<a class='box' title='[U+1F9EF] FIRE EXTINGUISHER' onClick='cp("🧯")'>&#x1F9EF;</a>
+<a class='box' title='[U+1F9F0] TOOLBOX' onClick='cp("🧰")'>&#x1F9F0;</a>
+<a class='box' title='[U+1F9F1] BRICK' onClick='cp("🧱")'>&#x1F9F1;</a>
+<a class='box' title='[U+1F9F2] MAGNET' onClick='cp("🧲")'>&#x1F9F2;</a>
+<a class='box' title='[U+1F9F3] LUGGAGE' onClick='cp("🧳")'>&#x1F9F3;</a>
+<a class='box' title='[U+1F9F4] LOTION BOTTLE' onClick='cp("🧴")'>&#x1F9F4;</a>
+<a class='box' title='[U+1F9F5] SPOOL OF THREAD' onClick='cp("🧵")'>&#x1F9F5;</a>
+<a class='box' title='[U+1F9F6] BALL OF YARN' onClick='cp("🧶")'>&#x1F9F6;</a>
+<a class='box' title='[U+1F9F7] SAFETY PIN' onClick='cp("🧷")'>&#x1F9F7;</a>
+<a class='box' title='[U+1F9F8] TEDDY BEAR' onClick='cp("🧸")'>&#x1F9F8;</a>
+<a class='box' title='[U+1F9F9] BROOM' onClick='cp("🧹")'>&#x1F9F9;</a>
+<a class='box' title='[U+1F9FA] BASKET' onClick='cp("🧺")'>&#x1F9FA;</a>
+<a class='box' title='[U+1F9FB] ROLL OF PAPER' onClick='cp("🧻")'>&#x1F9FB;</a>
+<a class='box' title='[U+1F9FC] BAR OF SOAP' onClick='cp("🧼")'>&#x1F9FC;</a>
+<a class='box' title='[U+1F9FD] SPONGE' onClick='cp("🧽")'>&#x1F9FD;</a>
+<a class='box' title='[U+1F9FE] RECEIPT' onClick='cp("🧾")'>&#x1F9FE;</a>
+<a class='box' title='[U+1F9FF] NAZAR AMULET' onClick='cp("🧿")'>&#x1F9FF;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #666; id=#;'>Symbols and Pictographs Extended-A (U+1FA70 - U+1FAFF)</h2>
+<div class='margined'>
+<a class='box' title='[U+1FA70] BALLET SHOES' onClick='cp("🩰")'>&#x1FA70;</a>
+<a class='box' title='[U+1FA71] ONE-PIECE SWIMSUIT' onClick='cp("🩱")'>&#x1FA71;</a>
+<a class='box' title='[U+1FA72] BRIEFS' onClick='cp("🩲")'>&#x1FA72;</a>
+<a class='box' title='[U+1FA73] SHORTS' onClick='cp("🩳")'>&#x1FA73;</a>
+<a class='box' title='[U+1FA74] THONG SANDAL' onClick='cp("🩴")'>&#x1FA74;</a>
+<a class='box' title='[U+1FA78] DROP OF BLOOD' onClick='cp("🩸")'>&#x1FA78;</a>
+<a class='box' title='[U+1FA79] ADHESIVE BANDAGE' onClick='cp("🩹")'>&#x1FA79;</a>
+<a class='box' title='[U+1FA7A] STETHOSCOPE' onClick='cp("🩺")'>&#x1FA7A;</a>
+<a class='box' title='[U+1FA80] YO-YO' onClick='cp("🪀")'>&#x1FA80;</a>
+<a class='box' title='[U+1FA81] KITE' onClick='cp("🪁")'>&#x1FA81;</a>
+<a class='box' title='[U+1FA82] PARACHUTE' onClick='cp("🪂")'>&#x1FA82;</a>
+<a class='box' title='[U+1FA83] BOOMERANG' onClick='cp("🪃")'>&#x1FA83;</a>
+<a class='box' title='[U+1FA84] MAGIC WAND' onClick='cp("🪄")'>&#x1FA84;</a>
+<a class='box' title='[U+1FA85] PINATA' onClick='cp("🪅")'>&#x1FA85;</a>
+<a class='box' title='[U+1FA86] NESTING DOLLS' onClick='cp("🪆")'>&#x1FA86;</a>
+<a class='box' title='[U+1FA90] RINGED PLANET' onClick='cp("🪐")'>&#x1FA90;</a>
+<a class='box' title='[U+1FA91] CHAIR' onClick='cp("🪑")'>&#x1FA91;</a>
+<a class='box' title='[U+1FA92] RAZOR' onClick='cp("🪒")'>&#x1FA92;</a>
+<a class='box' title='[U+1FA93] AXE' onClick='cp("🪓")'>&#x1FA93;</a>
+<a class='box' title='[U+1FA94] DIYA LAMP' onClick='cp("🪔")'>&#x1FA94;</a>
+<a class='box' title='[U+1FA95] BANJO' onClick='cp("🪕")'>&#x1FA95;</a>
+<a class='box' title='[U+1FA96] MILITARY HELMET' onClick='cp("🪖")'>&#x1FA96;</a>
+<a class='box' title='[U+1FA97] ACCORDION' onClick='cp("🪗")'>&#x1FA97;</a>
+<a class='box' title='[U+1FA98] LONG DRUM' onClick='cp("🪘")'>&#x1FA98;</a>
+<a class='box' title='[U+1FA99] COIN' onClick='cp("🪙")'>&#x1FA99;</a>
+<a class='box' title='[U+1FA9A] CARPENTRY SAW' onClick='cp("🪚")'>&#x1FA9A;</a>
+<a class='box' title='[U+1FA9B] SCREWDRIVER' onClick='cp("🪛")'>&#x1FA9B;</a>
+<a class='box' title='[U+1FA9C] LADDER' onClick='cp("🪜")'>&#x1FA9C;</a>
+<a class='box' title='[U+1FA9D] HOOK' onClick='cp("🪝")'>&#x1FA9D;</a>
+<a class='box' title='[U+1FA9E] MIRROR' onClick='cp("🪞")'>&#x1FA9E;</a>
+<a class='box' title='[U+1FA9F] WINDOW' onClick='cp("🪟")'>&#x1FA9F;</a>
+<a class='box' title='[U+1FAA0] PLUNGER' onClick='cp("🪠")'>&#x1FAA0;</a>
+<a class='box' title='[U+1FAA1] SEWING NEEDLE' onClick='cp("🪡")'>&#x1FAA1;</a>
+<a class='box' title='[U+1FAA2] KNOT' onClick='cp("🪢")'>&#x1FAA2;</a>
+<a class='box' title='[U+1FAA3] BUCKET' onClick='cp("🪣")'>&#x1FAA3;</a>
+<a class='box' title='[U+1FAA4] MOUSE TRAP' onClick='cp("🪤")'>&#x1FAA4;</a>
+<a class='box' title='[U+1FAA5] TOOTHBRUSH' onClick='cp("🪥")'>&#x1FAA5;</a>
+<a class='box' title='[U+1FAA6] HEADSTONE' onClick='cp("🪦")'>&#x1FAA6;</a>
+<a class='box' title='[U+1FAA7] PLACARD' onClick='cp("🪧")'>&#x1FAA7;</a>
+<a class='box' title='[U+1FAA8] ROCK' onClick='cp("🪨")'>&#x1FAA8;</a>
+<a class='box' title='[U+1FAB0] FLY' onClick='cp("🪰")'>&#x1FAB0;</a>
+<a class='box' title='[U+1FAB1] WORM' onClick='cp("🪱")'>&#x1FAB1;</a>
+<a class='box' title='[U+1FAB2] BEETLE' onClick='cp("🪲")'>&#x1FAB2;</a>
+<a class='box' title='[U+1FAB3] COCKROACH' onClick='cp("🪳")'>&#x1FAB3;</a>
+<a class='box' title='[U+1FAB4] POTTED PLANT' onClick='cp("🪴")'>&#x1FAB4;</a>
+<a class='box' title='[U+1FAB5] WOOD' onClick='cp("🪵")'>&#x1FAB5;</a>
+<a class='box' title='[U+1FAB6] FEATHER' onClick='cp("🪶")'>&#x1FAB6;</a>
+<a class='box' title='[U+1FAC0] ANATOMICAL HEART' onClick='cp("🫀")'>&#x1FAC0;</a>
+<a class='box' title='[U+1FAC1] LUNGS' onClick='cp("🫁")'>&#x1FAC1;</a>
+<a class='box' title='[U+1FAC2] PEOPLE HUGGING' onClick='cp("🫂")'>&#x1FAC2;</a>
+<a class='box' title='[U+1FAD0] BLUEBERRIES' onClick='cp("🫐")'>&#x1FAD0;</a>
+<a class='box' title='[U+1FAD1] BELL PEPPER' onClick='cp("🫑")'>&#x1FAD1;</a>
+<a class='box' title='[U+1FAD2] OLIVE' onClick='cp("🫒")'>&#x1FAD2;</a>
+<a class='box' title='[U+1FAD3] FLATBREAD' onClick='cp("🫓")'>&#x1FAD3;</a>
+<a class='box' title='[U+1FAD4] TAMALE' onClick='cp("🫔")'>&#x1FAD4;</a>
+<a class='box' title='[U+1FAD5] FONDUE' onClick='cp("🫕")'>&#x1FAD5;</a>
+<a class='box' title='[U+1FAD6] TEAPOT' onClick='cp("🫖")'>&#x1FAD6;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #63a; id=#;'>Transport and Map Symbols (U+1F680 - U+1F6FF)</h2>
+<div class='margined'>
+<a class='box' title='[U+1F680] ROCKET' onClick='cp("🚀")'>&#x1F680;</a>
+<a class='box' title='[U+1F681] HELICOPTER' onClick='cp("🚁")'>&#x1F681;</a>
+<a class='box' title='[U+1F682] STEAM LOCOMOTIVE' onClick='cp("🚂")'>&#x1F682;</a>
+<a class='box' title='[U+1F683] RAILWAY CAR' onClick='cp("🚃")'>&#x1F683;</a>
+<a class='box' title='[U+1F684] HIGH-SPEED TRAIN' onClick='cp("🚄")'>&#x1F684;</a>
+<a class='box' title='[U+1F685] HIGH-SPEED TRAIN WITH BULLET NOSE' onClick='cp("🚅")'>&#x1F685;</a>
+<a class='box' title='[U+1F686] TRAIN' onClick='cp("🚆")'>&#x1F686;</a>
+<a class='box' title='[U+1F687] METRO' onClick='cp("🚇")'>&#x1F687;</a>
+<a class='box' title='[U+1F688] LIGHT RAIL' onClick='cp("🚈")'>&#x1F688;</a>
+<a class='box' title='[U+1F689] STATION' onClick='cp("🚉")'>&#x1F689;</a>
+<a class='box' title='[U+1F68A] TRAM' onClick='cp("🚊")'>&#x1F68A;</a>
+<a class='box' title='[U+1F68B] TRAM CAR' onClick='cp("🚋")'>&#x1F68B;</a>
+<a class='box' title='[U+1F68C] BUS' onClick='cp("🚌")'>&#x1F68C;</a>
+<a class='box' title='[U+1F68D] ONCOMING BUS' onClick='cp("🚍")'>&#x1F68D;</a>
+<a class='box' title='[U+1F68E] TROLLEYBUS' onClick='cp("🚎")'>&#x1F68E;</a>
+<a class='box' title='[U+1F68F] BUS STOP' onClick='cp("🚏")'>&#x1F68F;</a>
+<a class='box' title='[U+1F690] MINIBUS' onClick='cp("🚐")'>&#x1F690;</a>
+<a class='box' title='[U+1F691] AMBULANCE' onClick='cp("🚑")'>&#x1F691;</a>
+<a class='box' title='[U+1F692] FIRE ENGINE' onClick='cp("🚒")'>&#x1F692;</a>
+<a class='box' title='[U+1F693] POLICE CAR' onClick='cp("🚓")'>&#x1F693;</a>
+<a class='box' title='[U+1F694] ONCOMING POLICE CAR' onClick='cp("🚔")'>&#x1F694;</a>
+<a class='box' title='[U+1F695] TAXI' onClick='cp("🚕")'>&#x1F695;</a>
+<a class='box' title='[U+1F696] ONCOMING TAXI' onClick='cp("🚖")'>&#x1F696;</a>
+<a class='box' title='[U+1F697] AUTOMOBILE' onClick='cp("🚗")'>&#x1F697;</a>
+<a class='box' title='[U+1F698] ONCOMING AUTOMOBILE' onClick='cp("🚘")'>&#x1F698;</a>
+<a class='box' title='[U+1F699] RECREATIONAL VEHICLE' onClick='cp("🚙")'>&#x1F699;</a>
+<a class='box' title='[U+1F69A] DELIVERY TRUCK' onClick='cp("🚚")'>&#x1F69A;</a>
+<a class='box' title='[U+1F69B] ARTICULATED LORRY' onClick='cp("🚛")'>&#x1F69B;</a>
+<a class='box' title='[U+1F69C] TRACTOR' onClick='cp("🚜")'>&#x1F69C;</a>
+<a class='box' title='[U+1F69D] MONORAIL' onClick='cp("🚝")'>&#x1F69D;</a>
+<a class='box' title='[U+1F69E] MOUNTAIN RAILWAY' onClick='cp("🚞")'>&#x1F69E;</a>
+<a class='box' title='[U+1F69F] SUSPENSION RAILWAY' onClick='cp("🚟")'>&#x1F69F;</a>
+<a class='box' title='[U+1F6A0] MOUNTAIN CABLEWAY' onClick='cp("🚠")'>&#x1F6A0;</a>
+<a class='box' title='[U+1F6A1] AERIAL TRAMWAY' onClick='cp("🚡")'>&#x1F6A1;</a>
+<a class='box' title='[U+1F6A2] SHIP' onClick='cp("🚢")'>&#x1F6A2;</a>
+<a class='box' title='[U+1F6A3] ROWBOAT' onClick='cp("🚣")'>&#x1F6A3;</a>
+<a class='box' title='[U+1F6A4] SPEEDBOAT' onClick='cp("🚤")'>&#x1F6A4;</a>
+<a class='box' title='[U+1F6A5] HORIZONTAL TRAFFIC LIGHT' onClick='cp("🚥")'>&#x1F6A5;</a>
+<a class='box' title='[U+1F6A6] VERTICAL TRAFFIC LIGHT' onClick='cp("🚦")'>&#x1F6A6;</a>
+<a class='box' title='[U+1F6A7] CONSTRUCTION SIGN' onClick='cp("🚧")'>&#x1F6A7;</a>
+<a class='box' title='[U+1F6A8] POLICE CARS REVOLVING LIGHT' onClick='cp("🚨")'>&#x1F6A8;</a>
+<a class='box' title='[U+1F6A9] TRIANGULAR FLAG ON POST' onClick='cp("🚩")'>&#x1F6A9;</a>
+<a class='box' title='[U+1F6AA] DOOR' onClick='cp("🚪")'>&#x1F6AA;</a>
+<a class='box' title='[U+1F6AB] NO ENTRY SIGN' onClick='cp("🚫")'>&#x1F6AB;</a>
+<a class='box' title='[U+1F6AC] SMOKING SYMBOL' onClick='cp("🚬")'>&#x1F6AC;</a>
+<a class='box' title='[U+1F6AD] NO SMOKING SYMBOL' onClick='cp("🚭")'>&#x1F6AD;</a>
+<a class='box' title='[U+1F6AE] PUT LITTER IN ITS PLACE SYMBOL' onClick='cp("🚮")'>&#x1F6AE;</a>
+<a class='box' title='[U+1F6AF] DO NOT LITTER SYMBOL' onClick='cp("🚯")'>&#x1F6AF;</a>
+<a class='box' title='[U+1F6B0] POTABLE WATER SYMBOL' onClick='cp("🚰")'>&#x1F6B0;</a>
+<a class='box' title='[U+1F6B1] NON-POTABLE WATER SYMBOL' onClick='cp("🚱")'>&#x1F6B1;</a>
+<a class='box' title='[U+1F6B2] BICYCLE' onClick='cp("🚲")'>&#x1F6B2;</a>
+<a class='box' title='[U+1F6B3] NO BICYCLES' onClick='cp("🚳")'>&#x1F6B3;</a>
+<a class='box' title='[U+1F6B4] BICYCLIST' onClick='cp("🚴")'>&#x1F6B4;</a>
+<a class='box' title='[U+1F6B5] MOUNTAIN BICYCLIST' onClick='cp("🚵")'>&#x1F6B5;</a>
+<a class='box' title='[U+1F6B6] PEDESTRIAN' onClick='cp("🚶")'>&#x1F6B6;</a>
+<a class='box' title='[U+1F6B7] NO PEDESTRIANS' onClick='cp("🚷")'>&#x1F6B7;</a>
+<a class='box' title='[U+1F6B8] CHILDREN CROSSING' onClick='cp("🚸")'>&#x1F6B8;</a>
+<a class='box' title='[U+1F6B9] MENS SYMBOL' onClick='cp("🚹")'>&#x1F6B9;</a>
+<a class='box' title='[U+1F6BA] WOMENS SYMBOL' onClick='cp("🚺")'>&#x1F6BA;</a>
+<a class='box' title='[U+1F6BB] RESTROOM' onClick='cp("🚻")'>&#x1F6BB;</a>
+<a class='box' title='[U+1F6BC] BABY SYMBOL' onClick='cp("🚼")'>&#x1F6BC;</a>
+<a class='box' title='[U+1F6BD] TOILET' onClick='cp("🚽")'>&#x1F6BD;</a>
+<a class='box' title='[U+1F6BE] WATER CLOSET' onClick='cp("🚾")'>&#x1F6BE;</a>
+<a class='box' title='[U+1F6BF] SHOWER' onClick='cp("🚿")'>&#x1F6BF;</a>
+<a class='box' title='[U+1F6C0] BATH' onClick='cp("🛀")'>&#x1F6C0;</a>
+<a class='box' title='[U+1F6C1] BATHTUB' onClick='cp("🛁")'>&#x1F6C1;</a>
+<a class='box' title='[U+1F6C2] PASSPORT CONTROL' onClick='cp("🛂")'>&#x1F6C2;</a>
+<a class='box' title='[U+1F6C3] CUSTOMS' onClick='cp("🛃")'>&#x1F6C3;</a>
+<a class='box' title='[U+1F6C4] BAGGAGE CLAIM' onClick='cp("🛄")'>&#x1F6C4;</a>
+<a class='box' title='[U+1F6C5] LEFT LUGGAGE' onClick='cp("🛅")'>&#x1F6C5;</a>
+<a class='box' title='[U+1F6C6] TRIANGLE WITH ROUNDED CORNERS' onClick='cp("🛆")'>&#x1F6C6;</a>
+<a class='box' title='[U+1F6C7] PROHIBITED SIGN' onClick='cp("🛇")'>&#x1F6C7;</a>
+<a class='box' title='[U+1F6C8] CIRCLED INFORMATION SOURCE' onClick='cp("🛈")'>&#x1F6C8;</a>
+<a class='box' title='[U+1F6C9] BOYS SYMBOL' onClick='cp("🛉")'>&#x1F6C9;</a>
+<a class='box' title='[U+1F6CA] GIRLS SYMBOL' onClick='cp("🛊")'>&#x1F6CA;</a>
+<a class='box' title='[U+1F6CB] COUCH AND LAMP' onClick='cp("🛋")'>&#x1F6CB;</a>
+<a class='box' title='[U+1F6CC] SLEEPING ACCOMMODATION' onClick='cp("🛌")'>&#x1F6CC;</a>
+<a class='box' title='[U+1F6CD] SHOPPING BAGS' onClick='cp("🛍")'>&#x1F6CD;</a>
+<a class='box' title='[U+1F6CE] BELLHOP BELL' onClick='cp("🛎")'>&#x1F6CE;</a>
+<a class='box' title='[U+1F6CF] BED' onClick='cp("🛏")'>&#x1F6CF;</a>
+<a class='box' title='[U+1F6D0] PLACE OF WORSHIP' onClick='cp("🛐")'>&#x1F6D0;</a>
+<a class='box' title='[U+1F6D1] OCTAGONAL SIGN' onClick='cp("🛑")'>&#x1F6D1;</a>
+<a class='box' title='[U+1F6D2] SHOPPING TROLLEY' onClick='cp("🛒")'>&#x1F6D2;</a>
+<a class='box' title='[U+1F6D3] STUPA' onClick='cp("🛓")'>&#x1F6D3;</a>
+<a class='box' title='[U+1F6D4] PAGODA' onClick='cp("🛔")'>&#x1F6D4;</a>
+<a class='box' title='[U+1F6D5] HINDU TEMPLE' onClick='cp("🛕")'>&#x1F6D5;</a>
+<a class='box' title='[U+1F6D6] HUT' onClick='cp("🛖")'>&#x1F6D6;</a>
+<a class='box' title='[U+1F6D7] ELEVATOR' onClick='cp("🛗")'>&#x1F6D7;</a>
+<a class='box' title='[U+1F6E0] HAMMER AND WRENCH' onClick='cp("🛠")'>&#x1F6E0;</a>
+<a class='box' title='[U+1F6E1] SHIELD' onClick='cp("🛡")'>&#x1F6E1;</a>
+<a class='box' title='[U+1F6E2] OIL DRUM' onClick='cp("🛢")'>&#x1F6E2;</a>
+<a class='box' title='[U+1F6E3] MOTORWAY' onClick='cp("🛣")'>&#x1F6E3;</a>
+<a class='box' title='[U+1F6E4] RAILWAY TRACK' onClick='cp("🛤")'>&#x1F6E4;</a>
+<a class='box' title='[U+1F6E5] MOTOR BOAT' onClick='cp("🛥")'>&#x1F6E5;</a>
+<a class='box' title='[U+1F6E6] UP-POINTING MILITARY AIRPLANE' onClick='cp("🛦")'>&#x1F6E6;</a>
+<a class='box' title='[U+1F6E7] UP-POINTING AIRPLANE' onClick='cp("🛧")'>&#x1F6E7;</a>
+<a class='box' title='[U+1F6E8] UP-POINTING SMALL AIRPLANE' onClick='cp("🛨")'>&#x1F6E8;</a>
+<a class='box' title='[U+1F6E9] SMALL AIRPLANE' onClick='cp("🛩")'>&#x1F6E9;</a>
+<a class='box' title='[U+1F6EA] NORTHEAST-POINTING AIRPLANE' onClick='cp("🛪")'>&#x1F6EA;</a>
+<a class='box' title='[U+1F6EB] AIRPLANE DEPARTURE' onClick='cp("🛫")'>&#x1F6EB;</a>
+<a class='box' title='[U+1F6EC] AIRPLANE ARRIVING' onClick='cp("🛬")'>&#x1F6EC;</a>
+<a class='box' title='[U+1F6F0] SATELLITE' onClick='cp("🛰")'>&#x1F6F0;</a>
+<a class='box' title='[U+1F6F1] ONCOMING FIRE ENGINE' onClick='cp("🛱")'>&#x1F6F1;</a>
+<a class='box' title='[U+1F6F2] DIESEL LOCOMOTIVE' onClick='cp("🛲")'>&#x1F6F2;</a>
+<a class='box' title='[U+1F6F3] PASSENGER SHIP' onClick='cp("🛳")'>&#x1F6F3;</a>
+<a class='box' title='[U+1F6F4] SCOOTER' onClick='cp("🛴")'>&#x1F6F4;</a>
+<a class='box' title='[U+1F6F5] MOTOR SCOOTER' onClick='cp("🛵")'>&#x1F6F5;</a>
+<a class='box' title='[U+1F6F6] CANOE' onClick='cp("🛶")'>&#x1F6F6;</a>
+<a class='box' title='[U+1F6F7] SLED' onClick='cp("🛷")'>&#x1F6F7;</a>
+<a class='box' title='[U+1F6F8] FLYING SAUCER' onClick='cp("🛸")'>&#x1F6F8;</a>
+<a class='box' title='[U+1F6F9] SKATEBOARD' onClick='cp("🛹")'>&#x1F6F9;</a>
+<a class='box' title='[U+1F6FA] AUTO RICKSHAW' onClick='cp("🛺")'>&#x1F6FA;</a>
+<a class='box' title='[U+1F6FB] PICKUP TRUCK' onClick='cp("🛻")'>&#x1F6FB;</a>
+<a class='box' title='[U+1F6FC] ROLLER SKATE' onClick='cp("🛼")'>&#x1F6FC;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+
+   </div>
+  </div>
+  <hr/>
+  <a href='javascript:history.back()'>
+   Back
+  </a>
+  <div>
+   <br/>
+   <br/>
+   <div style='font-size: 80%; text-align: center'>
+    Copyright &copy; 2020 emojipicker.com
+    <a href='../about/disclaimer.html' class='disclaimer'>
+     Disclaimer
+    </a>
+    <a href='../about/privacypolicy.html' class='disclaimer'>
+     Privacy Policy
+    </a>
+   </div>
+  </div>
+ </body>
+</html>

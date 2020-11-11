@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset='utf-8'/>
+  <title>
+   Central Asian Scripts
+  </title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<style type="text/css">
+		table,th,tr,td	{	padding:			0px;
+							border:				solid black 1px;
+							border-spacing:		0px;
+						}
+		td+td			{
+							padding-left:		4px;
+							padding-right:		4px;
+							font-family:		sans-serif;	
+						}
+		td+td+td		{
+							word-break:			break-all;
+							font-family:		serif;	
+						}
+		body			{
+							margin-left:		0px;
+							margin-right:		0px;
+							padding-left:		0px;
+							padding-right:		0px;
+							background-color:	#fcfcfc;
+						}
+		.margined_hdr	{
+							margin:				10px;
+						}
+		.margined		{
+							margin:				10px;
+						}
+		.wholearea		{
+							margin:				0px;
+							padding:			0px;
+						}
+		.wholearea		{	line-height: 		1em;	font-family:	sans-serif;	font-family: 'Segoe UI Emoji'; }
+		.titlearea		{	line-height: 		1.4em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.hbar_area		{	line-height: 		1em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.xcopyarea		{	line-height: 		1.2em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.main			{	line-height:		30px;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+
+		.box			{
+							float:				left;
+
+							line-height:		1;
+						/*	line-spacing:		0;	*/
+
+						/*	height:				30px; */
+							height:				50px;
+							min-width:			50px;
+						}
+		.box, .xbutton
+						{
+							box-sizing:			border-box;
+
+							font-family:		'Segoe UI Emoji';
+
+						    cursor:				pointer;
+						    text-decoration:	none;
+
+						    background-color:	#eeeeee;
+						    color:				black;
+
+						    text-align:			center;
+							vertical-align:		middle;
+						    font-size:			24px;
+
+						    border:				1px solid #000000;
+						    margin:				0px 0px 0px 0px;
+						    padding:			5px 5px 5px 5px;
+
+						    border:				1px solid #aaa;
+						    padding:			10px 5px;
+						}
+		.box:hover, .xbutton:hover
+						{
+							background-color: #ffffff
+						}
+		.box:active, .xbutton:active
+						{
+							background-color:	#eeeeee;
+							box-shadow:			0 4px #666;
+							transform:			translateY(-4px);
+						}
+		.testsvg		{
+							text-align:			center;
+							vertical-align:		middle;
+						}
+		/* -------------------------------------------------*/
+		/* CATEGORY HEADERS									*/
+		/* -------------------------------------------------*/
+		h1					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				black;
+								background-color:	cyan;
+
+								left:				0;
+								text-align:			center;
+
+								margin-top:			10px;
+								padding-top:		12px;
+								padding-bottom:		12px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		h2					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				white;
+								background-color:	#202020;
+
+								left:				0;
+								text-align:			center;
+								text-align:			left;
+
+								margin-top:			10px;
+								padding-top:		8px;
+								padding-bottom:		8px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		/* SUBCATEGORY */
+		h3					{ 
+							/*	font-family:		serif; */
+								font-family:		'Segoe UI Emoji';
+								font-family:		sans-serif;
+								font-weight:		normal;
+
+								margin-top:			10px;
+								padding-top:		0px;
+								padding-bottom:		0px;
+								margin-bottom:		4px;
+							}
+		.catlink			{
+								display:			inline-block;
+								padding:			5px 4px;
+								color:				#FCFCFC;
+								background:			#5050A0;
+								text-align:			center;
+								cursor:				pointer;
+								margin-left:		10px;
+							}
+		.catlink:hover		{
+								font-weight:		bold;
+							}
+		.codevalue			{
+								font-size:			20px;
+							}
+</style>
+	<script>
+		function goback()
+		{
+			window.history.back();
+		}
+		function cp(txt)
+		{
+			var a							= document.createElement ('textarea');
+			a.style.position				= 'fixed';
+			a.style.left					= '-100%';
+			a.value							= txt;
+			a.selectionStart				= 0;
+			a.selectionEnd					= a.value.length;
+
+			document.body.appendChild		(a);
+		//	a.focus							();		// 2017-11-02 del
+			a.select						();		// 2017-11-02 add
+			document.execCommand			('copy');
+			document.body.removeChild		(a);
+			var e							= document.getElementById ('copybuf');
+			e.value							+= txt;
+		};
+
+		function areacopy()
+		{
+			var a							= document.activeElement;
+			var box							= document.getElementById	('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function areaerase()
+		{
+			var a = document.activeElement;
+			var box							= document.getElementById ('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+			box.value						= '';
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function jmpl(location)
+		{
+			var old_name	= document.getElementById (location).getAttribute('name');
+			document.getElementById (location).setAttribute('name', location);
+			window.location.hash			= location;
+			var ret = window.scrollBy		(0, -62);
+			document.getElementById (location).setAttribute('name', old_name);
+		}
+		function jmphome()
+		{
+			window.location.hash				= '';
+		    document.body.scrollTop				= 0; // For Chrome, Safari and Opera
+		    document.documentElement.scrollTop	= 0; // For IE and Firefox
+		}
+	</script>
+ </head>
+ <body>
+  <div class='wholearea'>
+    <div class='testsvg'>
+     <svg class='testsvg' xmlns='http://www.w3.org/2000/svg' version='1.1' width='100%' height='100' stroke='black' stroke-width='0px' style='font-size:32px; text-align:center; font-family: serif; font-family:Segoe UI Emoji;'>
+      <defs>
+       <linearGradient id='grad1'>
+        <stop offset='0%' stop-color='cyan'/>
+        <stop offset='40%' stop-color='cyan'/>
+        <stop offset='70%' stop-color='#777777'/>
+        <stop offset='100%' stop-color='#333333'/>
+       </linearGradient>
+      </defs>
+      <rect x='0' y='0' width='100%' height='100' fill='url(#grad1)'/>
+      <text x='5%' y='55%'>
+       Central Asian Scripts
+      </text>
+     </svg>
+    </div>
+   <a href='javascript:history.back()'>
+    Back
+   </a>
+   <hr/>
+   <div>
+    <h2 style='color: white; background-color: #25f; id=#;'>Manichaean (U+10AC0 - U+10AFF)</h2>
+<div class='margined'>
+<a class='box' title='[U+10AC0] MANICHAEAN LETTER ALEPH' onClick='cp("𐫀")'>&#x10AC0;</a>
+<a class='box' title='[U+10AC1] MANICHAEAN LETTER BETH' onClick='cp("𐫁")'>&#x10AC1;</a>
+<a class='box' title='[U+10AC2] MANICHAEAN LETTER BHETH' onClick='cp("𐫂")'>&#x10AC2;</a>
+<a class='box' title='[U+10AC3] MANICHAEAN LETTER GIMEL' onClick='cp("𐫃")'>&#x10AC3;</a>
+<a class='box' title='[U+10AC4] MANICHAEAN LETTER GHIMEL' onClick='cp("𐫄")'>&#x10AC4;</a>
+<a class='box' title='[U+10AC5] MANICHAEAN LETTER DALETH' onClick='cp("𐫅")'>&#x10AC5;</a>
+<a class='box' title='[U+10AC6] MANICHAEAN LETTER HE' onClick='cp("𐫆")'>&#x10AC6;</a>
+<a class='box' title='[U+10AC7] MANICHAEAN LETTER WAW' onClick='cp("𐫇")'>&#x10AC7;</a>
+<a class='box' title='[U+10AC8] MANICHAEAN SIGN UD' onClick='cp("𐫈")'>&#x10AC8;</a>
+<a class='box' title='[U+10AC9] MANICHAEAN LETTER ZAYIN' onClick='cp("𐫉")'>&#x10AC9;</a>
+<a class='box' title='[U+10ACA] MANICHAEAN LETTER ZHAYIN' onClick='cp("𐫊")'>&#x10ACA;</a>
+<a class='box' title='[U+10ACB] MANICHAEAN LETTER JAYIN' onClick='cp("𐫋")'>&#x10ACB;</a>
+<a class='box' title='[U+10ACC] MANICHAEAN LETTER JHAYIN' onClick='cp("𐫌")'>&#x10ACC;</a>
+<a class='box' title='[U+10ACD] MANICHAEAN LETTER HETH' onClick='cp("𐫍")'>&#x10ACD;</a>
+<a class='box' title='[U+10ACE] MANICHAEAN LETTER TETH' onClick='cp("𐫎")'>&#x10ACE;</a>
+<a class='box' title='[U+10ACF] MANICHAEAN LETTER YODH' onClick='cp("𐫏")'>&#x10ACF;</a>
+<a class='box' title='[U+10AD0] MANICHAEAN LETTER KAPH' onClick='cp("𐫐")'>&#x10AD0;</a>
+<a class='box' title='[U+10AD1] MANICHAEAN LETTER XAPH' onClick='cp("𐫑")'>&#x10AD1;</a>
+<a class='box' title='[U+10AD2] MANICHAEAN LETTER KHAPH' onClick='cp("𐫒")'>&#x10AD2;</a>
+<a class='box' title='[U+10AD3] MANICHAEAN LETTER LAMEDH' onClick='cp("𐫓")'>&#x10AD3;</a>
+<a class='box' title='[U+10AD4] MANICHAEAN LETTER DHAMEDH' onClick='cp("𐫔")'>&#x10AD4;</a>
+<a class='box' title='[U+10AD5] MANICHAEAN LETTER THAMEDH' onClick='cp("𐫕")'>&#x10AD5;</a>
+<a class='box' title='[U+10AD6] MANICHAEAN LETTER MEM' onClick='cp("𐫖")'>&#x10AD6;</a>
+<a class='box' title='[U+10AD7] MANICHAEAN LETTER NUN' onClick='cp("𐫗")'>&#x10AD7;</a>
+<a class='box' title='[U+10AD8] MANICHAEAN LETTER SAMEKH' onClick='cp("𐫘")'>&#x10AD8;</a>
+<a class='box' title='[U+10AD9] MANICHAEAN LETTER AYIN' onClick='cp("𐫙")'>&#x10AD9;</a>
+<a class='box' title='[U+10ADA] MANICHAEAN LETTER AAYIN' onClick='cp("𐫚")'>&#x10ADA;</a>
+<a class='box' title='[U+10ADB] MANICHAEAN LETTER PE' onClick='cp("𐫛")'>&#x10ADB;</a>
+<a class='box' title='[U+10ADC] MANICHAEAN LETTER FE' onClick='cp("𐫜")'>&#x10ADC;</a>
+<a class='box' title='[U+10ADD] MANICHAEAN LETTER SADHE' onClick='cp("𐫝")'>&#x10ADD;</a>
+<a class='box' title='[U+10ADE] MANICHAEAN LETTER QOPH' onClick='cp("𐫞")'>&#x10ADE;</a>
+<a class='box' title='[U+10ADF] MANICHAEAN LETTER XOPH' onClick='cp("𐫟")'>&#x10ADF;</a>
+<a class='box' title='[U+10AE0] MANICHAEAN LETTER QHOPH' onClick='cp("𐫠")'>&#x10AE0;</a>
+<a class='box' title='[U+10AE1] MANICHAEAN LETTER RESH' onClick='cp("𐫡")'>&#x10AE1;</a>
+<a class='box' title='[U+10AE2] MANICHAEAN LETTER SHIN' onClick='cp("𐫢")'>&#x10AE2;</a>
+<a class='box' title='[U+10AE3] MANICHAEAN LETTER SSHIN' onClick='cp("𐫣")'>&#x10AE3;</a>
+<a class='box' title='[U+10AE4] MANICHAEAN LETTER TAW' onClick='cp("𐫤")'>&#x10AE4;</a>
+<a class='box' title='[U+10AE5] MANICHAEAN ABBREVIATION MARK ABOVE' onClick='cp("𐫥")'>&#x10AE5;</a>
+<a class='box' title='[U+10AE6] MANICHAEAN ABBREVIATION MARK BELOW' onClick='cp("𐫦")'>&#x10AE6;</a>
+<a class='box' title='[U+10AEB] MANICHAEAN NUMBER ONE' onClick='cp("𐫫")'>&#x10AEB;</a>
+<a class='box' title='[U+10AEC] MANICHAEAN NUMBER FIVE' onClick='cp("𐫬")'>&#x10AEC;</a>
+<a class='box' title='[U+10AED] MANICHAEAN NUMBER TEN' onClick='cp("𐫭")'>&#x10AED;</a>
+<a class='box' title='[U+10AEE] MANICHAEAN NUMBER TWENTY' onClick='cp("𐫮")'>&#x10AEE;</a>
+<a class='box' title='[U+10AEF] MANICHAEAN NUMBER ONE HUNDRED' onClick='cp("𐫯")'>&#x10AEF;</a>
+<a class='box' title='[U+10AF0] MANICHAEAN PUNCTUATION STAR' onClick='cp("𐫰")'>&#x10AF0;</a>
+<a class='box' title='[U+10AF1] MANICHAEAN PUNCTUATION FLEURON' onClick='cp("𐫱")'>&#x10AF1;</a>
+<a class='box' title='[U+10AF2] MANICHAEAN PUNCTUATION DOUBLE DOT WITHIN DOT' onClick='cp("𐫲")'>&#x10AF2;</a>
+<a class='box' title='[U+10AF3] MANICHAEAN PUNCTUATION DOT WITHIN DOT' onClick='cp("𐫳")'>&#x10AF3;</a>
+<a class='box' title='[U+10AF4] MANICHAEAN PUNCTUATION DOT' onClick='cp("𐫴")'>&#x10AF4;</a>
+<a class='box' title='[U+10AF5] MANICHAEAN PUNCTUATION TWO DOTS' onClick='cp("𐫵")'>&#x10AF5;</a>
+<a class='box' title='[U+10AF6] MANICHAEAN PUNCTUATION LINE FILLER' onClick='cp("𐫶")'>&#x10AF6;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: green; id=#;'>Marchen (U+11C70 - U+11CBF)</h2>
+<div class='margined'>
+<a class='box' title='[U+11C70] MARCHEN HEAD MARK' onClick='cp("𑱰")'>&#x11C70;</a>
+<a class='box' title='[U+11C71] MARCHEN MARK SHAD' onClick='cp("𑱱")'>&#x11C71;</a>
+<a class='box' title='[U+11C72] MARCHEN LETTER KA' onClick='cp("𑱲")'>&#x11C72;</a>
+<a class='box' title='[U+11C73] MARCHEN LETTER KHA' onClick='cp("𑱳")'>&#x11C73;</a>
+<a class='box' title='[U+11C74] MARCHEN LETTER GA' onClick='cp("𑱴")'>&#x11C74;</a>
+<a class='box' title='[U+11C75] MARCHEN LETTER NGA' onClick='cp("𑱵")'>&#x11C75;</a>
+<a class='box' title='[U+11C76] MARCHEN LETTER CA' onClick='cp("𑱶")'>&#x11C76;</a>
+<a class='box' title='[U+11C77] MARCHEN LETTER CHA' onClick='cp("𑱷")'>&#x11C77;</a>
+<a class='box' title='[U+11C78] MARCHEN LETTER JA' onClick='cp("𑱸")'>&#x11C78;</a>
+<a class='box' title='[U+11C79] MARCHEN LETTER NYA' onClick='cp("𑱹")'>&#x11C79;</a>
+<a class='box' title='[U+11C7A] MARCHEN LETTER TA' onClick='cp("𑱺")'>&#x11C7A;</a>
+<a class='box' title='[U+11C7B] MARCHEN LETTER THA' onClick='cp("𑱻")'>&#x11C7B;</a>
+<a class='box' title='[U+11C7C] MARCHEN LETTER DA' onClick='cp("𑱼")'>&#x11C7C;</a>
+<a class='box' title='[U+11C7D] MARCHEN LETTER NA' onClick='cp("𑱽")'>&#x11C7D;</a>
+<a class='box' title='[U+11C7E] MARCHEN LETTER PA' onClick='cp("𑱾")'>&#x11C7E;</a>
+<a class='box' title='[U+11C7F] MARCHEN LETTER PHA' onClick='cp("𑱿")'>&#x11C7F;</a>
+<a class='box' title='[U+11C80] MARCHEN LETTER BA' onClick='cp("𑲀")'>&#x11C80;</a>
+<a class='box' title='[U+11C81] MARCHEN LETTER MA' onClick='cp("𑲁")'>&#x11C81;</a>
+<a class='box' title='[U+11C82] MARCHEN LETTER TSA' onClick='cp("𑲂")'>&#x11C82;</a>
+<a class='box' title='[U+11C83] MARCHEN LETTER TSHA' onClick='cp("𑲃")'>&#x11C83;</a>
+<a class='box' title='[U+11C84] MARCHEN LETTER DZA' onClick='cp("𑲄")'>&#x11C84;</a>
+<a class='box' title='[U+11C85] MARCHEN LETTER WA' onClick='cp("𑲅")'>&#x11C85;</a>
+<a class='box' title='[U+11C86] MARCHEN LETTER ZHA' onClick='cp("𑲆")'>&#x11C86;</a>
+<a class='box' title='[U+11C87] MARCHEN LETTER ZA' onClick='cp("𑲇")'>&#x11C87;</a>
+<a class='box' title='[U+11C88] MARCHEN LETTER -A' onClick='cp("𑲈")'>&#x11C88;</a>
+<a class='box' title='[U+11C89] MARCHEN LETTER YA' onClick='cp("𑲉")'>&#x11C89;</a>
+<a class='box' title='[U+11C8A] MARCHEN LETTER RA' onClick='cp("𑲊")'>&#x11C8A;</a>
+<a class='box' title='[U+11C8B] MARCHEN LETTER LA' onClick='cp("𑲋")'>&#x11C8B;</a>
+<a class='box' title='[U+11C8C] MARCHEN LETTER SHA' onClick='cp("𑲌")'>&#x11C8C;</a>
+<a class='box' title='[U+11C8D] MARCHEN LETTER SA' onClick='cp("𑲍")'>&#x11C8D;</a>
+<a class='box' title='[U+11C8E] MARCHEN LETTER HA' onClick='cp("𑲎")'>&#x11C8E;</a>
+<a class='box' title='[U+11C8F] MARCHEN LETTER A' onClick='cp("𑲏")'>&#x11C8F;</a>
+<a class='box' title='[U+11C92] MARCHEN SUBJOINED LETTER KA' onClick='cp("𑲒")'>&#x11C92;</a>
+<a class='box' title='[U+11C93] MARCHEN SUBJOINED LETTER KHA' onClick='cp("𑲓")'>&#x11C93;</a>
+<a class='box' title='[U+11C94] MARCHEN SUBJOINED LETTER GA' onClick='cp("𑲔")'>&#x11C94;</a>
+<a class='box' title='[U+11C95] MARCHEN SUBJOINED LETTER NGA' onClick='cp("𑲕")'>&#x11C95;</a>
+<a class='box' title='[U+11C96] MARCHEN SUBJOINED LETTER CA' onClick='cp("𑲖")'>&#x11C96;</a>
+<a class='box' title='[U+11C97] MARCHEN SUBJOINED LETTER CHA' onClick='cp("𑲗")'>&#x11C97;</a>
+<a class='box' title='[U+11C98] MARCHEN SUBJOINED LETTER JA' onClick='cp("𑲘")'>&#x11C98;</a>
+<a class='box' title='[U+11C99] MARCHEN SUBJOINED LETTER NYA' onClick='cp("𑲙")'>&#x11C99;</a>
+<a class='box' title='[U+11C9A] MARCHEN SUBJOINED LETTER TA' onClick='cp("𑲚")'>&#x11C9A;</a>
+<a class='box' title='[U+11C9B] MARCHEN SUBJOINED LETTER THA' onClick='cp("𑲛")'>&#x11C9B;</a>
+<a class='box' title='[U+11C9C] MARCHEN SUBJOINED LETTER DA' onClick='cp("𑲜")'>&#x11C9C;</a>
+<a class='box' title='[U+11C9D] MARCHEN SUBJOINED LETTER NA' onClick='cp("𑲝")'>&#x11C9D;</a>
+<a class='box' title='[U+11C9E] MARCHEN SUBJOINED LETTER PA' onClick='cp("𑲞")'>&#x11C9E;</a>
+<a class='box' title='[U+11C9F] MARCHEN SUBJOINED LETTER PHA' onClick='cp("𑲟")'>&#x11C9F;</a>
+<a class='box' title='[U+11CA0] MARCHEN SUBJOINED LETTER BA' onClick='cp("𑲠")'>&#x11CA0;</a>
+<a class='box' title='[U+11CA1] MARCHEN SUBJOINED LETTER MA' onClick='cp("𑲡")'>&#x11CA1;</a>
+<a class='box' title='[U+11CA2] MARCHEN SUBJOINED LETTER TSA' onClick='cp("𑲢")'>&#x11CA2;</a>
+<a class='box' title='[U+11CA3] MARCHEN SUBJOINED LETTER TSHA' onClick='cp("𑲣")'>&#x11CA3;</a>
+<a class='box' title='[U+11CA4] MARCHEN SUBJOINED LETTER DZA' onClick='cp("𑲤")'>&#x11CA4;</a>
+<a class='box' title='[U+11CA5] MARCHEN SUBJOINED LETTER WA' onClick='cp("𑲥")'>&#x11CA5;</a>
+<a class='box' title='[U+11CA6] MARCHEN SUBJOINED LETTER ZHA' onClick='cp("𑲦")'>&#x11CA6;</a>
+<a class='box' title='[U+11CA7] MARCHEN SUBJOINED LETTER ZA' onClick='cp("𑲧")'>&#x11CA7;</a>
+<a class='box' title='[U+11CA9] MARCHEN SUBJOINED LETTER YA' onClick='cp("𑲩")'>&#x11CA9;</a>
+<a class='box' title='[U+11CAA] MARCHEN SUBJOINED LETTER RA' onClick='cp("𑲪")'>&#x11CAA;</a>
+<a class='box' title='[U+11CAB] MARCHEN SUBJOINED LETTER LA' onClick='cp("𑲫")'>&#x11CAB;</a>
+<a class='box' title='[U+11CAC] MARCHEN SUBJOINED LETTER SHA' onClick='cp("𑲬")'>&#x11CAC;</a>
+<a class='box' title='[U+11CAD] MARCHEN SUBJOINED LETTER SA' onClick='cp("𑲭")'>&#x11CAD;</a>
+<a class='box' title='[U+11CAE] MARCHEN SUBJOINED LETTER HA' onClick='cp("𑲮")'>&#x11CAE;</a>
+<a class='box' title='[U+11CAF] MARCHEN SUBJOINED LETTER A' onClick='cp("𑲯")'>&#x11CAF;</a>
+<a class='box' title='[U+11CB0] MARCHEN VOWEL SIGN AA' onClick='cp("𑲰")'>&#x11CB0;</a>
+<a class='box' title='[U+11CB1] MARCHEN VOWEL SIGN I' onClick='cp("𑲱")'>&#x11CB1;</a>
+<a class='box' title='[U+11CB2] MARCHEN VOWEL SIGN U' onClick='cp("𑲲")'>&#x11CB2;</a>
+<a class='box' title='[U+11CB3] MARCHEN VOWEL SIGN E' onClick='cp("𑲳")'>&#x11CB3;</a>
+<a class='box' title='[U+11CB4] MARCHEN VOWEL SIGN O' onClick='cp("𑲴")'>&#x11CB4;</a>
+<a class='box' title='[U+11CB5] MARCHEN SIGN ANUSVARA' onClick='cp("𑲵")'>&#x11CB5;</a>
+<a class='box' title='[U+11CB6] MARCHEN SIGN CANDRABINDU' onClick='cp("𑲶")'>&#x11CB6;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: orangered; id=#;'>Mongolian (U+1800 - U+18AF)</h2>
+<div class='margined'>
+<a class='box' title='[U+1800] MONGOLIAN BIRGA' onClick='cp("᠀")'>&#x1800;</a>
+<a class='box' title='[U+1801] MONGOLIAN ELLIPSIS' onClick='cp("᠁")'>&#x1801;</a>
+<a class='box' title='[U+1802] MONGOLIAN COMMA' onClick='cp("᠂")'>&#x1802;</a>
+<a class='box' title='[U+1803] MONGOLIAN FULL STOP' onClick='cp("᠃")'>&#x1803;</a>
+<a class='box' title='[U+1804] MONGOLIAN COLON' onClick='cp("᠄")'>&#x1804;</a>
+<a class='box' title='[U+1805] MONGOLIAN FOUR DOTS' onClick='cp("᠅")'>&#x1805;</a>
+<a class='box' title='[U+1806] MONGOLIAN TODO SOFT HYPHEN' onClick='cp("᠆")'>&#x1806;</a>
+<a class='box' title='[U+1807] MONGOLIAN SIBE SYLLABLE BOUNDARY MARKER' onClick='cp("᠇")'>&#x1807;</a>
+<a class='box' title='[U+1808] MONGOLIAN MANCHU COMMA' onClick='cp("᠈")'>&#x1808;</a>
+<a class='box' title='[U+1809] MONGOLIAN MANCHU FULL STOP' onClick='cp("᠉")'>&#x1809;</a>
+<a class='box' title='[U+180A] MONGOLIAN NIRUGU' onClick='cp("᠊")'>&#x180A;</a>
+<a class='box' title='[U+180B] MONGOLIAN FREE VARIATION SELECTOR ONE' onClick='cp("᠋")'>&#x180B;</a>
+<a class='box' title='[U+180C] MONGOLIAN FREE VARIATION SELECTOR TWO' onClick='cp("᠌")'>&#x180C;</a>
+<a class='box' title='[U+180D] MONGOLIAN FREE VARIATION SELECTOR THREE' onClick='cp("᠍")'>&#x180D;</a>
+<a class='box' title='[U+180E] MONGOLIAN VOWEL SEPARATOR' onClick='cp("᠎")'>&#x180E;</a>
+<a class='box' title='[U+1810] MONGOLIAN DIGIT ZERO' onClick='cp("᠐")'>&#x1810;</a>
+<a class='box' title='[U+1811] MONGOLIAN DIGIT ONE' onClick='cp("᠑")'>&#x1811;</a>
+<a class='box' title='[U+1812] MONGOLIAN DIGIT TWO' onClick='cp("᠒")'>&#x1812;</a>
+<a class='box' title='[U+1813] MONGOLIAN DIGIT THREE' onClick='cp("᠓")'>&#x1813;</a>
+<a class='box' title='[U+1814] MONGOLIAN DIGIT FOUR' onClick='cp("᠔")'>&#x1814;</a>
+<a class='box' title='[U+1815] MONGOLIAN DIGIT FIVE' onClick='cp("᠕")'>&#x1815;</a>
+<a class='box' title='[U+1816] MONGOLIAN DIGIT SIX' onClick='cp("᠖")'>&#x1816;</a>
+<a class='box' title='[U+1817] MONGOLIAN DIGIT SEVEN' onClick='cp("᠗")'>&#x1817;</a>
+<a class='box' title='[U+1818] MONGOLIAN DIGIT EIGHT' onClick='cp("᠘")'>&#x1818;</a>
+<a class='box' title='[U+1819] MONGOLIAN DIGIT NINE' onClick='cp("᠙")'>&#x1819;</a>
+<a class='box' title='[U+1820] MONGOLIAN LETTER A' onClick='cp("ᠠ")'>&#x1820;</a>
+<a class='box' title='[U+1821] MONGOLIAN LETTER E' onClick='cp("ᠡ")'>&#x1821;</a>
+<a class='box' title='[U+1822] MONGOLIAN LETTER I' onClick='cp("ᠢ")'>&#x1822;</a>
+<a class='box' title='[U+1823] MONGOLIAN LETTER O' onClick='cp("ᠣ")'>&#x1823;</a>
+<a class='box' title='[U+1824] MONGOLIAN LETTER U' onClick='cp("ᠤ")'>&#x1824;</a>
+<a class='box' title='[U+1825] MONGOLIAN LETTER OE' onClick='cp("ᠥ")'>&#x1825;</a>
+<a class='box' title='[U+1826] MONGOLIAN LETTER UE' onClick='cp("ᠦ")'>&#x1826;</a>
+<a class='box' title='[U+1827] MONGOLIAN LETTER EE' onClick='cp("ᠧ")'>&#x1827;</a>
+<a class='box' title='[U+1828] MONGOLIAN LETTER NA' onClick='cp("ᠨ")'>&#x1828;</a>
+<a class='box' title='[U+1829] MONGOLIAN LETTER ANG' onClick='cp("ᠩ")'>&#x1829;</a>
+<a class='box' title='[U+182A] MONGOLIAN LETTER BA' onClick='cp("ᠪ")'>&#x182A;</a>
+<a class='box' title='[U+182B] MONGOLIAN LETTER PA' onClick='cp("ᠫ")'>&#x182B;</a>
+<a class='box' title='[U+182C] MONGOLIAN LETTER QA' onClick='cp("ᠬ")'>&#x182C;</a>
+<a class='box' title='[U+182D] MONGOLIAN LETTER GA' onClick='cp("ᠭ")'>&#x182D;</a>
+<a class='box' title='[U+182E] MONGOLIAN LETTER MA' onClick='cp("ᠮ")'>&#x182E;</a>
+<a class='box' title='[U+182F] MONGOLIAN LETTER LA' onClick='cp("ᠯ")'>&#x182F;</a>
+<a class='box' title='[U+1830] MONGOLIAN LETTER SA' onClick='cp("ᠰ")'>&#x1830;</a>
+<a class='box' title='[U+1831] MONGOLIAN LETTER SHA' onClick='cp("ᠱ")'>&#x1831;</a>
+<a class='box' title='[U+1832] MONGOLIAN LETTER TA' onClick='cp("ᠲ")'>&#x1832;</a>
+<a class='box' title='[U+1833] MONGOLIAN LETTER DA' onClick='cp("ᠳ")'>&#x1833;</a>
+<a class='box' title='[U+1834] MONGOLIAN LETTER CHA' onClick='cp("ᠴ")'>&#x1834;</a>
+<a class='box' title='[U+1835] MONGOLIAN LETTER JA' onClick='cp("ᠵ")'>&#x1835;</a>
+<a class='box' title='[U+1836] MONGOLIAN LETTER YA' onClick='cp("ᠶ")'>&#x1836;</a>
+<a class='box' title='[U+1837] MONGOLIAN LETTER RA' onClick='cp("ᠷ")'>&#x1837;</a>
+<a class='box' title='[U+1838] MONGOLIAN LETTER WA' onClick='cp("ᠸ")'>&#x1838;</a>
+<a class='box' title='[U+1839] MONGOLIAN LETTER FA' onClick='cp("ᠹ")'>&#x1839;</a>
+<a class='box' title='[U+183A] MONGOLIAN LETTER KA' onClick='cp("ᠺ")'>&#x183A;</a>
+<a class='box' title='[U+183B] MONGOLIAN LETTER KHA' onClick='cp("ᠻ")'>&#x183B;</a>
+<a class='box' title='[U+183C] MONGOLIAN LETTER TSA' onClick='cp("ᠼ")'>&#x183C;</a>
+<a class='box' title='[U+183D] MONGOLIAN LETTER ZA' onClick='cp("ᠽ")'>&#x183D;</a>
+<a class='box' title='[U+183E] MONGOLIAN LETTER HAA' onClick='cp("ᠾ")'>&#x183E;</a>
+<a class='box' title='[U+183F] MONGOLIAN LETTER ZRA' onClick='cp("ᠿ")'>&#x183F;</a>
+<a class='box' title='[U+1840] MONGOLIAN LETTER LHA' onClick='cp("ᡀ")'>&#x1840;</a>
+<a class='box' title='[U+1841] MONGOLIAN LETTER ZHI' onClick='cp("ᡁ")'>&#x1841;</a>
+<a class='box' title='[U+1842] MONGOLIAN LETTER CHI' onClick='cp("ᡂ")'>&#x1842;</a>
+<a class='box' title='[U+1843] MONGOLIAN LETTER TODO LONG VOWEL SIGN' onClick='cp("ᡃ")'>&#x1843;</a>
+<a class='box' title='[U+1844] MONGOLIAN LETTER TODO E' onClick='cp("ᡄ")'>&#x1844;</a>
+<a class='box' title='[U+1845] MONGOLIAN LETTER TODO I' onClick='cp("ᡅ")'>&#x1845;</a>
+<a class='box' title='[U+1846] MONGOLIAN LETTER TODO O' onClick='cp("ᡆ")'>&#x1846;</a>
+<a class='box' title='[U+1847] MONGOLIAN LETTER TODO U' onClick='cp("ᡇ")'>&#x1847;</a>
+<a class='box' title='[U+1848] MONGOLIAN LETTER TODO OE' onClick='cp("ᡈ")'>&#x1848;</a>
+<a class='box' title='[U+1849] MONGOLIAN LETTER TODO UE' onClick='cp("ᡉ")'>&#x1849;</a>
+<a class='box' title='[U+184A] MONGOLIAN LETTER TODO ANG' onClick='cp("ᡊ")'>&#x184A;</a>
+<a class='box' title='[U+184B] MONGOLIAN LETTER TODO BA' onClick='cp("ᡋ")'>&#x184B;</a>
+<a class='box' title='[U+184C] MONGOLIAN LETTER TODO PA' onClick='cp("ᡌ")'>&#x184C;</a>
+<a class='box' title='[U+184D] MONGOLIAN LETTER TODO QA' onClick='cp("ᡍ")'>&#x184D;</a>
+<a class='box' title='[U+184E] MONGOLIAN LETTER TODO GA' onClick='cp("ᡎ")'>&#x184E;</a>
+<a class='box' title='[U+184F] MONGOLIAN LETTER TODO MA' onClick='cp("ᡏ")'>&#x184F;</a>
+<a class='box' title='[U+1850] MONGOLIAN LETTER TODO TA' onClick='cp("ᡐ")'>&#x1850;</a>
+<a class='box' title='[U+1851] MONGOLIAN LETTER TODO DA' onClick='cp("ᡑ")'>&#x1851;</a>
+<a class='box' title='[U+1852] MONGOLIAN LETTER TODO CHA' onClick='cp("ᡒ")'>&#x1852;</a>
+<a class='box' title='[U+1853] MONGOLIAN LETTER TODO JA' onClick='cp("ᡓ")'>&#x1853;</a>
+<a class='box' title='[U+1854] MONGOLIAN LETTER TODO TSA' onClick='cp("ᡔ")'>&#x1854;</a>
+<a class='box' title='[U+1855] MONGOLIAN LETTER TODO YA' onClick='cp("ᡕ")'>&#x1855;</a>
+<a class='box' title='[U+1856] MONGOLIAN LETTER TODO WA' onClick='cp("ᡖ")'>&#x1856;</a>
+<a class='box' title='[U+1857] MONGOLIAN LETTER TODO KA' onClick='cp("ᡗ")'>&#x1857;</a>
+<a class='box' title='[U+1858] MONGOLIAN LETTER TODO GAA' onClick='cp("ᡘ")'>&#x1858;</a>
+<a class='box' title='[U+1859] MONGOLIAN LETTER TODO HAA' onClick='cp("ᡙ")'>&#x1859;</a>
+<a class='box' title='[U+185A] MONGOLIAN LETTER TODO JIA' onClick='cp("ᡚ")'>&#x185A;</a>
+<a class='box' title='[U+185B] MONGOLIAN LETTER TODO NIA' onClick='cp("ᡛ")'>&#x185B;</a>
+<a class='box' title='[U+185C] MONGOLIAN LETTER TODO DZA' onClick='cp("ᡜ")'>&#x185C;</a>
+<a class='box' title='[U+185D] MONGOLIAN LETTER SIBE E' onClick='cp("ᡝ")'>&#x185D;</a>
+<a class='box' title='[U+185E] MONGOLIAN LETTER SIBE I' onClick='cp("ᡞ")'>&#x185E;</a>
+<a class='box' title='[U+185F] MONGOLIAN LETTER SIBE IY' onClick='cp("ᡟ")'>&#x185F;</a>
+<a class='box' title='[U+1860] MONGOLIAN LETTER SIBE UE' onClick='cp("ᡠ")'>&#x1860;</a>
+<a class='box' title='[U+1861] MONGOLIAN LETTER SIBE U' onClick='cp("ᡡ")'>&#x1861;</a>
+<a class='box' title='[U+1862] MONGOLIAN LETTER SIBE ANG' onClick='cp("ᡢ")'>&#x1862;</a>
+<a class='box' title='[U+1863] MONGOLIAN LETTER SIBE KA' onClick='cp("ᡣ")'>&#x1863;</a>
+<a class='box' title='[U+1864] MONGOLIAN LETTER SIBE GA' onClick='cp("ᡤ")'>&#x1864;</a>
+<a class='box' title='[U+1865] MONGOLIAN LETTER SIBE HA' onClick='cp("ᡥ")'>&#x1865;</a>
+<a class='box' title='[U+1866] MONGOLIAN LETTER SIBE PA' onClick='cp("ᡦ")'>&#x1866;</a>
+<a class='box' title='[U+1867] MONGOLIAN LETTER SIBE SHA' onClick='cp("ᡧ")'>&#x1867;</a>
+<a class='box' title='[U+1868] MONGOLIAN LETTER SIBE TA' onClick='cp("ᡨ")'>&#x1868;</a>
+<a class='box' title='[U+1869] MONGOLIAN LETTER SIBE DA' onClick='cp("ᡩ")'>&#x1869;</a>
+<a class='box' title='[U+186A] MONGOLIAN LETTER SIBE JA' onClick='cp("ᡪ")'>&#x186A;</a>
+<a class='box' title='[U+186B] MONGOLIAN LETTER SIBE FA' onClick='cp("ᡫ")'>&#x186B;</a>
+<a class='box' title='[U+186C] MONGOLIAN LETTER SIBE GAA' onClick='cp("ᡬ")'>&#x186C;</a>
+<a class='box' title='[U+186D] MONGOLIAN LETTER SIBE HAA' onClick='cp("ᡭ")'>&#x186D;</a>
+<a class='box' title='[U+186E] MONGOLIAN LETTER SIBE TSA' onClick='cp("ᡮ")'>&#x186E;</a>
+<a class='box' title='[U+186F] MONGOLIAN LETTER SIBE ZA' onClick='cp("ᡯ")'>&#x186F;</a>
+<a class='box' title='[U+1870] MONGOLIAN LETTER SIBE RAA' onClick='cp("ᡰ")'>&#x1870;</a>
+<a class='box' title='[U+1871] MONGOLIAN LETTER SIBE CHA' onClick='cp("ᡱ")'>&#x1871;</a>
+<a class='box' title='[U+1872] MONGOLIAN LETTER SIBE ZHA' onClick='cp("ᡲ")'>&#x1872;</a>
+<a class='box' title='[U+1873] MONGOLIAN LETTER MANCHU I' onClick='cp("ᡳ")'>&#x1873;</a>
+<a class='box' title='[U+1874] MONGOLIAN LETTER MANCHU KA' onClick='cp("ᡴ")'>&#x1874;</a>
+<a class='box' title='[U+1875] MONGOLIAN LETTER MANCHU RA' onClick='cp("ᡵ")'>&#x1875;</a>
+<a class='box' title='[U+1876] MONGOLIAN LETTER MANCHU FA' onClick='cp("ᡶ")'>&#x1876;</a>
+<a class='box' title='[U+1877] MONGOLIAN LETTER MANCHU ZHA' onClick='cp("ᡷ")'>&#x1877;</a>
+<a class='box' title='[U+1878] MONGOLIAN LETTER CHA WITH TWO DOTS' onClick='cp("ᡸ")'>&#x1878;</a>
+<a class='box' title='[U+1880] MONGOLIAN LETTER ALI GALI ANUSVARA ONE' onClick='cp("ᢀ")'>&#x1880;</a>
+<a class='box' title='[U+1881] MONGOLIAN LETTER ALI GALI VISARGA ONE' onClick='cp("ᢁ")'>&#x1881;</a>
+<a class='box' title='[U+1882] MONGOLIAN LETTER ALI GALI DAMARU' onClick='cp("ᢂ")'>&#x1882;</a>
+<a class='box' title='[U+1883] MONGOLIAN LETTER ALI GALI UBADAMA' onClick='cp("ᢃ")'>&#x1883;</a>
+<a class='box' title='[U+1884] MONGOLIAN LETTER ALI GALI INVERTED UBADAMA' onClick='cp("ᢄ")'>&#x1884;</a>
+<a class='box' title='[U+1885] MONGOLIAN LETTER ALI GALI BALUDA' onClick='cp("ᢅ")'>&#x1885;</a>
+<a class='box' title='[U+1886] MONGOLIAN LETTER ALI GALI THREE BALUDA' onClick='cp("ᢆ")'>&#x1886;</a>
+<a class='box' title='[U+1887] MONGOLIAN LETTER ALI GALI A' onClick='cp("ᢇ")'>&#x1887;</a>
+<a class='box' title='[U+1888] MONGOLIAN LETTER ALI GALI I' onClick='cp("ᢈ")'>&#x1888;</a>
+<a class='box' title='[U+1889] MONGOLIAN LETTER ALI GALI KA' onClick='cp("ᢉ")'>&#x1889;</a>
+<a class='box' title='[U+188A] MONGOLIAN LETTER ALI GALI NGA' onClick='cp("ᢊ")'>&#x188A;</a>
+<a class='box' title='[U+188B] MONGOLIAN LETTER ALI GALI CA' onClick='cp("ᢋ")'>&#x188B;</a>
+<a class='box' title='[U+188C] MONGOLIAN LETTER ALI GALI TTA' onClick='cp("ᢌ")'>&#x188C;</a>
+<a class='box' title='[U+188D] MONGOLIAN LETTER ALI GALI TTHA' onClick='cp("ᢍ")'>&#x188D;</a>
+<a class='box' title='[U+188E] MONGOLIAN LETTER ALI GALI DDA' onClick='cp("ᢎ")'>&#x188E;</a>
+<a class='box' title='[U+188F] MONGOLIAN LETTER ALI GALI NNA' onClick='cp("ᢏ")'>&#x188F;</a>
+<a class='box' title='[U+1890] MONGOLIAN LETTER ALI GALI TA' onClick='cp("ᢐ")'>&#x1890;</a>
+<a class='box' title='[U+1891] MONGOLIAN LETTER ALI GALI DA' onClick='cp("ᢑ")'>&#x1891;</a>
+<a class='box' title='[U+1892] MONGOLIAN LETTER ALI GALI PA' onClick='cp("ᢒ")'>&#x1892;</a>
+<a class='box' title='[U+1893] MONGOLIAN LETTER ALI GALI PHA' onClick='cp("ᢓ")'>&#x1893;</a>
+<a class='box' title='[U+1894] MONGOLIAN LETTER ALI GALI SSA' onClick='cp("ᢔ")'>&#x1894;</a>
+<a class='box' title='[U+1895] MONGOLIAN LETTER ALI GALI ZHA' onClick='cp("ᢕ")'>&#x1895;</a>
+<a class='box' title='[U+1896] MONGOLIAN LETTER ALI GALI ZA' onClick='cp("ᢖ")'>&#x1896;</a>
+<a class='box' title='[U+1897] MONGOLIAN LETTER ALI GALI AH' onClick='cp("ᢗ")'>&#x1897;</a>
+<a class='box' title='[U+1898] MONGOLIAN LETTER TODO ALI GALI TA' onClick='cp("ᢘ")'>&#x1898;</a>
+<a class='box' title='[U+1899] MONGOLIAN LETTER TODO ALI GALI ZHA' onClick='cp("ᢙ")'>&#x1899;</a>
+<a class='box' title='[U+189A] MONGOLIAN LETTER MANCHU ALI GALI GHA' onClick='cp("ᢚ")'>&#x189A;</a>
+<a class='box' title='[U+189B] MONGOLIAN LETTER MANCHU ALI GALI NGA' onClick='cp("ᢛ")'>&#x189B;</a>
+<a class='box' title='[U+189C] MONGOLIAN LETTER MANCHU ALI GALI CA' onClick='cp("ᢜ")'>&#x189C;</a>
+<a class='box' title='[U+189D] MONGOLIAN LETTER MANCHU ALI GALI JHA' onClick='cp("ᢝ")'>&#x189D;</a>
+<a class='box' title='[U+189E] MONGOLIAN LETTER MANCHU ALI GALI TTA' onClick='cp("ᢞ")'>&#x189E;</a>
+<a class='box' title='[U+189F] MONGOLIAN LETTER MANCHU ALI GALI DDHA' onClick='cp("ᢟ")'>&#x189F;</a>
+<a class='box' title='[U+18A0] MONGOLIAN LETTER MANCHU ALI GALI TA' onClick='cp("ᢠ")'>&#x18A0;</a>
+<a class='box' title='[U+18A1] MONGOLIAN LETTER MANCHU ALI GALI DHA' onClick='cp("ᢡ")'>&#x18A1;</a>
+<a class='box' title='[U+18A2] MONGOLIAN LETTER MANCHU ALI GALI SSA' onClick='cp("ᢢ")'>&#x18A2;</a>
+<a class='box' title='[U+18A3] MONGOLIAN LETTER MANCHU ALI GALI CYA' onClick='cp("ᢣ")'>&#x18A3;</a>
+<a class='box' title='[U+18A4] MONGOLIAN LETTER MANCHU ALI GALI ZHA' onClick='cp("ᢤ")'>&#x18A4;</a>
+<a class='box' title='[U+18A5] MONGOLIAN LETTER MANCHU ALI GALI ZA' onClick='cp("ᢥ")'>&#x18A5;</a>
+<a class='box' title='[U+18A6] MONGOLIAN LETTER ALI GALI HALF U' onClick='cp("ᢦ")'>&#x18A6;</a>
+<a class='box' title='[U+18A7] MONGOLIAN LETTER ALI GALI HALF YA' onClick='cp("ᢧ")'>&#x18A7;</a>
+<a class='box' title='[U+18A8] MONGOLIAN LETTER MANCHU ALI GALI BHA' onClick='cp("ᢨ")'>&#x18A8;</a>
+<a class='box' title='[U+18A9] MONGOLIAN LETTER ALI GALI DAGALGA' onClick='cp("ᢩ")'>&#x18A9;</a>
+<a class='box' title='[U+18AA] MONGOLIAN LETTER MANCHU ALI GALI LHA' onClick='cp("ᢪ")'>&#x18AA;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #27e; id=#;'>Mongolian Supplement (U+11660 - U+1167F)</h2>
+<div class='margined'>
+<a class='box' title='[U+11660] MONGOLIAN BIRGA WITH ORNAMENT' onClick='cp("𑙠")'>&#x11660;</a>
+<a class='box' title='[U+11661] MONGOLIAN ROTATED BIRGA' onClick='cp("𑙡")'>&#x11661;</a>
+<a class='box' title='[U+11662] MONGOLIAN DOUBLE BIRGA WITH ORNAMENT' onClick='cp("𑙢")'>&#x11662;</a>
+<a class='box' title='[U+11663] MONGOLIAN TRIPLE BIRGA WITH ORNAMENT' onClick='cp("𑙣")'>&#x11663;</a>
+<a class='box' title='[U+11664] MONGOLIAN BIRGA WITH DOUBLE ORNAMENT' onClick='cp("𑙤")'>&#x11664;</a>
+<a class='box' title='[U+11665] MONGOLIAN ROTATED BIRGA WITH ORNAMENT' onClick='cp("𑙥")'>&#x11665;</a>
+<a class='box' title='[U+11666] MONGOLIAN ROTATED BIRGA WITH DOUBLE ORNAMENT' onClick='cp("𑙦")'>&#x11666;</a>
+<a class='box' title='[U+11667] MONGOLIAN INVERTED BIRGA' onClick='cp("𑙧")'>&#x11667;</a>
+<a class='box' title='[U+11668] MONGOLIAN INVERTED BIRGA WITH DOUBLE ORNAMENT' onClick='cp("𑙨")'>&#x11668;</a>
+<a class='box' title='[U+11669] MONGOLIAN SWIRL BIRGA' onClick='cp("𑙩")'>&#x11669;</a>
+<a class='box' title='[U+1166A] MONGOLIAN SWIRL BIRGA WITH ORNAMENT' onClick='cp("𑙪")'>&#x1166A;</a>
+<a class='box' title='[U+1166B] MONGOLIAN SWIRL BIRGA WITH DOUBLE ORNAMENT' onClick='cp("𑙫")'>&#x1166B;</a>
+<a class='box' title='[U+1166C] MONGOLIAN TURNED SWIRL BIRGA WITH DOUBLE ORNAMENT' onClick='cp("𑙬")'>&#x1166C;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #f44; id=#;'>Old Sogdian (U+10F00 - U+10F2F)</h2>
+<div class='margined'>
+<a class='box' title='[U+10F00] OLD SOGDIAN LETTER ALEPH' onClick='cp("𐼀")'>&#x10F00;</a>
+<a class='box' title='[U+10F01] OLD SOGDIAN LETTER FINAL ALEPH' onClick='cp("𐼁")'>&#x10F01;</a>
+<a class='box' title='[U+10F02] OLD SOGDIAN LETTER BETH' onClick='cp("𐼂")'>&#x10F02;</a>
+<a class='box' title='[U+10F03] OLD SOGDIAN LETTER FINAL BETH' onClick='cp("𐼃")'>&#x10F03;</a>
+<a class='box' title='[U+10F04] OLD SOGDIAN LETTER GIMEL' onClick='cp("𐼄")'>&#x10F04;</a>
+<a class='box' title='[U+10F05] OLD SOGDIAN LETTER HE' onClick='cp("𐼅")'>&#x10F05;</a>
+<a class='box' title='[U+10F06] OLD SOGDIAN LETTER FINAL HE' onClick='cp("𐼆")'>&#x10F06;</a>
+<a class='box' title='[U+10F07] OLD SOGDIAN LETTER WAW' onClick='cp("𐼇")'>&#x10F07;</a>
+<a class='box' title='[U+10F08] OLD SOGDIAN LETTER ZAYIN' onClick='cp("𐼈")'>&#x10F08;</a>
+<a class='box' title='[U+10F09] OLD SOGDIAN LETTER HETH' onClick='cp("𐼉")'>&#x10F09;</a>
+<a class='box' title='[U+10F0A] OLD SOGDIAN LETTER YODH' onClick='cp("𐼊")'>&#x10F0A;</a>
+<a class='box' title='[U+10F0B] OLD SOGDIAN LETTER KAPH' onClick='cp("𐼋")'>&#x10F0B;</a>
+<a class='box' title='[U+10F0C] OLD SOGDIAN LETTER LAMEDH' onClick='cp("𐼌")'>&#x10F0C;</a>
+<a class='box' title='[U+10F0D] OLD SOGDIAN LETTER MEM' onClick='cp("𐼍")'>&#x10F0D;</a>
+<a class='box' title='[U+10F0E] OLD SOGDIAN LETTER NUN' onClick='cp("𐼎")'>&#x10F0E;</a>
+<a class='box' title='[U+10F0F] OLD SOGDIAN LETTER FINAL NUN' onClick='cp("𐼏")'>&#x10F0F;</a>
+<a class='box' title='[U+10F10] OLD SOGDIAN LETTER FINAL NUN WITH VERTICAL TAIL' onClick='cp("𐼐")'>&#x10F10;</a>
+<a class='box' title='[U+10F11] OLD SOGDIAN LETTER SAMEKH' onClick='cp("𐼑")'>&#x10F11;</a>
+<a class='box' title='[U+10F12] OLD SOGDIAN LETTER AYIN' onClick='cp("𐼒")'>&#x10F12;</a>
+<a class='box' title='[U+10F13] OLD SOGDIAN LETTER ALTERNATE AYIN' onClick='cp("𐼓")'>&#x10F13;</a>
+<a class='box' title='[U+10F14] OLD SOGDIAN LETTER PE' onClick='cp("𐼔")'>&#x10F14;</a>
+<a class='box' title='[U+10F15] OLD SOGDIAN LETTER SADHE' onClick='cp("𐼕")'>&#x10F15;</a>
+<a class='box' title='[U+10F16] OLD SOGDIAN LETTER FINAL SADHE' onClick='cp("𐼖")'>&#x10F16;</a>
+<a class='box' title='[U+10F17] OLD SOGDIAN LETTER FINAL SADHE WITH VERTICAL TAIL' onClick='cp("𐼗")'>&#x10F17;</a>
+<a class='box' title='[U+10F18] OLD SOGDIAN LETTER RESH-AYIN-DALETH' onClick='cp("𐼘")'>&#x10F18;</a>
+<a class='box' title='[U+10F19] OLD SOGDIAN LETTER SHIN' onClick='cp("𐼙")'>&#x10F19;</a>
+<a class='box' title='[U+10F1A] OLD SOGDIAN LETTER TAW' onClick='cp("𐼚")'>&#x10F1A;</a>
+<a class='box' title='[U+10F1B] OLD SOGDIAN LETTER FINAL TAW' onClick='cp("𐼛")'>&#x10F1B;</a>
+<a class='box' title='[U+10F1C] OLD SOGDIAN LETTER FINAL TAW WITH VERTICAL TAIL' onClick='cp("𐼜")'>&#x10F1C;</a>
+<a class='box' title='[U+10F1D] OLD SOGDIAN NUMBER ONE' onClick='cp("𐼝")'>&#x10F1D;</a>
+<a class='box' title='[U+10F1E] OLD SOGDIAN NUMBER TWO' onClick='cp("𐼞")'>&#x10F1E;</a>
+<a class='box' title='[U+10F1F] OLD SOGDIAN NUMBER THREE' onClick='cp("𐼟")'>&#x10F1F;</a>
+<a class='box' title='[U+10F20] OLD SOGDIAN NUMBER FOUR' onClick='cp("𐼠")'>&#x10F20;</a>
+<a class='box' title='[U+10F21] OLD SOGDIAN NUMBER FIVE' onClick='cp("𐼡")'>&#x10F21;</a>
+<a class='box' title='[U+10F22] OLD SOGDIAN NUMBER TEN' onClick='cp("𐼢")'>&#x10F22;</a>
+<a class='box' title='[U+10F23] OLD SOGDIAN NUMBER TWENTY' onClick='cp("𐼣")'>&#x10F23;</a>
+<a class='box' title='[U+10F24] OLD SOGDIAN NUMBER THIRTY' onClick='cp("𐼤")'>&#x10F24;</a>
+<a class='box' title='[U+10F25] OLD SOGDIAN NUMBER ONE HUNDRED' onClick='cp("𐼥")'>&#x10F25;</a>
+<a class='box' title='[U+10F26] OLD SOGDIAN FRACTION ONE HALF' onClick='cp("𐼦")'>&#x10F26;</a>
+<a class='box' title='[U+10F27] OLD SOGDIAN LIGATURE AYIN-DALETH' onClick='cp("𐼧")'>&#x10F27;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #222; id=#;'>Old Turkic (U+10C00 - U+10C4F)</h2>
+<div class='margined'>
+<a class='box' title='[U+10C00] OLD TURKIC LETTER ORKHON A' onClick='cp("𐰀")'>&#x10C00;</a>
+<a class='box' title='[U+10C01] OLD TURKIC LETTER YENISEI A' onClick='cp("𐰁")'>&#x10C01;</a>
+<a class='box' title='[U+10C02] OLD TURKIC LETTER YENISEI AE' onClick='cp("𐰂")'>&#x10C02;</a>
+<a class='box' title='[U+10C03] OLD TURKIC LETTER ORKHON I' onClick='cp("𐰃")'>&#x10C03;</a>
+<a class='box' title='[U+10C04] OLD TURKIC LETTER YENISEI I' onClick='cp("𐰄")'>&#x10C04;</a>
+<a class='box' title='[U+10C05] OLD TURKIC LETTER YENISEI E' onClick='cp("𐰅")'>&#x10C05;</a>
+<a class='box' title='[U+10C06] OLD TURKIC LETTER ORKHON O' onClick='cp("𐰆")'>&#x10C06;</a>
+<a class='box' title='[U+10C07] OLD TURKIC LETTER ORKHON OE' onClick='cp("𐰇")'>&#x10C07;</a>
+<a class='box' title='[U+10C08] OLD TURKIC LETTER YENISEI OE' onClick='cp("𐰈")'>&#x10C08;</a>
+<a class='box' title='[U+10C09] OLD TURKIC LETTER ORKHON AB' onClick='cp("𐰉")'>&#x10C09;</a>
+<a class='box' title='[U+10C0A] OLD TURKIC LETTER YENISEI AB' onClick='cp("𐰊")'>&#x10C0A;</a>
+<a class='box' title='[U+10C0B] OLD TURKIC LETTER ORKHON AEB' onClick='cp("𐰋")'>&#x10C0B;</a>
+<a class='box' title='[U+10C0C] OLD TURKIC LETTER YENISEI AEB' onClick='cp("𐰌")'>&#x10C0C;</a>
+<a class='box' title='[U+10C0D] OLD TURKIC LETTER ORKHON AG' onClick='cp("𐰍")'>&#x10C0D;</a>
+<a class='box' title='[U+10C0E] OLD TURKIC LETTER YENISEI AG' onClick='cp("𐰎")'>&#x10C0E;</a>
+<a class='box' title='[U+10C0F] OLD TURKIC LETTER ORKHON AEG' onClick='cp("𐰏")'>&#x10C0F;</a>
+<a class='box' title='[U+10C10] OLD TURKIC LETTER YENISEI AEG' onClick='cp("𐰐")'>&#x10C10;</a>
+<a class='box' title='[U+10C11] OLD TURKIC LETTER ORKHON AD' onClick='cp("𐰑")'>&#x10C11;</a>
+<a class='box' title='[U+10C12] OLD TURKIC LETTER YENISEI AD' onClick='cp("𐰒")'>&#x10C12;</a>
+<a class='box' title='[U+10C13] OLD TURKIC LETTER ORKHON AED' onClick='cp("𐰓")'>&#x10C13;</a>
+<a class='box' title='[U+10C14] OLD TURKIC LETTER ORKHON EZ' onClick='cp("𐰔")'>&#x10C14;</a>
+<a class='box' title='[U+10C15] OLD TURKIC LETTER YENISEI EZ' onClick='cp("𐰕")'>&#x10C15;</a>
+<a class='box' title='[U+10C16] OLD TURKIC LETTER ORKHON AY' onClick='cp("𐰖")'>&#x10C16;</a>
+<a class='box' title='[U+10C17] OLD TURKIC LETTER YENISEI AY' onClick='cp("𐰗")'>&#x10C17;</a>
+<a class='box' title='[U+10C18] OLD TURKIC LETTER ORKHON AEY' onClick='cp("𐰘")'>&#x10C18;</a>
+<a class='box' title='[U+10C19] OLD TURKIC LETTER YENISEI AEY' onClick='cp("𐰙")'>&#x10C19;</a>
+<a class='box' title='[U+10C1A] OLD TURKIC LETTER ORKHON AEK' onClick='cp("𐰚")'>&#x10C1A;</a>
+<a class='box' title='[U+10C1B] OLD TURKIC LETTER YENISEI AEK' onClick='cp("𐰛")'>&#x10C1B;</a>
+<a class='box' title='[U+10C1C] OLD TURKIC LETTER ORKHON OEK' onClick='cp("𐰜")'>&#x10C1C;</a>
+<a class='box' title='[U+10C1D] OLD TURKIC LETTER YENISEI OEK' onClick='cp("𐰝")'>&#x10C1D;</a>
+<a class='box' title='[U+10C1E] OLD TURKIC LETTER ORKHON AL' onClick='cp("𐰞")'>&#x10C1E;</a>
+<a class='box' title='[U+10C1F] OLD TURKIC LETTER YENISEI AL' onClick='cp("𐰟")'>&#x10C1F;</a>
+<a class='box' title='[U+10C20] OLD TURKIC LETTER ORKHON AEL' onClick='cp("𐰠")'>&#x10C20;</a>
+<a class='box' title='[U+10C21] OLD TURKIC LETTER ORKHON ELT' onClick='cp("𐰡")'>&#x10C21;</a>
+<a class='box' title='[U+10C22] OLD TURKIC LETTER ORKHON EM' onClick='cp("𐰢")'>&#x10C22;</a>
+<a class='box' title='[U+10C23] OLD TURKIC LETTER ORKHON AN' onClick='cp("𐰣")'>&#x10C23;</a>
+<a class='box' title='[U+10C24] OLD TURKIC LETTER ORKHON AEN' onClick='cp("𐰤")'>&#x10C24;</a>
+<a class='box' title='[U+10C25] OLD TURKIC LETTER YENISEI AEN' onClick='cp("𐰥")'>&#x10C25;</a>
+<a class='box' title='[U+10C26] OLD TURKIC LETTER ORKHON ENT' onClick='cp("𐰦")'>&#x10C26;</a>
+<a class='box' title='[U+10C27] OLD TURKIC LETTER YENISEI ENT' onClick='cp("𐰧")'>&#x10C27;</a>
+<a class='box' title='[U+10C28] OLD TURKIC LETTER ORKHON ENC' onClick='cp("𐰨")'>&#x10C28;</a>
+<a class='box' title='[U+10C29] OLD TURKIC LETTER YENISEI ENC' onClick='cp("𐰩")'>&#x10C29;</a>
+<a class='box' title='[U+10C2A] OLD TURKIC LETTER ORKHON ENY' onClick='cp("𐰪")'>&#x10C2A;</a>
+<a class='box' title='[U+10C2B] OLD TURKIC LETTER YENISEI ENY' onClick='cp("𐰫")'>&#x10C2B;</a>
+<a class='box' title='[U+10C2C] OLD TURKIC LETTER YENISEI ANG' onClick='cp("𐰬")'>&#x10C2C;</a>
+<a class='box' title='[U+10C2D] OLD TURKIC LETTER ORKHON ENG' onClick='cp("𐰭")'>&#x10C2D;</a>
+<a class='box' title='[U+10C2E] OLD TURKIC LETTER YENISEI AENG' onClick='cp("𐰮")'>&#x10C2E;</a>
+<a class='box' title='[U+10C2F] OLD TURKIC LETTER ORKHON EP' onClick='cp("𐰯")'>&#x10C2F;</a>
+<a class='box' title='[U+10C30] OLD TURKIC LETTER ORKHON OP' onClick='cp("𐰰")'>&#x10C30;</a>
+<a class='box' title='[U+10C31] OLD TURKIC LETTER ORKHON IC' onClick='cp("𐰱")'>&#x10C31;</a>
+<a class='box' title='[U+10C32] OLD TURKIC LETTER ORKHON EC' onClick='cp("𐰲")'>&#x10C32;</a>
+<a class='box' title='[U+10C33] OLD TURKIC LETTER YENISEI EC' onClick='cp("𐰳")'>&#x10C33;</a>
+<a class='box' title='[U+10C34] OLD TURKIC LETTER ORKHON AQ' onClick='cp("𐰴")'>&#x10C34;</a>
+<a class='box' title='[U+10C35] OLD TURKIC LETTER YENISEI AQ' onClick='cp("𐰵")'>&#x10C35;</a>
+<a class='box' title='[U+10C36] OLD TURKIC LETTER ORKHON IQ' onClick='cp("𐰶")'>&#x10C36;</a>
+<a class='box' title='[U+10C37] OLD TURKIC LETTER YENISEI IQ' onClick='cp("𐰷")'>&#x10C37;</a>
+<a class='box' title='[U+10C38] OLD TURKIC LETTER ORKHON OQ' onClick='cp("𐰸")'>&#x10C38;</a>
+<a class='box' title='[U+10C39] OLD TURKIC LETTER YENISEI OQ' onClick='cp("𐰹")'>&#x10C39;</a>
+<a class='box' title='[U+10C3A] OLD TURKIC LETTER ORKHON AR' onClick='cp("𐰺")'>&#x10C3A;</a>
+<a class='box' title='[U+10C3B] OLD TURKIC LETTER YENISEI AR' onClick='cp("𐰻")'>&#x10C3B;</a>
+<a class='box' title='[U+10C3C] OLD TURKIC LETTER ORKHON AER' onClick='cp("𐰼")'>&#x10C3C;</a>
+<a class='box' title='[U+10C3D] OLD TURKIC LETTER ORKHON AS' onClick='cp("𐰽")'>&#x10C3D;</a>
+<a class='box' title='[U+10C3E] OLD TURKIC LETTER ORKHON AES' onClick='cp("𐰾")'>&#x10C3E;</a>
+<a class='box' title='[U+10C3F] OLD TURKIC LETTER ORKHON ASH' onClick='cp("𐰿")'>&#x10C3F;</a>
+<a class='box' title='[U+10C40] OLD TURKIC LETTER YENISEI ASH' onClick='cp("𐱀")'>&#x10C40;</a>
+<a class='box' title='[U+10C41] OLD TURKIC LETTER ORKHON ESH' onClick='cp("𐱁")'>&#x10C41;</a>
+<a class='box' title='[U+10C42] OLD TURKIC LETTER YENISEI ESH' onClick='cp("𐱂")'>&#x10C42;</a>
+<a class='box' title='[U+10C43] OLD TURKIC LETTER ORKHON AT' onClick='cp("𐱃")'>&#x10C43;</a>
+<a class='box' title='[U+10C44] OLD TURKIC LETTER YENISEI AT' onClick='cp("𐱄")'>&#x10C44;</a>
+<a class='box' title='[U+10C45] OLD TURKIC LETTER ORKHON AET' onClick='cp("𐱅")'>&#x10C45;</a>
+<a class='box' title='[U+10C46] OLD TURKIC LETTER YENISEI AET' onClick='cp("𐱆")'>&#x10C46;</a>
+<a class='box' title='[U+10C47] OLD TURKIC LETTER ORKHON OT' onClick='cp("𐱇")'>&#x10C47;</a>
+<a class='box' title='[U+10C48] OLD TURKIC LETTER ORKHON BASH' onClick='cp("𐱈")'>&#x10C48;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #666; id=#;'>Phags-Pa (U+A840 - U+A87F)</h2>
+<div class='margined'>
+<a class='box' title='[U+A840] PHAGS-PA LETTER KA' onClick='cp("ꡀ")'>&#xA840;</a>
+<a class='box' title='[U+A841] PHAGS-PA LETTER KHA' onClick='cp("ꡁ")'>&#xA841;</a>
+<a class='box' title='[U+A842] PHAGS-PA LETTER GA' onClick='cp("ꡂ")'>&#xA842;</a>
+<a class='box' title='[U+A843] PHAGS-PA LETTER NGA' onClick='cp("ꡃ")'>&#xA843;</a>
+<a class='box' title='[U+A844] PHAGS-PA LETTER CA' onClick='cp("ꡄ")'>&#xA844;</a>
+<a class='box' title='[U+A845] PHAGS-PA LETTER CHA' onClick='cp("ꡅ")'>&#xA845;</a>
+<a class='box' title='[U+A846] PHAGS-PA LETTER JA' onClick='cp("ꡆ")'>&#xA846;</a>
+<a class='box' title='[U+A847] PHAGS-PA LETTER NYA' onClick='cp("ꡇ")'>&#xA847;</a>
+<a class='box' title='[U+A848] PHAGS-PA LETTER TA' onClick='cp("ꡈ")'>&#xA848;</a>
+<a class='box' title='[U+A849] PHAGS-PA LETTER THA' onClick='cp("ꡉ")'>&#xA849;</a>
+<a class='box' title='[U+A84A] PHAGS-PA LETTER DA' onClick='cp("ꡊ")'>&#xA84A;</a>
+<a class='box' title='[U+A84B] PHAGS-PA LETTER NA' onClick='cp("ꡋ")'>&#xA84B;</a>
+<a class='box' title='[U+A84C] PHAGS-PA LETTER PA' onClick='cp("ꡌ")'>&#xA84C;</a>
+<a class='box' title='[U+A84D] PHAGS-PA LETTER PHA' onClick='cp("ꡍ")'>&#xA84D;</a>
+<a class='box' title='[U+A84E] PHAGS-PA LETTER BA' onClick='cp("ꡎ")'>&#xA84E;</a>
+<a class='box' title='[U+A84F] PHAGS-PA LETTER MA' onClick='cp("ꡏ")'>&#xA84F;</a>
+<a class='box' title='[U+A850] PHAGS-PA LETTER TSA' onClick='cp("ꡐ")'>&#xA850;</a>
+<a class='box' title='[U+A851] PHAGS-PA LETTER TSHA' onClick='cp("ꡑ")'>&#xA851;</a>
+<a class='box' title='[U+A852] PHAGS-PA LETTER DZA' onClick='cp("ꡒ")'>&#xA852;</a>
+<a class='box' title='[U+A853] PHAGS-PA LETTER WA' onClick='cp("ꡓ")'>&#xA853;</a>
+<a class='box' title='[U+A854] PHAGS-PA LETTER ZHA' onClick='cp("ꡔ")'>&#xA854;</a>
+<a class='box' title='[U+A855] PHAGS-PA LETTER ZA' onClick='cp("ꡕ")'>&#xA855;</a>
+<a class='box' title='[U+A856] PHAGS-PA LETTER SMALL A' onClick='cp("ꡖ")'>&#xA856;</a>
+<a class='box' title='[U+A857] PHAGS-PA LETTER YA' onClick='cp("ꡗ")'>&#xA857;</a>
+<a class='box' title='[U+A858] PHAGS-PA LETTER RA' onClick='cp("ꡘ")'>&#xA858;</a>
+<a class='box' title='[U+A859] PHAGS-PA LETTER LA' onClick='cp("ꡙ")'>&#xA859;</a>
+<a class='box' title='[U+A85A] PHAGS-PA LETTER SHA' onClick='cp("ꡚ")'>&#xA85A;</a>
+<a class='box' title='[U+A85B] PHAGS-PA LETTER SA' onClick='cp("ꡛ")'>&#xA85B;</a>
+<a class='box' title='[U+A85C] PHAGS-PA LETTER HA' onClick='cp("ꡜ")'>&#xA85C;</a>
+<a class='box' title='[U+A85D] PHAGS-PA LETTER A' onClick='cp("ꡝ")'>&#xA85D;</a>
+<a class='box' title='[U+A85E] PHAGS-PA LETTER I' onClick='cp("ꡞ")'>&#xA85E;</a>
+<a class='box' title='[U+A85F] PHAGS-PA LETTER U' onClick='cp("ꡟ")'>&#xA85F;</a>
+<a class='box' title='[U+A860] PHAGS-PA LETTER E' onClick='cp("ꡠ")'>&#xA860;</a>
+<a class='box' title='[U+A861] PHAGS-PA LETTER O' onClick='cp("ꡡ")'>&#xA861;</a>
+<a class='box' title='[U+A862] PHAGS-PA LETTER QA' onClick='cp("ꡢ")'>&#xA862;</a>
+<a class='box' title='[U+A863] PHAGS-PA LETTER XA' onClick='cp("ꡣ")'>&#xA863;</a>
+<a class='box' title='[U+A864] PHAGS-PA LETTER FA' onClick='cp("ꡤ")'>&#xA864;</a>
+<a class='box' title='[U+A865] PHAGS-PA LETTER GGA' onClick='cp("ꡥ")'>&#xA865;</a>
+<a class='box' title='[U+A866] PHAGS-PA LETTER EE' onClick='cp("ꡦ")'>&#xA866;</a>
+<a class='box' title='[U+A867] PHAGS-PA SUBJOINED LETTER WA' onClick='cp("ꡧ")'>&#xA867;</a>
+<a class='box' title='[U+A868] PHAGS-PA SUBJOINED LETTER YA' onClick='cp("ꡨ")'>&#xA868;</a>
+<a class='box' title='[U+A869] PHAGS-PA LETTER TTA' onClick='cp("ꡩ")'>&#xA869;</a>
+<a class='box' title='[U+A86A] PHAGS-PA LETTER TTHA' onClick='cp("ꡪ")'>&#xA86A;</a>
+<a class='box' title='[U+A86B] PHAGS-PA LETTER DDA' onClick='cp("ꡫ")'>&#xA86B;</a>
+<a class='box' title='[U+A86C] PHAGS-PA LETTER NNA' onClick='cp("ꡬ")'>&#xA86C;</a>
+<a class='box' title='[U+A86D] PHAGS-PA LETTER ALTERNATE YA' onClick='cp("ꡭ")'>&#xA86D;</a>
+<a class='box' title='[U+A86E] PHAGS-PA LETTER VOICELESS SHA' onClick='cp("ꡮ")'>&#xA86E;</a>
+<a class='box' title='[U+A86F] PHAGS-PA LETTER VOICED HA' onClick='cp("ꡯ")'>&#xA86F;</a>
+<a class='box' title='[U+A870] PHAGS-PA LETTER ASPIRATED FA' onClick='cp("ꡰ")'>&#xA870;</a>
+<a class='box' title='[U+A871] PHAGS-PA SUBJOINED LETTER RA' onClick='cp("ꡱ")'>&#xA871;</a>
+<a class='box' title='[U+A872] PHAGS-PA SUPERFIXED LETTER RA' onClick='cp("ꡲ")'>&#xA872;</a>
+<a class='box' title='[U+A873] PHAGS-PA LETTER CANDRABINDU' onClick='cp("ꡳ")'>&#xA873;</a>
+<a class='box' title='[U+A874] PHAGS-PA SINGLE HEAD MARK' onClick='cp("꡴")'>&#xA874;</a>
+<a class='box' title='[U+A875] PHAGS-PA DOUBLE HEAD MARK' onClick='cp("꡵")'>&#xA875;</a>
+<a class='box' title='[U+A876] PHAGS-PA MARK SHAD' onClick='cp("꡶")'>&#xA876;</a>
+<a class='box' title='[U+A877] PHAGS-PA MARK DOUBLE SHAD' onClick='cp("꡷")'>&#xA877;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #63a; id=#;'>Sogdian (U+10F30 - U+10F6F)</h2>
+<div class='margined'>
+<a class='box' title='[U+10F30] SOGDIAN LETTER ALEPH' onClick='cp("𐼰")'>&#x10F30;</a>
+<a class='box' title='[U+10F31] SOGDIAN LETTER BETH' onClick='cp("𐼱")'>&#x10F31;</a>
+<a class='box' title='[U+10F32] SOGDIAN LETTER GIMEL' onClick='cp("𐼲")'>&#x10F32;</a>
+<a class='box' title='[U+10F33] SOGDIAN LETTER HE' onClick='cp("𐼳")'>&#x10F33;</a>
+<a class='box' title='[U+10F34] SOGDIAN LETTER WAW' onClick='cp("𐼴")'>&#x10F34;</a>
+<a class='box' title='[U+10F35] SOGDIAN LETTER ZAYIN' onClick='cp("𐼵")'>&#x10F35;</a>
+<a class='box' title='[U+10F36] SOGDIAN LETTER HETH' onClick='cp("𐼶")'>&#x10F36;</a>
+<a class='box' title='[U+10F37] SOGDIAN LETTER YODH' onClick='cp("𐼷")'>&#x10F37;</a>
+<a class='box' title='[U+10F38] SOGDIAN LETTER KAPH' onClick='cp("𐼸")'>&#x10F38;</a>
+<a class='box' title='[U+10F39] SOGDIAN LETTER LAMEDH' onClick='cp("𐼹")'>&#x10F39;</a>
+<a class='box' title='[U+10F3A] SOGDIAN LETTER MEM' onClick='cp("𐼺")'>&#x10F3A;</a>
+<a class='box' title='[U+10F3B] SOGDIAN LETTER NUN' onClick='cp("𐼻")'>&#x10F3B;</a>
+<a class='box' title='[U+10F3C] SOGDIAN LETTER SAMEKH' onClick='cp("𐼼")'>&#x10F3C;</a>
+<a class='box' title='[U+10F3D] SOGDIAN LETTER AYIN' onClick='cp("𐼽")'>&#x10F3D;</a>
+<a class='box' title='[U+10F3E] SOGDIAN LETTER PE' onClick='cp("𐼾")'>&#x10F3E;</a>
+<a class='box' title='[U+10F3F] SOGDIAN LETTER SADHE' onClick='cp("𐼿")'>&#x10F3F;</a>
+<a class='box' title='[U+10F40] SOGDIAN LETTER RESH-AYIN' onClick='cp("𐽀")'>&#x10F40;</a>
+<a class='box' title='[U+10F41] SOGDIAN LETTER SHIN' onClick='cp("𐽁")'>&#x10F41;</a>
+<a class='box' title='[U+10F42] SOGDIAN LETTER TAW' onClick='cp("𐽂")'>&#x10F42;</a>
+<a class='box' title='[U+10F43] SOGDIAN LETTER FETH' onClick='cp("𐽃")'>&#x10F43;</a>
+<a class='box' title='[U+10F44] SOGDIAN LETTER LESH' onClick='cp("𐽄")'>&#x10F44;</a>
+<a class='box' title='[U+10F45] SOGDIAN INDEPENDENT SHIN' onClick='cp("𐽅")'>&#x10F45;</a>
+<a class='box' title='[U+10F46] SOGDIAN COMBINING DOT BELOW' onClick='cp("𐽆")'>&#x10F46;</a>
+<a class='box' title='[U+10F47] SOGDIAN COMBINING TWO DOTS BELOW' onClick='cp("𐽇")'>&#x10F47;</a>
+<a class='box' title='[U+10F48] SOGDIAN COMBINING DOT ABOVE' onClick='cp("𐽈")'>&#x10F48;</a>
+<a class='box' title='[U+10F49] SOGDIAN COMBINING TWO DOTS ABOVE' onClick='cp("𐽉")'>&#x10F49;</a>
+<a class='box' title='[U+10F4A] SOGDIAN COMBINING CURVE ABOVE' onClick='cp("𐽊")'>&#x10F4A;</a>
+<a class='box' title='[U+10F4B] SOGDIAN COMBINING CURVE BELOW' onClick='cp("𐽋")'>&#x10F4B;</a>
+<a class='box' title='[U+10F4C] SOGDIAN COMBINING HOOK ABOVE' onClick='cp("𐽌")'>&#x10F4C;</a>
+<a class='box' title='[U+10F4D] SOGDIAN COMBINING HOOK BELOW' onClick='cp("𐽍")'>&#x10F4D;</a>
+<a class='box' title='[U+10F4E] SOGDIAN COMBINING LONG HOOK BELOW' onClick='cp("𐽎")'>&#x10F4E;</a>
+<a class='box' title='[U+10F4F] SOGDIAN COMBINING RESH BELOW' onClick='cp("𐽏")'>&#x10F4F;</a>
+<a class='box' title='[U+10F50] SOGDIAN COMBINING STROKE BELOW' onClick='cp("𐽐")'>&#x10F50;</a>
+<a class='box' title='[U+10F51] SOGDIAN NUMBER ONE' onClick='cp("𐽑")'>&#x10F51;</a>
+<a class='box' title='[U+10F52] SOGDIAN NUMBER TEN' onClick='cp("𐽒")'>&#x10F52;</a>
+<a class='box' title='[U+10F53] SOGDIAN NUMBER TWENTY' onClick='cp("𐽓")'>&#x10F53;</a>
+<a class='box' title='[U+10F54] SOGDIAN NUMBER ONE HUNDRED' onClick='cp("𐽔")'>&#x10F54;</a>
+<a class='box' title='[U+10F55] SOGDIAN PUNCTUATION TWO VERTICAL BARS' onClick='cp("𐽕")'>&#x10F55;</a>
+<a class='box' title='[U+10F56] SOGDIAN PUNCTUATION TWO VERTICAL BARS WITH DOTS' onClick='cp("𐽖")'>&#x10F56;</a>
+<a class='box' title='[U+10F57] SOGDIAN PUNCTUATION CIRCLE WITH DOT' onClick='cp("𐽗")'>&#x10F57;</a>
+<a class='box' title='[U+10F58] SOGDIAN PUNCTUATION TWO CIRCLES WITH DOTS' onClick='cp("𐽘")'>&#x10F58;</a>
+<a class='box' title='[U+10F59] SOGDIAN PUNCTUATION HALF CIRCLE WITH DOT' onClick='cp("𐽙")'>&#x10F59;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #25f; id=#;'>Soyombo (U+11A50 - U+11AAF)</h2>
+<div class='margined'>
+<a class='box' title='[U+11A50] SOYOMBO LETTER A' onClick='cp("𑩐")'>&#x11A50;</a>
+<a class='box' title='[U+11A51] SOYOMBO VOWEL SIGN I' onClick='cp("𑩑")'>&#x11A51;</a>
+<a class='box' title='[U+11A52] SOYOMBO VOWEL SIGN UE' onClick='cp("𑩒")'>&#x11A52;</a>
+<a class='box' title='[U+11A53] SOYOMBO VOWEL SIGN U' onClick='cp("𑩓")'>&#x11A53;</a>
+<a class='box' title='[U+11A54] SOYOMBO VOWEL SIGN E' onClick='cp("𑩔")'>&#x11A54;</a>
+<a class='box' title='[U+11A55] SOYOMBO VOWEL SIGN O' onClick='cp("𑩕")'>&#x11A55;</a>
+<a class='box' title='[U+11A56] SOYOMBO VOWEL SIGN OE' onClick='cp("𑩖")'>&#x11A56;</a>
+<a class='box' title='[U+11A57] SOYOMBO VOWEL SIGN AI' onClick='cp("𑩗")'>&#x11A57;</a>
+<a class='box' title='[U+11A58] SOYOMBO VOWEL SIGN AU' onClick='cp("𑩘")'>&#x11A58;</a>
+<a class='box' title='[U+11A59] SOYOMBO VOWEL SIGN VOCALIC R' onClick='cp("𑩙")'>&#x11A59;</a>
+<a class='box' title='[U+11A5A] SOYOMBO VOWEL SIGN VOCALIC L' onClick='cp("𑩚")'>&#x11A5A;</a>
+<a class='box' title='[U+11A5B] SOYOMBO VOWEL LENGTH MARK' onClick='cp("𑩛")'>&#x11A5B;</a>
+<a class='box' title='[U+11A5C] SOYOMBO LETTER KA' onClick='cp("𑩜")'>&#x11A5C;</a>
+<a class='box' title='[U+11A5D] SOYOMBO LETTER KHA' onClick='cp("𑩝")'>&#x11A5D;</a>
+<a class='box' title='[U+11A5E] SOYOMBO LETTER GA' onClick='cp("𑩞")'>&#x11A5E;</a>
+<a class='box' title='[U+11A5F] SOYOMBO LETTER GHA' onClick='cp("𑩟")'>&#x11A5F;</a>
+<a class='box' title='[U+11A60] SOYOMBO LETTER NGA' onClick='cp("𑩠")'>&#x11A60;</a>
+<a class='box' title='[U+11A61] SOYOMBO LETTER CA' onClick='cp("𑩡")'>&#x11A61;</a>
+<a class='box' title='[U+11A62] SOYOMBO LETTER CHA' onClick='cp("𑩢")'>&#x11A62;</a>
+<a class='box' title='[U+11A63] SOYOMBO LETTER JA' onClick='cp("𑩣")'>&#x11A63;</a>
+<a class='box' title='[U+11A64] SOYOMBO LETTER JHA' onClick='cp("𑩤")'>&#x11A64;</a>
+<a class='box' title='[U+11A65] SOYOMBO LETTER NYA' onClick='cp("𑩥")'>&#x11A65;</a>
+<a class='box' title='[U+11A66] SOYOMBO LETTER TTA' onClick='cp("𑩦")'>&#x11A66;</a>
+<a class='box' title='[U+11A67] SOYOMBO LETTER TTHA' onClick='cp("𑩧")'>&#x11A67;</a>
+<a class='box' title='[U+11A68] SOYOMBO LETTER DDA' onClick='cp("𑩨")'>&#x11A68;</a>
+<a class='box' title='[U+11A69] SOYOMBO LETTER DDHA' onClick='cp("𑩩")'>&#x11A69;</a>
+<a class='box' title='[U+11A6A] SOYOMBO LETTER NNA' onClick='cp("𑩪")'>&#x11A6A;</a>
+<a class='box' title='[U+11A6B] SOYOMBO LETTER TA' onClick='cp("𑩫")'>&#x11A6B;</a>
+<a class='box' title='[U+11A6C] SOYOMBO LETTER THA' onClick='cp("𑩬")'>&#x11A6C;</a>
+<a class='box' title='[U+11A6D] SOYOMBO LETTER DA' onClick='cp("𑩭")'>&#x11A6D;</a>
+<a class='box' title='[U+11A6E] SOYOMBO LETTER DHA' onClick='cp("𑩮")'>&#x11A6E;</a>
+<a class='box' title='[U+11A6F] SOYOMBO LETTER NA' onClick='cp("𑩯")'>&#x11A6F;</a>
+<a class='box' title='[U+11A70] SOYOMBO LETTER PA' onClick='cp("𑩰")'>&#x11A70;</a>
+<a class='box' title='[U+11A71] SOYOMBO LETTER PHA' onClick='cp("𑩱")'>&#x11A71;</a>
+<a class='box' title='[U+11A72] SOYOMBO LETTER BA' onClick='cp("𑩲")'>&#x11A72;</a>
+<a class='box' title='[U+11A73] SOYOMBO LETTER BHA' onClick='cp("𑩳")'>&#x11A73;</a>
+<a class='box' title='[U+11A74] SOYOMBO LETTER MA' onClick='cp("𑩴")'>&#x11A74;</a>
+<a class='box' title='[U+11A75] SOYOMBO LETTER TSA' onClick='cp("𑩵")'>&#x11A75;</a>
+<a class='box' title='[U+11A76] SOYOMBO LETTER TSHA' onClick='cp("𑩶")'>&#x11A76;</a>
+<a class='box' title='[U+11A77] SOYOMBO LETTER DZA' onClick='cp("𑩷")'>&#x11A77;</a>
+<a class='box' title='[U+11A78] SOYOMBO LETTER ZHA' onClick='cp("𑩸")'>&#x11A78;</a>
+<a class='box' title='[U+11A79] SOYOMBO LETTER ZA' onClick='cp("𑩹")'>&#x11A79;</a>
+<a class='box' title='[U+11A7A] SOYOMBO LETTER -A' onClick='cp("𑩺")'>&#x11A7A;</a>
+<a class='box' title='[U+11A7B] SOYOMBO LETTER YA' onClick='cp("𑩻")'>&#x11A7B;</a>
+<a class='box' title='[U+11A7C] SOYOMBO LETTER RA' onClick='cp("𑩼")'>&#x11A7C;</a>
+<a class='box' title='[U+11A7D] SOYOMBO LETTER LA' onClick='cp("𑩽")'>&#x11A7D;</a>
+<a class='box' title='[U+11A7E] SOYOMBO LETTER VA' onClick='cp("𑩾")'>&#x11A7E;</a>
+<a class='box' title='[U+11A7F] SOYOMBO LETTER SHA' onClick='cp("𑩿")'>&#x11A7F;</a>
+<a class='box' title='[U+11A80] SOYOMBO LETTER SSA' onClick='cp("𑪀")'>&#x11A80;</a>
+<a class='box' title='[U+11A81] SOYOMBO LETTER SA' onClick='cp("𑪁")'>&#x11A81;</a>
+<a class='box' title='[U+11A82] SOYOMBO LETTER HA' onClick='cp("𑪂")'>&#x11A82;</a>
+<a class='box' title='[U+11A83] SOYOMBO LETTER KSSA' onClick='cp("𑪃")'>&#x11A83;</a>
+<a class='box' title='[U+11A84] SOYOMBO SIGN JIHVAMULIYA' onClick='cp("𑪄")'>&#x11A84;</a>
+<a class='box' title='[U+11A85] SOYOMBO SIGN UPADHMANIYA' onClick='cp("𑪅")'>&#x11A85;</a>
+<a class='box' title='[U+11A86] SOYOMBO CLUSTER-INITIAL LETTER RA' onClick='cp("𑪆")'>&#x11A86;</a>
+<a class='box' title='[U+11A87] SOYOMBO CLUSTER-INITIAL LETTER LA' onClick='cp("𑪇")'>&#x11A87;</a>
+<a class='box' title='[U+11A88] SOYOMBO CLUSTER-INITIAL LETTER SHA' onClick='cp("𑪈")'>&#x11A88;</a>
+<a class='box' title='[U+11A89] SOYOMBO CLUSTER-INITIAL LETTER SA' onClick='cp("𑪉")'>&#x11A89;</a>
+<a class='box' title='[U+11A8A] SOYOMBO FINAL CONSONANT SIGN G' onClick='cp("𑪊")'>&#x11A8A;</a>
+<a class='box' title='[U+11A8B] SOYOMBO FINAL CONSONANT SIGN K' onClick='cp("𑪋")'>&#x11A8B;</a>
+<a class='box' title='[U+11A8C] SOYOMBO FINAL CONSONANT SIGN NG' onClick='cp("𑪌")'>&#x11A8C;</a>
+<a class='box' title='[U+11A8D] SOYOMBO FINAL CONSONANT SIGN D' onClick='cp("𑪍")'>&#x11A8D;</a>
+<a class='box' title='[U+11A8E] SOYOMBO FINAL CONSONANT SIGN N' onClick='cp("𑪎")'>&#x11A8E;</a>
+<a class='box' title='[U+11A8F] SOYOMBO FINAL CONSONANT SIGN B' onClick='cp("𑪏")'>&#x11A8F;</a>
+<a class='box' title='[U+11A90] SOYOMBO FINAL CONSONANT SIGN M' onClick='cp("𑪐")'>&#x11A90;</a>
+<a class='box' title='[U+11A91] SOYOMBO FINAL CONSONANT SIGN R' onClick='cp("𑪑")'>&#x11A91;</a>
+<a class='box' title='[U+11A92] SOYOMBO FINAL CONSONANT SIGN L' onClick='cp("𑪒")'>&#x11A92;</a>
+<a class='box' title='[U+11A93] SOYOMBO FINAL CONSONANT SIGN SH' onClick='cp("𑪓")'>&#x11A93;</a>
+<a class='box' title='[U+11A94] SOYOMBO FINAL CONSONANT SIGN S' onClick='cp("𑪔")'>&#x11A94;</a>
+<a class='box' title='[U+11A95] SOYOMBO FINAL CONSONANT SIGN -A' onClick='cp("𑪕")'>&#x11A95;</a>
+<a class='box' title='[U+11A96] SOYOMBO SIGN ANUSVARA' onClick='cp("𑪖")'>&#x11A96;</a>
+<a class='box' title='[U+11A97] SOYOMBO SIGN VISARGA' onClick='cp("𑪗")'>&#x11A97;</a>
+<a class='box' title='[U+11A98] SOYOMBO GEMINATION MARK' onClick='cp("𑪘")'>&#x11A98;</a>
+<a class='box' title='[U+11A99] SOYOMBO SUBJOINER' onClick='cp("𑪙")'>&#x11A99;</a>
+<a class='box' title='[U+11A9A] SOYOMBO MARK TSHEG' onClick='cp("𑪚")'>&#x11A9A;</a>
+<a class='box' title='[U+11A9B] SOYOMBO MARK SHAD' onClick='cp("𑪛")'>&#x11A9B;</a>
+<a class='box' title='[U+11A9C] SOYOMBO MARK DOUBLE SHAD' onClick='cp("𑪜")'>&#x11A9C;</a>
+<a class='box' title='[U+11A9D] SOYOMBO MARK PLUTA' onClick='cp("𑪝")'>&#x11A9D;</a>
+<a class='box' title='[U+11A9E] SOYOMBO HEAD MARK WITH MOON AND SUN AND TRIPLE FLAME' onClick='cp("𑪞")'>&#x11A9E;</a>
+<a class='box' title='[U+11A9F] SOYOMBO HEAD MARK WITH MOON AND SUN AND FLAME' onClick='cp("𑪟")'>&#x11A9F;</a>
+<a class='box' title='[U+11AA0] SOYOMBO HEAD MARK WITH MOON AND SUN' onClick='cp("𑪠")'>&#x11AA0;</a>
+<a class='box' title='[U+11AA1] SOYOMBO TERMINAL MARK-1' onClick='cp("𑪡")'>&#x11AA1;</a>
+<a class='box' title='[U+11AA2] SOYOMBO TERMINAL MARK-2' onClick='cp("𑪢")'>&#x11AA2;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: green; id=#;'>Tibetan (U+0F00 - U+0FFF)</h2>
+<div class='margined'>
+<a class='box' title='[U+0F00] TIBETAN SYLLABLE OM' onClick='cp("ༀ")'>&#xF00;</a>
+<a class='box' title='[U+0F01] TIBETAN MARK GTER YIG MGO TRUNCATED A' onClick='cp("༁")'>&#xF01;</a>
+<a class='box' title='[U+0F02] TIBETAN MARK GTER YIG MGO -UM RNAM BCAD MA' onClick='cp("༂")'>&#xF02;</a>
+<a class='box' title='[U+0F03] TIBETAN MARK GTER YIG MGO -UM GTER TSHEG MA' onClick='cp("༃")'>&#xF03;</a>
+<a class='box' title='[U+0F04] TIBETAN MARK INITIAL YIG MGO MDUN MA
+= TIBETAN SINGLE ORNAMENT' onClick='cp("༄")'>&#xF04;</a>
+<a class='box' title='[U+0F05] TIBETAN MARK CLOSING YIG MGO SGAB MA' onClick='cp("༅")'>&#xF05;</a>
+<a class='box' title='[U+0F06] TIBETAN MARK CARET YIG MGO PHUR SHAD MA' onClick='cp("༆")'>&#xF06;</a>
+<a class='box' title='[U+0F07] TIBETAN MARK YIG MGO TSHEG SHAD MA' onClick='cp("༇")'>&#xF07;</a>
+<a class='box' title='[U+0F08] TIBETAN MARK SBRUL SHAD
+= TIBETAN RGYANSHAD' onClick='cp("༈")'>&#xF08;</a>
+<a class='box' title='[U+0F09] TIBETAN MARK BSKUR YIG MGO' onClick='cp("༉")'>&#xF09;</a>
+<a class='box' title='[U+0F0A] TIBETAN MARK BKA- SHOG YIG MGO' onClick='cp("༊")'>&#xF0A;</a>
+<a class='box' title='[U+0F0B] TIBETAN MARK INTERSYLLABIC TSHEG
+= TIBETAN TSEG' onClick='cp("་")'>&#xF0B;</a>
+<a class='box' title='[U+0F0C] TIBETAN MARK DELIMITER TSHEG BSTAR' onClick='cp("༌")'>&#xF0C;</a>
+<a class='box' title='[U+0F0D] TIBETAN MARK SHAD
+= TIBETAN SHAD' onClick='cp("།")'>&#xF0D;</a>
+<a class='box' title='[U+0F0E] TIBETAN MARK NYIS SHAD
+= TIBETAN DOUBLE SHAD' onClick='cp("༎")'>&#xF0E;</a>
+<a class='box' title='[U+0F0F] TIBETAN MARK TSHEG SHAD' onClick='cp("༏")'>&#xF0F;</a>
+<a class='box' title='[U+0F10] TIBETAN MARK NYIS TSHEG SHAD' onClick='cp("༐")'>&#xF10;</a>
+<a class='box' title='[U+0F11] TIBETAN MARK RIN CHEN SPUNGS SHAD
+= TIBETAN RINCHANPHUNGSHAD' onClick='cp("༑")'>&#xF11;</a>
+<a class='box' title='[U+0F12] TIBETAN MARK RGYA GRAM SHAD' onClick='cp("༒")'>&#xF12;</a>
+<a class='box' title='[U+0F13] TIBETAN MARK CARET -DZUD RTAGS ME LONG CAN' onClick='cp("༓")'>&#xF13;</a>
+<a class='box' title='[U+0F14] TIBETAN MARK GTER TSHEG
+= TIBETAN COMMA' onClick='cp("༔")'>&#xF14;</a>
+<a class='box' title='[U+0F15] TIBETAN LOGOTYPE SIGN CHAD RTAGS' onClick='cp("༕")'>&#xF15;</a>
+<a class='box' title='[U+0F16] TIBETAN LOGOTYPE SIGN LHAG RTAGS' onClick='cp("༖")'>&#xF16;</a>
+<a class='box' title='[U+0F17] TIBETAN ASTROLOGICAL SIGN SGRA GCAN -CHAR RTAGS' onClick='cp("༗")'>&#xF17;</a>
+<a class='box' title='[U+0F18] TIBETAN ASTROLOGICAL SIGN -KHYUD PA' onClick='cp("༘")'>&#xF18;</a>
+<a class='box' title='[U+0F19] TIBETAN ASTROLOGICAL SIGN SDONG TSHUGS' onClick='cp("༙")'>&#xF19;</a>
+<a class='box' title='[U+0F1A] TIBETAN SIGN RDEL DKAR GCIG' onClick='cp("༚")'>&#xF1A;</a>
+<a class='box' title='[U+0F1B] TIBETAN SIGN RDEL DKAR GNYIS' onClick='cp("༛")'>&#xF1B;</a>
+<a class='box' title='[U+0F1C] TIBETAN SIGN RDEL DKAR GSUM' onClick='cp("༜")'>&#xF1C;</a>
+<a class='box' title='[U+0F1D] TIBETAN SIGN RDEL NAG GCIG' onClick='cp("༝")'>&#xF1D;</a>
+<a class='box' title='[U+0F1E] TIBETAN SIGN RDEL NAG GNYIS' onClick='cp("༞")'>&#xF1E;</a>
+<a class='box' title='[U+0F1F] TIBETAN SIGN RDEL DKAR RDEL NAG' onClick='cp("༟")'>&#xF1F;</a>
+<a class='box' title='[U+0F20] TIBETAN DIGIT ZERO' onClick='cp("༠")'>&#xF20;</a>
+<a class='box' title='[U+0F21] TIBETAN DIGIT ONE' onClick='cp("༡")'>&#xF21;</a>
+<a class='box' title='[U+0F22] TIBETAN DIGIT TWO' onClick='cp("༢")'>&#xF22;</a>
+<a class='box' title='[U+0F23] TIBETAN DIGIT THREE' onClick='cp("༣")'>&#xF23;</a>
+<a class='box' title='[U+0F24] TIBETAN DIGIT FOUR' onClick='cp("༤")'>&#xF24;</a>
+<a class='box' title='[U+0F25] TIBETAN DIGIT FIVE' onClick='cp("༥")'>&#xF25;</a>
+<a class='box' title='[U+0F26] TIBETAN DIGIT SIX' onClick='cp("༦")'>&#xF26;</a>
+<a class='box' title='[U+0F27] TIBETAN DIGIT SEVEN' onClick='cp("༧")'>&#xF27;</a>
+<a class='box' title='[U+0F28] TIBETAN DIGIT EIGHT' onClick='cp("༨")'>&#xF28;</a>
+<a class='box' title='[U+0F29] TIBETAN DIGIT NINE' onClick='cp("༩")'>&#xF29;</a>
+<a class='box' title='[U+0F2A] TIBETAN DIGIT HALF ONE' onClick='cp("༪")'>&#xF2A;</a>
+<a class='box' title='[U+0F2B] TIBETAN DIGIT HALF TWO' onClick='cp("༫")'>&#xF2B;</a>
+<a class='box' title='[U+0F2C] TIBETAN DIGIT HALF THREE' onClick='cp("༬")'>&#xF2C;</a>
+<a class='box' title='[U+0F2D] TIBETAN DIGIT HALF FOUR' onClick='cp("༭")'>&#xF2D;</a>
+<a class='box' title='[U+0F2E] TIBETAN DIGIT HALF FIVE' onClick='cp("༮")'>&#xF2E;</a>
+<a class='box' title='[U+0F2F] TIBETAN DIGIT HALF SIX' onClick='cp("༯")'>&#xF2F;</a>
+<a class='box' title='[U+0F30] TIBETAN DIGIT HALF SEVEN' onClick='cp("༰")'>&#xF30;</a>
+<a class='box' title='[U+0F31] TIBETAN DIGIT HALF EIGHT' onClick='cp("༱")'>&#xF31;</a>
+<a class='box' title='[U+0F32] TIBETAN DIGIT HALF NINE' onClick='cp("༲")'>&#xF32;</a>
+<a class='box' title='[U+0F33] TIBETAN DIGIT HALF ZERO' onClick='cp("༳")'>&#xF33;</a>
+<a class='box' title='[U+0F34] TIBETAN MARK BSDUS RTAGS' onClick='cp("༴")'>&#xF34;</a>
+<a class='box' title='[U+0F35] TIBETAN MARK NGAS BZUNG NYI ZLA
+= TIBETAN HONORIFIC UNDER RING' onClick='cp("༵")'>&#xF35;</a>
+<a class='box' title='[U+0F36] TIBETAN MARK CARET -DZUD RTAGS BZHI MIG CAN' onClick='cp("༶")'>&#xF36;</a>
+<a class='box' title='[U+0F37] TIBETAN MARK NGAS BZUNG SGOR RTAGS
+= TIBETAN UNDER RING' onClick='cp("༷")'>&#xF37;</a>
+<a class='box' title='[U+0F38] TIBETAN MARK CHE MGO' onClick='cp("༸")'>&#xF38;</a>
+<a class='box' title='[U+0F39] TIBETAN MARK TSA -PHRU
+= TIBETAN LENITION MARK' onClick='cp("༹")'>&#xF39;</a>
+<a class='box' title='[U+0F3A] TIBETAN MARK GUG RTAGS GYON' onClick='cp("༺")'>&#xF3A;</a>
+<a class='box' title='[U+0F3B] TIBETAN MARK GUG RTAGS GYAS' onClick='cp("༻")'>&#xF3B;</a>
+<a class='box' title='[U+0F3C] TIBETAN MARK ANG KHANG GYON
+= TIBETAN LEFT BRACE' onClick='cp("༼")'>&#xF3C;</a>
+<a class='box' title='[U+0F3D] TIBETAN MARK ANG KHANG GYAS
+= TIBETAN RIGHT BRACE' onClick='cp("༽")'>&#xF3D;</a>
+<a class='box' title='[U+0F3E] TIBETAN SIGN YAR TSHES' onClick='cp("༾")'>&#xF3E;</a>
+<a class='box' title='[U+0F3F] TIBETAN SIGN MAR TSHES' onClick='cp("༿")'>&#xF3F;</a>
+<a class='box' title='[U+0F40] TIBETAN LETTER KA' onClick='cp("ཀ")'>&#xF40;</a>
+<a class='box' title='[U+0F41] TIBETAN LETTER KHA' onClick='cp("ཁ")'>&#xF41;</a>
+<a class='box' title='[U+0F42] TIBETAN LETTER GA' onClick='cp("ག")'>&#xF42;</a>
+<a class='box' title='[U+0F43] TIBETAN LETTER GHA' onClick='cp("གྷ")'>&#xF43;</a>
+<a class='box' title='[U+0F44] TIBETAN LETTER NGA' onClick='cp("ང")'>&#xF44;</a>
+<a class='box' title='[U+0F45] TIBETAN LETTER CA' onClick='cp("ཅ")'>&#xF45;</a>
+<a class='box' title='[U+0F46] TIBETAN LETTER CHA' onClick='cp("ཆ")'>&#xF46;</a>
+<a class='box' title='[U+0F47] TIBETAN LETTER JA' onClick='cp("ཇ")'>&#xF47;</a>
+<a class='box' title='[U+0F49] TIBETAN LETTER NYA' onClick='cp("ཉ")'>&#xF49;</a>
+<a class='box' title='[U+0F4A] TIBETAN LETTER TTA
+= TIBETAN LETTER REVERSED TA' onClick='cp("ཊ")'>&#xF4A;</a>
+<a class='box' title='[U+0F4B] TIBETAN LETTER TTHA
+= TIBETAN LETTER REVERSED THA' onClick='cp("ཋ")'>&#xF4B;</a>
+<a class='box' title='[U+0F4C] TIBETAN LETTER DDA
+= TIBETAN LETTER REVERSED DA' onClick='cp("ཌ")'>&#xF4C;</a>
+<a class='box' title='[U+0F4D] TIBETAN LETTER DDHA' onClick='cp("ཌྷ")'>&#xF4D;</a>
+<a class='box' title='[U+0F4E] TIBETAN LETTER NNA
+= TIBETAN LETTER REVERSED NA' onClick='cp("ཎ")'>&#xF4E;</a>
+<a class='box' title='[U+0F4F] TIBETAN LETTER TA' onClick='cp("ཏ")'>&#xF4F;</a>
+<a class='box' title='[U+0F50] TIBETAN LETTER THA' onClick='cp("ཐ")'>&#xF50;</a>
+<a class='box' title='[U+0F51] TIBETAN LETTER DA' onClick='cp("ད")'>&#xF51;</a>
+<a class='box' title='[U+0F52] TIBETAN LETTER DHA' onClick='cp("དྷ")'>&#xF52;</a>
+<a class='box' title='[U+0F53] TIBETAN LETTER NA' onClick='cp("ན")'>&#xF53;</a>
+<a class='box' title='[U+0F54] TIBETAN LETTER PA' onClick='cp("པ")'>&#xF54;</a>
+<a class='box' title='[U+0F55] TIBETAN LETTER PHA' onClick='cp("ཕ")'>&#xF55;</a>
+<a class='box' title='[U+0F56] TIBETAN LETTER BA' onClick='cp("བ")'>&#xF56;</a>
+<a class='box' title='[U+0F57] TIBETAN LETTER BHA' onClick='cp("བྷ")'>&#xF57;</a>
+<a class='box' title='[U+0F58] TIBETAN LETTER MA' onClick='cp("མ")'>&#xF58;</a>
+<a class='box' title='[U+0F59] TIBETAN LETTER TSA' onClick='cp("ཙ")'>&#xF59;</a>
+<a class='box' title='[U+0F5A] TIBETAN LETTER TSHA' onClick='cp("ཚ")'>&#xF5A;</a>
+<a class='box' title='[U+0F5B] TIBETAN LETTER DZA' onClick='cp("ཛ")'>&#xF5B;</a>
+<a class='box' title='[U+0F5C] TIBETAN LETTER DZHA' onClick='cp("ཛྷ")'>&#xF5C;</a>
+<a class='box' title='[U+0F5D] TIBETAN LETTER WA' onClick='cp("ཝ")'>&#xF5D;</a>
+<a class='box' title='[U+0F5E] TIBETAN LETTER ZHA' onClick='cp("ཞ")'>&#xF5E;</a>
+<a class='box' title='[U+0F5F] TIBETAN LETTER ZA' onClick='cp("ཟ")'>&#xF5F;</a>
+<a class='box' title='[U+0F60] TIBETAN LETTER -A
+= TIBETAN LETTER AA' onClick='cp("འ")'>&#xF60;</a>
+<a class='box' title='[U+0F61] TIBETAN LETTER YA' onClick='cp("ཡ")'>&#xF61;</a>
+<a class='box' title='[U+0F62] TIBETAN LETTER RA' onClick='cp("ར")'>&#xF62;</a>
+<a class='box' title='[U+0F63] TIBETAN LETTER LA' onClick='cp("ལ")'>&#xF63;</a>
+<a class='box' title='[U+0F64] TIBETAN LETTER SHA' onClick='cp("ཤ")'>&#xF64;</a>
+<a class='box' title='[U+0F65] TIBETAN LETTER SSA
+= TIBETAN LETTER REVERSED SHA' onClick='cp("ཥ")'>&#xF65;</a>
+<a class='box' title='[U+0F66] TIBETAN LETTER SA' onClick='cp("ས")'>&#xF66;</a>
+<a class='box' title='[U+0F67] TIBETAN LETTER HA' onClick='cp("ཧ")'>&#xF67;</a>
+<a class='box' title='[U+0F68] TIBETAN LETTER A' onClick='cp("ཨ")'>&#xF68;</a>
+<a class='box' title='[U+0F69] TIBETAN LETTER KSSA' onClick='cp("ཀྵ")'>&#xF69;</a>
+<a class='box' title='[U+0F6A] TIBETAN LETTER FIXED-FORM RA' onClick='cp("ཪ")'>&#xF6A;</a>
+<a class='box' title='[U+0F6B] TIBETAN LETTER KKA' onClick='cp("ཫ")'>&#xF6B;</a>
+<a class='box' title='[U+0F6C] TIBETAN LETTER RRA' onClick='cp("ཬ")'>&#xF6C;</a>
+<a class='box' title='[U+0F71] TIBETAN VOWEL SIGN AA' onClick='cp("ཱ")'>&#xF71;</a>
+<a class='box' title='[U+0F72] TIBETAN VOWEL SIGN I' onClick='cp("ི")'>&#xF72;</a>
+<a class='box' title='[U+0F73] TIBETAN VOWEL SIGN II' onClick='cp("ཱི")'>&#xF73;</a>
+<a class='box' title='[U+0F74] TIBETAN VOWEL SIGN U' onClick='cp("ུ")'>&#xF74;</a>
+<a class='box' title='[U+0F75] TIBETAN VOWEL SIGN UU' onClick='cp("ཱུ")'>&#xF75;</a>
+<a class='box' title='[U+0F76] TIBETAN VOWEL SIGN VOCALIC R' onClick='cp("ྲྀ")'>&#xF76;</a>
+<a class='box' title='[U+0F77] TIBETAN VOWEL SIGN VOCALIC RR' onClick='cp("ཷ")'>&#xF77;</a>
+<a class='box' title='[U+0F78] TIBETAN VOWEL SIGN VOCALIC L' onClick='cp("ླྀ")'>&#xF78;</a>
+<a class='box' title='[U+0F79] TIBETAN VOWEL SIGN VOCALIC LL' onClick='cp("ཹ")'>&#xF79;</a>
+<a class='box' title='[U+0F7A] TIBETAN VOWEL SIGN E' onClick='cp("ེ")'>&#xF7A;</a>
+<a class='box' title='[U+0F7B] TIBETAN VOWEL SIGN EE
+= TIBETAN VOWEL SIGN AI' onClick='cp("ཻ")'>&#xF7B;</a>
+<a class='box' title='[U+0F7C] TIBETAN VOWEL SIGN O' onClick='cp("ོ")'>&#xF7C;</a>
+<a class='box' title='[U+0F7D] TIBETAN VOWEL SIGN OO
+= TIBETAN VOWEL SIGN AU' onClick='cp("ཽ")'>&#xF7D;</a>
+<a class='box' title='[U+0F7E] TIBETAN SIGN RJES SU NGA RO
+= TIBETAN ANUSVARA' onClick='cp("ཾ")'>&#xF7E;</a>
+<a class='box' title='[U+0F7F] TIBETAN SIGN RNAM BCAD
+= TIBETAN VISARGA' onClick='cp("ཿ")'>&#xF7F;</a>
+<a class='box' title='[U+0F80] TIBETAN VOWEL SIGN REVERSED I
+= TIBETAN VOWEL SIGN SHORT I' onClick='cp("ྀ")'>&#xF80;</a>
+<a class='box' title='[U+0F81] TIBETAN VOWEL SIGN REVERSED II' onClick='cp("ཱྀ")'>&#xF81;</a>
+<a class='box' title='[U+0F82] TIBETAN SIGN NYI ZLA NAA DA
+= TIBETAN CANDRABINDU WITH ORNAMENT' onClick='cp("ྂ")'>&#xF82;</a>
+<a class='box' title='[U+0F83] TIBETAN SIGN SNA LDAN
+= TIBETAN CANDRABINDU' onClick='cp("ྃ")'>&#xF83;</a>
+<a class='box' title='[U+0F84] TIBETAN MARK HALANTA
+= TIBETAN VIRAMA' onClick='cp("྄")'>&#xF84;</a>
+<a class='box' title='[U+0F85] TIBETAN MARK PALUTA
+= TIBETAN CHUCHENYIGE' onClick='cp("྅")'>&#xF85;</a>
+<a class='box' title='[U+0F86] TIBETAN SIGN LCI RTAGS' onClick='cp("྆")'>&#xF86;</a>
+<a class='box' title='[U+0F87] TIBETAN SIGN YANG RTAGS' onClick='cp("྇")'>&#xF87;</a>
+<a class='box' title='[U+0F88] TIBETAN SIGN LCE TSA CAN' onClick='cp("ྈ")'>&#xF88;</a>
+<a class='box' title='[U+0F89] TIBETAN SIGN MCHU CAN' onClick='cp("ྉ")'>&#xF89;</a>
+<a class='box' title='[U+0F8A] TIBETAN SIGN GRU CAN RGYINGS' onClick='cp("ྊ")'>&#xF8A;</a>
+<a class='box' title='[U+0F8B] TIBETAN SIGN GRU MED RGYINGS' onClick='cp("ྋ")'>&#xF8B;</a>
+<a class='box' title='[U+0F8C] TIBETAN SIGN INVERTED MCHU CAN' onClick='cp("ྌ")'>&#xF8C;</a>
+<a class='box' title='[U+0F8D] TIBETAN SUBJOINED SIGN LCE TSA CAN' onClick='cp("ྍ")'>&#xF8D;</a>
+<a class='box' title='[U+0F8E] TIBETAN SUBJOINED SIGN MCHU CAN' onClick='cp("ྎ")'>&#xF8E;</a>
+<a class='box' title='[U+0F8F] TIBETAN SUBJOINED SIGN INVERTED MCHU CAN' onClick='cp("ྏ")'>&#xF8F;</a>
+<a class='box' title='[U+0F90] TIBETAN SUBJOINED LETTER KA' onClick='cp("ྐ")'>&#xF90;</a>
+<a class='box' title='[U+0F91] TIBETAN SUBJOINED LETTER KHA' onClick='cp("ྑ")'>&#xF91;</a>
+<a class='box' title='[U+0F92] TIBETAN SUBJOINED LETTER GA' onClick='cp("ྒ")'>&#xF92;</a>
+<a class='box' title='[U+0F93] TIBETAN SUBJOINED LETTER GHA' onClick='cp("ྒྷ")'>&#xF93;</a>
+<a class='box' title='[U+0F94] TIBETAN SUBJOINED LETTER NGA' onClick='cp("ྔ")'>&#xF94;</a>
+<a class='box' title='[U+0F95] TIBETAN SUBJOINED LETTER CA' onClick='cp("ྕ")'>&#xF95;</a>
+<a class='box' title='[U+0F96] TIBETAN SUBJOINED LETTER CHA' onClick='cp("ྖ")'>&#xF96;</a>
+<a class='box' title='[U+0F97] TIBETAN SUBJOINED LETTER JA' onClick='cp("ྗ")'>&#xF97;</a>
+<a class='box' title='[U+0F99] TIBETAN SUBJOINED LETTER NYA' onClick='cp("ྙ")'>&#xF99;</a>
+<a class='box' title='[U+0F9A] TIBETAN SUBJOINED LETTER TTA' onClick='cp("ྚ")'>&#xF9A;</a>
+<a class='box' title='[U+0F9B] TIBETAN SUBJOINED LETTER TTHA' onClick='cp("ྛ")'>&#xF9B;</a>
+<a class='box' title='[U+0F9C] TIBETAN SUBJOINED LETTER DDA' onClick='cp("ྜ")'>&#xF9C;</a>
+<a class='box' title='[U+0F9D] TIBETAN SUBJOINED LETTER DDHA' onClick='cp("ྜྷ")'>&#xF9D;</a>
+<a class='box' title='[U+0F9E] TIBETAN SUBJOINED LETTER NNA' onClick='cp("ྞ")'>&#xF9E;</a>
+<a class='box' title='[U+0F9F] TIBETAN SUBJOINED LETTER TA' onClick='cp("ྟ")'>&#xF9F;</a>
+<a class='box' title='[U+0FA0] TIBETAN SUBJOINED LETTER THA' onClick='cp("ྠ")'>&#xFA0;</a>
+<a class='box' title='[U+0FA1] TIBETAN SUBJOINED LETTER DA' onClick='cp("ྡ")'>&#xFA1;</a>
+<a class='box' title='[U+0FA2] TIBETAN SUBJOINED LETTER DHA' onClick='cp("ྡྷ")'>&#xFA2;</a>
+<a class='box' title='[U+0FA3] TIBETAN SUBJOINED LETTER NA' onClick='cp("ྣ")'>&#xFA3;</a>
+<a class='box' title='[U+0FA4] TIBETAN SUBJOINED LETTER PA' onClick='cp("ྤ")'>&#xFA4;</a>
+<a class='box' title='[U+0FA5] TIBETAN SUBJOINED LETTER PHA' onClick='cp("ྥ")'>&#xFA5;</a>
+<a class='box' title='[U+0FA6] TIBETAN SUBJOINED LETTER BA' onClick='cp("ྦ")'>&#xFA6;</a>
+<a class='box' title='[U+0FA7] TIBETAN SUBJOINED LETTER BHA' onClick='cp("ྦྷ")'>&#xFA7;</a>
+<a class='box' title='[U+0FA8] TIBETAN SUBJOINED LETTER MA' onClick='cp("ྨ")'>&#xFA8;</a>
+<a class='box' title='[U+0FA9] TIBETAN SUBJOINED LETTER TSA' onClick='cp("ྩ")'>&#xFA9;</a>
+<a class='box' title='[U+0FAA] TIBETAN SUBJOINED LETTER TSHA' onClick='cp("ྪ")'>&#xFAA;</a>
+<a class='box' title='[U+0FAB] TIBETAN SUBJOINED LETTER DZA' onClick='cp("ྫ")'>&#xFAB;</a>
+<a class='box' title='[U+0FAC] TIBETAN SUBJOINED LETTER DZHA' onClick='cp("ྫྷ")'>&#xFAC;</a>
+<a class='box' title='[U+0FAD] TIBETAN SUBJOINED LETTER WA' onClick='cp("ྭ")'>&#xFAD;</a>
+<a class='box' title='[U+0FAE] TIBETAN SUBJOINED LETTER ZHA' onClick='cp("ྮ")'>&#xFAE;</a>
+<a class='box' title='[U+0FAF] TIBETAN SUBJOINED LETTER ZA' onClick='cp("ྯ")'>&#xFAF;</a>
+<a class='box' title='[U+0FB0] TIBETAN SUBJOINED LETTER -A' onClick='cp("ྰ")'>&#xFB0;</a>
+<a class='box' title='[U+0FB1] TIBETAN SUBJOINED LETTER YA' onClick='cp("ྱ")'>&#xFB1;</a>
+<a class='box' title='[U+0FB2] TIBETAN SUBJOINED LETTER RA' onClick='cp("ྲ")'>&#xFB2;</a>
+<a class='box' title='[U+0FB3] TIBETAN SUBJOINED LETTER LA' onClick='cp("ླ")'>&#xFB3;</a>
+<a class='box' title='[U+0FB4] TIBETAN SUBJOINED LETTER SHA' onClick='cp("ྴ")'>&#xFB4;</a>
+<a class='box' title='[U+0FB5] TIBETAN SUBJOINED LETTER SSA' onClick='cp("ྵ")'>&#xFB5;</a>
+<a class='box' title='[U+0FB6] TIBETAN SUBJOINED LETTER SA' onClick='cp("ྶ")'>&#xFB6;</a>
+<a class='box' title='[U+0FB7] TIBETAN SUBJOINED LETTER HA' onClick='cp("ྷ")'>&#xFB7;</a>
+<a class='box' title='[U+0FB8] TIBETAN SUBJOINED LETTER A' onClick='cp("ྸ")'>&#xFB8;</a>
+<a class='box' title='[U+0FB9] TIBETAN SUBJOINED LETTER KSSA' onClick='cp("ྐྵ")'>&#xFB9;</a>
+<a class='box' title='[U+0FBA] TIBETAN SUBJOINED LETTER FIXED-FORM WA' onClick='cp("ྺ")'>&#xFBA;</a>
+<a class='box' title='[U+0FBB] TIBETAN SUBJOINED LETTER FIXED-FORM YA' onClick='cp("ྻ")'>&#xFBB;</a>
+<a class='box' title='[U+0FBC] TIBETAN SUBJOINED LETTER FIXED-FORM RA' onClick='cp("ྼ")'>&#xFBC;</a>
+<a class='box' title='[U+0FBE] TIBETAN KU RU KHA' onClick='cp("྾")'>&#xFBE;</a>
+<a class='box' title='[U+0FBF] TIBETAN KU RU KHA BZHI MIG CAN' onClick='cp("྿")'>&#xFBF;</a>
+<a class='box' title='[U+0FC0] TIBETAN CANTILLATION SIGN HEAVY BEAT' onClick='cp("࿀")'>&#xFC0;</a>
+<a class='box' title='[U+0FC1] TIBETAN CANTILLATION SIGN LIGHT BEAT' onClick='cp("࿁")'>&#xFC1;</a>
+<a class='box' title='[U+0FC2] TIBETAN CANTILLATION SIGN CANG TE-U' onClick='cp("࿂")'>&#xFC2;</a>
+<a class='box' title='[U+0FC3] TIBETAN CANTILLATION SIGN SBUB -CHAL' onClick='cp("࿃")'>&#xFC3;</a>
+<a class='box' title='[U+0FC4] TIBETAN SYMBOL DRIL BU' onClick='cp("࿄")'>&#xFC4;</a>
+<a class='box' title='[U+0FC5] TIBETAN SYMBOL RDO RJE' onClick='cp("࿅")'>&#xFC5;</a>
+<a class='box' title='[U+0FC6] TIBETAN SYMBOL PADMA GDAN' onClick='cp("࿆")'>&#xFC6;</a>
+<a class='box' title='[U+0FC7] TIBETAN SYMBOL RDO RJE RGYA GRAM' onClick='cp("࿇")'>&#xFC7;</a>
+<a class='box' title='[U+0FC8] TIBETAN SYMBOL PHUR PA' onClick='cp("࿈")'>&#xFC8;</a>
+<a class='box' title='[U+0FC9] TIBETAN SYMBOL NOR BU' onClick='cp("࿉")'>&#xFC9;</a>
+<a class='box' title='[U+0FCA] TIBETAN SYMBOL NOR BU NYIS -KHYIL' onClick='cp("࿊")'>&#xFCA;</a>
+<a class='box' title='[U+0FCB] TIBETAN SYMBOL NOR BU GSUM -KHYIL' onClick='cp("࿋")'>&#xFCB;</a>
+<a class='box' title='[U+0FCC] TIBETAN SYMBOL NOR BU BZHI -KHYIL' onClick='cp("࿌")'>&#xFCC;</a>
+<a class='box' title='[U+0FCE] TIBETAN SIGN RDEL NAG RDEL DKAR' onClick='cp("࿎")'>&#xFCE;</a>
+<a class='box' title='[U+0FCF] TIBETAN SIGN RDEL NAG GSUM' onClick='cp("࿏")'>&#xFCF;</a>
+<a class='box' title='[U+0FD0] TIBETAN MARK BSKA- SHOG GI MGO RGYAN' onClick='cp("࿐")'>&#xFD0;</a>
+<a class='box' title='[U+0FD1] TIBETAN MARK MNYAM YIG GI MGO RGYAN' onClick='cp("࿑")'>&#xFD1;</a>
+<a class='box' title='[U+0FD2] TIBETAN MARK NYIS TSHEG' onClick='cp("࿒")'>&#xFD2;</a>
+<a class='box' title='[U+0FD3] TIBETAN MARK INITIAL BRDA RNYING YIG MGO MDUN MA' onClick='cp("࿓")'>&#xFD3;</a>
+<a class='box' title='[U+0FD4] TIBETAN MARK CLOSING BRDA RNYING YIG MGO SGAB MA' onClick='cp("࿔")'>&#xFD4;</a>
+<a class='box' title='[U+0FD5] RIGHT-FACING SVASTI SIGN' onClick='cp("࿕")'>&#xFD5;</a>
+<a class='box' title='[U+0FD6] LEFT-FACING SVASTI SIGN' onClick='cp("࿖")'>&#xFD6;</a>
+<a class='box' title='[U+0FD7] RIGHT-FACING SVASTI SIGN WITH DOTS' onClick='cp("࿗")'>&#xFD7;</a>
+<a class='box' title='[U+0FD8] LEFT-FACING SVASTI SIGN WITH DOTS' onClick='cp("࿘")'>&#xFD8;</a>
+<a class='box' title='[U+0FD9] TIBETAN MARK LEADING MCHAN RTAGS' onClick='cp("࿙")'>&#xFD9;</a>
+<a class='box' title='[U+0FDA] TIBETAN MARK TRAILING MCHAN RTAGS' onClick='cp("࿚")'>&#xFDA;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: orangered; id=#;'>Zanabazar Square (U+11A00 - U+11A4F)</h2>
+<div class='margined'>
+<a class='box' title='[U+11A00] ZANABAZAR SQUARE LETTER A' onClick='cp("𑨀")'>&#x11A00;</a>
+<a class='box' title='[U+11A01] ZANABAZAR SQUARE VOWEL SIGN I' onClick='cp("𑨁")'>&#x11A01;</a>
+<a class='box' title='[U+11A02] ZANABAZAR SQUARE VOWEL SIGN UE' onClick='cp("𑨂")'>&#x11A02;</a>
+<a class='box' title='[U+11A03] ZANABAZAR SQUARE VOWEL SIGN U' onClick='cp("𑨃")'>&#x11A03;</a>
+<a class='box' title='[U+11A04] ZANABAZAR SQUARE VOWEL SIGN E' onClick='cp("𑨄")'>&#x11A04;</a>
+<a class='box' title='[U+11A05] ZANABAZAR SQUARE VOWEL SIGN OE' onClick='cp("𑨅")'>&#x11A05;</a>
+<a class='box' title='[U+11A06] ZANABAZAR SQUARE VOWEL SIGN O' onClick='cp("𑨆")'>&#x11A06;</a>
+<a class='box' title='[U+11A07] ZANABAZAR SQUARE VOWEL SIGN AI' onClick='cp("𑨇")'>&#x11A07;</a>
+<a class='box' title='[U+11A08] ZANABAZAR SQUARE VOWEL SIGN AU' onClick='cp("𑨈")'>&#x11A08;</a>
+<a class='box' title='[U+11A09] ZANABAZAR SQUARE VOWEL SIGN REVERSED I' onClick='cp("𑨉")'>&#x11A09;</a>
+<a class='box' title='[U+11A0A] ZANABAZAR SQUARE VOWEL LENGTH MARK' onClick='cp("𑨊")'>&#x11A0A;</a>
+<a class='box' title='[U+11A0B] ZANABAZAR SQUARE LETTER KA' onClick='cp("𑨋")'>&#x11A0B;</a>
+<a class='box' title='[U+11A0C] ZANABAZAR SQUARE LETTER KHA' onClick='cp("𑨌")'>&#x11A0C;</a>
+<a class='box' title='[U+11A0D] ZANABAZAR SQUARE LETTER GA' onClick='cp("𑨍")'>&#x11A0D;</a>
+<a class='box' title='[U+11A0E] ZANABAZAR SQUARE LETTER GHA' onClick='cp("𑨎")'>&#x11A0E;</a>
+<a class='box' title='[U+11A0F] ZANABAZAR SQUARE LETTER NGA' onClick='cp("𑨏")'>&#x11A0F;</a>
+<a class='box' title='[U+11A10] ZANABAZAR SQUARE LETTER CA' onClick='cp("𑨐")'>&#x11A10;</a>
+<a class='box' title='[U+11A11] ZANABAZAR SQUARE LETTER CHA' onClick='cp("𑨑")'>&#x11A11;</a>
+<a class='box' title='[U+11A12] ZANABAZAR SQUARE LETTER JA' onClick='cp("𑨒")'>&#x11A12;</a>
+<a class='box' title='[U+11A13] ZANABAZAR SQUARE LETTER NYA' onClick='cp("𑨓")'>&#x11A13;</a>
+<a class='box' title='[U+11A14] ZANABAZAR SQUARE LETTER TTA' onClick='cp("𑨔")'>&#x11A14;</a>
+<a class='box' title='[U+11A15] ZANABAZAR SQUARE LETTER TTHA' onClick='cp("𑨕")'>&#x11A15;</a>
+<a class='box' title='[U+11A16] ZANABAZAR SQUARE LETTER DDA' onClick='cp("𑨖")'>&#x11A16;</a>
+<a class='box' title='[U+11A17] ZANABAZAR SQUARE LETTER DDHA' onClick='cp("𑨗")'>&#x11A17;</a>
+<a class='box' title='[U+11A18] ZANABAZAR SQUARE LETTER NNA' onClick='cp("𑨘")'>&#x11A18;</a>
+<a class='box' title='[U+11A19] ZANABAZAR SQUARE LETTER TA' onClick='cp("𑨙")'>&#x11A19;</a>
+<a class='box' title='[U+11A1A] ZANABAZAR SQUARE LETTER THA' onClick='cp("𑨚")'>&#x11A1A;</a>
+<a class='box' title='[U+11A1B] ZANABAZAR SQUARE LETTER DA' onClick='cp("𑨛")'>&#x11A1B;</a>
+<a class='box' title='[U+11A1C] ZANABAZAR SQUARE LETTER DHA' onClick='cp("𑨜")'>&#x11A1C;</a>
+<a class='box' title='[U+11A1D] ZANABAZAR SQUARE LETTER NA' onClick='cp("𑨝")'>&#x11A1D;</a>
+<a class='box' title='[U+11A1E] ZANABAZAR SQUARE LETTER PA' onClick='cp("𑨞")'>&#x11A1E;</a>
+<a class='box' title='[U+11A1F] ZANABAZAR SQUARE LETTER PHA' onClick='cp("𑨟")'>&#x11A1F;</a>
+<a class='box' title='[U+11A20] ZANABAZAR SQUARE LETTER BA' onClick='cp("𑨠")'>&#x11A20;</a>
+<a class='box' title='[U+11A21] ZANABAZAR SQUARE LETTER BHA' onClick='cp("𑨡")'>&#x11A21;</a>
+<a class='box' title='[U+11A22] ZANABAZAR SQUARE LETTER MA' onClick='cp("𑨢")'>&#x11A22;</a>
+<a class='box' title='[U+11A23] ZANABAZAR SQUARE LETTER TSA' onClick='cp("𑨣")'>&#x11A23;</a>
+<a class='box' title='[U+11A24] ZANABAZAR SQUARE LETTER TSHA' onClick='cp("𑨤")'>&#x11A24;</a>
+<a class='box' title='[U+11A25] ZANABAZAR SQUARE LETTER DZA' onClick='cp("𑨥")'>&#x11A25;</a>
+<a class='box' title='[U+11A26] ZANABAZAR SQUARE LETTER DZHA' onClick='cp("𑨦")'>&#x11A26;</a>
+<a class='box' title='[U+11A27] ZANABAZAR SQUARE LETTER ZHA' onClick='cp("𑨧")'>&#x11A27;</a>
+<a class='box' title='[U+11A28] ZANABAZAR SQUARE LETTER ZA' onClick='cp("𑨨")'>&#x11A28;</a>
+<a class='box' title='[U+11A29] ZANABAZAR SQUARE LETTER -A' onClick='cp("𑨩")'>&#x11A29;</a>
+<a class='box' title='[U+11A2A] ZANABAZAR SQUARE LETTER YA' onClick='cp("𑨪")'>&#x11A2A;</a>
+<a class='box' title='[U+11A2B] ZANABAZAR SQUARE LETTER RA' onClick='cp("𑨫")'>&#x11A2B;</a>
+<a class='box' title='[U+11A2C] ZANABAZAR SQUARE LETTER LA' onClick='cp("𑨬")'>&#x11A2C;</a>
+<a class='box' title='[U+11A2D] ZANABAZAR SQUARE LETTER VA' onClick='cp("𑨭")'>&#x11A2D;</a>
+<a class='box' title='[U+11A2E] ZANABAZAR SQUARE LETTER SHA' onClick='cp("𑨮")'>&#x11A2E;</a>
+<a class='box' title='[U+11A2F] ZANABAZAR SQUARE LETTER SSA' onClick='cp("𑨯")'>&#x11A2F;</a>
+<a class='box' title='[U+11A30] ZANABAZAR SQUARE LETTER SA' onClick='cp("𑨰")'>&#x11A30;</a>
+<a class='box' title='[U+11A31] ZANABAZAR SQUARE LETTER HA' onClick='cp("𑨱")'>&#x11A31;</a>
+<a class='box' title='[U+11A32] ZANABAZAR SQUARE LETTER KSSA' onClick='cp("𑨲")'>&#x11A32;</a>
+<a class='box' title='[U+11A33] ZANABAZAR SQUARE FINAL CONSONANT MARK' onClick='cp("𑨳")'>&#x11A33;</a>
+<a class='box' title='[U+11A34] ZANABAZAR SQUARE SIGN VIRAMA' onClick='cp("𑨴")'>&#x11A34;</a>
+<a class='box' title='[U+11A35] ZANABAZAR SQUARE SIGN CANDRABINDU' onClick='cp("𑨵")'>&#x11A35;</a>
+<a class='box' title='[U+11A36] ZANABAZAR SQUARE SIGN CANDRABINDU WITH ORNAMENT' onClick='cp("𑨶")'>&#x11A36;</a>
+<a class='box' title='[U+11A37] ZANABAZAR SQUARE SIGN CANDRA WITH ORNAMENT' onClick='cp("𑨷")'>&#x11A37;</a>
+<a class='box' title='[U+11A38] ZANABAZAR SQUARE SIGN ANUSVARA' onClick='cp("𑨸")'>&#x11A38;</a>
+<a class='box' title='[U+11A39] ZANABAZAR SQUARE SIGN VISARGA' onClick='cp("𑨹")'>&#x11A39;</a>
+<a class='box' title='[U+11A3A] ZANABAZAR SQUARE CLUSTER-INITIAL LETTER RA' onClick='cp("𑨺")'>&#x11A3A;</a>
+<a class='box' title='[U+11A3B] ZANABAZAR SQUARE CLUSTER-FINAL LETTER YA' onClick='cp("𑨻")'>&#x11A3B;</a>
+<a class='box' title='[U+11A3C] ZANABAZAR SQUARE CLUSTER-FINAL LETTER RA' onClick='cp("𑨼")'>&#x11A3C;</a>
+<a class='box' title='[U+11A3D] ZANABAZAR SQUARE CLUSTER-FINAL LETTER LA' onClick='cp("𑨽")'>&#x11A3D;</a>
+<a class='box' title='[U+11A3E] ZANABAZAR SQUARE CLUSTER-FINAL LETTER VA' onClick='cp("𑨾")'>&#x11A3E;</a>
+<a class='box' title='[U+11A3F] ZANABAZAR SQUARE INITIAL HEAD MARK' onClick='cp("𑨿")'>&#x11A3F;</a>
+<a class='box' title='[U+11A40] ZANABAZAR SQUARE CLOSING HEAD MARK' onClick='cp("𑩀")'>&#x11A40;</a>
+<a class='box' title='[U+11A41] ZANABAZAR SQUARE MARK TSHEG' onClick='cp("𑩁")'>&#x11A41;</a>
+<a class='box' title='[U+11A42] ZANABAZAR SQUARE MARK SHAD' onClick='cp("𑩂")'>&#x11A42;</a>
+<a class='box' title='[U+11A43] ZANABAZAR SQUARE MARK DOUBLE SHAD' onClick='cp("𑩃")'>&#x11A43;</a>
+<a class='box' title='[U+11A44] ZANABAZAR SQUARE MARK LONG TSHEG' onClick='cp("𑩄")'>&#x11A44;</a>
+<a class='box' title='[U+11A45] ZANABAZAR SQUARE INITIAL DOUBLE-LINED HEAD MARK' onClick='cp("𑩅")'>&#x11A45;</a>
+<a class='box' title='[U+11A46] ZANABAZAR SQUARE CLOSING DOUBLE-LINED HEAD MARK' onClick='cp("𑩆")'>&#x11A46;</a>
+<a class='box' title='[U+11A47] ZANABAZAR SQUARE SUBJOINER' onClick='cp("𑩇")'>&#x11A47;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+
+   </div>
+  </div>
+  <hr/>
+  <a href='javascript:history.back()'>
+   Back
+  </a>
+  <div>
+   <br/>
+   <br/>
+   <div style='font-size: 80%; text-align: center'>
+    Copyright &copy; 2020 emojipicker.com
+    <a href='../about/disclaimer.html' class='disclaimer'>
+     Disclaimer
+    </a>
+    <a href='../about/privacypolicy.html' class='disclaimer'>
+     Privacy Policy
+    </a>
+   </div>
+  </div>
+ </body>
+</html>

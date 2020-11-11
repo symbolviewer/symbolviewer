@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset='utf-8'/>
+  <title>
+   American Scripts
+  </title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<style type="text/css">
+		table,th,tr,td	{	padding:			0px;
+							border:				solid black 1px;
+							border-spacing:		0px;
+						}
+		td+td			{
+							padding-left:		4px;
+							padding-right:		4px;
+							font-family:		sans-serif;	
+						}
+		td+td+td		{
+							word-break:			break-all;
+							font-family:		serif;	
+						}
+		body			{
+							margin-left:		0px;
+							margin-right:		0px;
+							padding-left:		0px;
+							padding-right:		0px;
+							background-color:	#fcfcfc;
+						}
+		.margined_hdr	{
+							margin:				10px;
+						}
+		.margined		{
+							margin:				10px;
+						}
+		.wholearea		{
+							margin:				0px;
+							padding:			0px;
+						}
+		.wholearea		{	line-height: 		1em;	font-family:	sans-serif;	font-family: 'Segoe UI Emoji'; }
+		.titlearea		{	line-height: 		1.4em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.hbar_area		{	line-height: 		1em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.xcopyarea		{	line-height: 		1.2em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.main			{	line-height:		30px;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+
+		.box			{
+							float:				left;
+
+							line-height:		1;
+						/*	line-spacing:		0;	*/
+
+						/*	height:				30px; */
+							height:				50px;
+							min-width:			50px;
+						}
+		.box, .xbutton
+						{
+							box-sizing:			border-box;
+
+							font-family:		'Segoe UI Emoji';
+
+						    cursor:				pointer;
+						    text-decoration:	none;
+
+						    background-color:	#eeeeee;
+						    color:				black;
+
+						    text-align:			center;
+							vertical-align:		middle;
+						    font-size:			24px;
+
+						    border:				1px solid #000000;
+						    margin:				0px 0px 0px 0px;
+						    padding:			5px 5px 5px 5px;
+
+						    border:				1px solid #aaa;
+						    padding:			10px 5px;
+						}
+		.box:hover, .xbutton:hover
+						{
+							background-color: #ffffff
+						}
+		.box:active, .xbutton:active
+						{
+							background-color:	#eeeeee;
+							box-shadow:			0 4px #666;
+							transform:			translateY(-4px);
+						}
+		.testsvg		{
+							text-align:			center;
+							vertical-align:		middle;
+						}
+		/* -------------------------------------------------*/
+		/* CATEGORY HEADERS									*/
+		/* -------------------------------------------------*/
+		h1					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				black;
+								background-color:	cyan;
+
+								left:				0;
+								text-align:			center;
+
+								margin-top:			10px;
+								padding-top:		12px;
+								padding-bottom:		12px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		h2					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				white;
+								background-color:	#202020;
+
+								left:				0;
+								text-align:			center;
+								text-align:			left;
+
+								margin-top:			10px;
+								padding-top:		8px;
+								padding-bottom:		8px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		/* SUBCATEGORY */
+		h3					{ 
+							/*	font-family:		serif; */
+								font-family:		'Segoe UI Emoji';
+								font-family:		sans-serif;
+								font-weight:		normal;
+
+								margin-top:			10px;
+								padding-top:		0px;
+								padding-bottom:		0px;
+								margin-bottom:		4px;
+							}
+		.catlink			{
+								display:			inline-block;
+								padding:			5px 4px;
+								color:				#FCFCFC;
+								background:			#5050A0;
+								text-align:			center;
+								cursor:				pointer;
+								margin-left:		10px;
+							}
+		.catlink:hover		{
+								font-weight:		bold;
+							}
+		.codevalue			{
+								font-size:			20px;
+							}
+</style>
+	<script>
+		function goback()
+		{
+			window.history.back();
+		}
+		function cp(txt)
+		{
+			var a							= document.createElement ('textarea');
+			a.style.position				= 'fixed';
+			a.style.left					= '-100%';
+			a.value							= txt;
+			a.selectionStart				= 0;
+			a.selectionEnd					= a.value.length;
+
+			document.body.appendChild		(a);
+		//	a.focus							();		// 2017-11-02 del
+			a.select						();		// 2017-11-02 add
+			document.execCommand			('copy');
+			document.body.removeChild		(a);
+			var e							= document.getElementById ('copybuf');
+			e.value							+= txt;
+		};
+
+		function areacopy()
+		{
+			var a							= document.activeElement;
+			var box							= document.getElementById	('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function areaerase()
+		{
+			var a = document.activeElement;
+			var box							= document.getElementById ('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+			box.value						= '';
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function jmpl(location)
+		{
+			var old_name	= document.getElementById (location).getAttribute('name');
+			document.getElementById (location).setAttribute('name', location);
+			window.location.hash			= location;
+			var ret = window.scrollBy		(0, -62);
+			document.getElementById (location).setAttribute('name', old_name);
+		}
+		function jmphome()
+		{
+			window.location.hash				= '';
+		    document.body.scrollTop				= 0; // For Chrome, Safari and Opera
+		    document.documentElement.scrollTop	= 0; // For IE and Firefox
+		}
+	</script>
+ </head>
+ <body>
+  <div class='wholearea'>
+    <div class='testsvg'>
+     <svg class='testsvg' xmlns='http://www.w3.org/2000/svg' version='1.1' width='100%' height='100' stroke='black' stroke-width='0px' style='font-size:32px; text-align:center; font-family: serif; font-family:Segoe UI Emoji;'>
+      <defs>
+       <linearGradient id='grad1'>
+        <stop offset='0%' stop-color='cyan'/>
+        <stop offset='40%' stop-color='cyan'/>
+        <stop offset='70%' stop-color='#777777'/>
+        <stop offset='100%' stop-color='#333333'/>
+       </linearGradient>
+      </defs>
+      <rect x='0' y='0' width='100%' height='100' fill='url(#grad1)'/>
+      <text x='5%' y='55%'>
+       American Scripts
+      </text>
+     </svg>
+    </div>
+   <a href='javascript:history.back()'>
+    Back
+   </a>
+   <hr/>
+   <div>
+    <h2 style='color: white; background-color: #25f; id=#;'>Cherokee (U+13A0 - U+13FF)</h2>
+<div class='margined'>
+<a class='box' title='[U+13A0] CHEROKEE LETTER A' onClick='cp("Ꭰ")'>&#x13A0;</a>
+<a class='box' title='[U+13A1] CHEROKEE LETTER E' onClick='cp("Ꭱ")'>&#x13A1;</a>
+<a class='box' title='[U+13A2] CHEROKEE LETTER I' onClick='cp("Ꭲ")'>&#x13A2;</a>
+<a class='box' title='[U+13A3] CHEROKEE LETTER O' onClick='cp("Ꭳ")'>&#x13A3;</a>
+<a class='box' title='[U+13A4] CHEROKEE LETTER U' onClick='cp("Ꭴ")'>&#x13A4;</a>
+<a class='box' title='[U+13A5] CHEROKEE LETTER V' onClick='cp("Ꭵ")'>&#x13A5;</a>
+<a class='box' title='[U+13A6] CHEROKEE LETTER GA' onClick='cp("Ꭶ")'>&#x13A6;</a>
+<a class='box' title='[U+13A7] CHEROKEE LETTER KA' onClick='cp("Ꭷ")'>&#x13A7;</a>
+<a class='box' title='[U+13A8] CHEROKEE LETTER GE' onClick='cp("Ꭸ")'>&#x13A8;</a>
+<a class='box' title='[U+13A9] CHEROKEE LETTER GI' onClick='cp("Ꭹ")'>&#x13A9;</a>
+<a class='box' title='[U+13AA] CHEROKEE LETTER GO' onClick='cp("Ꭺ")'>&#x13AA;</a>
+<a class='box' title='[U+13AB] CHEROKEE LETTER GU' onClick='cp("Ꭻ")'>&#x13AB;</a>
+<a class='box' title='[U+13AC] CHEROKEE LETTER GV' onClick='cp("Ꭼ")'>&#x13AC;</a>
+<a class='box' title='[U+13AD] CHEROKEE LETTER HA' onClick='cp("Ꭽ")'>&#x13AD;</a>
+<a class='box' title='[U+13AE] CHEROKEE LETTER HE' onClick='cp("Ꭾ")'>&#x13AE;</a>
+<a class='box' title='[U+13AF] CHEROKEE LETTER HI' onClick='cp("Ꭿ")'>&#x13AF;</a>
+<a class='box' title='[U+13B0] CHEROKEE LETTER HO' onClick='cp("Ꮀ")'>&#x13B0;</a>
+<a class='box' title='[U+13B1] CHEROKEE LETTER HU' onClick='cp("Ꮁ")'>&#x13B1;</a>
+<a class='box' title='[U+13B2] CHEROKEE LETTER HV' onClick='cp("Ꮂ")'>&#x13B2;</a>
+<a class='box' title='[U+13B3] CHEROKEE LETTER LA' onClick='cp("Ꮃ")'>&#x13B3;</a>
+<a class='box' title='[U+13B4] CHEROKEE LETTER LE' onClick='cp("Ꮄ")'>&#x13B4;</a>
+<a class='box' title='[U+13B5] CHEROKEE LETTER LI' onClick='cp("Ꮅ")'>&#x13B5;</a>
+<a class='box' title='[U+13B6] CHEROKEE LETTER LO' onClick='cp("Ꮆ")'>&#x13B6;</a>
+<a class='box' title='[U+13B7] CHEROKEE LETTER LU' onClick='cp("Ꮇ")'>&#x13B7;</a>
+<a class='box' title='[U+13B8] CHEROKEE LETTER LV' onClick='cp("Ꮈ")'>&#x13B8;</a>
+<a class='box' title='[U+13B9] CHEROKEE LETTER MA' onClick='cp("Ꮉ")'>&#x13B9;</a>
+<a class='box' title='[U+13BA] CHEROKEE LETTER ME' onClick='cp("Ꮊ")'>&#x13BA;</a>
+<a class='box' title='[U+13BB] CHEROKEE LETTER MI' onClick='cp("Ꮋ")'>&#x13BB;</a>
+<a class='box' title='[U+13BC] CHEROKEE LETTER MO' onClick='cp("Ꮌ")'>&#x13BC;</a>
+<a class='box' title='[U+13BD] CHEROKEE LETTER MU' onClick='cp("Ꮍ")'>&#x13BD;</a>
+<a class='box' title='[U+13BE] CHEROKEE LETTER NA' onClick='cp("Ꮎ")'>&#x13BE;</a>
+<a class='box' title='[U+13BF] CHEROKEE LETTER HNA' onClick='cp("Ꮏ")'>&#x13BF;</a>
+<a class='box' title='[U+13C0] CHEROKEE LETTER NAH' onClick='cp("Ꮐ")'>&#x13C0;</a>
+<a class='box' title='[U+13C1] CHEROKEE LETTER NE' onClick='cp("Ꮑ")'>&#x13C1;</a>
+<a class='box' title='[U+13C2] CHEROKEE LETTER NI' onClick='cp("Ꮒ")'>&#x13C2;</a>
+<a class='box' title='[U+13C3] CHEROKEE LETTER NO' onClick='cp("Ꮓ")'>&#x13C3;</a>
+<a class='box' title='[U+13C4] CHEROKEE LETTER NU' onClick='cp("Ꮔ")'>&#x13C4;</a>
+<a class='box' title='[U+13C5] CHEROKEE LETTER NV' onClick='cp("Ꮕ")'>&#x13C5;</a>
+<a class='box' title='[U+13C6] CHEROKEE LETTER QUA' onClick='cp("Ꮖ")'>&#x13C6;</a>
+<a class='box' title='[U+13C7] CHEROKEE LETTER QUE' onClick='cp("Ꮗ")'>&#x13C7;</a>
+<a class='box' title='[U+13C8] CHEROKEE LETTER QUI' onClick='cp("Ꮘ")'>&#x13C8;</a>
+<a class='box' title='[U+13C9] CHEROKEE LETTER QUO' onClick='cp("Ꮙ")'>&#x13C9;</a>
+<a class='box' title='[U+13CA] CHEROKEE LETTER QUU' onClick='cp("Ꮚ")'>&#x13CA;</a>
+<a class='box' title='[U+13CB] CHEROKEE LETTER QUV' onClick='cp("Ꮛ")'>&#x13CB;</a>
+<a class='box' title='[U+13CC] CHEROKEE LETTER SA' onClick='cp("Ꮜ")'>&#x13CC;</a>
+<a class='box' title='[U+13CD] CHEROKEE LETTER S' onClick='cp("Ꮝ")'>&#x13CD;</a>
+<a class='box' title='[U+13CE] CHEROKEE LETTER SE' onClick='cp("Ꮞ")'>&#x13CE;</a>
+<a class='box' title='[U+13CF] CHEROKEE LETTER SI' onClick='cp("Ꮟ")'>&#x13CF;</a>
+<a class='box' title='[U+13D0] CHEROKEE LETTER SO' onClick='cp("Ꮠ")'>&#x13D0;</a>
+<a class='box' title='[U+13D1] CHEROKEE LETTER SU' onClick='cp("Ꮡ")'>&#x13D1;</a>
+<a class='box' title='[U+13D2] CHEROKEE LETTER SV' onClick='cp("Ꮢ")'>&#x13D2;</a>
+<a class='box' title='[U+13D3] CHEROKEE LETTER DA' onClick='cp("Ꮣ")'>&#x13D3;</a>
+<a class='box' title='[U+13D4] CHEROKEE LETTER TA' onClick='cp("Ꮤ")'>&#x13D4;</a>
+<a class='box' title='[U+13D5] CHEROKEE LETTER DE' onClick='cp("Ꮥ")'>&#x13D5;</a>
+<a class='box' title='[U+13D6] CHEROKEE LETTER TE' onClick='cp("Ꮦ")'>&#x13D6;</a>
+<a class='box' title='[U+13D7] CHEROKEE LETTER DI' onClick='cp("Ꮧ")'>&#x13D7;</a>
+<a class='box' title='[U+13D8] CHEROKEE LETTER TI' onClick='cp("Ꮨ")'>&#x13D8;</a>
+<a class='box' title='[U+13D9] CHEROKEE LETTER DO' onClick='cp("Ꮩ")'>&#x13D9;</a>
+<a class='box' title='[U+13DA] CHEROKEE LETTER DU' onClick='cp("Ꮪ")'>&#x13DA;</a>
+<a class='box' title='[U+13DB] CHEROKEE LETTER DV' onClick='cp("Ꮫ")'>&#x13DB;</a>
+<a class='box' title='[U+13DC] CHEROKEE LETTER DLA' onClick='cp("Ꮬ")'>&#x13DC;</a>
+<a class='box' title='[U+13DD] CHEROKEE LETTER TLA' onClick='cp("Ꮭ")'>&#x13DD;</a>
+<a class='box' title='[U+13DE] CHEROKEE LETTER TLE' onClick='cp("Ꮮ")'>&#x13DE;</a>
+<a class='box' title='[U+13DF] CHEROKEE LETTER TLI' onClick='cp("Ꮯ")'>&#x13DF;</a>
+<a class='box' title='[U+13E0] CHEROKEE LETTER TLO' onClick='cp("Ꮰ")'>&#x13E0;</a>
+<a class='box' title='[U+13E1] CHEROKEE LETTER TLU' onClick='cp("Ꮱ")'>&#x13E1;</a>
+<a class='box' title='[U+13E2] CHEROKEE LETTER TLV' onClick='cp("Ꮲ")'>&#x13E2;</a>
+<a class='box' title='[U+13E3] CHEROKEE LETTER TSA' onClick='cp("Ꮳ")'>&#x13E3;</a>
+<a class='box' title='[U+13E4] CHEROKEE LETTER TSE' onClick='cp("Ꮴ")'>&#x13E4;</a>
+<a class='box' title='[U+13E5] CHEROKEE LETTER TSI' onClick='cp("Ꮵ")'>&#x13E5;</a>
+<a class='box' title='[U+13E6] CHEROKEE LETTER TSO' onClick='cp("Ꮶ")'>&#x13E6;</a>
+<a class='box' title='[U+13E7] CHEROKEE LETTER TSU' onClick='cp("Ꮷ")'>&#x13E7;</a>
+<a class='box' title='[U+13E8] CHEROKEE LETTER TSV' onClick='cp("Ꮸ")'>&#x13E8;</a>
+<a class='box' title='[U+13E9] CHEROKEE LETTER WA' onClick='cp("Ꮹ")'>&#x13E9;</a>
+<a class='box' title='[U+13EA] CHEROKEE LETTER WE' onClick='cp("Ꮺ")'>&#x13EA;</a>
+<a class='box' title='[U+13EB] CHEROKEE LETTER WI' onClick='cp("Ꮻ")'>&#x13EB;</a>
+<a class='box' title='[U+13EC] CHEROKEE LETTER WO' onClick='cp("Ꮼ")'>&#x13EC;</a>
+<a class='box' title='[U+13ED] CHEROKEE LETTER WU' onClick='cp("Ꮽ")'>&#x13ED;</a>
+<a class='box' title='[U+13EE] CHEROKEE LETTER WV' onClick='cp("Ꮾ")'>&#x13EE;</a>
+<a class='box' title='[U+13EF] CHEROKEE LETTER YA' onClick='cp("Ꮿ")'>&#x13EF;</a>
+<a class='box' title='[U+13F0] CHEROKEE LETTER YE' onClick='cp("Ᏸ")'>&#x13F0;</a>
+<a class='box' title='[U+13F1] CHEROKEE LETTER YI' onClick='cp("Ᏹ")'>&#x13F1;</a>
+<a class='box' title='[U+13F2] CHEROKEE LETTER YO' onClick='cp("Ᏺ")'>&#x13F2;</a>
+<a class='box' title='[U+13F3] CHEROKEE LETTER YU' onClick='cp("Ᏻ")'>&#x13F3;</a>
+<a class='box' title='[U+13F4] CHEROKEE LETTER YV' onClick='cp("Ᏼ")'>&#x13F4;</a>
+<a class='box' title='[U+13F5] CHEROKEE LETTER MV' onClick='cp("Ᏽ")'>&#x13F5;</a>
+<a class='box' title='[U+13F8] CHEROKEE SMALL LETTER YE' onClick='cp("ᏸ")'>&#x13F8;</a>
+<a class='box' title='[U+13F9] CHEROKEE SMALL LETTER YI' onClick='cp("ᏹ")'>&#x13F9;</a>
+<a class='box' title='[U+13FA] CHEROKEE SMALL LETTER YO' onClick='cp("ᏺ")'>&#x13FA;</a>
+<a class='box' title='[U+13FB] CHEROKEE SMALL LETTER YU' onClick='cp("ᏻ")'>&#x13FB;</a>
+<a class='box' title='[U+13FC] CHEROKEE SMALL LETTER YV' onClick='cp("ᏼ")'>&#x13FC;</a>
+<a class='box' title='[U+13FD] CHEROKEE SMALL LETTER MV' onClick='cp("ᏽ")'>&#x13FD;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: green; id=#;'>Cherokee Supplement (U+AB70 - U+ABBF)</h2>
+<div class='margined'>
+<a class='box' title='[U+AB70] CHEROKEE SMALL LETTER A' onClick='cp("ꭰ")'>&#xAB70;</a>
+<a class='box' title='[U+AB71] CHEROKEE SMALL LETTER E' onClick='cp("ꭱ")'>&#xAB71;</a>
+<a class='box' title='[U+AB72] CHEROKEE SMALL LETTER I' onClick='cp("ꭲ")'>&#xAB72;</a>
+<a class='box' title='[U+AB73] CHEROKEE SMALL LETTER O' onClick='cp("ꭳ")'>&#xAB73;</a>
+<a class='box' title='[U+AB74] CHEROKEE SMALL LETTER U' onClick='cp("ꭴ")'>&#xAB74;</a>
+<a class='box' title='[U+AB75] CHEROKEE SMALL LETTER V' onClick='cp("ꭵ")'>&#xAB75;</a>
+<a class='box' title='[U+AB76] CHEROKEE SMALL LETTER GA' onClick='cp("ꭶ")'>&#xAB76;</a>
+<a class='box' title='[U+AB77] CHEROKEE SMALL LETTER KA' onClick='cp("ꭷ")'>&#xAB77;</a>
+<a class='box' title='[U+AB78] CHEROKEE SMALL LETTER GE' onClick='cp("ꭸ")'>&#xAB78;</a>
+<a class='box' title='[U+AB79] CHEROKEE SMALL LETTER GI' onClick='cp("ꭹ")'>&#xAB79;</a>
+<a class='box' title='[U+AB7A] CHEROKEE SMALL LETTER GO' onClick='cp("ꭺ")'>&#xAB7A;</a>
+<a class='box' title='[U+AB7B] CHEROKEE SMALL LETTER GU' onClick='cp("ꭻ")'>&#xAB7B;</a>
+<a class='box' title='[U+AB7C] CHEROKEE SMALL LETTER GV' onClick='cp("ꭼ")'>&#xAB7C;</a>
+<a class='box' title='[U+AB7D] CHEROKEE SMALL LETTER HA' onClick='cp("ꭽ")'>&#xAB7D;</a>
+<a class='box' title='[U+AB7E] CHEROKEE SMALL LETTER HE' onClick='cp("ꭾ")'>&#xAB7E;</a>
+<a class='box' title='[U+AB7F] CHEROKEE SMALL LETTER HI' onClick='cp("ꭿ")'>&#xAB7F;</a>
+<a class='box' title='[U+AB80] CHEROKEE SMALL LETTER HO' onClick='cp("ꮀ")'>&#xAB80;</a>
+<a class='box' title='[U+AB81] CHEROKEE SMALL LETTER HU' onClick='cp("ꮁ")'>&#xAB81;</a>
+<a class='box' title='[U+AB82] CHEROKEE SMALL LETTER HV' onClick='cp("ꮂ")'>&#xAB82;</a>
+<a class='box' title='[U+AB83] CHEROKEE SMALL LETTER LA' onClick='cp("ꮃ")'>&#xAB83;</a>
+<a class='box' title='[U+AB84] CHEROKEE SMALL LETTER LE' onClick='cp("ꮄ")'>&#xAB84;</a>
+<a class='box' title='[U+AB85] CHEROKEE SMALL LETTER LI' onClick='cp("ꮅ")'>&#xAB85;</a>
+<a class='box' title='[U+AB86] CHEROKEE SMALL LETTER LO' onClick='cp("ꮆ")'>&#xAB86;</a>
+<a class='box' title='[U+AB87] CHEROKEE SMALL LETTER LU' onClick='cp("ꮇ")'>&#xAB87;</a>
+<a class='box' title='[U+AB88] CHEROKEE SMALL LETTER LV' onClick='cp("ꮈ")'>&#xAB88;</a>
+<a class='box' title='[U+AB89] CHEROKEE SMALL LETTER MA' onClick='cp("ꮉ")'>&#xAB89;</a>
+<a class='box' title='[U+AB8A] CHEROKEE SMALL LETTER ME' onClick='cp("ꮊ")'>&#xAB8A;</a>
+<a class='box' title='[U+AB8B] CHEROKEE SMALL LETTER MI' onClick='cp("ꮋ")'>&#xAB8B;</a>
+<a class='box' title='[U+AB8C] CHEROKEE SMALL LETTER MO' onClick='cp("ꮌ")'>&#xAB8C;</a>
+<a class='box' title='[U+AB8D] CHEROKEE SMALL LETTER MU' onClick='cp("ꮍ")'>&#xAB8D;</a>
+<a class='box' title='[U+AB8E] CHEROKEE SMALL LETTER NA' onClick='cp("ꮎ")'>&#xAB8E;</a>
+<a class='box' title='[U+AB8F] CHEROKEE SMALL LETTER HNA' onClick='cp("ꮏ")'>&#xAB8F;</a>
+<a class='box' title='[U+AB90] CHEROKEE SMALL LETTER NAH' onClick='cp("ꮐ")'>&#xAB90;</a>
+<a class='box' title='[U+AB91] CHEROKEE SMALL LETTER NE' onClick='cp("ꮑ")'>&#xAB91;</a>
+<a class='box' title='[U+AB92] CHEROKEE SMALL LETTER NI' onClick='cp("ꮒ")'>&#xAB92;</a>
+<a class='box' title='[U+AB93] CHEROKEE SMALL LETTER NO' onClick='cp("ꮓ")'>&#xAB93;</a>
+<a class='box' title='[U+AB94] CHEROKEE SMALL LETTER NU' onClick='cp("ꮔ")'>&#xAB94;</a>
+<a class='box' title='[U+AB95] CHEROKEE SMALL LETTER NV' onClick='cp("ꮕ")'>&#xAB95;</a>
+<a class='box' title='[U+AB96] CHEROKEE SMALL LETTER QUA' onClick='cp("ꮖ")'>&#xAB96;</a>
+<a class='box' title='[U+AB97] CHEROKEE SMALL LETTER QUE' onClick='cp("ꮗ")'>&#xAB97;</a>
+<a class='box' title='[U+AB98] CHEROKEE SMALL LETTER QUI' onClick='cp("ꮘ")'>&#xAB98;</a>
+<a class='box' title='[U+AB99] CHEROKEE SMALL LETTER QUO' onClick='cp("ꮙ")'>&#xAB99;</a>
+<a class='box' title='[U+AB9A] CHEROKEE SMALL LETTER QUU' onClick='cp("ꮚ")'>&#xAB9A;</a>
+<a class='box' title='[U+AB9B] CHEROKEE SMALL LETTER QUV' onClick='cp("ꮛ")'>&#xAB9B;</a>
+<a class='box' title='[U+AB9C] CHEROKEE SMALL LETTER SA' onClick='cp("ꮜ")'>&#xAB9C;</a>
+<a class='box' title='[U+AB9D] CHEROKEE SMALL LETTER S' onClick='cp("ꮝ")'>&#xAB9D;</a>
+<a class='box' title='[U+AB9E] CHEROKEE SMALL LETTER SE' onClick='cp("ꮞ")'>&#xAB9E;</a>
+<a class='box' title='[U+AB9F] CHEROKEE SMALL LETTER SI' onClick='cp("ꮟ")'>&#xAB9F;</a>
+<a class='box' title='[U+ABA0] CHEROKEE SMALL LETTER SO' onClick='cp("ꮠ")'>&#xABA0;</a>
+<a class='box' title='[U+ABA1] CHEROKEE SMALL LETTER SU' onClick='cp("ꮡ")'>&#xABA1;</a>
+<a class='box' title='[U+ABA2] CHEROKEE SMALL LETTER SV' onClick='cp("ꮢ")'>&#xABA2;</a>
+<a class='box' title='[U+ABA3] CHEROKEE SMALL LETTER DA' onClick='cp("ꮣ")'>&#xABA3;</a>
+<a class='box' title='[U+ABA4] CHEROKEE SMALL LETTER TA' onClick='cp("ꮤ")'>&#xABA4;</a>
+<a class='box' title='[U+ABA5] CHEROKEE SMALL LETTER DE' onClick='cp("ꮥ")'>&#xABA5;</a>
+<a class='box' title='[U+ABA6] CHEROKEE SMALL LETTER TE' onClick='cp("ꮦ")'>&#xABA6;</a>
+<a class='box' title='[U+ABA7] CHEROKEE SMALL LETTER DI' onClick='cp("ꮧ")'>&#xABA7;</a>
+<a class='box' title='[U+ABA8] CHEROKEE SMALL LETTER TI' onClick='cp("ꮨ")'>&#xABA8;</a>
+<a class='box' title='[U+ABA9] CHEROKEE SMALL LETTER DO' onClick='cp("ꮩ")'>&#xABA9;</a>
+<a class='box' title='[U+ABAA] CHEROKEE SMALL LETTER DU' onClick='cp("ꮪ")'>&#xABAA;</a>
+<a class='box' title='[U+ABAB] CHEROKEE SMALL LETTER DV' onClick='cp("ꮫ")'>&#xABAB;</a>
+<a class='box' title='[U+ABAC] CHEROKEE SMALL LETTER DLA' onClick='cp("ꮬ")'>&#xABAC;</a>
+<a class='box' title='[U+ABAD] CHEROKEE SMALL LETTER TLA' onClick='cp("ꮭ")'>&#xABAD;</a>
+<a class='box' title='[U+ABAE] CHEROKEE SMALL LETTER TLE' onClick='cp("ꮮ")'>&#xABAE;</a>
+<a class='box' title='[U+ABAF] CHEROKEE SMALL LETTER TLI' onClick='cp("ꮯ")'>&#xABAF;</a>
+<a class='box' title='[U+ABB0] CHEROKEE SMALL LETTER TLO' onClick='cp("ꮰ")'>&#xABB0;</a>
+<a class='box' title='[U+ABB1] CHEROKEE SMALL LETTER TLU' onClick='cp("ꮱ")'>&#xABB1;</a>
+<a class='box' title='[U+ABB2] CHEROKEE SMALL LETTER TLV' onClick='cp("ꮲ")'>&#xABB2;</a>
+<a class='box' title='[U+ABB3] CHEROKEE SMALL LETTER TSA' onClick='cp("ꮳ")'>&#xABB3;</a>
+<a class='box' title='[U+ABB4] CHEROKEE SMALL LETTER TSE' onClick='cp("ꮴ")'>&#xABB4;</a>
+<a class='box' title='[U+ABB5] CHEROKEE SMALL LETTER TSI' onClick='cp("ꮵ")'>&#xABB5;</a>
+<a class='box' title='[U+ABB6] CHEROKEE SMALL LETTER TSO' onClick='cp("ꮶ")'>&#xABB6;</a>
+<a class='box' title='[U+ABB7] CHEROKEE SMALL LETTER TSU' onClick='cp("ꮷ")'>&#xABB7;</a>
+<a class='box' title='[U+ABB8] CHEROKEE SMALL LETTER TSV' onClick='cp("ꮸ")'>&#xABB8;</a>
+<a class='box' title='[U+ABB9] CHEROKEE SMALL LETTER WA' onClick='cp("ꮹ")'>&#xABB9;</a>
+<a class='box' title='[U+ABBA] CHEROKEE SMALL LETTER WE' onClick='cp("ꮺ")'>&#xABBA;</a>
+<a class='box' title='[U+ABBB] CHEROKEE SMALL LETTER WI' onClick='cp("ꮻ")'>&#xABBB;</a>
+<a class='box' title='[U+ABBC] CHEROKEE SMALL LETTER WO' onClick='cp("ꮼ")'>&#xABBC;</a>
+<a class='box' title='[U+ABBD] CHEROKEE SMALL LETTER WU' onClick='cp("ꮽ")'>&#xABBD;</a>
+<a class='box' title='[U+ABBE] CHEROKEE SMALL LETTER WV' onClick='cp("ꮾ")'>&#xABBE;</a>
+<a class='box' title='[U+ABBF] CHEROKEE SMALL LETTER YA' onClick='cp("ꮿ")'>&#xABBF;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: orangered; id=#;'>Deseret (U+10400 - U+1044F)</h2>
+<div class='margined'>
+<a class='box' title='[U+10400] DESERET CAPITAL LETTER LONG I' onClick='cp("𐐀")'>&#x10400;</a>
+<a class='box' title='[U+10401] DESERET CAPITAL LETTER LONG E' onClick='cp("𐐁")'>&#x10401;</a>
+<a class='box' title='[U+10402] DESERET CAPITAL LETTER LONG A' onClick='cp("𐐂")'>&#x10402;</a>
+<a class='box' title='[U+10403] DESERET CAPITAL LETTER LONG AH' onClick='cp("𐐃")'>&#x10403;</a>
+<a class='box' title='[U+10404] DESERET CAPITAL LETTER LONG O' onClick='cp("𐐄")'>&#x10404;</a>
+<a class='box' title='[U+10405] DESERET CAPITAL LETTER LONG OO' onClick='cp("𐐅")'>&#x10405;</a>
+<a class='box' title='[U+10406] DESERET CAPITAL LETTER SHORT I' onClick='cp("𐐆")'>&#x10406;</a>
+<a class='box' title='[U+10407] DESERET CAPITAL LETTER SHORT E' onClick='cp("𐐇")'>&#x10407;</a>
+<a class='box' title='[U+10408] DESERET CAPITAL LETTER SHORT A' onClick='cp("𐐈")'>&#x10408;</a>
+<a class='box' title='[U+10409] DESERET CAPITAL LETTER SHORT AH' onClick='cp("𐐉")'>&#x10409;</a>
+<a class='box' title='[U+1040A] DESERET CAPITAL LETTER SHORT O' onClick='cp("𐐊")'>&#x1040A;</a>
+<a class='box' title='[U+1040B] DESERET CAPITAL LETTER SHORT OO' onClick='cp("𐐋")'>&#x1040B;</a>
+<a class='box' title='[U+1040C] DESERET CAPITAL LETTER AY' onClick='cp("𐐌")'>&#x1040C;</a>
+<a class='box' title='[U+1040D] DESERET CAPITAL LETTER OW' onClick='cp("𐐍")'>&#x1040D;</a>
+<a class='box' title='[U+1040E] DESERET CAPITAL LETTER WU' onClick='cp("𐐎")'>&#x1040E;</a>
+<a class='box' title='[U+1040F] DESERET CAPITAL LETTER YEE' onClick='cp("𐐏")'>&#x1040F;</a>
+<a class='box' title='[U+10410] DESERET CAPITAL LETTER H' onClick='cp("𐐐")'>&#x10410;</a>
+<a class='box' title='[U+10411] DESERET CAPITAL LETTER PEE' onClick='cp("𐐑")'>&#x10411;</a>
+<a class='box' title='[U+10412] DESERET CAPITAL LETTER BEE' onClick='cp("𐐒")'>&#x10412;</a>
+<a class='box' title='[U+10413] DESERET CAPITAL LETTER TEE' onClick='cp("𐐓")'>&#x10413;</a>
+<a class='box' title='[U+10414] DESERET CAPITAL LETTER DEE' onClick='cp("𐐔")'>&#x10414;</a>
+<a class='box' title='[U+10415] DESERET CAPITAL LETTER CHEE' onClick='cp("𐐕")'>&#x10415;</a>
+<a class='box' title='[U+10416] DESERET CAPITAL LETTER JEE' onClick='cp("𐐖")'>&#x10416;</a>
+<a class='box' title='[U+10417] DESERET CAPITAL LETTER KAY' onClick='cp("𐐗")'>&#x10417;</a>
+<a class='box' title='[U+10418] DESERET CAPITAL LETTER GAY' onClick='cp("𐐘")'>&#x10418;</a>
+<a class='box' title='[U+10419] DESERET CAPITAL LETTER EF' onClick='cp("𐐙")'>&#x10419;</a>
+<a class='box' title='[U+1041A] DESERET CAPITAL LETTER VEE' onClick='cp("𐐚")'>&#x1041A;</a>
+<a class='box' title='[U+1041B] DESERET CAPITAL LETTER ETH' onClick='cp("𐐛")'>&#x1041B;</a>
+<a class='box' title='[U+1041C] DESERET CAPITAL LETTER THEE' onClick='cp("𐐜")'>&#x1041C;</a>
+<a class='box' title='[U+1041D] DESERET CAPITAL LETTER ES' onClick='cp("𐐝")'>&#x1041D;</a>
+<a class='box' title='[U+1041E] DESERET CAPITAL LETTER ZEE' onClick='cp("𐐞")'>&#x1041E;</a>
+<a class='box' title='[U+1041F] DESERET CAPITAL LETTER ESH' onClick='cp("𐐟")'>&#x1041F;</a>
+<a class='box' title='[U+10420] DESERET CAPITAL LETTER ZHEE' onClick='cp("𐐠")'>&#x10420;</a>
+<a class='box' title='[U+10421] DESERET CAPITAL LETTER ER' onClick='cp("𐐡")'>&#x10421;</a>
+<a class='box' title='[U+10422] DESERET CAPITAL LETTER EL' onClick='cp("𐐢")'>&#x10422;</a>
+<a class='box' title='[U+10423] DESERET CAPITAL LETTER EM' onClick='cp("𐐣")'>&#x10423;</a>
+<a class='box' title='[U+10424] DESERET CAPITAL LETTER EN' onClick='cp("𐐤")'>&#x10424;</a>
+<a class='box' title='[U+10425] DESERET CAPITAL LETTER ENG' onClick='cp("𐐥")'>&#x10425;</a>
+<a class='box' title='[U+10426] DESERET CAPITAL LETTER OI' onClick='cp("𐐦")'>&#x10426;</a>
+<a class='box' title='[U+10427] DESERET CAPITAL LETTER EW' onClick='cp("𐐧")'>&#x10427;</a>
+<a class='box' title='[U+10428] DESERET SMALL LETTER LONG I' onClick='cp("𐐨")'>&#x10428;</a>
+<a class='box' title='[U+10429] DESERET SMALL LETTER LONG E' onClick='cp("𐐩")'>&#x10429;</a>
+<a class='box' title='[U+1042A] DESERET SMALL LETTER LONG A' onClick='cp("𐐪")'>&#x1042A;</a>
+<a class='box' title='[U+1042B] DESERET SMALL LETTER LONG AH' onClick='cp("𐐫")'>&#x1042B;</a>
+<a class='box' title='[U+1042C] DESERET SMALL LETTER LONG O' onClick='cp("𐐬")'>&#x1042C;</a>
+<a class='box' title='[U+1042D] DESERET SMALL LETTER LONG OO' onClick='cp("𐐭")'>&#x1042D;</a>
+<a class='box' title='[U+1042E] DESERET SMALL LETTER SHORT I' onClick='cp("𐐮")'>&#x1042E;</a>
+<a class='box' title='[U+1042F] DESERET SMALL LETTER SHORT E' onClick='cp("𐐯")'>&#x1042F;</a>
+<a class='box' title='[U+10430] DESERET SMALL LETTER SHORT A' onClick='cp("𐐰")'>&#x10430;</a>
+<a class='box' title='[U+10431] DESERET SMALL LETTER SHORT AH' onClick='cp("𐐱")'>&#x10431;</a>
+<a class='box' title='[U+10432] DESERET SMALL LETTER SHORT O' onClick='cp("𐐲")'>&#x10432;</a>
+<a class='box' title='[U+10433] DESERET SMALL LETTER SHORT OO' onClick='cp("𐐳")'>&#x10433;</a>
+<a class='box' title='[U+10434] DESERET SMALL LETTER AY' onClick='cp("𐐴")'>&#x10434;</a>
+<a class='box' title='[U+10435] DESERET SMALL LETTER OW' onClick='cp("𐐵")'>&#x10435;</a>
+<a class='box' title='[U+10436] DESERET SMALL LETTER WU' onClick='cp("𐐶")'>&#x10436;</a>
+<a class='box' title='[U+10437] DESERET SMALL LETTER YEE' onClick='cp("𐐷")'>&#x10437;</a>
+<a class='box' title='[U+10438] DESERET SMALL LETTER H' onClick='cp("𐐸")'>&#x10438;</a>
+<a class='box' title='[U+10439] DESERET SMALL LETTER PEE' onClick='cp("𐐹")'>&#x10439;</a>
+<a class='box' title='[U+1043A] DESERET SMALL LETTER BEE' onClick='cp("𐐺")'>&#x1043A;</a>
+<a class='box' title='[U+1043B] DESERET SMALL LETTER TEE' onClick='cp("𐐻")'>&#x1043B;</a>
+<a class='box' title='[U+1043C] DESERET SMALL LETTER DEE' onClick='cp("𐐼")'>&#x1043C;</a>
+<a class='box' title='[U+1043D] DESERET SMALL LETTER CHEE' onClick='cp("𐐽")'>&#x1043D;</a>
+<a class='box' title='[U+1043E] DESERET SMALL LETTER JEE' onClick='cp("𐐾")'>&#x1043E;</a>
+<a class='box' title='[U+1043F] DESERET SMALL LETTER KAY' onClick='cp("𐐿")'>&#x1043F;</a>
+<a class='box' title='[U+10440] DESERET SMALL LETTER GAY' onClick='cp("𐑀")'>&#x10440;</a>
+<a class='box' title='[U+10441] DESERET SMALL LETTER EF' onClick='cp("𐑁")'>&#x10441;</a>
+<a class='box' title='[U+10442] DESERET SMALL LETTER VEE' onClick='cp("𐑂")'>&#x10442;</a>
+<a class='box' title='[U+10443] DESERET SMALL LETTER ETH' onClick='cp("𐑃")'>&#x10443;</a>
+<a class='box' title='[U+10444] DESERET SMALL LETTER THEE' onClick='cp("𐑄")'>&#x10444;</a>
+<a class='box' title='[U+10445] DESERET SMALL LETTER ES' onClick='cp("𐑅")'>&#x10445;</a>
+<a class='box' title='[U+10446] DESERET SMALL LETTER ZEE' onClick='cp("𐑆")'>&#x10446;</a>
+<a class='box' title='[U+10447] DESERET SMALL LETTER ESH' onClick='cp("𐑇")'>&#x10447;</a>
+<a class='box' title='[U+10448] DESERET SMALL LETTER ZHEE' onClick='cp("𐑈")'>&#x10448;</a>
+<a class='box' title='[U+10449] DESERET SMALL LETTER ER' onClick='cp("𐑉")'>&#x10449;</a>
+<a class='box' title='[U+1044A] DESERET SMALL LETTER EL' onClick='cp("𐑊")'>&#x1044A;</a>
+<a class='box' title='[U+1044B] DESERET SMALL LETTER EM' onClick='cp("𐑋")'>&#x1044B;</a>
+<a class='box' title='[U+1044C] DESERET SMALL LETTER EN' onClick='cp("𐑌")'>&#x1044C;</a>
+<a class='box' title='[U+1044D] DESERET SMALL LETTER ENG' onClick='cp("𐑍")'>&#x1044D;</a>
+<a class='box' title='[U+1044E] DESERET SMALL LETTER OI' onClick='cp("𐑎")'>&#x1044E;</a>
+<a class='box' title='[U+1044F] DESERET SMALL LETTER EW' onClick='cp("𐑏")'>&#x1044F;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #27e; id=#;'>Osage (U+104B0 - U+104FF)</h2>
+<div class='margined'>
+<a class='box' title='[U+104B0] OSAGE CAPITAL LETTER A' onClick='cp("𐒰")'>&#x104B0;</a>
+<a class='box' title='[U+104B1] OSAGE CAPITAL LETTER AI' onClick='cp("𐒱")'>&#x104B1;</a>
+<a class='box' title='[U+104B2] OSAGE CAPITAL LETTER AIN' onClick='cp("𐒲")'>&#x104B2;</a>
+<a class='box' title='[U+104B3] OSAGE CAPITAL LETTER AH' onClick='cp("𐒳")'>&#x104B3;</a>
+<a class='box' title='[U+104B4] OSAGE CAPITAL LETTER BRA' onClick='cp("𐒴")'>&#x104B4;</a>
+<a class='box' title='[U+104B5] OSAGE CAPITAL LETTER CHA' onClick='cp("𐒵")'>&#x104B5;</a>
+<a class='box' title='[U+104B6] OSAGE CAPITAL LETTER EHCHA' onClick='cp("𐒶")'>&#x104B6;</a>
+<a class='box' title='[U+104B7] OSAGE CAPITAL LETTER E' onClick='cp("𐒷")'>&#x104B7;</a>
+<a class='box' title='[U+104B8] OSAGE CAPITAL LETTER EIN' onClick='cp("𐒸")'>&#x104B8;</a>
+<a class='box' title='[U+104B9] OSAGE CAPITAL LETTER HA' onClick='cp("𐒹")'>&#x104B9;</a>
+<a class='box' title='[U+104BA] OSAGE CAPITAL LETTER HYA' onClick='cp("𐒺")'>&#x104BA;</a>
+<a class='box' title='[U+104BB] OSAGE CAPITAL LETTER I' onClick='cp("𐒻")'>&#x104BB;</a>
+<a class='box' title='[U+104BC] OSAGE CAPITAL LETTER KA' onClick='cp("𐒼")'>&#x104BC;</a>
+<a class='box' title='[U+104BD] OSAGE CAPITAL LETTER EHKA' onClick='cp("𐒽")'>&#x104BD;</a>
+<a class='box' title='[U+104BE] OSAGE CAPITAL LETTER KYA' onClick='cp("𐒾")'>&#x104BE;</a>
+<a class='box' title='[U+104BF] OSAGE CAPITAL LETTER LA' onClick='cp("𐒿")'>&#x104BF;</a>
+<a class='box' title='[U+104C0] OSAGE CAPITAL LETTER MA' onClick='cp("𐓀")'>&#x104C0;</a>
+<a class='box' title='[U+104C1] OSAGE CAPITAL LETTER NA' onClick='cp("𐓁")'>&#x104C1;</a>
+<a class='box' title='[U+104C2] OSAGE CAPITAL LETTER O' onClick='cp("𐓂")'>&#x104C2;</a>
+<a class='box' title='[U+104C3] OSAGE CAPITAL LETTER OIN' onClick='cp("𐓃")'>&#x104C3;</a>
+<a class='box' title='[U+104C4] OSAGE CAPITAL LETTER PA' onClick='cp("𐓄")'>&#x104C4;</a>
+<a class='box' title='[U+104C5] OSAGE CAPITAL LETTER EHPA' onClick='cp("𐓅")'>&#x104C5;</a>
+<a class='box' title='[U+104C6] OSAGE CAPITAL LETTER SA' onClick='cp("𐓆")'>&#x104C6;</a>
+<a class='box' title='[U+104C7] OSAGE CAPITAL LETTER SHA' onClick='cp("𐓇")'>&#x104C7;</a>
+<a class='box' title='[U+104C8] OSAGE CAPITAL LETTER TA' onClick='cp("𐓈")'>&#x104C8;</a>
+<a class='box' title='[U+104C9] OSAGE CAPITAL LETTER EHTA' onClick='cp("𐓉")'>&#x104C9;</a>
+<a class='box' title='[U+104CA] OSAGE CAPITAL LETTER TSA' onClick='cp("𐓊")'>&#x104CA;</a>
+<a class='box' title='[U+104CB] OSAGE CAPITAL LETTER EHTSA' onClick='cp("𐓋")'>&#x104CB;</a>
+<a class='box' title='[U+104CC] OSAGE CAPITAL LETTER TSHA' onClick='cp("𐓌")'>&#x104CC;</a>
+<a class='box' title='[U+104CD] OSAGE CAPITAL LETTER DHA' onClick='cp("𐓍")'>&#x104CD;</a>
+<a class='box' title='[U+104CE] OSAGE CAPITAL LETTER U' onClick='cp("𐓎")'>&#x104CE;</a>
+<a class='box' title='[U+104CF] OSAGE CAPITAL LETTER WA' onClick='cp("𐓏")'>&#x104CF;</a>
+<a class='box' title='[U+104D0] OSAGE CAPITAL LETTER KHA' onClick='cp("𐓐")'>&#x104D0;</a>
+<a class='box' title='[U+104D1] OSAGE CAPITAL LETTER GHA' onClick='cp("𐓑")'>&#x104D1;</a>
+<a class='box' title='[U+104D2] OSAGE CAPITAL LETTER ZA' onClick='cp("𐓒")'>&#x104D2;</a>
+<a class='box' title='[U+104D3] OSAGE CAPITAL LETTER ZHA' onClick='cp("𐓓")'>&#x104D3;</a>
+<a class='box' title='[U+104D8] OSAGE SMALL LETTER A' onClick='cp("𐓘")'>&#x104D8;</a>
+<a class='box' title='[U+104D9] OSAGE SMALL LETTER AI' onClick='cp("𐓙")'>&#x104D9;</a>
+<a class='box' title='[U+104DA] OSAGE SMALL LETTER AIN' onClick='cp("𐓚")'>&#x104DA;</a>
+<a class='box' title='[U+104DB] OSAGE SMALL LETTER AH' onClick='cp("𐓛")'>&#x104DB;</a>
+<a class='box' title='[U+104DC] OSAGE SMALL LETTER BRA' onClick='cp("𐓜")'>&#x104DC;</a>
+<a class='box' title='[U+104DD] OSAGE SMALL LETTER CHA' onClick='cp("𐓝")'>&#x104DD;</a>
+<a class='box' title='[U+104DE] OSAGE SMALL LETTER EHCHA' onClick='cp("𐓞")'>&#x104DE;</a>
+<a class='box' title='[U+104DF] OSAGE SMALL LETTER E' onClick='cp("𐓟")'>&#x104DF;</a>
+<a class='box' title='[U+104E0] OSAGE SMALL LETTER EIN' onClick='cp("𐓠")'>&#x104E0;</a>
+<a class='box' title='[U+104E1] OSAGE SMALL LETTER HA' onClick='cp("𐓡")'>&#x104E1;</a>
+<a class='box' title='[U+104E2] OSAGE SMALL LETTER HYA' onClick='cp("𐓢")'>&#x104E2;</a>
+<a class='box' title='[U+104E3] OSAGE SMALL LETTER I' onClick='cp("𐓣")'>&#x104E3;</a>
+<a class='box' title='[U+104E4] OSAGE SMALL LETTER KA' onClick='cp("𐓤")'>&#x104E4;</a>
+<a class='box' title='[U+104E5] OSAGE SMALL LETTER EHKA' onClick='cp("𐓥")'>&#x104E5;</a>
+<a class='box' title='[U+104E6] OSAGE SMALL LETTER KYA' onClick='cp("𐓦")'>&#x104E6;</a>
+<a class='box' title='[U+104E7] OSAGE SMALL LETTER LA' onClick='cp("𐓧")'>&#x104E7;</a>
+<a class='box' title='[U+104E8] OSAGE SMALL LETTER MA' onClick='cp("𐓨")'>&#x104E8;</a>
+<a class='box' title='[U+104E9] OSAGE SMALL LETTER NA' onClick='cp("𐓩")'>&#x104E9;</a>
+<a class='box' title='[U+104EA] OSAGE SMALL LETTER O' onClick='cp("𐓪")'>&#x104EA;</a>
+<a class='box' title='[U+104EB] OSAGE SMALL LETTER OIN' onClick='cp("𐓫")'>&#x104EB;</a>
+<a class='box' title='[U+104EC] OSAGE SMALL LETTER PA' onClick='cp("𐓬")'>&#x104EC;</a>
+<a class='box' title='[U+104ED] OSAGE SMALL LETTER EHPA' onClick='cp("𐓭")'>&#x104ED;</a>
+<a class='box' title='[U+104EE] OSAGE SMALL LETTER SA' onClick='cp("𐓮")'>&#x104EE;</a>
+<a class='box' title='[U+104EF] OSAGE SMALL LETTER SHA' onClick='cp("𐓯")'>&#x104EF;</a>
+<a class='box' title='[U+104F0] OSAGE SMALL LETTER TA' onClick='cp("𐓰")'>&#x104F0;</a>
+<a class='box' title='[U+104F1] OSAGE SMALL LETTER EHTA' onClick='cp("𐓱")'>&#x104F1;</a>
+<a class='box' title='[U+104F2] OSAGE SMALL LETTER TSA' onClick='cp("𐓲")'>&#x104F2;</a>
+<a class='box' title='[U+104F3] OSAGE SMALL LETTER EHTSA' onClick='cp("𐓳")'>&#x104F3;</a>
+<a class='box' title='[U+104F4] OSAGE SMALL LETTER TSHA' onClick='cp("𐓴")'>&#x104F4;</a>
+<a class='box' title='[U+104F5] OSAGE SMALL LETTER DHA' onClick='cp("𐓵")'>&#x104F5;</a>
+<a class='box' title='[U+104F6] OSAGE SMALL LETTER U' onClick='cp("𐓶")'>&#x104F6;</a>
+<a class='box' title='[U+104F7] OSAGE SMALL LETTER WA' onClick='cp("𐓷")'>&#x104F7;</a>
+<a class='box' title='[U+104F8] OSAGE SMALL LETTER KHA' onClick='cp("𐓸")'>&#x104F8;</a>
+<a class='box' title='[U+104F9] OSAGE SMALL LETTER GHA' onClick='cp("𐓹")'>&#x104F9;</a>
+<a class='box' title='[U+104FA] OSAGE SMALL LETTER ZA' onClick='cp("𐓺")'>&#x104FA;</a>
+<a class='box' title='[U+104FB] OSAGE SMALL LETTER ZHA' onClick='cp("𐓻")'>&#x104FB;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #f44; id=#;'>Unified Canadian Aboriginal Syllabics (U+1400 - U+167F)</h2>
+<div class='margined'>
+<a class='box' title='[U+1400] CANADIAN SYLLABICS HYPHEN' onClick='cp("᐀")'>&#x1400;</a>
+<a class='box' title='[U+1401] CANADIAN SYLLABICS E' onClick='cp("ᐁ")'>&#x1401;</a>
+<a class='box' title='[U+1402] CANADIAN SYLLABICS AAI' onClick='cp("ᐂ")'>&#x1402;</a>
+<a class='box' title='[U+1403] CANADIAN SYLLABICS I' onClick='cp("ᐃ")'>&#x1403;</a>
+<a class='box' title='[U+1404] CANADIAN SYLLABICS II' onClick='cp("ᐄ")'>&#x1404;</a>
+<a class='box' title='[U+1405] CANADIAN SYLLABICS O' onClick='cp("ᐅ")'>&#x1405;</a>
+<a class='box' title='[U+1406] CANADIAN SYLLABICS OO' onClick='cp("ᐆ")'>&#x1406;</a>
+<a class='box' title='[U+1407] CANADIAN SYLLABICS Y-CREE OO' onClick='cp("ᐇ")'>&#x1407;</a>
+<a class='box' title='[U+1408] CANADIAN SYLLABICS CARRIER EE' onClick='cp("ᐈ")'>&#x1408;</a>
+<a class='box' title='[U+1409] CANADIAN SYLLABICS CARRIER I' onClick='cp("ᐉ")'>&#x1409;</a>
+<a class='box' title='[U+140A] CANADIAN SYLLABICS A' onClick='cp("ᐊ")'>&#x140A;</a>
+<a class='box' title='[U+140B] CANADIAN SYLLABICS AA' onClick='cp("ᐋ")'>&#x140B;</a>
+<a class='box' title='[U+140C] CANADIAN SYLLABICS WE' onClick='cp("ᐌ")'>&#x140C;</a>
+<a class='box' title='[U+140D] CANADIAN SYLLABICS WEST-CREE WE' onClick='cp("ᐍ")'>&#x140D;</a>
+<a class='box' title='[U+140E] CANADIAN SYLLABICS WI' onClick='cp("ᐎ")'>&#x140E;</a>
+<a class='box' title='[U+140F] CANADIAN SYLLABICS WEST-CREE WI' onClick='cp("ᐏ")'>&#x140F;</a>
+<a class='box' title='[U+1410] CANADIAN SYLLABICS WII' onClick='cp("ᐐ")'>&#x1410;</a>
+<a class='box' title='[U+1411] CANADIAN SYLLABICS WEST-CREE WII' onClick='cp("ᐑ")'>&#x1411;</a>
+<a class='box' title='[U+1412] CANADIAN SYLLABICS WO' onClick='cp("ᐒ")'>&#x1412;</a>
+<a class='box' title='[U+1413] CANADIAN SYLLABICS WEST-CREE WO' onClick='cp("ᐓ")'>&#x1413;</a>
+<a class='box' title='[U+1414] CANADIAN SYLLABICS WOO' onClick='cp("ᐔ")'>&#x1414;</a>
+<a class='box' title='[U+1415] CANADIAN SYLLABICS WEST-CREE WOO' onClick='cp("ᐕ")'>&#x1415;</a>
+<a class='box' title='[U+1416] CANADIAN SYLLABICS NASKAPI WOO' onClick='cp("ᐖ")'>&#x1416;</a>
+<a class='box' title='[U+1417] CANADIAN SYLLABICS WA' onClick='cp("ᐗ")'>&#x1417;</a>
+<a class='box' title='[U+1418] CANADIAN SYLLABICS WEST-CREE WA' onClick='cp("ᐘ")'>&#x1418;</a>
+<a class='box' title='[U+1419] CANADIAN SYLLABICS WAA' onClick='cp("ᐙ")'>&#x1419;</a>
+<a class='box' title='[U+141A] CANADIAN SYLLABICS WEST-CREE WAA' onClick='cp("ᐚ")'>&#x141A;</a>
+<a class='box' title='[U+141B] CANADIAN SYLLABICS NASKAPI WAA' onClick='cp("ᐛ")'>&#x141B;</a>
+<a class='box' title='[U+141C] CANADIAN SYLLABICS AI' onClick='cp("ᐜ")'>&#x141C;</a>
+<a class='box' title='[U+141D] CANADIAN SYLLABICS Y-CREE W' onClick='cp("ᐝ")'>&#x141D;</a>
+<a class='box' title='[U+141E] CANADIAN SYLLABICS GLOTTAL STOP' onClick='cp("ᐞ")'>&#x141E;</a>
+<a class='box' title='[U+141F] CANADIAN SYLLABICS FINAL ACUTE' onClick='cp("ᐟ")'>&#x141F;</a>
+<a class='box' title='[U+1420] CANADIAN SYLLABICS FINAL GRAVE' onClick='cp("ᐠ")'>&#x1420;</a>
+<a class='box' title='[U+1421] CANADIAN SYLLABICS FINAL BOTTOM HALF RING' onClick='cp("ᐡ")'>&#x1421;</a>
+<a class='box' title='[U+1422] CANADIAN SYLLABICS FINAL TOP HALF RING' onClick='cp("ᐢ")'>&#x1422;</a>
+<a class='box' title='[U+1423] CANADIAN SYLLABICS FINAL RIGHT HALF RING' onClick='cp("ᐣ")'>&#x1423;</a>
+<a class='box' title='[U+1424] CANADIAN SYLLABICS FINAL RING' onClick='cp("ᐤ")'>&#x1424;</a>
+<a class='box' title='[U+1425] CANADIAN SYLLABICS FINAL DOUBLE ACUTE' onClick='cp("ᐥ")'>&#x1425;</a>
+<a class='box' title='[U+1426] CANADIAN SYLLABICS FINAL DOUBLE SHORT VERTICAL STROKES' onClick='cp("ᐦ")'>&#x1426;</a>
+<a class='box' title='[U+1427] CANADIAN SYLLABICS FINAL MIDDLE DOT' onClick='cp("ᐧ")'>&#x1427;</a>
+<a class='box' title='[U+1428] CANADIAN SYLLABICS FINAL SHORT HORIZONTAL STROKE' onClick='cp("ᐨ")'>&#x1428;</a>
+<a class='box' title='[U+1429] CANADIAN SYLLABICS FINAL PLUS' onClick='cp("ᐩ")'>&#x1429;</a>
+<a class='box' title='[U+142A] CANADIAN SYLLABICS FINAL DOWN TACK' onClick='cp("ᐪ")'>&#x142A;</a>
+<a class='box' title='[U+142B] CANADIAN SYLLABICS EN' onClick='cp("ᐫ")'>&#x142B;</a>
+<a class='box' title='[U+142C] CANADIAN SYLLABICS IN' onClick='cp("ᐬ")'>&#x142C;</a>
+<a class='box' title='[U+142D] CANADIAN SYLLABICS ON' onClick='cp("ᐭ")'>&#x142D;</a>
+<a class='box' title='[U+142E] CANADIAN SYLLABICS AN' onClick='cp("ᐮ")'>&#x142E;</a>
+<a class='box' title='[U+142F] CANADIAN SYLLABICS PE' onClick='cp("ᐯ")'>&#x142F;</a>
+<a class='box' title='[U+1430] CANADIAN SYLLABICS PAAI' onClick='cp("ᐰ")'>&#x1430;</a>
+<a class='box' title='[U+1431] CANADIAN SYLLABICS PI' onClick='cp("ᐱ")'>&#x1431;</a>
+<a class='box' title='[U+1432] CANADIAN SYLLABICS PII' onClick='cp("ᐲ")'>&#x1432;</a>
+<a class='box' title='[U+1433] CANADIAN SYLLABICS PO' onClick='cp("ᐳ")'>&#x1433;</a>
+<a class='box' title='[U+1434] CANADIAN SYLLABICS POO' onClick='cp("ᐴ")'>&#x1434;</a>
+<a class='box' title='[U+1435] CANADIAN SYLLABICS Y-CREE POO' onClick='cp("ᐵ")'>&#x1435;</a>
+<a class='box' title='[U+1436] CANADIAN SYLLABICS CARRIER HEE' onClick='cp("ᐶ")'>&#x1436;</a>
+<a class='box' title='[U+1437] CANADIAN SYLLABICS CARRIER HI' onClick='cp("ᐷ")'>&#x1437;</a>
+<a class='box' title='[U+1438] CANADIAN SYLLABICS PA' onClick='cp("ᐸ")'>&#x1438;</a>
+<a class='box' title='[U+1439] CANADIAN SYLLABICS PAA' onClick='cp("ᐹ")'>&#x1439;</a>
+<a class='box' title='[U+143A] CANADIAN SYLLABICS PWE' onClick='cp("ᐺ")'>&#x143A;</a>
+<a class='box' title='[U+143B] CANADIAN SYLLABICS WEST-CREE PWE' onClick='cp("ᐻ")'>&#x143B;</a>
+<a class='box' title='[U+143C] CANADIAN SYLLABICS PWI' onClick='cp("ᐼ")'>&#x143C;</a>
+<a class='box' title='[U+143D] CANADIAN SYLLABICS WEST-CREE PWI' onClick='cp("ᐽ")'>&#x143D;</a>
+<a class='box' title='[U+143E] CANADIAN SYLLABICS PWII' onClick='cp("ᐾ")'>&#x143E;</a>
+<a class='box' title='[U+143F] CANADIAN SYLLABICS WEST-CREE PWII' onClick='cp("ᐿ")'>&#x143F;</a>
+<a class='box' title='[U+1440] CANADIAN SYLLABICS PWO' onClick='cp("ᑀ")'>&#x1440;</a>
+<a class='box' title='[U+1441] CANADIAN SYLLABICS WEST-CREE PWO' onClick='cp("ᑁ")'>&#x1441;</a>
+<a class='box' title='[U+1442] CANADIAN SYLLABICS PWOO' onClick='cp("ᑂ")'>&#x1442;</a>
+<a class='box' title='[U+1443] CANADIAN SYLLABICS WEST-CREE PWOO' onClick='cp("ᑃ")'>&#x1443;</a>
+<a class='box' title='[U+1444] CANADIAN SYLLABICS PWA' onClick='cp("ᑄ")'>&#x1444;</a>
+<a class='box' title='[U+1445] CANADIAN SYLLABICS WEST-CREE PWA' onClick='cp("ᑅ")'>&#x1445;</a>
+<a class='box' title='[U+1446] CANADIAN SYLLABICS PWAA' onClick='cp("ᑆ")'>&#x1446;</a>
+<a class='box' title='[U+1447] CANADIAN SYLLABICS WEST-CREE PWAA' onClick='cp("ᑇ")'>&#x1447;</a>
+<a class='box' title='[U+1448] CANADIAN SYLLABICS Y-CREE PWAA' onClick='cp("ᑈ")'>&#x1448;</a>
+<a class='box' title='[U+1449] CANADIAN SYLLABICS P' onClick='cp("ᑉ")'>&#x1449;</a>
+<a class='box' title='[U+144A] CANADIAN SYLLABICS WEST-CREE P' onClick='cp("ᑊ")'>&#x144A;</a>
+<a class='box' title='[U+144B] CANADIAN SYLLABICS CARRIER H' onClick='cp("ᑋ")'>&#x144B;</a>
+<a class='box' title='[U+144C] CANADIAN SYLLABICS TE' onClick='cp("ᑌ")'>&#x144C;</a>
+<a class='box' title='[U+144D] CANADIAN SYLLABICS TAAI' onClick='cp("ᑍ")'>&#x144D;</a>
+<a class='box' title='[U+144E] CANADIAN SYLLABICS TI' onClick='cp("ᑎ")'>&#x144E;</a>
+<a class='box' title='[U+144F] CANADIAN SYLLABICS TII' onClick='cp("ᑏ")'>&#x144F;</a>
+<a class='box' title='[U+1450] CANADIAN SYLLABICS TO' onClick='cp("ᑐ")'>&#x1450;</a>
+<a class='box' title='[U+1451] CANADIAN SYLLABICS TOO' onClick='cp("ᑑ")'>&#x1451;</a>
+<a class='box' title='[U+1452] CANADIAN SYLLABICS Y-CREE TOO' onClick='cp("ᑒ")'>&#x1452;</a>
+<a class='box' title='[U+1453] CANADIAN SYLLABICS CARRIER DEE' onClick='cp("ᑓ")'>&#x1453;</a>
+<a class='box' title='[U+1454] CANADIAN SYLLABICS CARRIER DI' onClick='cp("ᑔ")'>&#x1454;</a>
+<a class='box' title='[U+1455] CANADIAN SYLLABICS TA' onClick='cp("ᑕ")'>&#x1455;</a>
+<a class='box' title='[U+1456] CANADIAN SYLLABICS TAA' onClick='cp("ᑖ")'>&#x1456;</a>
+<a class='box' title='[U+1457] CANADIAN SYLLABICS TWE' onClick='cp("ᑗ")'>&#x1457;</a>
+<a class='box' title='[U+1458] CANADIAN SYLLABICS WEST-CREE TWE' onClick='cp("ᑘ")'>&#x1458;</a>
+<a class='box' title='[U+1459] CANADIAN SYLLABICS TWI' onClick='cp("ᑙ")'>&#x1459;</a>
+<a class='box' title='[U+145A] CANADIAN SYLLABICS WEST-CREE TWI' onClick='cp("ᑚ")'>&#x145A;</a>
+<a class='box' title='[U+145B] CANADIAN SYLLABICS TWII' onClick='cp("ᑛ")'>&#x145B;</a>
+<a class='box' title='[U+145C] CANADIAN SYLLABICS WEST-CREE TWII' onClick='cp("ᑜ")'>&#x145C;</a>
+<a class='box' title='[U+145D] CANADIAN SYLLABICS TWO' onClick='cp("ᑝ")'>&#x145D;</a>
+<a class='box' title='[U+145E] CANADIAN SYLLABICS WEST-CREE TWO' onClick='cp("ᑞ")'>&#x145E;</a>
+<a class='box' title='[U+145F] CANADIAN SYLLABICS TWOO' onClick='cp("ᑟ")'>&#x145F;</a>
+<a class='box' title='[U+1460] CANADIAN SYLLABICS WEST-CREE TWOO' onClick='cp("ᑠ")'>&#x1460;</a>
+<a class='box' title='[U+1461] CANADIAN SYLLABICS TWA' onClick='cp("ᑡ")'>&#x1461;</a>
+<a class='box' title='[U+1462] CANADIAN SYLLABICS WEST-CREE TWA' onClick='cp("ᑢ")'>&#x1462;</a>
+<a class='box' title='[U+1463] CANADIAN SYLLABICS TWAA' onClick='cp("ᑣ")'>&#x1463;</a>
+<a class='box' title='[U+1464] CANADIAN SYLLABICS WEST-CREE TWAA' onClick='cp("ᑤ")'>&#x1464;</a>
+<a class='box' title='[U+1465] CANADIAN SYLLABICS NASKAPI TWAA' onClick='cp("ᑥ")'>&#x1465;</a>
+<a class='box' title='[U+1466] CANADIAN SYLLABICS T' onClick='cp("ᑦ")'>&#x1466;</a>
+<a class='box' title='[U+1467] CANADIAN SYLLABICS TTE' onClick='cp("ᑧ")'>&#x1467;</a>
+<a class='box' title='[U+1468] CANADIAN SYLLABICS TTI' onClick='cp("ᑨ")'>&#x1468;</a>
+<a class='box' title='[U+1469] CANADIAN SYLLABICS TTO' onClick='cp("ᑩ")'>&#x1469;</a>
+<a class='box' title='[U+146A] CANADIAN SYLLABICS TTA' onClick='cp("ᑪ")'>&#x146A;</a>
+<a class='box' title='[U+146B] CANADIAN SYLLABICS KE' onClick='cp("ᑫ")'>&#x146B;</a>
+<a class='box' title='[U+146C] CANADIAN SYLLABICS KAAI' onClick='cp("ᑬ")'>&#x146C;</a>
+<a class='box' title='[U+146D] CANADIAN SYLLABICS KI' onClick='cp("ᑭ")'>&#x146D;</a>
+<a class='box' title='[U+146E] CANADIAN SYLLABICS KII' onClick='cp("ᑮ")'>&#x146E;</a>
+<a class='box' title='[U+146F] CANADIAN SYLLABICS KO' onClick='cp("ᑯ")'>&#x146F;</a>
+<a class='box' title='[U+1470] CANADIAN SYLLABICS KOO' onClick='cp("ᑰ")'>&#x1470;</a>
+<a class='box' title='[U+1471] CANADIAN SYLLABICS Y-CREE KOO' onClick='cp("ᑱ")'>&#x1471;</a>
+<a class='box' title='[U+1472] CANADIAN SYLLABICS KA' onClick='cp("ᑲ")'>&#x1472;</a>
+<a class='box' title='[U+1473] CANADIAN SYLLABICS KAA' onClick='cp("ᑳ")'>&#x1473;</a>
+<a class='box' title='[U+1474] CANADIAN SYLLABICS KWE' onClick='cp("ᑴ")'>&#x1474;</a>
+<a class='box' title='[U+1475] CANADIAN SYLLABICS WEST-CREE KWE' onClick='cp("ᑵ")'>&#x1475;</a>
+<a class='box' title='[U+1476] CANADIAN SYLLABICS KWI' onClick='cp("ᑶ")'>&#x1476;</a>
+<a class='box' title='[U+1477] CANADIAN SYLLABICS WEST-CREE KWI' onClick='cp("ᑷ")'>&#x1477;</a>
+<a class='box' title='[U+1478] CANADIAN SYLLABICS KWII' onClick='cp("ᑸ")'>&#x1478;</a>
+<a class='box' title='[U+1479] CANADIAN SYLLABICS WEST-CREE KWII' onClick='cp("ᑹ")'>&#x1479;</a>
+<a class='box' title='[U+147A] CANADIAN SYLLABICS KWO' onClick='cp("ᑺ")'>&#x147A;</a>
+<a class='box' title='[U+147B] CANADIAN SYLLABICS WEST-CREE KWO' onClick='cp("ᑻ")'>&#x147B;</a>
+<a class='box' title='[U+147C] CANADIAN SYLLABICS KWOO' onClick='cp("ᑼ")'>&#x147C;</a>
+<a class='box' title='[U+147D] CANADIAN SYLLABICS WEST-CREE KWOO' onClick='cp("ᑽ")'>&#x147D;</a>
+<a class='box' title='[U+147E] CANADIAN SYLLABICS KWA' onClick='cp("ᑾ")'>&#x147E;</a>
+<a class='box' title='[U+147F] CANADIAN SYLLABICS WEST-CREE KWA' onClick='cp("ᑿ")'>&#x147F;</a>
+<a class='box' title='[U+1480] CANADIAN SYLLABICS KWAA' onClick='cp("ᒀ")'>&#x1480;</a>
+<a class='box' title='[U+1481] CANADIAN SYLLABICS WEST-CREE KWAA' onClick='cp("ᒁ")'>&#x1481;</a>
+<a class='box' title='[U+1482] CANADIAN SYLLABICS NASKAPI KWAA' onClick='cp("ᒂ")'>&#x1482;</a>
+<a class='box' title='[U+1483] CANADIAN SYLLABICS K' onClick='cp("ᒃ")'>&#x1483;</a>
+<a class='box' title='[U+1484] CANADIAN SYLLABICS KW' onClick='cp("ᒄ")'>&#x1484;</a>
+<a class='box' title='[U+1485] CANADIAN SYLLABICS SOUTH-SLAVEY KEH' onClick='cp("ᒅ")'>&#x1485;</a>
+<a class='box' title='[U+1486] CANADIAN SYLLABICS SOUTH-SLAVEY KIH' onClick='cp("ᒆ")'>&#x1486;</a>
+<a class='box' title='[U+1487] CANADIAN SYLLABICS SOUTH-SLAVEY KOH' onClick='cp("ᒇ")'>&#x1487;</a>
+<a class='box' title='[U+1488] CANADIAN SYLLABICS SOUTH-SLAVEY KAH' onClick='cp("ᒈ")'>&#x1488;</a>
+<a class='box' title='[U+1489] CANADIAN SYLLABICS CE' onClick='cp("ᒉ")'>&#x1489;</a>
+<a class='box' title='[U+148A] CANADIAN SYLLABICS CAAI' onClick='cp("ᒊ")'>&#x148A;</a>
+<a class='box' title='[U+148B] CANADIAN SYLLABICS CI' onClick='cp("ᒋ")'>&#x148B;</a>
+<a class='box' title='[U+148C] CANADIAN SYLLABICS CII' onClick='cp("ᒌ")'>&#x148C;</a>
+<a class='box' title='[U+148D] CANADIAN SYLLABICS CO' onClick='cp("ᒍ")'>&#x148D;</a>
+<a class='box' title='[U+148E] CANADIAN SYLLABICS COO' onClick='cp("ᒎ")'>&#x148E;</a>
+<a class='box' title='[U+148F] CANADIAN SYLLABICS Y-CREE COO' onClick='cp("ᒏ")'>&#x148F;</a>
+<a class='box' title='[U+1490] CANADIAN SYLLABICS CA' onClick='cp("ᒐ")'>&#x1490;</a>
+<a class='box' title='[U+1491] CANADIAN SYLLABICS CAA' onClick='cp("ᒑ")'>&#x1491;</a>
+<a class='box' title='[U+1492] CANADIAN SYLLABICS CWE' onClick='cp("ᒒ")'>&#x1492;</a>
+<a class='box' title='[U+1493] CANADIAN SYLLABICS WEST-CREE CWE' onClick='cp("ᒓ")'>&#x1493;</a>
+<a class='box' title='[U+1494] CANADIAN SYLLABICS CWI' onClick='cp("ᒔ")'>&#x1494;</a>
+<a class='box' title='[U+1495] CANADIAN SYLLABICS WEST-CREE CWI' onClick='cp("ᒕ")'>&#x1495;</a>
+<a class='box' title='[U+1496] CANADIAN SYLLABICS CWII' onClick='cp("ᒖ")'>&#x1496;</a>
+<a class='box' title='[U+1497] CANADIAN SYLLABICS WEST-CREE CWII' onClick='cp("ᒗ")'>&#x1497;</a>
+<a class='box' title='[U+1498] CANADIAN SYLLABICS CWO' onClick='cp("ᒘ")'>&#x1498;</a>
+<a class='box' title='[U+1499] CANADIAN SYLLABICS WEST-CREE CWO' onClick='cp("ᒙ")'>&#x1499;</a>
+<a class='box' title='[U+149A] CANADIAN SYLLABICS CWOO' onClick='cp("ᒚ")'>&#x149A;</a>
+<a class='box' title='[U+149B] CANADIAN SYLLABICS WEST-CREE CWOO' onClick='cp("ᒛ")'>&#x149B;</a>
+<a class='box' title='[U+149C] CANADIAN SYLLABICS CWA' onClick='cp("ᒜ")'>&#x149C;</a>
+<a class='box' title='[U+149D] CANADIAN SYLLABICS WEST-CREE CWA' onClick='cp("ᒝ")'>&#x149D;</a>
+<a class='box' title='[U+149E] CANADIAN SYLLABICS CWAA' onClick='cp("ᒞ")'>&#x149E;</a>
+<a class='box' title='[U+149F] CANADIAN SYLLABICS WEST-CREE CWAA' onClick='cp("ᒟ")'>&#x149F;</a>
+<a class='box' title='[U+14A0] CANADIAN SYLLABICS NASKAPI CWAA' onClick='cp("ᒠ")'>&#x14A0;</a>
+<a class='box' title='[U+14A1] CANADIAN SYLLABICS C' onClick='cp("ᒡ")'>&#x14A1;</a>
+<a class='box' title='[U+14A2] CANADIAN SYLLABICS SAYISI TH' onClick='cp("ᒢ")'>&#x14A2;</a>
+<a class='box' title='[U+14A3] CANADIAN SYLLABICS ME' onClick='cp("ᒣ")'>&#x14A3;</a>
+<a class='box' title='[U+14A4] CANADIAN SYLLABICS MAAI' onClick='cp("ᒤ")'>&#x14A4;</a>
+<a class='box' title='[U+14A5] CANADIAN SYLLABICS MI' onClick='cp("ᒥ")'>&#x14A5;</a>
+<a class='box' title='[U+14A6] CANADIAN SYLLABICS MII' onClick='cp("ᒦ")'>&#x14A6;</a>
+<a class='box' title='[U+14A7] CANADIAN SYLLABICS MO' onClick='cp("ᒧ")'>&#x14A7;</a>
+<a class='box' title='[U+14A8] CANADIAN SYLLABICS MOO' onClick='cp("ᒨ")'>&#x14A8;</a>
+<a class='box' title='[U+14A9] CANADIAN SYLLABICS Y-CREE MOO' onClick='cp("ᒩ")'>&#x14A9;</a>
+<a class='box' title='[U+14AA] CANADIAN SYLLABICS MA' onClick='cp("ᒪ")'>&#x14AA;</a>
+<a class='box' title='[U+14AB] CANADIAN SYLLABICS MAA' onClick='cp("ᒫ")'>&#x14AB;</a>
+<a class='box' title='[U+14AC] CANADIAN SYLLABICS MWE' onClick='cp("ᒬ")'>&#x14AC;</a>
+<a class='box' title='[U+14AD] CANADIAN SYLLABICS WEST-CREE MWE' onClick='cp("ᒭ")'>&#x14AD;</a>
+<a class='box' title='[U+14AE] CANADIAN SYLLABICS MWI' onClick='cp("ᒮ")'>&#x14AE;</a>
+<a class='box' title='[U+14AF] CANADIAN SYLLABICS WEST-CREE MWI' onClick='cp("ᒯ")'>&#x14AF;</a>
+<a class='box' title='[U+14B0] CANADIAN SYLLABICS MWII' onClick='cp("ᒰ")'>&#x14B0;</a>
+<a class='box' title='[U+14B1] CANADIAN SYLLABICS WEST-CREE MWII' onClick='cp("ᒱ")'>&#x14B1;</a>
+<a class='box' title='[U+14B2] CANADIAN SYLLABICS MWO' onClick='cp("ᒲ")'>&#x14B2;</a>
+<a class='box' title='[U+14B3] CANADIAN SYLLABICS WEST-CREE MWO' onClick='cp("ᒳ")'>&#x14B3;</a>
+<a class='box' title='[U+14B4] CANADIAN SYLLABICS MWOO' onClick='cp("ᒴ")'>&#x14B4;</a>
+<a class='box' title='[U+14B5] CANADIAN SYLLABICS WEST-CREE MWOO' onClick='cp("ᒵ")'>&#x14B5;</a>
+<a class='box' title='[U+14B6] CANADIAN SYLLABICS MWA' onClick='cp("ᒶ")'>&#x14B6;</a>
+<a class='box' title='[U+14B7] CANADIAN SYLLABICS WEST-CREE MWA' onClick='cp("ᒷ")'>&#x14B7;</a>
+<a class='box' title='[U+14B8] CANADIAN SYLLABICS MWAA' onClick='cp("ᒸ")'>&#x14B8;</a>
+<a class='box' title='[U+14B9] CANADIAN SYLLABICS WEST-CREE MWAA' onClick='cp("ᒹ")'>&#x14B9;</a>
+<a class='box' title='[U+14BA] CANADIAN SYLLABICS NASKAPI MWAA' onClick='cp("ᒺ")'>&#x14BA;</a>
+<a class='box' title='[U+14BB] CANADIAN SYLLABICS M' onClick='cp("ᒻ")'>&#x14BB;</a>
+<a class='box' title='[U+14BC] CANADIAN SYLLABICS WEST-CREE M' onClick='cp("ᒼ")'>&#x14BC;</a>
+<a class='box' title='[U+14BD] CANADIAN SYLLABICS MH' onClick='cp("ᒽ")'>&#x14BD;</a>
+<a class='box' title='[U+14BE] CANADIAN SYLLABICS ATHAPASCAN M' onClick='cp("ᒾ")'>&#x14BE;</a>
+<a class='box' title='[U+14BF] CANADIAN SYLLABICS SAYISI M' onClick='cp("ᒿ")'>&#x14BF;</a>
+<a class='box' title='[U+14C0] CANADIAN SYLLABICS NE' onClick='cp("ᓀ")'>&#x14C0;</a>
+<a class='box' title='[U+14C1] CANADIAN SYLLABICS NAAI' onClick='cp("ᓁ")'>&#x14C1;</a>
+<a class='box' title='[U+14C2] CANADIAN SYLLABICS NI' onClick='cp("ᓂ")'>&#x14C2;</a>
+<a class='box' title='[U+14C3] CANADIAN SYLLABICS NII' onClick='cp("ᓃ")'>&#x14C3;</a>
+<a class='box' title='[U+14C4] CANADIAN SYLLABICS NO' onClick='cp("ᓄ")'>&#x14C4;</a>
+<a class='box' title='[U+14C5] CANADIAN SYLLABICS NOO' onClick='cp("ᓅ")'>&#x14C5;</a>
+<a class='box' title='[U+14C6] CANADIAN SYLLABICS Y-CREE NOO' onClick='cp("ᓆ")'>&#x14C6;</a>
+<a class='box' title='[U+14C7] CANADIAN SYLLABICS NA' onClick='cp("ᓇ")'>&#x14C7;</a>
+<a class='box' title='[U+14C8] CANADIAN SYLLABICS NAA' onClick='cp("ᓈ")'>&#x14C8;</a>
+<a class='box' title='[U+14C9] CANADIAN SYLLABICS NWE' onClick='cp("ᓉ")'>&#x14C9;</a>
+<a class='box' title='[U+14CA] CANADIAN SYLLABICS WEST-CREE NWE' onClick='cp("ᓊ")'>&#x14CA;</a>
+<a class='box' title='[U+14CB] CANADIAN SYLLABICS NWA' onClick='cp("ᓋ")'>&#x14CB;</a>
+<a class='box' title='[U+14CC] CANADIAN SYLLABICS WEST-CREE NWA' onClick='cp("ᓌ")'>&#x14CC;</a>
+<a class='box' title='[U+14CD] CANADIAN SYLLABICS NWAA' onClick='cp("ᓍ")'>&#x14CD;</a>
+<a class='box' title='[U+14CE] CANADIAN SYLLABICS WEST-CREE NWAA' onClick='cp("ᓎ")'>&#x14CE;</a>
+<a class='box' title='[U+14CF] CANADIAN SYLLABICS NASKAPI NWAA' onClick='cp("ᓏ")'>&#x14CF;</a>
+<a class='box' title='[U+14D0] CANADIAN SYLLABICS N' onClick='cp("ᓐ")'>&#x14D0;</a>
+<a class='box' title='[U+14D1] CANADIAN SYLLABICS CARRIER NG' onClick='cp("ᓑ")'>&#x14D1;</a>
+<a class='box' title='[U+14D2] CANADIAN SYLLABICS NH' onClick='cp("ᓒ")'>&#x14D2;</a>
+<a class='box' title='[U+14D3] CANADIAN SYLLABICS LE' onClick='cp("ᓓ")'>&#x14D3;</a>
+<a class='box' title='[U+14D4] CANADIAN SYLLABICS LAAI' onClick='cp("ᓔ")'>&#x14D4;</a>
+<a class='box' title='[U+14D5] CANADIAN SYLLABICS LI' onClick='cp("ᓕ")'>&#x14D5;</a>
+<a class='box' title='[U+14D6] CANADIAN SYLLABICS LII' onClick='cp("ᓖ")'>&#x14D6;</a>
+<a class='box' title='[U+14D7] CANADIAN SYLLABICS LO' onClick='cp("ᓗ")'>&#x14D7;</a>
+<a class='box' title='[U+14D8] CANADIAN SYLLABICS LOO' onClick='cp("ᓘ")'>&#x14D8;</a>
+<a class='box' title='[U+14D9] CANADIAN SYLLABICS Y-CREE LOO' onClick='cp("ᓙ")'>&#x14D9;</a>
+<a class='box' title='[U+14DA] CANADIAN SYLLABICS LA' onClick='cp("ᓚ")'>&#x14DA;</a>
+<a class='box' title='[U+14DB] CANADIAN SYLLABICS LAA' onClick='cp("ᓛ")'>&#x14DB;</a>
+<a class='box' title='[U+14DC] CANADIAN SYLLABICS LWE' onClick='cp("ᓜ")'>&#x14DC;</a>
+<a class='box' title='[U+14DD] CANADIAN SYLLABICS WEST-CREE LWE' onClick='cp("ᓝ")'>&#x14DD;</a>
+<a class='box' title='[U+14DE] CANADIAN SYLLABICS LWI' onClick='cp("ᓞ")'>&#x14DE;</a>
+<a class='box' title='[U+14DF] CANADIAN SYLLABICS WEST-CREE LWI' onClick='cp("ᓟ")'>&#x14DF;</a>
+<a class='box' title='[U+14E0] CANADIAN SYLLABICS LWII' onClick='cp("ᓠ")'>&#x14E0;</a>
+<a class='box' title='[U+14E1] CANADIAN SYLLABICS WEST-CREE LWII' onClick='cp("ᓡ")'>&#x14E1;</a>
+<a class='box' title='[U+14E2] CANADIAN SYLLABICS LWO' onClick='cp("ᓢ")'>&#x14E2;</a>
+<a class='box' title='[U+14E3] CANADIAN SYLLABICS WEST-CREE LWO' onClick='cp("ᓣ")'>&#x14E3;</a>
+<a class='box' title='[U+14E4] CANADIAN SYLLABICS LWOO' onClick='cp("ᓤ")'>&#x14E4;</a>
+<a class='box' title='[U+14E5] CANADIAN SYLLABICS WEST-CREE LWOO' onClick='cp("ᓥ")'>&#x14E5;</a>
+<a class='box' title='[U+14E6] CANADIAN SYLLABICS LWA' onClick='cp("ᓦ")'>&#x14E6;</a>
+<a class='box' title='[U+14E7] CANADIAN SYLLABICS WEST-CREE LWA' onClick='cp("ᓧ")'>&#x14E7;</a>
+<a class='box' title='[U+14E8] CANADIAN SYLLABICS LWAA' onClick='cp("ᓨ")'>&#x14E8;</a>
+<a class='box' title='[U+14E9] CANADIAN SYLLABICS WEST-CREE LWAA' onClick='cp("ᓩ")'>&#x14E9;</a>
+<a class='box' title='[U+14EA] CANADIAN SYLLABICS L' onClick='cp("ᓪ")'>&#x14EA;</a>
+<a class='box' title='[U+14EB] CANADIAN SYLLABICS WEST-CREE L' onClick='cp("ᓫ")'>&#x14EB;</a>
+<a class='box' title='[U+14EC] CANADIAN SYLLABICS MEDIAL L' onClick='cp("ᓬ")'>&#x14EC;</a>
+<a class='box' title='[U+14ED] CANADIAN SYLLABICS SE' onClick='cp("ᓭ")'>&#x14ED;</a>
+<a class='box' title='[U+14EE] CANADIAN SYLLABICS SAAI' onClick='cp("ᓮ")'>&#x14EE;</a>
+<a class='box' title='[U+14EF] CANADIAN SYLLABICS SI' onClick='cp("ᓯ")'>&#x14EF;</a>
+<a class='box' title='[U+14F0] CANADIAN SYLLABICS SII' onClick='cp("ᓰ")'>&#x14F0;</a>
+<a class='box' title='[U+14F1] CANADIAN SYLLABICS SO' onClick='cp("ᓱ")'>&#x14F1;</a>
+<a class='box' title='[U+14F2] CANADIAN SYLLABICS SOO' onClick='cp("ᓲ")'>&#x14F2;</a>
+<a class='box' title='[U+14F3] CANADIAN SYLLABICS Y-CREE SOO' onClick='cp("ᓳ")'>&#x14F3;</a>
+<a class='box' title='[U+14F4] CANADIAN SYLLABICS SA' onClick='cp("ᓴ")'>&#x14F4;</a>
+<a class='box' title='[U+14F5] CANADIAN SYLLABICS SAA' onClick='cp("ᓵ")'>&#x14F5;</a>
+<a class='box' title='[U+14F6] CANADIAN SYLLABICS SWE' onClick='cp("ᓶ")'>&#x14F6;</a>
+<a class='box' title='[U+14F7] CANADIAN SYLLABICS WEST-CREE SWE' onClick='cp("ᓷ")'>&#x14F7;</a>
+<a class='box' title='[U+14F8] CANADIAN SYLLABICS SWI' onClick='cp("ᓸ")'>&#x14F8;</a>
+<a class='box' title='[U+14F9] CANADIAN SYLLABICS WEST-CREE SWI' onClick='cp("ᓹ")'>&#x14F9;</a>
+<a class='box' title='[U+14FA] CANADIAN SYLLABICS SWII' onClick='cp("ᓺ")'>&#x14FA;</a>
+<a class='box' title='[U+14FB] CANADIAN SYLLABICS WEST-CREE SWII' onClick='cp("ᓻ")'>&#x14FB;</a>
+<a class='box' title='[U+14FC] CANADIAN SYLLABICS SWO' onClick='cp("ᓼ")'>&#x14FC;</a>
+<a class='box' title='[U+14FD] CANADIAN SYLLABICS WEST-CREE SWO' onClick='cp("ᓽ")'>&#x14FD;</a>
+<a class='box' title='[U+14FE] CANADIAN SYLLABICS SWOO' onClick='cp("ᓾ")'>&#x14FE;</a>
+<a class='box' title='[U+14FF] CANADIAN SYLLABICS WEST-CREE SWOO' onClick='cp("ᓿ")'>&#x14FF;</a>
+<a class='box' title='[U+1500] CANADIAN SYLLABICS SWA' onClick='cp("ᔀ")'>&#x1500;</a>
+<a class='box' title='[U+1501] CANADIAN SYLLABICS WEST-CREE SWA' onClick='cp("ᔁ")'>&#x1501;</a>
+<a class='box' title='[U+1502] CANADIAN SYLLABICS SWAA' onClick='cp("ᔂ")'>&#x1502;</a>
+<a class='box' title='[U+1503] CANADIAN SYLLABICS WEST-CREE SWAA' onClick='cp("ᔃ")'>&#x1503;</a>
+<a class='box' title='[U+1504] CANADIAN SYLLABICS NASKAPI SWAA' onClick='cp("ᔄ")'>&#x1504;</a>
+<a class='box' title='[U+1505] CANADIAN SYLLABICS S' onClick='cp("ᔅ")'>&#x1505;</a>
+<a class='box' title='[U+1506] CANADIAN SYLLABICS ATHAPASCAN S' onClick='cp("ᔆ")'>&#x1506;</a>
+<a class='box' title='[U+1507] CANADIAN SYLLABICS SW' onClick='cp("ᔇ")'>&#x1507;</a>
+<a class='box' title='[U+1508] CANADIAN SYLLABICS BLACKFOOT S' onClick='cp("ᔈ")'>&#x1508;</a>
+<a class='box' title='[U+1509] CANADIAN SYLLABICS MOOSE-CREE SK' onClick='cp("ᔉ")'>&#x1509;</a>
+<a class='box' title='[U+150A] CANADIAN SYLLABICS NASKAPI SKW' onClick='cp("ᔊ")'>&#x150A;</a>
+<a class='box' title='[U+150B] CANADIAN SYLLABICS NASKAPI S-W' onClick='cp("ᔋ")'>&#x150B;</a>
+<a class='box' title='[U+150C] CANADIAN SYLLABICS NASKAPI SPWA' onClick='cp("ᔌ")'>&#x150C;</a>
+<a class='box' title='[U+150D] CANADIAN SYLLABICS NASKAPI STWA' onClick='cp("ᔍ")'>&#x150D;</a>
+<a class='box' title='[U+150E] CANADIAN SYLLABICS NASKAPI SKWA' onClick='cp("ᔎ")'>&#x150E;</a>
+<a class='box' title='[U+150F] CANADIAN SYLLABICS NASKAPI SCWA' onClick='cp("ᔏ")'>&#x150F;</a>
+<a class='box' title='[U+1510] CANADIAN SYLLABICS SHE' onClick='cp("ᔐ")'>&#x1510;</a>
+<a class='box' title='[U+1511] CANADIAN SYLLABICS SHI' onClick='cp("ᔑ")'>&#x1511;</a>
+<a class='box' title='[U+1512] CANADIAN SYLLABICS SHII' onClick='cp("ᔒ")'>&#x1512;</a>
+<a class='box' title='[U+1513] CANADIAN SYLLABICS SHO' onClick='cp("ᔓ")'>&#x1513;</a>
+<a class='box' title='[U+1514] CANADIAN SYLLABICS SHOO' onClick='cp("ᔔ")'>&#x1514;</a>
+<a class='box' title='[U+1515] CANADIAN SYLLABICS SHA' onClick='cp("ᔕ")'>&#x1515;</a>
+<a class='box' title='[U+1516] CANADIAN SYLLABICS SHAA' onClick='cp("ᔖ")'>&#x1516;</a>
+<a class='box' title='[U+1517] CANADIAN SYLLABICS SHWE' onClick='cp("ᔗ")'>&#x1517;</a>
+<a class='box' title='[U+1518] CANADIAN SYLLABICS WEST-CREE SHWE' onClick='cp("ᔘ")'>&#x1518;</a>
+<a class='box' title='[U+1519] CANADIAN SYLLABICS SHWI' onClick='cp("ᔙ")'>&#x1519;</a>
+<a class='box' title='[U+151A] CANADIAN SYLLABICS WEST-CREE SHWI' onClick='cp("ᔚ")'>&#x151A;</a>
+<a class='box' title='[U+151B] CANADIAN SYLLABICS SHWII' onClick='cp("ᔛ")'>&#x151B;</a>
+<a class='box' title='[U+151C] CANADIAN SYLLABICS WEST-CREE SHWII' onClick='cp("ᔜ")'>&#x151C;</a>
+<a class='box' title='[U+151D] CANADIAN SYLLABICS SHWO' onClick='cp("ᔝ")'>&#x151D;</a>
+<a class='box' title='[U+151E] CANADIAN SYLLABICS WEST-CREE SHWO' onClick='cp("ᔞ")'>&#x151E;</a>
+<a class='box' title='[U+151F] CANADIAN SYLLABICS SHWOO' onClick='cp("ᔟ")'>&#x151F;</a>
+<a class='box' title='[U+1520] CANADIAN SYLLABICS WEST-CREE SHWOO' onClick='cp("ᔠ")'>&#x1520;</a>
+<a class='box' title='[U+1521] CANADIAN SYLLABICS SHWA' onClick='cp("ᔡ")'>&#x1521;</a>
+<a class='box' title='[U+1522] CANADIAN SYLLABICS WEST-CREE SHWA' onClick='cp("ᔢ")'>&#x1522;</a>
+<a class='box' title='[U+1523] CANADIAN SYLLABICS SHWAA' onClick='cp("ᔣ")'>&#x1523;</a>
+<a class='box' title='[U+1524] CANADIAN SYLLABICS WEST-CREE SHWAA' onClick='cp("ᔤ")'>&#x1524;</a>
+<a class='box' title='[U+1525] CANADIAN SYLLABICS SH' onClick='cp("ᔥ")'>&#x1525;</a>
+<a class='box' title='[U+1526] CANADIAN SYLLABICS YE' onClick='cp("ᔦ")'>&#x1526;</a>
+<a class='box' title='[U+1527] CANADIAN SYLLABICS YAAI' onClick='cp("ᔧ")'>&#x1527;</a>
+<a class='box' title='[U+1528] CANADIAN SYLLABICS YI' onClick='cp("ᔨ")'>&#x1528;</a>
+<a class='box' title='[U+1529] CANADIAN SYLLABICS YII' onClick='cp("ᔩ")'>&#x1529;</a>
+<a class='box' title='[U+152A] CANADIAN SYLLABICS YO' onClick='cp("ᔪ")'>&#x152A;</a>
+<a class='box' title='[U+152B] CANADIAN SYLLABICS YOO' onClick='cp("ᔫ")'>&#x152B;</a>
+<a class='box' title='[U+152C] CANADIAN SYLLABICS Y-CREE YOO' onClick='cp("ᔬ")'>&#x152C;</a>
+<a class='box' title='[U+152D] CANADIAN SYLLABICS YA' onClick='cp("ᔭ")'>&#x152D;</a>
+<a class='box' title='[U+152E] CANADIAN SYLLABICS YAA' onClick='cp("ᔮ")'>&#x152E;</a>
+<a class='box' title='[U+152F] CANADIAN SYLLABICS YWE' onClick='cp("ᔯ")'>&#x152F;</a>
+<a class='box' title='[U+1530] CANADIAN SYLLABICS WEST-CREE YWE' onClick='cp("ᔰ")'>&#x1530;</a>
+<a class='box' title='[U+1531] CANADIAN SYLLABICS YWI' onClick='cp("ᔱ")'>&#x1531;</a>
+<a class='box' title='[U+1532] CANADIAN SYLLABICS WEST-CREE YWI' onClick='cp("ᔲ")'>&#x1532;</a>
+<a class='box' title='[U+1533] CANADIAN SYLLABICS YWII' onClick='cp("ᔳ")'>&#x1533;</a>
+<a class='box' title='[U+1534] CANADIAN SYLLABICS WEST-CREE YWII' onClick='cp("ᔴ")'>&#x1534;</a>
+<a class='box' title='[U+1535] CANADIAN SYLLABICS YWO' onClick='cp("ᔵ")'>&#x1535;</a>
+<a class='box' title='[U+1536] CANADIAN SYLLABICS WEST-CREE YWO' onClick='cp("ᔶ")'>&#x1536;</a>
+<a class='box' title='[U+1537] CANADIAN SYLLABICS YWOO' onClick='cp("ᔷ")'>&#x1537;</a>
+<a class='box' title='[U+1538] CANADIAN SYLLABICS WEST-CREE YWOO' onClick='cp("ᔸ")'>&#x1538;</a>
+<a class='box' title='[U+1539] CANADIAN SYLLABICS YWA' onClick='cp("ᔹ")'>&#x1539;</a>
+<a class='box' title='[U+153A] CANADIAN SYLLABICS WEST-CREE YWA' onClick='cp("ᔺ")'>&#x153A;</a>
+<a class='box' title='[U+153B] CANADIAN SYLLABICS YWAA' onClick='cp("ᔻ")'>&#x153B;</a>
+<a class='box' title='[U+153C] CANADIAN SYLLABICS WEST-CREE YWAA' onClick='cp("ᔼ")'>&#x153C;</a>
+<a class='box' title='[U+153D] CANADIAN SYLLABICS NASKAPI YWAA' onClick='cp("ᔽ")'>&#x153D;</a>
+<a class='box' title='[U+153E] CANADIAN SYLLABICS Y' onClick='cp("ᔾ")'>&#x153E;</a>
+<a class='box' title='[U+153F] CANADIAN SYLLABICS BIBLE-CREE Y' onClick='cp("ᔿ")'>&#x153F;</a>
+<a class='box' title='[U+1540] CANADIAN SYLLABICS WEST-CREE Y' onClick='cp("ᕀ")'>&#x1540;</a>
+<a class='box' title='[U+1541] CANADIAN SYLLABICS SAYISI YI' onClick='cp("ᕁ")'>&#x1541;</a>
+<a class='box' title='[U+1542] CANADIAN SYLLABICS RE' onClick='cp("ᕂ")'>&#x1542;</a>
+<a class='box' title='[U+1543] CANADIAN SYLLABICS R-CREE RE' onClick='cp("ᕃ")'>&#x1543;</a>
+<a class='box' title='[U+1544] CANADIAN SYLLABICS WEST-CREE LE' onClick='cp("ᕄ")'>&#x1544;</a>
+<a class='box' title='[U+1545] CANADIAN SYLLABICS RAAI' onClick='cp("ᕅ")'>&#x1545;</a>
+<a class='box' title='[U+1546] CANADIAN SYLLABICS RI' onClick='cp("ᕆ")'>&#x1546;</a>
+<a class='box' title='[U+1547] CANADIAN SYLLABICS RII' onClick='cp("ᕇ")'>&#x1547;</a>
+<a class='box' title='[U+1548] CANADIAN SYLLABICS RO' onClick='cp("ᕈ")'>&#x1548;</a>
+<a class='box' title='[U+1549] CANADIAN SYLLABICS ROO' onClick='cp("ᕉ")'>&#x1549;</a>
+<a class='box' title='[U+154A] CANADIAN SYLLABICS WEST-CREE LO' onClick='cp("ᕊ")'>&#x154A;</a>
+<a class='box' title='[U+154B] CANADIAN SYLLABICS RA' onClick='cp("ᕋ")'>&#x154B;</a>
+<a class='box' title='[U+154C] CANADIAN SYLLABICS RAA' onClick='cp("ᕌ")'>&#x154C;</a>
+<a class='box' title='[U+154D] CANADIAN SYLLABICS WEST-CREE LA' onClick='cp("ᕍ")'>&#x154D;</a>
+<a class='box' title='[U+154E] CANADIAN SYLLABICS RWAA' onClick='cp("ᕎ")'>&#x154E;</a>
+<a class='box' title='[U+154F] CANADIAN SYLLABICS WEST-CREE RWAA' onClick='cp("ᕏ")'>&#x154F;</a>
+<a class='box' title='[U+1550] CANADIAN SYLLABICS R' onClick='cp("ᕐ")'>&#x1550;</a>
+<a class='box' title='[U+1551] CANADIAN SYLLABICS WEST-CREE R' onClick='cp("ᕑ")'>&#x1551;</a>
+<a class='box' title='[U+1552] CANADIAN SYLLABICS MEDIAL R' onClick='cp("ᕒ")'>&#x1552;</a>
+<a class='box' title='[U+1553] CANADIAN SYLLABICS FE' onClick='cp("ᕓ")'>&#x1553;</a>
+<a class='box' title='[U+1554] CANADIAN SYLLABICS FAAI' onClick='cp("ᕔ")'>&#x1554;</a>
+<a class='box' title='[U+1555] CANADIAN SYLLABICS FI' onClick='cp("ᕕ")'>&#x1555;</a>
+<a class='box' title='[U+1556] CANADIAN SYLLABICS FII' onClick='cp("ᕖ")'>&#x1556;</a>
+<a class='box' title='[U+1557] CANADIAN SYLLABICS FO' onClick='cp("ᕗ")'>&#x1557;</a>
+<a class='box' title='[U+1558] CANADIAN SYLLABICS FOO' onClick='cp("ᕘ")'>&#x1558;</a>
+<a class='box' title='[U+1559] CANADIAN SYLLABICS FA' onClick='cp("ᕙ")'>&#x1559;</a>
+<a class='box' title='[U+155A] CANADIAN SYLLABICS FAA' onClick='cp("ᕚ")'>&#x155A;</a>
+<a class='box' title='[U+155B] CANADIAN SYLLABICS FWAA' onClick='cp("ᕛ")'>&#x155B;</a>
+<a class='box' title='[U+155C] CANADIAN SYLLABICS WEST-CREE FWAA' onClick='cp("ᕜ")'>&#x155C;</a>
+<a class='box' title='[U+155D] CANADIAN SYLLABICS F' onClick='cp("ᕝ")'>&#x155D;</a>
+<a class='box' title='[U+155E] CANADIAN SYLLABICS THE' onClick='cp("ᕞ")'>&#x155E;</a>
+<a class='box' title='[U+155F] CANADIAN SYLLABICS N-CREE THE' onClick='cp("ᕟ")'>&#x155F;</a>
+<a class='box' title='[U+1560] CANADIAN SYLLABICS THI' onClick='cp("ᕠ")'>&#x1560;</a>
+<a class='box' title='[U+1561] CANADIAN SYLLABICS N-CREE THI' onClick='cp("ᕡ")'>&#x1561;</a>
+<a class='box' title='[U+1562] CANADIAN SYLLABICS THII' onClick='cp("ᕢ")'>&#x1562;</a>
+<a class='box' title='[U+1563] CANADIAN SYLLABICS N-CREE THII' onClick='cp("ᕣ")'>&#x1563;</a>
+<a class='box' title='[U+1564] CANADIAN SYLLABICS THO' onClick='cp("ᕤ")'>&#x1564;</a>
+<a class='box' title='[U+1565] CANADIAN SYLLABICS THOO' onClick='cp("ᕥ")'>&#x1565;</a>
+<a class='box' title='[U+1566] CANADIAN SYLLABICS THA' onClick='cp("ᕦ")'>&#x1566;</a>
+<a class='box' title='[U+1567] CANADIAN SYLLABICS THAA' onClick='cp("ᕧ")'>&#x1567;</a>
+<a class='box' title='[U+1568] CANADIAN SYLLABICS THWAA' onClick='cp("ᕨ")'>&#x1568;</a>
+<a class='box' title='[U+1569] CANADIAN SYLLABICS WEST-CREE THWAA' onClick='cp("ᕩ")'>&#x1569;</a>
+<a class='box' title='[U+156A] CANADIAN SYLLABICS TH' onClick='cp("ᕪ")'>&#x156A;</a>
+<a class='box' title='[U+156B] CANADIAN SYLLABICS TTHE' onClick='cp("ᕫ")'>&#x156B;</a>
+<a class='box' title='[U+156C] CANADIAN SYLLABICS TTHI' onClick='cp("ᕬ")'>&#x156C;</a>
+<a class='box' title='[U+156D] CANADIAN SYLLABICS TTHO' onClick='cp("ᕭ")'>&#x156D;</a>
+<a class='box' title='[U+156E] CANADIAN SYLLABICS TTHA' onClick='cp("ᕮ")'>&#x156E;</a>
+<a class='box' title='[U+156F] CANADIAN SYLLABICS TTH' onClick='cp("ᕯ")'>&#x156F;</a>
+<a class='box' title='[U+1570] CANADIAN SYLLABICS TYE' onClick='cp("ᕰ")'>&#x1570;</a>
+<a class='box' title='[U+1571] CANADIAN SYLLABICS TYI' onClick='cp("ᕱ")'>&#x1571;</a>
+<a class='box' title='[U+1572] CANADIAN SYLLABICS TYO' onClick='cp("ᕲ")'>&#x1572;</a>
+<a class='box' title='[U+1573] CANADIAN SYLLABICS TYA' onClick='cp("ᕳ")'>&#x1573;</a>
+<a class='box' title='[U+1574] CANADIAN SYLLABICS NUNAVIK HE' onClick='cp("ᕴ")'>&#x1574;</a>
+<a class='box' title='[U+1575] CANADIAN SYLLABICS NUNAVIK HI' onClick='cp("ᕵ")'>&#x1575;</a>
+<a class='box' title='[U+1576] CANADIAN SYLLABICS NUNAVIK HII' onClick='cp("ᕶ")'>&#x1576;</a>
+<a class='box' title='[U+1577] CANADIAN SYLLABICS NUNAVIK HO' onClick='cp("ᕷ")'>&#x1577;</a>
+<a class='box' title='[U+1578] CANADIAN SYLLABICS NUNAVIK HOO' onClick='cp("ᕸ")'>&#x1578;</a>
+<a class='box' title='[U+1579] CANADIAN SYLLABICS NUNAVIK HA' onClick='cp("ᕹ")'>&#x1579;</a>
+<a class='box' title='[U+157A] CANADIAN SYLLABICS NUNAVIK HAA' onClick='cp("ᕺ")'>&#x157A;</a>
+<a class='box' title='[U+157B] CANADIAN SYLLABICS NUNAVIK H' onClick='cp("ᕻ")'>&#x157B;</a>
+<a class='box' title='[U+157C] CANADIAN SYLLABICS NUNAVUT H' onClick='cp("ᕼ")'>&#x157C;</a>
+<a class='box' title='[U+157D] CANADIAN SYLLABICS HK' onClick='cp("ᕽ")'>&#x157D;</a>
+<a class='box' title='[U+157E] CANADIAN SYLLABICS QAAI' onClick='cp("ᕾ")'>&#x157E;</a>
+<a class='box' title='[U+157F] CANADIAN SYLLABICS QI' onClick='cp("ᕿ")'>&#x157F;</a>
+<a class='box' title='[U+1580] CANADIAN SYLLABICS QII' onClick='cp("ᖀ")'>&#x1580;</a>
+<a class='box' title='[U+1581] CANADIAN SYLLABICS QO' onClick='cp("ᖁ")'>&#x1581;</a>
+<a class='box' title='[U+1582] CANADIAN SYLLABICS QOO' onClick='cp("ᖂ")'>&#x1582;</a>
+<a class='box' title='[U+1583] CANADIAN SYLLABICS QA' onClick='cp("ᖃ")'>&#x1583;</a>
+<a class='box' title='[U+1584] CANADIAN SYLLABICS QAA' onClick='cp("ᖄ")'>&#x1584;</a>
+<a class='box' title='[U+1585] CANADIAN SYLLABICS Q' onClick='cp("ᖅ")'>&#x1585;</a>
+<a class='box' title='[U+1586] CANADIAN SYLLABICS TLHE' onClick='cp("ᖆ")'>&#x1586;</a>
+<a class='box' title='[U+1587] CANADIAN SYLLABICS TLHI' onClick='cp("ᖇ")'>&#x1587;</a>
+<a class='box' title='[U+1588] CANADIAN SYLLABICS TLHO' onClick='cp("ᖈ")'>&#x1588;</a>
+<a class='box' title='[U+1589] CANADIAN SYLLABICS TLHA' onClick='cp("ᖉ")'>&#x1589;</a>
+<a class='box' title='[U+158A] CANADIAN SYLLABICS WEST-CREE RE' onClick='cp("ᖊ")'>&#x158A;</a>
+<a class='box' title='[U+158B] CANADIAN SYLLABICS WEST-CREE RI' onClick='cp("ᖋ")'>&#x158B;</a>
+<a class='box' title='[U+158C] CANADIAN SYLLABICS WEST-CREE RO' onClick='cp("ᖌ")'>&#x158C;</a>
+<a class='box' title='[U+158D] CANADIAN SYLLABICS WEST-CREE RA' onClick='cp("ᖍ")'>&#x158D;</a>
+<a class='box' title='[U+158E] CANADIAN SYLLABICS NGAAI' onClick='cp("ᖎ")'>&#x158E;</a>
+<a class='box' title='[U+158F] CANADIAN SYLLABICS NGI' onClick='cp("ᖏ")'>&#x158F;</a>
+<a class='box' title='[U+1590] CANADIAN SYLLABICS NGII' onClick='cp("ᖐ")'>&#x1590;</a>
+<a class='box' title='[U+1591] CANADIAN SYLLABICS NGO' onClick='cp("ᖑ")'>&#x1591;</a>
+<a class='box' title='[U+1592] CANADIAN SYLLABICS NGOO' onClick='cp("ᖒ")'>&#x1592;</a>
+<a class='box' title='[U+1593] CANADIAN SYLLABICS NGA' onClick='cp("ᖓ")'>&#x1593;</a>
+<a class='box' title='[U+1594] CANADIAN SYLLABICS NGAA' onClick='cp("ᖔ")'>&#x1594;</a>
+<a class='box' title='[U+1595] CANADIAN SYLLABICS NG' onClick='cp("ᖕ")'>&#x1595;</a>
+<a class='box' title='[U+1596] CANADIAN SYLLABICS NNG' onClick='cp("ᖖ")'>&#x1596;</a>
+<a class='box' title='[U+1597] CANADIAN SYLLABICS SAYISI SHE' onClick='cp("ᖗ")'>&#x1597;</a>
+<a class='box' title='[U+1598] CANADIAN SYLLABICS SAYISI SHI' onClick='cp("ᖘ")'>&#x1598;</a>
+<a class='box' title='[U+1599] CANADIAN SYLLABICS SAYISI SHO' onClick='cp("ᖙ")'>&#x1599;</a>
+<a class='box' title='[U+159A] CANADIAN SYLLABICS SAYISI SHA' onClick='cp("ᖚ")'>&#x159A;</a>
+<a class='box' title='[U+159B] CANADIAN SYLLABICS WOODS-CREE THE' onClick='cp("ᖛ")'>&#x159B;</a>
+<a class='box' title='[U+159C] CANADIAN SYLLABICS WOODS-CREE THI' onClick='cp("ᖜ")'>&#x159C;</a>
+<a class='box' title='[U+159D] CANADIAN SYLLABICS WOODS-CREE THO' onClick='cp("ᖝ")'>&#x159D;</a>
+<a class='box' title='[U+159E] CANADIAN SYLLABICS WOODS-CREE THA' onClick='cp("ᖞ")'>&#x159E;</a>
+<a class='box' title='[U+159F] CANADIAN SYLLABICS WOODS-CREE TH' onClick='cp("ᖟ")'>&#x159F;</a>
+<a class='box' title='[U+15A0] CANADIAN SYLLABICS LHI' onClick='cp("ᖠ")'>&#x15A0;</a>
+<a class='box' title='[U+15A1] CANADIAN SYLLABICS LHII' onClick='cp("ᖡ")'>&#x15A1;</a>
+<a class='box' title='[U+15A2] CANADIAN SYLLABICS LHO' onClick='cp("ᖢ")'>&#x15A2;</a>
+<a class='box' title='[U+15A3] CANADIAN SYLLABICS LHOO' onClick='cp("ᖣ")'>&#x15A3;</a>
+<a class='box' title='[U+15A4] CANADIAN SYLLABICS LHA' onClick='cp("ᖤ")'>&#x15A4;</a>
+<a class='box' title='[U+15A5] CANADIAN SYLLABICS LHAA' onClick='cp("ᖥ")'>&#x15A5;</a>
+<a class='box' title='[U+15A6] CANADIAN SYLLABICS LH' onClick='cp("ᖦ")'>&#x15A6;</a>
+<a class='box' title='[U+15A7] CANADIAN SYLLABICS TH-CREE THE' onClick='cp("ᖧ")'>&#x15A7;</a>
+<a class='box' title='[U+15A8] CANADIAN SYLLABICS TH-CREE THI' onClick='cp("ᖨ")'>&#x15A8;</a>
+<a class='box' title='[U+15A9] CANADIAN SYLLABICS TH-CREE THII' onClick='cp("ᖩ")'>&#x15A9;</a>
+<a class='box' title='[U+15AA] CANADIAN SYLLABICS TH-CREE THO' onClick='cp("ᖪ")'>&#x15AA;</a>
+<a class='box' title='[U+15AB] CANADIAN SYLLABICS TH-CREE THOO' onClick='cp("ᖫ")'>&#x15AB;</a>
+<a class='box' title='[U+15AC] CANADIAN SYLLABICS TH-CREE THA' onClick='cp("ᖬ")'>&#x15AC;</a>
+<a class='box' title='[U+15AD] CANADIAN SYLLABICS TH-CREE THAA' onClick='cp("ᖭ")'>&#x15AD;</a>
+<a class='box' title='[U+15AE] CANADIAN SYLLABICS TH-CREE TH' onClick='cp("ᖮ")'>&#x15AE;</a>
+<a class='box' title='[U+15AF] CANADIAN SYLLABICS AIVILIK B' onClick='cp("ᖯ")'>&#x15AF;</a>
+<a class='box' title='[U+15B0] CANADIAN SYLLABICS BLACKFOOT E' onClick='cp("ᖰ")'>&#x15B0;</a>
+<a class='box' title='[U+15B1] CANADIAN SYLLABICS BLACKFOOT I' onClick='cp("ᖱ")'>&#x15B1;</a>
+<a class='box' title='[U+15B2] CANADIAN SYLLABICS BLACKFOOT O' onClick='cp("ᖲ")'>&#x15B2;</a>
+<a class='box' title='[U+15B3] CANADIAN SYLLABICS BLACKFOOT A' onClick='cp("ᖳ")'>&#x15B3;</a>
+<a class='box' title='[U+15B4] CANADIAN SYLLABICS BLACKFOOT WE' onClick='cp("ᖴ")'>&#x15B4;</a>
+<a class='box' title='[U+15B5] CANADIAN SYLLABICS BLACKFOOT WI' onClick='cp("ᖵ")'>&#x15B5;</a>
+<a class='box' title='[U+15B6] CANADIAN SYLLABICS BLACKFOOT WO' onClick='cp("ᖶ")'>&#x15B6;</a>
+<a class='box' title='[U+15B7] CANADIAN SYLLABICS BLACKFOOT WA' onClick='cp("ᖷ")'>&#x15B7;</a>
+<a class='box' title='[U+15B8] CANADIAN SYLLABICS BLACKFOOT NE' onClick='cp("ᖸ")'>&#x15B8;</a>
+<a class='box' title='[U+15B9] CANADIAN SYLLABICS BLACKFOOT NI' onClick='cp("ᖹ")'>&#x15B9;</a>
+<a class='box' title='[U+15BA] CANADIAN SYLLABICS BLACKFOOT NO' onClick='cp("ᖺ")'>&#x15BA;</a>
+<a class='box' title='[U+15BB] CANADIAN SYLLABICS BLACKFOOT NA' onClick='cp("ᖻ")'>&#x15BB;</a>
+<a class='box' title='[U+15BC] CANADIAN SYLLABICS BLACKFOOT KE' onClick='cp("ᖼ")'>&#x15BC;</a>
+<a class='box' title='[U+15BD] CANADIAN SYLLABICS BLACKFOOT KI' onClick='cp("ᖽ")'>&#x15BD;</a>
+<a class='box' title='[U+15BE] CANADIAN SYLLABICS BLACKFOOT KO' onClick='cp("ᖾ")'>&#x15BE;</a>
+<a class='box' title='[U+15BF] CANADIAN SYLLABICS BLACKFOOT KA' onClick='cp("ᖿ")'>&#x15BF;</a>
+<a class='box' title='[U+15C0] CANADIAN SYLLABICS SAYISI HE' onClick='cp("ᗀ")'>&#x15C0;</a>
+<a class='box' title='[U+15C1] CANADIAN SYLLABICS SAYISI HI' onClick='cp("ᗁ")'>&#x15C1;</a>
+<a class='box' title='[U+15C2] CANADIAN SYLLABICS SAYISI HO' onClick='cp("ᗂ")'>&#x15C2;</a>
+<a class='box' title='[U+15C3] CANADIAN SYLLABICS SAYISI HA' onClick='cp("ᗃ")'>&#x15C3;</a>
+<a class='box' title='[U+15C4] CANADIAN SYLLABICS CARRIER GHU' onClick='cp("ᗄ")'>&#x15C4;</a>
+<a class='box' title='[U+15C5] CANADIAN SYLLABICS CARRIER GHO' onClick='cp("ᗅ")'>&#x15C5;</a>
+<a class='box' title='[U+15C6] CANADIAN SYLLABICS CARRIER GHE' onClick='cp("ᗆ")'>&#x15C6;</a>
+<a class='box' title='[U+15C7] CANADIAN SYLLABICS CARRIER GHEE' onClick='cp("ᗇ")'>&#x15C7;</a>
+<a class='box' title='[U+15C8] CANADIAN SYLLABICS CARRIER GHI' onClick='cp("ᗈ")'>&#x15C8;</a>
+<a class='box' title='[U+15C9] CANADIAN SYLLABICS CARRIER GHA' onClick='cp("ᗉ")'>&#x15C9;</a>
+<a class='box' title='[U+15CA] CANADIAN SYLLABICS CARRIER RU' onClick='cp("ᗊ")'>&#x15CA;</a>
+<a class='box' title='[U+15CB] CANADIAN SYLLABICS CARRIER RO' onClick='cp("ᗋ")'>&#x15CB;</a>
+<a class='box' title='[U+15CC] CANADIAN SYLLABICS CARRIER RE' onClick='cp("ᗌ")'>&#x15CC;</a>
+<a class='box' title='[U+15CD] CANADIAN SYLLABICS CARRIER REE' onClick='cp("ᗍ")'>&#x15CD;</a>
+<a class='box' title='[U+15CE] CANADIAN SYLLABICS CARRIER RI' onClick='cp("ᗎ")'>&#x15CE;</a>
+<a class='box' title='[U+15CF] CANADIAN SYLLABICS CARRIER RA' onClick='cp("ᗏ")'>&#x15CF;</a>
+<a class='box' title='[U+15D0] CANADIAN SYLLABICS CARRIER WU' onClick='cp("ᗐ")'>&#x15D0;</a>
+<a class='box' title='[U+15D1] CANADIAN SYLLABICS CARRIER WO' onClick='cp("ᗑ")'>&#x15D1;</a>
+<a class='box' title='[U+15D2] CANADIAN SYLLABICS CARRIER WE' onClick='cp("ᗒ")'>&#x15D2;</a>
+<a class='box' title='[U+15D3] CANADIAN SYLLABICS CARRIER WEE' onClick='cp("ᗓ")'>&#x15D3;</a>
+<a class='box' title='[U+15D4] CANADIAN SYLLABICS CARRIER WI' onClick='cp("ᗔ")'>&#x15D4;</a>
+<a class='box' title='[U+15D5] CANADIAN SYLLABICS CARRIER WA' onClick='cp("ᗕ")'>&#x15D5;</a>
+<a class='box' title='[U+15D6] CANADIAN SYLLABICS CARRIER HWU' onClick='cp("ᗖ")'>&#x15D6;</a>
+<a class='box' title='[U+15D7] CANADIAN SYLLABICS CARRIER HWO' onClick='cp("ᗗ")'>&#x15D7;</a>
+<a class='box' title='[U+15D8] CANADIAN SYLLABICS CARRIER HWE' onClick='cp("ᗘ")'>&#x15D8;</a>
+<a class='box' title='[U+15D9] CANADIAN SYLLABICS CARRIER HWEE' onClick='cp("ᗙ")'>&#x15D9;</a>
+<a class='box' title='[U+15DA] CANADIAN SYLLABICS CARRIER HWI' onClick='cp("ᗚ")'>&#x15DA;</a>
+<a class='box' title='[U+15DB] CANADIAN SYLLABICS CARRIER HWA' onClick='cp("ᗛ")'>&#x15DB;</a>
+<a class='box' title='[U+15DC] CANADIAN SYLLABICS CARRIER THU' onClick='cp("ᗜ")'>&#x15DC;</a>
+<a class='box' title='[U+15DD] CANADIAN SYLLABICS CARRIER THO' onClick='cp("ᗝ")'>&#x15DD;</a>
+<a class='box' title='[U+15DE] CANADIAN SYLLABICS CARRIER THE' onClick='cp("ᗞ")'>&#x15DE;</a>
+<a class='box' title='[U+15DF] CANADIAN SYLLABICS CARRIER THEE' onClick='cp("ᗟ")'>&#x15DF;</a>
+<a class='box' title='[U+15E0] CANADIAN SYLLABICS CARRIER THI' onClick='cp("ᗠ")'>&#x15E0;</a>
+<a class='box' title='[U+15E1] CANADIAN SYLLABICS CARRIER THA' onClick='cp("ᗡ")'>&#x15E1;</a>
+<a class='box' title='[U+15E2] CANADIAN SYLLABICS CARRIER TTU' onClick='cp("ᗢ")'>&#x15E2;</a>
+<a class='box' title='[U+15E3] CANADIAN SYLLABICS CARRIER TTO' onClick='cp("ᗣ")'>&#x15E3;</a>
+<a class='box' title='[U+15E4] CANADIAN SYLLABICS CARRIER TTE' onClick='cp("ᗤ")'>&#x15E4;</a>
+<a class='box' title='[U+15E5] CANADIAN SYLLABICS CARRIER TTEE' onClick='cp("ᗥ")'>&#x15E5;</a>
+<a class='box' title='[U+15E6] CANADIAN SYLLABICS CARRIER TTI' onClick='cp("ᗦ")'>&#x15E6;</a>
+<a class='box' title='[U+15E7] CANADIAN SYLLABICS CARRIER TTA' onClick='cp("ᗧ")'>&#x15E7;</a>
+<a class='box' title='[U+15E8] CANADIAN SYLLABICS CARRIER PU' onClick='cp("ᗨ")'>&#x15E8;</a>
+<a class='box' title='[U+15E9] CANADIAN SYLLABICS CARRIER PO' onClick='cp("ᗩ")'>&#x15E9;</a>
+<a class='box' title='[U+15EA] CANADIAN SYLLABICS CARRIER PE' onClick='cp("ᗪ")'>&#x15EA;</a>
+<a class='box' title='[U+15EB] CANADIAN SYLLABICS CARRIER PEE' onClick='cp("ᗫ")'>&#x15EB;</a>
+<a class='box' title='[U+15EC] CANADIAN SYLLABICS CARRIER PI' onClick='cp("ᗬ")'>&#x15EC;</a>
+<a class='box' title='[U+15ED] CANADIAN SYLLABICS CARRIER PA' onClick='cp("ᗭ")'>&#x15ED;</a>
+<a class='box' title='[U+15EE] CANADIAN SYLLABICS CARRIER P' onClick='cp("ᗮ")'>&#x15EE;</a>
+<a class='box' title='[U+15EF] CANADIAN SYLLABICS CARRIER GU' onClick='cp("ᗯ")'>&#x15EF;</a>
+<a class='box' title='[U+15F0] CANADIAN SYLLABICS CARRIER GO' onClick='cp("ᗰ")'>&#x15F0;</a>
+<a class='box' title='[U+15F1] CANADIAN SYLLABICS CARRIER GE' onClick='cp("ᗱ")'>&#x15F1;</a>
+<a class='box' title='[U+15F2] CANADIAN SYLLABICS CARRIER GEE' onClick='cp("ᗲ")'>&#x15F2;</a>
+<a class='box' title='[U+15F3] CANADIAN SYLLABICS CARRIER GI' onClick='cp("ᗳ")'>&#x15F3;</a>
+<a class='box' title='[U+15F4] CANADIAN SYLLABICS CARRIER GA' onClick='cp("ᗴ")'>&#x15F4;</a>
+<a class='box' title='[U+15F5] CANADIAN SYLLABICS CARRIER KHU' onClick='cp("ᗵ")'>&#x15F5;</a>
+<a class='box' title='[U+15F6] CANADIAN SYLLABICS CARRIER KHO' onClick='cp("ᗶ")'>&#x15F6;</a>
+<a class='box' title='[U+15F7] CANADIAN SYLLABICS CARRIER KHE' onClick='cp("ᗷ")'>&#x15F7;</a>
+<a class='box' title='[U+15F8] CANADIAN SYLLABICS CARRIER KHEE' onClick='cp("ᗸ")'>&#x15F8;</a>
+<a class='box' title='[U+15F9] CANADIAN SYLLABICS CARRIER KHI' onClick='cp("ᗹ")'>&#x15F9;</a>
+<a class='box' title='[U+15FA] CANADIAN SYLLABICS CARRIER KHA' onClick='cp("ᗺ")'>&#x15FA;</a>
+<a class='box' title='[U+15FB] CANADIAN SYLLABICS CARRIER KKU' onClick='cp("ᗻ")'>&#x15FB;</a>
+<a class='box' title='[U+15FC] CANADIAN SYLLABICS CARRIER KKO' onClick='cp("ᗼ")'>&#x15FC;</a>
+<a class='box' title='[U+15FD] CANADIAN SYLLABICS CARRIER KKE' onClick='cp("ᗽ")'>&#x15FD;</a>
+<a class='box' title='[U+15FE] CANADIAN SYLLABICS CARRIER KKEE' onClick='cp("ᗾ")'>&#x15FE;</a>
+<a class='box' title='[U+15FF] CANADIAN SYLLABICS CARRIER KKI' onClick='cp("ᗿ")'>&#x15FF;</a>
+<a class='box' title='[U+1600] CANADIAN SYLLABICS CARRIER KKA' onClick='cp("ᘀ")'>&#x1600;</a>
+<a class='box' title='[U+1601] CANADIAN SYLLABICS CARRIER KK' onClick='cp("ᘁ")'>&#x1601;</a>
+<a class='box' title='[U+1602] CANADIAN SYLLABICS CARRIER NU' onClick='cp("ᘂ")'>&#x1602;</a>
+<a class='box' title='[U+1603] CANADIAN SYLLABICS CARRIER NO' onClick='cp("ᘃ")'>&#x1603;</a>
+<a class='box' title='[U+1604] CANADIAN SYLLABICS CARRIER NE' onClick='cp("ᘄ")'>&#x1604;</a>
+<a class='box' title='[U+1605] CANADIAN SYLLABICS CARRIER NEE' onClick='cp("ᘅ")'>&#x1605;</a>
+<a class='box' title='[U+1606] CANADIAN SYLLABICS CARRIER NI' onClick='cp("ᘆ")'>&#x1606;</a>
+<a class='box' title='[U+1607] CANADIAN SYLLABICS CARRIER NA' onClick='cp("ᘇ")'>&#x1607;</a>
+<a class='box' title='[U+1608] CANADIAN SYLLABICS CARRIER MU' onClick='cp("ᘈ")'>&#x1608;</a>
+<a class='box' title='[U+1609] CANADIAN SYLLABICS CARRIER MO' onClick='cp("ᘉ")'>&#x1609;</a>
+<a class='box' title='[U+160A] CANADIAN SYLLABICS CARRIER ME' onClick='cp("ᘊ")'>&#x160A;</a>
+<a class='box' title='[U+160B] CANADIAN SYLLABICS CARRIER MEE' onClick='cp("ᘋ")'>&#x160B;</a>
+<a class='box' title='[U+160C] CANADIAN SYLLABICS CARRIER MI' onClick='cp("ᘌ")'>&#x160C;</a>
+<a class='box' title='[U+160D] CANADIAN SYLLABICS CARRIER MA' onClick='cp("ᘍ")'>&#x160D;</a>
+<a class='box' title='[U+160E] CANADIAN SYLLABICS CARRIER YU' onClick='cp("ᘎ")'>&#x160E;</a>
+<a class='box' title='[U+160F] CANADIAN SYLLABICS CARRIER YO' onClick='cp("ᘏ")'>&#x160F;</a>
+<a class='box' title='[U+1610] CANADIAN SYLLABICS CARRIER YE' onClick='cp("ᘐ")'>&#x1610;</a>
+<a class='box' title='[U+1611] CANADIAN SYLLABICS CARRIER YEE' onClick='cp("ᘑ")'>&#x1611;</a>
+<a class='box' title='[U+1612] CANADIAN SYLLABICS CARRIER YI' onClick='cp("ᘒ")'>&#x1612;</a>
+<a class='box' title='[U+1613] CANADIAN SYLLABICS CARRIER YA' onClick='cp("ᘓ")'>&#x1613;</a>
+<a class='box' title='[U+1614] CANADIAN SYLLABICS CARRIER JU' onClick='cp("ᘔ")'>&#x1614;</a>
+<a class='box' title='[U+1615] CANADIAN SYLLABICS SAYISI JU' onClick='cp("ᘕ")'>&#x1615;</a>
+<a class='box' title='[U+1616] CANADIAN SYLLABICS CARRIER JO' onClick='cp("ᘖ")'>&#x1616;</a>
+<a class='box' title='[U+1617] CANADIAN SYLLABICS CARRIER JE' onClick='cp("ᘗ")'>&#x1617;</a>
+<a class='box' title='[U+1618] CANADIAN SYLLABICS CARRIER JEE' onClick='cp("ᘘ")'>&#x1618;</a>
+<a class='box' title='[U+1619] CANADIAN SYLLABICS CARRIER JI' onClick='cp("ᘙ")'>&#x1619;</a>
+<a class='box' title='[U+161A] CANADIAN SYLLABICS SAYISI JI' onClick='cp("ᘚ")'>&#x161A;</a>
+<a class='box' title='[U+161B] CANADIAN SYLLABICS CARRIER JA' onClick='cp("ᘛ")'>&#x161B;</a>
+<a class='box' title='[U+161C] CANADIAN SYLLABICS CARRIER JJU' onClick='cp("ᘜ")'>&#x161C;</a>
+<a class='box' title='[U+161D] CANADIAN SYLLABICS CARRIER JJO' onClick='cp("ᘝ")'>&#x161D;</a>
+<a class='box' title='[U+161E] CANADIAN SYLLABICS CARRIER JJE' onClick='cp("ᘞ")'>&#x161E;</a>
+<a class='box' title='[U+161F] CANADIAN SYLLABICS CARRIER JJEE' onClick='cp("ᘟ")'>&#x161F;</a>
+<a class='box' title='[U+1620] CANADIAN SYLLABICS CARRIER JJI' onClick='cp("ᘠ")'>&#x1620;</a>
+<a class='box' title='[U+1621] CANADIAN SYLLABICS CARRIER JJA' onClick='cp("ᘡ")'>&#x1621;</a>
+<a class='box' title='[U+1622] CANADIAN SYLLABICS CARRIER LU' onClick='cp("ᘢ")'>&#x1622;</a>
+<a class='box' title='[U+1623] CANADIAN SYLLABICS CARRIER LO' onClick='cp("ᘣ")'>&#x1623;</a>
+<a class='box' title='[U+1624] CANADIAN SYLLABICS CARRIER LE' onClick='cp("ᘤ")'>&#x1624;</a>
+<a class='box' title='[U+1625] CANADIAN SYLLABICS CARRIER LEE' onClick='cp("ᘥ")'>&#x1625;</a>
+<a class='box' title='[U+1626] CANADIAN SYLLABICS CARRIER LI' onClick='cp("ᘦ")'>&#x1626;</a>
+<a class='box' title='[U+1627] CANADIAN SYLLABICS CARRIER LA' onClick='cp("ᘧ")'>&#x1627;</a>
+<a class='box' title='[U+1628] CANADIAN SYLLABICS CARRIER DLU' onClick='cp("ᘨ")'>&#x1628;</a>
+<a class='box' title='[U+1629] CANADIAN SYLLABICS CARRIER DLO' onClick='cp("ᘩ")'>&#x1629;</a>
+<a class='box' title='[U+162A] CANADIAN SYLLABICS CARRIER DLE' onClick='cp("ᘪ")'>&#x162A;</a>
+<a class='box' title='[U+162B] CANADIAN SYLLABICS CARRIER DLEE' onClick='cp("ᘫ")'>&#x162B;</a>
+<a class='box' title='[U+162C] CANADIAN SYLLABICS CARRIER DLI' onClick='cp("ᘬ")'>&#x162C;</a>
+<a class='box' title='[U+162D] CANADIAN SYLLABICS CARRIER DLA' onClick='cp("ᘭ")'>&#x162D;</a>
+<a class='box' title='[U+162E] CANADIAN SYLLABICS CARRIER LHU' onClick='cp("ᘮ")'>&#x162E;</a>
+<a class='box' title='[U+162F] CANADIAN SYLLABICS CARRIER LHO' onClick='cp("ᘯ")'>&#x162F;</a>
+<a class='box' title='[U+1630] CANADIAN SYLLABICS CARRIER LHE' onClick='cp("ᘰ")'>&#x1630;</a>
+<a class='box' title='[U+1631] CANADIAN SYLLABICS CARRIER LHEE' onClick='cp("ᘱ")'>&#x1631;</a>
+<a class='box' title='[U+1632] CANADIAN SYLLABICS CARRIER LHI' onClick='cp("ᘲ")'>&#x1632;</a>
+<a class='box' title='[U+1633] CANADIAN SYLLABICS CARRIER LHA' onClick='cp("ᘳ")'>&#x1633;</a>
+<a class='box' title='[U+1634] CANADIAN SYLLABICS CARRIER TLHU' onClick='cp("ᘴ")'>&#x1634;</a>
+<a class='box' title='[U+1635] CANADIAN SYLLABICS CARRIER TLHO' onClick='cp("ᘵ")'>&#x1635;</a>
+<a class='box' title='[U+1636] CANADIAN SYLLABICS CARRIER TLHE' onClick='cp("ᘶ")'>&#x1636;</a>
+<a class='box' title='[U+1637] CANADIAN SYLLABICS CARRIER TLHEE' onClick='cp("ᘷ")'>&#x1637;</a>
+<a class='box' title='[U+1638] CANADIAN SYLLABICS CARRIER TLHI' onClick='cp("ᘸ")'>&#x1638;</a>
+<a class='box' title='[U+1639] CANADIAN SYLLABICS CARRIER TLHA' onClick='cp("ᘹ")'>&#x1639;</a>
+<a class='box' title='[U+163A] CANADIAN SYLLABICS CARRIER TLU' onClick='cp("ᘺ")'>&#x163A;</a>
+<a class='box' title='[U+163B] CANADIAN SYLLABICS CARRIER TLO' onClick='cp("ᘻ")'>&#x163B;</a>
+<a class='box' title='[U+163C] CANADIAN SYLLABICS CARRIER TLE' onClick='cp("ᘼ")'>&#x163C;</a>
+<a class='box' title='[U+163D] CANADIAN SYLLABICS CARRIER TLEE' onClick='cp("ᘽ")'>&#x163D;</a>
+<a class='box' title='[U+163E] CANADIAN SYLLABICS CARRIER TLI' onClick='cp("ᘾ")'>&#x163E;</a>
+<a class='box' title='[U+163F] CANADIAN SYLLABICS CARRIER TLA' onClick='cp("ᘿ")'>&#x163F;</a>
+<a class='box' title='[U+1640] CANADIAN SYLLABICS CARRIER ZU' onClick='cp("ᙀ")'>&#x1640;</a>
+<a class='box' title='[U+1641] CANADIAN SYLLABICS CARRIER ZO' onClick='cp("ᙁ")'>&#x1641;</a>
+<a class='box' title='[U+1642] CANADIAN SYLLABICS CARRIER ZE' onClick='cp("ᙂ")'>&#x1642;</a>
+<a class='box' title='[U+1643] CANADIAN SYLLABICS CARRIER ZEE' onClick='cp("ᙃ")'>&#x1643;</a>
+<a class='box' title='[U+1644] CANADIAN SYLLABICS CARRIER ZI' onClick='cp("ᙄ")'>&#x1644;</a>
+<a class='box' title='[U+1645] CANADIAN SYLLABICS CARRIER ZA' onClick='cp("ᙅ")'>&#x1645;</a>
+<a class='box' title='[U+1646] CANADIAN SYLLABICS CARRIER Z' onClick='cp("ᙆ")'>&#x1646;</a>
+<a class='box' title='[U+1647] CANADIAN SYLLABICS CARRIER INITIAL Z' onClick='cp("ᙇ")'>&#x1647;</a>
+<a class='box' title='[U+1648] CANADIAN SYLLABICS CARRIER DZU' onClick='cp("ᙈ")'>&#x1648;</a>
+<a class='box' title='[U+1649] CANADIAN SYLLABICS CARRIER DZO' onClick='cp("ᙉ")'>&#x1649;</a>
+<a class='box' title='[U+164A] CANADIAN SYLLABICS CARRIER DZE' onClick='cp("ᙊ")'>&#x164A;</a>
+<a class='box' title='[U+164B] CANADIAN SYLLABICS CARRIER DZEE' onClick='cp("ᙋ")'>&#x164B;</a>
+<a class='box' title='[U+164C] CANADIAN SYLLABICS CARRIER DZI' onClick='cp("ᙌ")'>&#x164C;</a>
+<a class='box' title='[U+164D] CANADIAN SYLLABICS CARRIER DZA' onClick='cp("ᙍ")'>&#x164D;</a>
+<a class='box' title='[U+164E] CANADIAN SYLLABICS CARRIER SU' onClick='cp("ᙎ")'>&#x164E;</a>
+<a class='box' title='[U+164F] CANADIAN SYLLABICS CARRIER SO' onClick='cp("ᙏ")'>&#x164F;</a>
+<a class='box' title='[U+1650] CANADIAN SYLLABICS CARRIER SE' onClick='cp("ᙐ")'>&#x1650;</a>
+<a class='box' title='[U+1651] CANADIAN SYLLABICS CARRIER SEE' onClick='cp("ᙑ")'>&#x1651;</a>
+<a class='box' title='[U+1652] CANADIAN SYLLABICS CARRIER SI' onClick='cp("ᙒ")'>&#x1652;</a>
+<a class='box' title='[U+1653] CANADIAN SYLLABICS CARRIER SA' onClick='cp("ᙓ")'>&#x1653;</a>
+<a class='box' title='[U+1654] CANADIAN SYLLABICS CARRIER SHU' onClick='cp("ᙔ")'>&#x1654;</a>
+<a class='box' title='[U+1655] CANADIAN SYLLABICS CARRIER SHO' onClick='cp("ᙕ")'>&#x1655;</a>
+<a class='box' title='[U+1656] CANADIAN SYLLABICS CARRIER SHE' onClick='cp("ᙖ")'>&#x1656;</a>
+<a class='box' title='[U+1657] CANADIAN SYLLABICS CARRIER SHEE' onClick='cp("ᙗ")'>&#x1657;</a>
+<a class='box' title='[U+1658] CANADIAN SYLLABICS CARRIER SHI' onClick='cp("ᙘ")'>&#x1658;</a>
+<a class='box' title='[U+1659] CANADIAN SYLLABICS CARRIER SHA' onClick='cp("ᙙ")'>&#x1659;</a>
+<a class='box' title='[U+165A] CANADIAN SYLLABICS CARRIER SH' onClick='cp("ᙚ")'>&#x165A;</a>
+<a class='box' title='[U+165B] CANADIAN SYLLABICS CARRIER TSU' onClick='cp("ᙛ")'>&#x165B;</a>
+<a class='box' title='[U+165C] CANADIAN SYLLABICS CARRIER TSO' onClick='cp("ᙜ")'>&#x165C;</a>
+<a class='box' title='[U+165D] CANADIAN SYLLABICS CARRIER TSE' onClick='cp("ᙝ")'>&#x165D;</a>
+<a class='box' title='[U+165E] CANADIAN SYLLABICS CARRIER TSEE' onClick='cp("ᙞ")'>&#x165E;</a>
+<a class='box' title='[U+165F] CANADIAN SYLLABICS CARRIER TSI' onClick='cp("ᙟ")'>&#x165F;</a>
+<a class='box' title='[U+1660] CANADIAN SYLLABICS CARRIER TSA' onClick='cp("ᙠ")'>&#x1660;</a>
+<a class='box' title='[U+1661] CANADIAN SYLLABICS CARRIER CHU' onClick='cp("ᙡ")'>&#x1661;</a>
+<a class='box' title='[U+1662] CANADIAN SYLLABICS CARRIER CHO' onClick='cp("ᙢ")'>&#x1662;</a>
+<a class='box' title='[U+1663] CANADIAN SYLLABICS CARRIER CHE' onClick='cp("ᙣ")'>&#x1663;</a>
+<a class='box' title='[U+1664] CANADIAN SYLLABICS CARRIER CHEE' onClick='cp("ᙤ")'>&#x1664;</a>
+<a class='box' title='[U+1665] CANADIAN SYLLABICS CARRIER CHI' onClick='cp("ᙥ")'>&#x1665;</a>
+<a class='box' title='[U+1666] CANADIAN SYLLABICS CARRIER CHA' onClick='cp("ᙦ")'>&#x1666;</a>
+<a class='box' title='[U+1667] CANADIAN SYLLABICS CARRIER TTSU' onClick='cp("ᙧ")'>&#x1667;</a>
+<a class='box' title='[U+1668] CANADIAN SYLLABICS CARRIER TTSO' onClick='cp("ᙨ")'>&#x1668;</a>
+<a class='box' title='[U+1669] CANADIAN SYLLABICS CARRIER TTSE' onClick='cp("ᙩ")'>&#x1669;</a>
+<a class='box' title='[U+166A] CANADIAN SYLLABICS CARRIER TTSEE' onClick='cp("ᙪ")'>&#x166A;</a>
+<a class='box' title='[U+166B] CANADIAN SYLLABICS CARRIER TTSI' onClick='cp("ᙫ")'>&#x166B;</a>
+<a class='box' title='[U+166C] CANADIAN SYLLABICS CARRIER TTSA' onClick='cp("ᙬ")'>&#x166C;</a>
+<a class='box' title='[U+166D] CANADIAN SYLLABICS CHI SIGN' onClick='cp("᙭")'>&#x166D;</a>
+<a class='box' title='[U+166E] CANADIAN SYLLABICS FULL STOP' onClick='cp("᙮")'>&#x166E;</a>
+<a class='box' title='[U+166F] CANADIAN SYLLABICS QAI' onClick='cp("ᙯ")'>&#x166F;</a>
+<a class='box' title='[U+1670] CANADIAN SYLLABICS NGAI' onClick='cp("ᙰ")'>&#x1670;</a>
+<a class='box' title='[U+1671] CANADIAN SYLLABICS NNGI' onClick='cp("ᙱ")'>&#x1671;</a>
+<a class='box' title='[U+1672] CANADIAN SYLLABICS NNGII' onClick='cp("ᙲ")'>&#x1672;</a>
+<a class='box' title='[U+1673] CANADIAN SYLLABICS NNGO' onClick='cp("ᙳ")'>&#x1673;</a>
+<a class='box' title='[U+1674] CANADIAN SYLLABICS NNGOO' onClick='cp("ᙴ")'>&#x1674;</a>
+<a class='box' title='[U+1675] CANADIAN SYLLABICS NNGA' onClick='cp("ᙵ")'>&#x1675;</a>
+<a class='box' title='[U+1676] CANADIAN SYLLABICS NNGAA' onClick='cp("ᙶ")'>&#x1676;</a>
+<a class='box' title='[U+1677] CANADIAN SYLLABICS WOODS-CREE THWEE' onClick='cp("ᙷ")'>&#x1677;</a>
+<a class='box' title='[U+1678] CANADIAN SYLLABICS WOODS-CREE THWI' onClick='cp("ᙸ")'>&#x1678;</a>
+<a class='box' title='[U+1679] CANADIAN SYLLABICS WOODS-CREE THWII' onClick='cp("ᙹ")'>&#x1679;</a>
+<a class='box' title='[U+167A] CANADIAN SYLLABICS WOODS-CREE THWO' onClick='cp("ᙺ")'>&#x167A;</a>
+<a class='box' title='[U+167B] CANADIAN SYLLABICS WOODS-CREE THWOO' onClick='cp("ᙻ")'>&#x167B;</a>
+<a class='box' title='[U+167C] CANADIAN SYLLABICS WOODS-CREE THWA' onClick='cp("ᙼ")'>&#x167C;</a>
+<a class='box' title='[U+167D] CANADIAN SYLLABICS WOODS-CREE THWAA' onClick='cp("ᙽ")'>&#x167D;</a>
+<a class='box' title='[U+167E] CANADIAN SYLLABICS WOODS-CREE FINAL TH' onClick='cp("ᙾ")'>&#x167E;</a>
+<a class='box' title='[U+167F] CANADIAN SYLLABICS BLACKFOOT W' onClick='cp("ᙿ")'>&#x167F;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #222; id=#;'>UCAS Extended (U+18B0 - U+18FF)</h2>
+<div class='margined'>
+<a class='box' title='[U+18B0] CANADIAN SYLLABICS OY' onClick='cp("ᢰ")'>&#x18B0;</a>
+<a class='box' title='[U+18B1] CANADIAN SYLLABICS AY' onClick='cp("ᢱ")'>&#x18B1;</a>
+<a class='box' title='[U+18B2] CANADIAN SYLLABICS AAY' onClick='cp("ᢲ")'>&#x18B2;</a>
+<a class='box' title='[U+18B3] CANADIAN SYLLABICS WAY' onClick='cp("ᢳ")'>&#x18B3;</a>
+<a class='box' title='[U+18B4] CANADIAN SYLLABICS POY' onClick='cp("ᢴ")'>&#x18B4;</a>
+<a class='box' title='[U+18B5] CANADIAN SYLLABICS PAY' onClick='cp("ᢵ")'>&#x18B5;</a>
+<a class='box' title='[U+18B6] CANADIAN SYLLABICS PWOY' onClick='cp("ᢶ")'>&#x18B6;</a>
+<a class='box' title='[U+18B7] CANADIAN SYLLABICS TAY' onClick='cp("ᢷ")'>&#x18B7;</a>
+<a class='box' title='[U+18B8] CANADIAN SYLLABICS KAY' onClick='cp("ᢸ")'>&#x18B8;</a>
+<a class='box' title='[U+18B9] CANADIAN SYLLABICS KWAY' onClick='cp("ᢹ")'>&#x18B9;</a>
+<a class='box' title='[U+18BA] CANADIAN SYLLABICS MAY' onClick='cp("ᢺ")'>&#x18BA;</a>
+<a class='box' title='[U+18BB] CANADIAN SYLLABICS NOY' onClick='cp("ᢻ")'>&#x18BB;</a>
+<a class='box' title='[U+18BC] CANADIAN SYLLABICS NAY' onClick='cp("ᢼ")'>&#x18BC;</a>
+<a class='box' title='[U+18BD] CANADIAN SYLLABICS LAY' onClick='cp("ᢽ")'>&#x18BD;</a>
+<a class='box' title='[U+18BE] CANADIAN SYLLABICS SOY' onClick='cp("ᢾ")'>&#x18BE;</a>
+<a class='box' title='[U+18BF] CANADIAN SYLLABICS SAY' onClick='cp("ᢿ")'>&#x18BF;</a>
+<a class='box' title='[U+18C0] CANADIAN SYLLABICS SHOY' onClick='cp("ᣀ")'>&#x18C0;</a>
+<a class='box' title='[U+18C1] CANADIAN SYLLABICS SHAY' onClick='cp("ᣁ")'>&#x18C1;</a>
+<a class='box' title='[U+18C2] CANADIAN SYLLABICS SHWOY' onClick='cp("ᣂ")'>&#x18C2;</a>
+<a class='box' title='[U+18C3] CANADIAN SYLLABICS YOY' onClick='cp("ᣃ")'>&#x18C3;</a>
+<a class='box' title='[U+18C4] CANADIAN SYLLABICS YAY' onClick='cp("ᣄ")'>&#x18C4;</a>
+<a class='box' title='[U+18C5] CANADIAN SYLLABICS RAY' onClick='cp("ᣅ")'>&#x18C5;</a>
+<a class='box' title='[U+18C6] CANADIAN SYLLABICS NWI' onClick='cp("ᣆ")'>&#x18C6;</a>
+<a class='box' title='[U+18C7] CANADIAN SYLLABICS OJIBWAY NWI' onClick='cp("ᣇ")'>&#x18C7;</a>
+<a class='box' title='[U+18C8] CANADIAN SYLLABICS NWII' onClick='cp("ᣈ")'>&#x18C8;</a>
+<a class='box' title='[U+18C9] CANADIAN SYLLABICS OJIBWAY NWII' onClick='cp("ᣉ")'>&#x18C9;</a>
+<a class='box' title='[U+18CA] CANADIAN SYLLABICS NWO' onClick='cp("ᣊ")'>&#x18CA;</a>
+<a class='box' title='[U+18CB] CANADIAN SYLLABICS OJIBWAY NWO' onClick='cp("ᣋ")'>&#x18CB;</a>
+<a class='box' title='[U+18CC] CANADIAN SYLLABICS NWOO' onClick='cp("ᣌ")'>&#x18CC;</a>
+<a class='box' title='[U+18CD] CANADIAN SYLLABICS OJIBWAY NWOO' onClick='cp("ᣍ")'>&#x18CD;</a>
+<a class='box' title='[U+18CE] CANADIAN SYLLABICS RWEE' onClick='cp("ᣎ")'>&#x18CE;</a>
+<a class='box' title='[U+18CF] CANADIAN SYLLABICS RWI' onClick='cp("ᣏ")'>&#x18CF;</a>
+<a class='box' title='[U+18D0] CANADIAN SYLLABICS RWII' onClick='cp("ᣐ")'>&#x18D0;</a>
+<a class='box' title='[U+18D1] CANADIAN SYLLABICS RWO' onClick='cp("ᣑ")'>&#x18D1;</a>
+<a class='box' title='[U+18D2] CANADIAN SYLLABICS RWOO' onClick='cp("ᣒ")'>&#x18D2;</a>
+<a class='box' title='[U+18D3] CANADIAN SYLLABICS RWA' onClick='cp("ᣓ")'>&#x18D3;</a>
+<a class='box' title='[U+18D4] CANADIAN SYLLABICS OJIBWAY P' onClick='cp("ᣔ")'>&#x18D4;</a>
+<a class='box' title='[U+18D5] CANADIAN SYLLABICS OJIBWAY T' onClick='cp("ᣕ")'>&#x18D5;</a>
+<a class='box' title='[U+18D6] CANADIAN SYLLABICS OJIBWAY K' onClick='cp("ᣖ")'>&#x18D6;</a>
+<a class='box' title='[U+18D7] CANADIAN SYLLABICS OJIBWAY C' onClick='cp("ᣗ")'>&#x18D7;</a>
+<a class='box' title='[U+18D8] CANADIAN SYLLABICS OJIBWAY M' onClick='cp("ᣘ")'>&#x18D8;</a>
+<a class='box' title='[U+18D9] CANADIAN SYLLABICS OJIBWAY N' onClick='cp("ᣙ")'>&#x18D9;</a>
+<a class='box' title='[U+18DA] CANADIAN SYLLABICS OJIBWAY S' onClick='cp("ᣚ")'>&#x18DA;</a>
+<a class='box' title='[U+18DB] CANADIAN SYLLABICS OJIBWAY SH' onClick='cp("ᣛ")'>&#x18DB;</a>
+<a class='box' title='[U+18DC] CANADIAN SYLLABICS EASTERN W' onClick='cp("ᣜ")'>&#x18DC;</a>
+<a class='box' title='[U+18DD] CANADIAN SYLLABICS WESTERN W' onClick='cp("ᣝ")'>&#x18DD;</a>
+<a class='box' title='[U+18DE] CANADIAN SYLLABICS FINAL SMALL RING' onClick='cp("ᣞ")'>&#x18DE;</a>
+<a class='box' title='[U+18DF] CANADIAN SYLLABICS FINAL RAISED DOT' onClick='cp("ᣟ")'>&#x18DF;</a>
+<a class='box' title='[U+18E0] CANADIAN SYLLABICS R-CREE RWE' onClick='cp("ᣠ")'>&#x18E0;</a>
+<a class='box' title='[U+18E1] CANADIAN SYLLABICS WEST-CREE LOO' onClick='cp("ᣡ")'>&#x18E1;</a>
+<a class='box' title='[U+18E2] CANADIAN SYLLABICS WEST-CREE LAA' onClick='cp("ᣢ")'>&#x18E2;</a>
+<a class='box' title='[U+18E3] CANADIAN SYLLABICS THWE' onClick='cp("ᣣ")'>&#x18E3;</a>
+<a class='box' title='[U+18E4] CANADIAN SYLLABICS THWA' onClick='cp("ᣤ")'>&#x18E4;</a>
+<a class='box' title='[U+18E5] CANADIAN SYLLABICS TTHWE' onClick='cp("ᣥ")'>&#x18E5;</a>
+<a class='box' title='[U+18E6] CANADIAN SYLLABICS TTHOO' onClick='cp("ᣦ")'>&#x18E6;</a>
+<a class='box' title='[U+18E7] CANADIAN SYLLABICS TTHAA' onClick='cp("ᣧ")'>&#x18E7;</a>
+<a class='box' title='[U+18E8] CANADIAN SYLLABICS TLHWE' onClick='cp("ᣨ")'>&#x18E8;</a>
+<a class='box' title='[U+18E9] CANADIAN SYLLABICS TLHOO' onClick='cp("ᣩ")'>&#x18E9;</a>
+<a class='box' title='[U+18EA] CANADIAN SYLLABICS SAYISI SHWE' onClick='cp("ᣪ")'>&#x18EA;</a>
+<a class='box' title='[U+18EB] CANADIAN SYLLABICS SAYISI SHOO' onClick='cp("ᣫ")'>&#x18EB;</a>
+<a class='box' title='[U+18EC] CANADIAN SYLLABICS SAYISI HOO' onClick='cp("ᣬ")'>&#x18EC;</a>
+<a class='box' title='[U+18ED] CANADIAN SYLLABICS CARRIER GWU' onClick='cp("ᣭ")'>&#x18ED;</a>
+<a class='box' title='[U+18EE] CANADIAN SYLLABICS CARRIER DENE GEE' onClick='cp("ᣮ")'>&#x18EE;</a>
+<a class='box' title='[U+18EF] CANADIAN SYLLABICS CARRIER GAA' onClick='cp("ᣯ")'>&#x18EF;</a>
+<a class='box' title='[U+18F0] CANADIAN SYLLABICS CARRIER GWA' onClick='cp("ᣰ")'>&#x18F0;</a>
+<a class='box' title='[U+18F1] CANADIAN SYLLABICS SAYISI JUU' onClick='cp("ᣱ")'>&#x18F1;</a>
+<a class='box' title='[U+18F2] CANADIAN SYLLABICS CARRIER JWA' onClick='cp("ᣲ")'>&#x18F2;</a>
+<a class='box' title='[U+18F3] CANADIAN SYLLABICS BEAVER DENE L' onClick='cp("ᣳ")'>&#x18F3;</a>
+<a class='box' title='[U+18F4] CANADIAN SYLLABICS BEAVER DENE R' onClick='cp("ᣴ")'>&#x18F4;</a>
+<a class='box' title='[U+18F5] CANADIAN SYLLABICS CARRIER DENTAL S' onClick='cp("ᣵ")'>&#x18F5;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+
+   </div>
+  </div>
+  <hr/>
+  <a href='javascript:history.back()'>
+   Back
+  </a>
+  <div>
+   <br/>
+   <br/>
+   <div style='font-size: 80%; text-align: center'>
+    Copyright &copy; 2020 emojipicker.com
+    <a href='../about/disclaimer.html' class='disclaimer'>
+     Disclaimer
+    </a>
+    <a href='../about/privacypolicy.html' class='disclaimer'>
+     Privacy Policy
+    </a>
+   </div>
+  </div>
+ </body>
+</html>

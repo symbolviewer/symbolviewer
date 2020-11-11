@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset='utf-8'/>
+  <title>
+   List of Unicode 13.0 Characters & Symbols
+  </title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<style type="text/css">
+		table,th,tr,td	{	padding:			0px;
+							border:				solid black 1px;
+							border-spacing:		0px;
+						}
+		td+td			{
+							padding-left:		4px;
+							padding-right:		4px;
+							font-family:		sans-serif;	
+						}
+		td+td+td		{
+							word-break:			break-all;
+							font-family:		serif;	
+						}
+		body			{
+							margin-left:		0px;
+							margin-right:		0px;
+							padding-left:		0px;
+							padding-right:		0px;
+							background-color:	#fcfcfc;
+						}
+		.margined_hdr	{
+							margin:				10px;
+						}
+		.margined		{
+							margin:				10px;
+						}
+		.wholearea		{
+							margin:				0px;
+							padding:			0px;
+						}
+		.wholearea		{	line-height: 		1em;	font-family:	sans-serif;	font-family: 'Segoe UI Emoji'; }
+		.titlearea		{	line-height: 		1.4em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.hbar_area		{	line-height: 		1em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.xcopyarea		{	line-height: 		1.2em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.main			{	line-height:		30px;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+
+		.box			{
+							float:				left;
+
+							line-height:		1;
+						/*	line-spacing:		0;	*/
+
+						/*	height:				30px; */
+							height:				50px;
+							min-width:			50px;
+						}
+		.box, .xbutton
+						{
+							box-sizing:			border-box;
+
+							font-family:		'Segoe UI Emoji';
+
+						    cursor:				pointer;
+						    text-decoration:	none;
+
+						    background-color:	#eeeeee;
+						    color:				black;
+
+						    text-align:			center;
+							vertical-align:		middle;
+						    font-size:			24px;
+
+						    border:				1px solid #000000;
+						    margin:				0px 0px 0px 0px;
+						    padding:			5px 5px 5px 5px;
+
+						    border:				1px solid #aaa;
+						    padding:			10px 5px;
+						}
+		.box:hover, .xbutton:hover
+						{
+							background-color: #ffffff
+						}
+		.box:active, .xbutton:active
+						{
+							background-color:	#eeeeee;
+							box-shadow:			0 4px #666;
+							transform:			translateY(-4px);
+						}
+		.testsvg		{
+							text-align:			center;
+							vertical-align:		middle;
+						}
+		/* -------------------------------------------------*/
+		/* CATEGORY HEADERS									*/
+		/* -------------------------------------------------*/
+		h1					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				black;
+								background-color:	cyan;
+
+								left:				0;
+								text-align:			center;
+
+								margin-top:			10px;
+								padding-top:		12px;
+								padding-bottom:		12px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		h2					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				white;
+								background-color:	#202020;
+
+								left:				0;
+								text-align:			center;
+								text-align:			left;
+
+								margin-top:			10px;
+								padding-top:		8px;
+								padding-bottom:		8px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		/* SUBCATEGORY */
+		h3					{ 
+							/*	font-family:		serif; */
+								font-family:		'Segoe UI Emoji';
+								font-family:		sans-serif;
+								font-weight:		normal;
+
+								margin-top:			10px;
+								padding-top:		0px;
+								padding-bottom:		0px;
+								margin-bottom:		4px;
+							}
+		.catlink			{
+								display:			inline-block;
+								padding:			5px 4px;
+								color:				#FCFCFC;
+								background:			#5050A0;
+								text-align:			center;
+								cursor:				pointer;
+								margin-left:		10px;
+							}
+		.catlink:hover		{
+								font-weight:		bold;
+							}
+		.codevalue			{
+								font-size:			20px;
+							}
+</style>
+	<script>
+		function goback()
+		{
+			window.history.back();
+		}
+		function cp(txt)
+		{
+			var a							= document.createElement ('textarea');
+			a.style.position				= 'fixed';
+			a.style.left					= '-100%';
+			a.value							= txt;
+			a.selectionStart				= 0;
+			a.selectionEnd					= a.value.length;
+
+			document.body.appendChild		(a);
+		//	a.focus							();		// 2017-11-02 del
+			a.select						();		// 2017-11-02 add
+			document.execCommand			('copy');
+			document.body.removeChild		(a);
+			var e							= document.getElementById ('copybuf');
+			e.value							+= txt;
+		};
+
+		function areacopy()
+		{
+			var a							= document.activeElement;
+			var box							= document.getElementById	('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function areaerase()
+		{
+			var a = document.activeElement;
+			var box							= document.getElementById ('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+			box.value						= '';
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function jmpl(location)
+		{
+			var old_name	= document.getElementById (location).getAttribute('name');
+			document.getElementById (location).setAttribute('name', location);
+			window.location.hash			= location;
+			var ret = window.scrollBy		(0, -62);
+			document.getElementById (location).setAttribute('name', old_name);
+		}
+		function jmphome()
+		{
+			window.location.hash				= '';
+		    document.body.scrollTop				= 0; // For Chrome, Safari and Opera
+		    document.documentElement.scrollTop	= 0; // For IE and Firefox
+		}
+	</script>
+ </head>
+ <body>
+  <div class='wholearea'>
+    <div class='testsvg'>
+     <svg class='testsvg' xmlns='http://www.w3.org/2000/svg' version='1.1' width='100%' height='100' stroke='black' stroke-width='0px' style='font-size:32px; text-align:center; font-family: serif; font-family:Segoe UI Emoji;'>
+      <defs>
+       <linearGradient id='grad1'>
+        <stop offset='0%' stop-color='cyan'/>
+        <stop offset='40%' stop-color='cyan'/>
+        <stop offset='70%' stop-color='#777777'/>
+        <stop offset='100%' stop-color='#333333'/>
+       </linearGradient>
+      </defs>
+      <rect x='0' y='0' width='100%' height='100' fill='url(#grad1)'/>
+      <text x='5%' y='55%'>
+       List of Unicode 13.0 Characters & Symbols
+      </text>
+     </svg>
+    </div>
+   <div>
+    <h2>&nbsp;Scripts</h2>
+<div class='margined'>
+<h3>European Scripts</h3>
+<div>
+<a class='catlink' href='../picker/European_Scripts.html'>Simple List</a>
+<a class='catlink' href='../detail/European_Scripts.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Modifier Letters</h3>
+<div>
+<a class='catlink' href='../picker/Modifier_Letters.html'>Simple List</a>
+<a class='catlink' href='../detail/Modifier_Letters.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Combining Marks</h3>
+<div>
+<a class='catlink' href='../picker/Combining_Marks.html'>Simple List</a>
+<a class='catlink' href='../detail/Combining_Marks.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>African Scripts</h3>
+<div>
+<a class='catlink' href='../picker/African_Scripts.html'>Simple List</a>
+<a class='catlink' href='../detail/African_Scripts.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Middle Eastern Scripts</h3>
+<div>
+<a class='catlink' href='../picker/Middle_Eastern_Scripts.html'>Simple List</a>
+<a class='catlink' href='../detail/Middle_Eastern_Scripts.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Central Asian Scripts</h3>
+<div>
+<a class='catlink' href='../picker/Central_Asian_Scripts.html'>Simple List</a>
+<a class='catlink' href='../detail/Central_Asian_Scripts.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>South Asian Scripts</h3>
+<div>
+<a class='catlink' href='../picker/South_Asian_Scripts.html'>Simple List</a>
+<a class='catlink' href='../detail/South_Asian_Scripts.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Southeast Asian Scripts</h3>
+<div>
+<a class='catlink' href='../picker/Southeast_Asian_Scripts.html'>Simple List</a>
+<a class='catlink' href='../detail/Southeast_Asian_Scripts.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Indonesia and Oceania Scripts</h3>
+<div>
+<a class='catlink' href='../picker/Indonesia_and_Oceania_Scripts.html'>Simple List</a>
+<a class='catlink' href='../detail/Indonesia_and_Oceania_Scripts.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>East Asian Scripts</h3>
+<div>
+<a class='catlink' href='../picker/East_Asian_Scripts.html'>Simple List</a>
+<a class='catlink' href='../detail/East_Asian_Scripts.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>American Scripts</h3>
+<div>
+<a class='catlink' href='../picker/American_Scripts.html'>Simple List</a>
+<a class='catlink' href='../detail/American_Scripts.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Other</h3>
+<div>
+<a class='catlink' href='../picker/Other.html'>Simple List</a>
+<a class='catlink' href='../detail/Other.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<h2>&nbsp;Symbols and Punctuation</h2>
+<div class='margined'>
+<h3>Notational Systems</h3>
+<div>
+<a class='catlink' href='../picker/Notational_Systems.html'>Simple List</a>
+<a class='catlink' href='../detail/Notational_Systems.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Punctuation</h3>
+<div>
+<a class='catlink' href='../picker/Punctuation.html'>Simple List</a>
+<a class='catlink' href='../detail/Punctuation.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Alphanumeric Symbols</h3>
+<div>
+<a class='catlink' href='../picker/Alphanumeric_Symbols.html'>Simple List</a>
+<a class='catlink' href='../detail/Alphanumeric_Symbols.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Technical Symbols</h3>
+<div>
+<a class='catlink' href='../picker/Technical_Symbols.html'>Simple List</a>
+<a class='catlink' href='../detail/Technical_Symbols.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Numbers and Digits</h3>
+<div>
+<a class='catlink' href='../picker/Numbers_and_Digits.html'>Simple List</a>
+<a class='catlink' href='../detail/Numbers_and_Digits.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Mathematical Symbols</h3>
+<div>
+<a class='catlink' href='../picker/Mathematical_Symbols.html'>Simple List</a>
+<a class='catlink' href='../detail/Mathematical_Symbols.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Emoji and Pictographs</h3>
+<div>
+<a class='catlink' href='../picker/Emoji_and_Pictographs.html'>Simple List</a>
+<a class='catlink' href='../detail/Emoji_and_Pictographs.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+<div class='margined'>
+<h3>Other Symbols</h3>
+<div>
+<a class='catlink' href='../picker/Other_Symbols.html'>Simple List</a>
+<a class='catlink' href='../detail/Other_Symbols.html'>Name / Code</a>
+<div style='clear:left;'></div>
+</div>
+</div> <!-- margined -->
+
+   </div>
+  </div>
+  <div>
+   <br/>
+   <br/>
+   <div style='font-size: 80%; text-align: center'>
+    Copyright &copy; 2020 emojipicker.com
+    <a href='../about/disclaimer.html' class='disclaimer'>
+     Disclaimer
+    </a>
+    <a href='../about/privacypolicy.html' class='disclaimer'>
+     Privacy Policy
+    </a>
+   </div>
+  </div>
+ </body>
+</html>

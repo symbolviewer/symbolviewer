@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset='utf-8'/>
+  <title>
+   Other
+  </title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<style type="text/css">
+		table,th,tr,td	{	padding:			0px;
+							border:				solid black 1px;
+							border-spacing:		0px;
+						}
+		td+td			{
+							padding-left:		4px;
+							padding-right:		4px;
+							font-family:		sans-serif;	
+						}
+		td+td+td		{
+							word-break:			break-all;
+							font-family:		serif;	
+						}
+		body			{
+							margin-left:		0px;
+							margin-right:		0px;
+							padding-left:		0px;
+							padding-right:		0px;
+							background-color:	#fcfcfc;
+						}
+		.margined_hdr	{
+							margin:				10px;
+						}
+		.margined		{
+							margin:				10px;
+						}
+		.wholearea		{
+							margin:				0px;
+							padding:			0px;
+						}
+		.wholearea		{	line-height: 		1em;	font-family:	sans-serif;	font-family: 'Segoe UI Emoji'; }
+		.titlearea		{	line-height: 		1.4em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.hbar_area		{	line-height: 		1em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.xcopyarea		{	line-height: 		1.2em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.main			{	line-height:		30px;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+
+		.box			{
+							float:				left;
+
+							line-height:		1;
+						/*	line-spacing:		0;	*/
+
+						/*	height:				30px; */
+							height:				50px;
+							min-width:			50px;
+						}
+		.box, .xbutton
+						{
+							box-sizing:			border-box;
+
+							font-family:		'Segoe UI Emoji';
+
+						    cursor:				pointer;
+						    text-decoration:	none;
+
+						    background-color:	#eeeeee;
+						    color:				black;
+
+						    text-align:			center;
+							vertical-align:		middle;
+						    font-size:			24px;
+
+						    border:				1px solid #000000;
+						    margin:				0px 0px 0px 0px;
+						    padding:			5px 5px 5px 5px;
+
+						    border:				1px solid #aaa;
+						    padding:			10px 5px;
+						}
+		.box:hover, .xbutton:hover
+						{
+							background-color: #ffffff
+						}
+		.box:active, .xbutton:active
+						{
+							background-color:	#eeeeee;
+							box-shadow:			0 4px #666;
+							transform:			translateY(-4px);
+						}
+		.testsvg		{
+							text-align:			center;
+							vertical-align:		middle;
+						}
+		/* -------------------------------------------------*/
+		/* CATEGORY HEADERS									*/
+		/* -------------------------------------------------*/
+		h1					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				black;
+								background-color:	cyan;
+
+								left:				0;
+								text-align:			center;
+
+								margin-top:			10px;
+								padding-top:		12px;
+								padding-bottom:		12px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		h2					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				white;
+								background-color:	#202020;
+
+								left:				0;
+								text-align:			center;
+								text-align:			left;
+
+								margin-top:			10px;
+								padding-top:		8px;
+								padding-bottom:		8px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		/* SUBCATEGORY */
+		h3					{ 
+							/*	font-family:		serif; */
+								font-family:		'Segoe UI Emoji';
+								font-family:		sans-serif;
+								font-weight:		normal;
+
+								margin-top:			10px;
+								padding-top:		0px;
+								padding-bottom:		0px;
+								margin-bottom:		4px;
+							}
+		.catlink			{
+								display:			inline-block;
+								padding:			5px 4px;
+								color:				#FCFCFC;
+								background:			#5050A0;
+								text-align:			center;
+								cursor:				pointer;
+								margin-left:		10px;
+							}
+		.catlink:hover		{
+								font-weight:		bold;
+							}
+		.codevalue			{
+								font-size:			20px;
+							}
+</style>
+	<script>
+		function goback()
+		{
+			window.history.back();
+		}
+		function cp(txt)
+		{
+			var a							= document.createElement ('textarea');
+			a.style.position				= 'fixed';
+			a.style.left					= '-100%';
+			a.value							= txt;
+			a.selectionStart				= 0;
+			a.selectionEnd					= a.value.length;
+
+			document.body.appendChild		(a);
+		//	a.focus							();		// 2017-11-02 del
+			a.select						();		// 2017-11-02 add
+			document.execCommand			('copy');
+			document.body.removeChild		(a);
+			var e							= document.getElementById ('copybuf');
+			e.value							+= txt;
+		};
+
+		function areacopy()
+		{
+			var a							= document.activeElement;
+			var box							= document.getElementById	('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function areaerase()
+		{
+			var a = document.activeElement;
+			var box							= document.getElementById ('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+			box.value						= '';
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function jmpl(location)
+		{
+			var old_name	= document.getElementById (location).getAttribute('name');
+			document.getElementById (location).setAttribute('name', location);
+			window.location.hash			= location;
+			var ret = window.scrollBy		(0, -62);
+			document.getElementById (location).setAttribute('name', old_name);
+		}
+		function jmphome()
+		{
+			window.location.hash				= '';
+		    document.body.scrollTop				= 0; // For Chrome, Safari and Opera
+		    document.documentElement.scrollTop	= 0; // For IE and Firefox
+		}
+	</script>
+ </head>
+ <body>
+  <div class='wholearea'>
+    <div class='testsvg'>
+     <svg class='testsvg' xmlns='http://www.w3.org/2000/svg' version='1.1' width='100%' height='100' stroke='black' stroke-width='0px' style='font-size:32px; text-align:center; font-family: serif; font-family:Segoe UI Emoji;'>
+      <defs>
+       <linearGradient id='grad1'>
+        <stop offset='0%' stop-color='cyan'/>
+        <stop offset='40%' stop-color='cyan'/>
+        <stop offset='70%' stop-color='#777777'/>
+        <stop offset='100%' stop-color='#333333'/>
+       </linearGradient>
+      </defs>
+      <rect x='0' y='0' width='100%' height='100' fill='url(#grad1)'/>
+      <text x='5%' y='55%'>
+       Other
+      </text>
+     </svg>
+    </div>
+   <a href='javascript:history.back()'>
+    Back
+   </a>
+   <hr/>
+   <div>
+    <h2 style='color: white; background-color: #25f; id=#;'>Alphabetic Presentation Forms (U+FB00 - U+FB4F)</h2>
+<div class='margined'>
+<a class='box' title='[U+FB00] LATIN SMALL LIGATURE FF' onClick='cp("ﬀ")'>&#xFB00;</a>
+<a class='box' title='[U+FB01] LATIN SMALL LIGATURE FI' onClick='cp("ﬁ")'>&#xFB01;</a>
+<a class='box' title='[U+FB02] LATIN SMALL LIGATURE FL' onClick='cp("ﬂ")'>&#xFB02;</a>
+<a class='box' title='[U+FB03] LATIN SMALL LIGATURE FFI' onClick='cp("ﬃ")'>&#xFB03;</a>
+<a class='box' title='[U+FB04] LATIN SMALL LIGATURE FFL' onClick='cp("ﬄ")'>&#xFB04;</a>
+<a class='box' title='[U+FB05] LATIN SMALL LIGATURE LONG S T' onClick='cp("ﬅ")'>&#xFB05;</a>
+<a class='box' title='[U+FB06] LATIN SMALL LIGATURE ST' onClick='cp("ﬆ")'>&#xFB06;</a>
+<a class='box' title='[U+FB13] ARMENIAN SMALL LIGATURE MEN NOW' onClick='cp("ﬓ")'>&#xFB13;</a>
+<a class='box' title='[U+FB14] ARMENIAN SMALL LIGATURE MEN ECH' onClick='cp("ﬔ")'>&#xFB14;</a>
+<a class='box' title='[U+FB15] ARMENIAN SMALL LIGATURE MEN INI' onClick='cp("ﬕ")'>&#xFB15;</a>
+<a class='box' title='[U+FB16] ARMENIAN SMALL LIGATURE VEW NOW' onClick='cp("ﬖ")'>&#xFB16;</a>
+<a class='box' title='[U+FB17] ARMENIAN SMALL LIGATURE MEN XEH' onClick='cp("ﬗ")'>&#xFB17;</a>
+<a class='box' title='[U+FB1D] HEBREW LETTER YOD WITH HIRIQ' onClick='cp("יִ")'>&#xFB1D;</a>
+<a class='box' title='[U+FB1E] HEBREW POINT JUDEO-SPANISH VARIKA
+= HEBREW POINT VARIKA' onClick='cp("ﬞ")'>&#xFB1E;</a>
+<a class='box' title='[U+FB1F] HEBREW LIGATURE YIDDISH YOD YOD PATAH' onClick='cp("ײַ")'>&#xFB1F;</a>
+<a class='box' title='[U+FB20] HEBREW LETTER ALTERNATIVE AYIN' onClick='cp("ﬠ")'>&#xFB20;</a>
+<a class='box' title='[U+FB21] HEBREW LETTER WIDE ALEF' onClick='cp("ﬡ")'>&#xFB21;</a>
+<a class='box' title='[U+FB22] HEBREW LETTER WIDE DALET' onClick='cp("ﬢ")'>&#xFB22;</a>
+<a class='box' title='[U+FB23] HEBREW LETTER WIDE HE' onClick='cp("ﬣ")'>&#xFB23;</a>
+<a class='box' title='[U+FB24] HEBREW LETTER WIDE KAF' onClick='cp("ﬤ")'>&#xFB24;</a>
+<a class='box' title='[U+FB25] HEBREW LETTER WIDE LAMED' onClick='cp("ﬥ")'>&#xFB25;</a>
+<a class='box' title='[U+FB26] HEBREW LETTER WIDE FINAL MEM' onClick='cp("ﬦ")'>&#xFB26;</a>
+<a class='box' title='[U+FB27] HEBREW LETTER WIDE RESH' onClick='cp("ﬧ")'>&#xFB27;</a>
+<a class='box' title='[U+FB28] HEBREW LETTER WIDE TAV' onClick='cp("ﬨ")'>&#xFB28;</a>
+<a class='box' title='[U+FB29] HEBREW LETTER ALTERNATIVE PLUS SIGN' onClick='cp("﬩")'>&#xFB29;</a>
+<a class='box' title='[U+FB2A] HEBREW LETTER SHIN WITH SHIN DOT' onClick='cp("שׁ")'>&#xFB2A;</a>
+<a class='box' title='[U+FB2B] HEBREW LETTER SHIN WITH SIN DOT' onClick='cp("שׂ")'>&#xFB2B;</a>
+<a class='box' title='[U+FB2C] HEBREW LETTER SHIN WITH DAGESH AND SHIN DOT' onClick='cp("שּׁ")'>&#xFB2C;</a>
+<a class='box' title='[U+FB2D] HEBREW LETTER SHIN WITH DAGESH AND SIN DOT' onClick='cp("שּׂ")'>&#xFB2D;</a>
+<a class='box' title='[U+FB2E] HEBREW LETTER ALEF WITH PATAH' onClick='cp("אַ")'>&#xFB2E;</a>
+<a class='box' title='[U+FB2F] HEBREW LETTER ALEF WITH QAMATS' onClick='cp("אָ")'>&#xFB2F;</a>
+<a class='box' title='[U+FB30] HEBREW LETTER ALEF WITH MAPIQ' onClick='cp("אּ")'>&#xFB30;</a>
+<a class='box' title='[U+FB31] HEBREW LETTER BET WITH DAGESH' onClick='cp("בּ")'>&#xFB31;</a>
+<a class='box' title='[U+FB32] HEBREW LETTER GIMEL WITH DAGESH' onClick='cp("גּ")'>&#xFB32;</a>
+<a class='box' title='[U+FB33] HEBREW LETTER DALET WITH DAGESH' onClick='cp("דּ")'>&#xFB33;</a>
+<a class='box' title='[U+FB34] HEBREW LETTER HE WITH MAPIQ' onClick='cp("הּ")'>&#xFB34;</a>
+<a class='box' title='[U+FB35] HEBREW LETTER VAV WITH DAGESH' onClick='cp("וּ")'>&#xFB35;</a>
+<a class='box' title='[U+FB36] HEBREW LETTER ZAYIN WITH DAGESH' onClick='cp("זּ")'>&#xFB36;</a>
+<a class='box' title='[U+FB38] HEBREW LETTER TET WITH DAGESH' onClick='cp("טּ")'>&#xFB38;</a>
+<a class='box' title='[U+FB39] HEBREW LETTER YOD WITH DAGESH' onClick='cp("יּ")'>&#xFB39;</a>
+<a class='box' title='[U+FB3A] HEBREW LETTER FINAL KAF WITH DAGESH' onClick='cp("ךּ")'>&#xFB3A;</a>
+<a class='box' title='[U+FB3B] HEBREW LETTER KAF WITH DAGESH' onClick='cp("כּ")'>&#xFB3B;</a>
+<a class='box' title='[U+FB3C] HEBREW LETTER LAMED WITH DAGESH' onClick='cp("לּ")'>&#xFB3C;</a>
+<a class='box' title='[U+FB3E] HEBREW LETTER MEM WITH DAGESH' onClick='cp("מּ")'>&#xFB3E;</a>
+<a class='box' title='[U+FB40] HEBREW LETTER NUN WITH DAGESH' onClick='cp("נּ")'>&#xFB40;</a>
+<a class='box' title='[U+FB41] HEBREW LETTER SAMEKH WITH DAGESH' onClick='cp("סּ")'>&#xFB41;</a>
+<a class='box' title='[U+FB43] HEBREW LETTER FINAL PE WITH DAGESH' onClick='cp("ףּ")'>&#xFB43;</a>
+<a class='box' title='[U+FB44] HEBREW LETTER PE WITH DAGESH' onClick='cp("פּ")'>&#xFB44;</a>
+<a class='box' title='[U+FB46] HEBREW LETTER TSADI WITH DAGESH' onClick='cp("צּ")'>&#xFB46;</a>
+<a class='box' title='[U+FB47] HEBREW LETTER QOF WITH DAGESH' onClick='cp("קּ")'>&#xFB47;</a>
+<a class='box' title='[U+FB48] HEBREW LETTER RESH WITH DAGESH' onClick='cp("רּ")'>&#xFB48;</a>
+<a class='box' title='[U+FB49] HEBREW LETTER SHIN WITH DAGESH' onClick='cp("שּ")'>&#xFB49;</a>
+<a class='box' title='[U+FB4A] HEBREW LETTER TAV WITH DAGESH' onClick='cp("תּ")'>&#xFB4A;</a>
+<a class='box' title='[U+FB4B] HEBREW LETTER VAV WITH HOLAM' onClick='cp("וֹ")'>&#xFB4B;</a>
+<a class='box' title='[U+FB4C] HEBREW LETTER BET WITH RAFE' onClick='cp("בֿ")'>&#xFB4C;</a>
+<a class='box' title='[U+FB4D] HEBREW LETTER KAF WITH RAFE' onClick='cp("כֿ")'>&#xFB4D;</a>
+<a class='box' title='[U+FB4E] HEBREW LETTER PE WITH RAFE' onClick='cp("פֿ")'>&#xFB4E;</a>
+<a class='box' title='[U+FB4F] HEBREW LIGATURE ALEF LAMED' onClick='cp("ﭏ")'>&#xFB4F;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: green; id=#;'>ASCII Characters (U+0000 - U+007F)</h2>
+<div class='margined'>
+<a class='box' title='[U+0000] <control>
+= NULL' onClick='cp("")'>&#x0;</a>
+<a class='box' title='[U+0001] <control>
+= START OF HEADING' onClick='cp("")'>&#x1;</a>
+<a class='box' title='[U+0002] <control>
+= START OF TEXT' onClick='cp("")'>&#x2;</a>
+<a class='box' title='[U+0003] <control>
+= END OF TEXT' onClick='cp("")'>&#x3;</a>
+<a class='box' title='[U+0004] <control>
+= END OF TRANSMISSION' onClick='cp("")'>&#x4;</a>
+<a class='box' title='[U+0005] <control>
+= ENQUIRY' onClick='cp("")'>&#x5;</a>
+<a class='box' title='[U+0006] <control>
+= ACKNOWLEDGE' onClick='cp("")'>&#x6;</a>
+<a class='box' title='[U+0007] <control>
+= BELL' onClick='cp("")'>&#x7;</a>
+<a class='box' title='[U+0008] <control>
+= BACKSPACE' onClick='cp("")'>&#x8;</a>
+<a class='box' title='[U+0009] <control>
+= CHARACTER TABULATION' onClick='cp("	")'>&#x9;</a>
+<a class='box' title='[U+000A] <control>
+= LINE FEED (LF)' onClick='cp("
+")'>&#xA;</a>
+<a class='box' title='[U+000B] <control>
+= LINE TABULATION' onClick='cp("")'>&#xB;</a>
+<a class='box' title='[U+000C] <control>
+= FORM FEED (FF)' onClick='cp("")'>&#xC;</a>
+<a class='box' title='[U+000D] <control>
+= CARRIAGE RETURN (CR)' onClick='cp("")'>&#xD;</a>
+<a class='box' title='[U+000E] <control>
+= SHIFT OUT' onClick='cp("")'>&#xE;</a>
+<a class='box' title='[U+000F] <control>
+= SHIFT IN' onClick='cp("")'>&#xF;</a>
+<a class='box' title='[U+0010] <control>
+= DATA LINK ESCAPE' onClick='cp("")'>&#x10;</a>
+<a class='box' title='[U+0011] <control>
+= DEVICE CONTROL ONE' onClick='cp("")'>&#x11;</a>
+<a class='box' title='[U+0012] <control>
+= DEVICE CONTROL TWO' onClick='cp("")'>&#x12;</a>
+<a class='box' title='[U+0013] <control>
+= DEVICE CONTROL THREE' onClick='cp("")'>&#x13;</a>
+<a class='box' title='[U+0014] <control>
+= DEVICE CONTROL FOUR' onClick='cp("")'>&#x14;</a>
+<a class='box' title='[U+0015] <control>
+= NEGATIVE ACKNOWLEDGE' onClick='cp("")'>&#x15;</a>
+<a class='box' title='[U+0016] <control>
+= SYNCHRONOUS IDLE' onClick='cp("")'>&#x16;</a>
+<a class='box' title='[U+0017] <control>
+= END OF TRANSMISSION BLOCK' onClick='cp("")'>&#x17;</a>
+<a class='box' title='[U+0018] <control>
+= CANCEL' onClick='cp("")'>&#x18;</a>
+<a class='box' title='[U+0019] <control>
+= END OF MEDIUM' onClick='cp("")'>&#x19;</a>
+<a class='box' title='[U+001A] <control>
+= SUBSTITUTE' onClick='cp("")'>&#x1A;</a>
+<a class='box' title='[U+001B] <control>
+= ESCAPE' onClick='cp("")'>&#x1B;</a>
+<a class='box' title='[U+001C] <control>
+= INFORMATION SEPARATOR FOUR' onClick='cp("")'>&#x1C;</a>
+<a class='box' title='[U+001D] <control>
+= INFORMATION SEPARATOR THREE' onClick='cp("")'>&#x1D;</a>
+<a class='box' title='[U+001E] <control>
+= INFORMATION SEPARATOR TWO' onClick='cp("")'>&#x1E;</a>
+<a class='box' title='[U+001F] <control>
+= INFORMATION SEPARATOR ONE' onClick='cp("")'>&#x1F;</a>
+<a class='box' title='[U+0020] SPACE' onClick='cp(" ")'>&#x20;</a>
+<a class='box' title='[U+0021] EXCLAMATION MARK' onClick='cp("!")'>&#x21;</a>
+<a class='box' title='[U+0022] QUOTATION MARK' onClick='cp(""")'>&#x22;</a>
+<a class='box' title='[U+0023] NUMBER SIGN' onClick='cp("#")'>&#x23;</a>
+<a class='box' title='[U+0024] DOLLAR SIGN' onClick='cp("$")'>&#x24;</a>
+<a class='box' title='[U+0025] PERCENT SIGN' onClick='cp("%")'>&#x25;</a>
+<a class='box' title='[U+0026] AMPERSAND' onClick='cp("&")'>&#x26;</a>
+<a class='box' title='[U+0027] APOSTROPHE
+= APOSTROPHE-QUOTE' onClick='cp("'")'>&#x27;</a>
+<a class='box' title='[U+0028] LEFT PARENTHESIS
+= OPENING PARENTHESIS' onClick='cp("(")'>&#x28;</a>
+<a class='box' title='[U+0029] RIGHT PARENTHESIS
+= CLOSING PARENTHESIS' onClick='cp(")")'>&#x29;</a>
+<a class='box' title='[U+002A] ASTERISK' onClick='cp("*")'>&#x2A;</a>
+<a class='box' title='[U+002B] PLUS SIGN' onClick='cp("+")'>&#x2B;</a>
+<a class='box' title='[U+002C] COMMA' onClick='cp(",")'>&#x2C;</a>
+<a class='box' title='[U+002D] HYPHEN-MINUS' onClick='cp("-")'>&#x2D;</a>
+<a class='box' title='[U+002E] FULL STOP
+= PERIOD' onClick='cp(".")'>&#x2E;</a>
+<a class='box' title='[U+002F] SOLIDUS
+= SLASH' onClick='cp("/")'>&#x2F;</a>
+<a class='box' title='[U+0030] DIGIT ZERO' onClick='cp("0")'>&#x30;</a>
+<a class='box' title='[U+0031] DIGIT ONE' onClick='cp("1")'>&#x31;</a>
+<a class='box' title='[U+0032] DIGIT TWO' onClick='cp("2")'>&#x32;</a>
+<a class='box' title='[U+0033] DIGIT THREE' onClick='cp("3")'>&#x33;</a>
+<a class='box' title='[U+0034] DIGIT FOUR' onClick='cp("4")'>&#x34;</a>
+<a class='box' title='[U+0035] DIGIT FIVE' onClick='cp("5")'>&#x35;</a>
+<a class='box' title='[U+0036] DIGIT SIX' onClick='cp("6")'>&#x36;</a>
+<a class='box' title='[U+0037] DIGIT SEVEN' onClick='cp("7")'>&#x37;</a>
+<a class='box' title='[U+0038] DIGIT EIGHT' onClick='cp("8")'>&#x38;</a>
+<a class='box' title='[U+0039] DIGIT NINE' onClick='cp("9")'>&#x39;</a>
+<a class='box' title='[U+003A] COLON' onClick='cp(":")'>&#x3A;</a>
+<a class='box' title='[U+003B] SEMICOLON' onClick='cp(";")'>&#x3B;</a>
+<a class='box' title='[U+003C] LESS-THAN SIGN' onClick='cp("<")'>&#x3C;</a>
+<a class='box' title='[U+003D] EQUALS SIGN' onClick='cp("=")'>&#x3D;</a>
+<a class='box' title='[U+003E] GREATER-THAN SIGN' onClick='cp(">")'>&#x3E;</a>
+<a class='box' title='[U+003F] QUESTION MARK' onClick='cp("?")'>&#x3F;</a>
+<a class='box' title='[U+0040] COMMERCIAL AT' onClick='cp("@")'>&#x40;</a>
+<a class='box' title='[U+0041] LATIN CAPITAL LETTER A' onClick='cp("A")'>&#x41;</a>
+<a class='box' title='[U+0042] LATIN CAPITAL LETTER B' onClick='cp("B")'>&#x42;</a>
+<a class='box' title='[U+0043] LATIN CAPITAL LETTER C' onClick='cp("C")'>&#x43;</a>
+<a class='box' title='[U+0044] LATIN CAPITAL LETTER D' onClick='cp("D")'>&#x44;</a>
+<a class='box' title='[U+0045] LATIN CAPITAL LETTER E' onClick='cp("E")'>&#x45;</a>
+<a class='box' title='[U+0046] LATIN CAPITAL LETTER F' onClick='cp("F")'>&#x46;</a>
+<a class='box' title='[U+0047] LATIN CAPITAL LETTER G' onClick='cp("G")'>&#x47;</a>
+<a class='box' title='[U+0048] LATIN CAPITAL LETTER H' onClick='cp("H")'>&#x48;</a>
+<a class='box' title='[U+0049] LATIN CAPITAL LETTER I' onClick='cp("I")'>&#x49;</a>
+<a class='box' title='[U+004A] LATIN CAPITAL LETTER J' onClick='cp("J")'>&#x4A;</a>
+<a class='box' title='[U+004B] LATIN CAPITAL LETTER K' onClick='cp("K")'>&#x4B;</a>
+<a class='box' title='[U+004C] LATIN CAPITAL LETTER L' onClick='cp("L")'>&#x4C;</a>
+<a class='box' title='[U+004D] LATIN CAPITAL LETTER M' onClick='cp("M")'>&#x4D;</a>
+<a class='box' title='[U+004E] LATIN CAPITAL LETTER N' onClick='cp("N")'>&#x4E;</a>
+<a class='box' title='[U+004F] LATIN CAPITAL LETTER O' onClick='cp("O")'>&#x4F;</a>
+<a class='box' title='[U+0050] LATIN CAPITAL LETTER P' onClick='cp("P")'>&#x50;</a>
+<a class='box' title='[U+0051] LATIN CAPITAL LETTER Q' onClick='cp("Q")'>&#x51;</a>
+<a class='box' title='[U+0052] LATIN CAPITAL LETTER R' onClick='cp("R")'>&#x52;</a>
+<a class='box' title='[U+0053] LATIN CAPITAL LETTER S' onClick='cp("S")'>&#x53;</a>
+<a class='box' title='[U+0054] LATIN CAPITAL LETTER T' onClick='cp("T")'>&#x54;</a>
+<a class='box' title='[U+0055] LATIN CAPITAL LETTER U' onClick='cp("U")'>&#x55;</a>
+<a class='box' title='[U+0056] LATIN CAPITAL LETTER V' onClick='cp("V")'>&#x56;</a>
+<a class='box' title='[U+0057] LATIN CAPITAL LETTER W' onClick='cp("W")'>&#x57;</a>
+<a class='box' title='[U+0058] LATIN CAPITAL LETTER X' onClick='cp("X")'>&#x58;</a>
+<a class='box' title='[U+0059] LATIN CAPITAL LETTER Y' onClick='cp("Y")'>&#x59;</a>
+<a class='box' title='[U+005A] LATIN CAPITAL LETTER Z' onClick='cp("Z")'>&#x5A;</a>
+<a class='box' title='[U+005B] LEFT SQUARE BRACKET
+= OPENING SQUARE BRACKET' onClick='cp("[")'>&#x5B;</a>
+<a class='box' title='[U+005C] REVERSE SOLIDUS
+= BACKSLASH' onClick='cp("\")'>&#x5C;</a>
+<a class='box' title='[U+005D] RIGHT SQUARE BRACKET
+= CLOSING SQUARE BRACKET' onClick='cp("]")'>&#x5D;</a>
+<a class='box' title='[U+005E] CIRCUMFLEX ACCENT
+= SPACING CIRCUMFLEX' onClick='cp("^")'>&#x5E;</a>
+<a class='box' title='[U+005F] LOW LINE
+= SPACING UNDERSCORE' onClick='cp("_")'>&#x5F;</a>
+<a class='box' title='[U+0060] GRAVE ACCENT
+= SPACING GRAVE' onClick='cp("`")'>&#x60;</a>
+<a class='box' title='[U+0061] LATIN SMALL LETTER A' onClick='cp("a")'>&#x61;</a>
+<a class='box' title='[U+0062] LATIN SMALL LETTER B' onClick='cp("b")'>&#x62;</a>
+<a class='box' title='[U+0063] LATIN SMALL LETTER C' onClick='cp("c")'>&#x63;</a>
+<a class='box' title='[U+0064] LATIN SMALL LETTER D' onClick='cp("d")'>&#x64;</a>
+<a class='box' title='[U+0065] LATIN SMALL LETTER E' onClick='cp("e")'>&#x65;</a>
+<a class='box' title='[U+0066] LATIN SMALL LETTER F' onClick='cp("f")'>&#x66;</a>
+<a class='box' title='[U+0067] LATIN SMALL LETTER G' onClick='cp("g")'>&#x67;</a>
+<a class='box' title='[U+0068] LATIN SMALL LETTER H' onClick='cp("h")'>&#x68;</a>
+<a class='box' title='[U+0069] LATIN SMALL LETTER I' onClick='cp("i")'>&#x69;</a>
+<a class='box' title='[U+006A] LATIN SMALL LETTER J' onClick='cp("j")'>&#x6A;</a>
+<a class='box' title='[U+006B] LATIN SMALL LETTER K' onClick='cp("k")'>&#x6B;</a>
+<a class='box' title='[U+006C] LATIN SMALL LETTER L' onClick='cp("l")'>&#x6C;</a>
+<a class='box' title='[U+006D] LATIN SMALL LETTER M' onClick='cp("m")'>&#x6D;</a>
+<a class='box' title='[U+006E] LATIN SMALL LETTER N' onClick='cp("n")'>&#x6E;</a>
+<a class='box' title='[U+006F] LATIN SMALL LETTER O' onClick='cp("o")'>&#x6F;</a>
+<a class='box' title='[U+0070] LATIN SMALL LETTER P' onClick='cp("p")'>&#x70;</a>
+<a class='box' title='[U+0071] LATIN SMALL LETTER Q' onClick='cp("q")'>&#x71;</a>
+<a class='box' title='[U+0072] LATIN SMALL LETTER R' onClick='cp("r")'>&#x72;</a>
+<a class='box' title='[U+0073] LATIN SMALL LETTER S' onClick='cp("s")'>&#x73;</a>
+<a class='box' title='[U+0074] LATIN SMALL LETTER T' onClick='cp("t")'>&#x74;</a>
+<a class='box' title='[U+0075] LATIN SMALL LETTER U' onClick='cp("u")'>&#x75;</a>
+<a class='box' title='[U+0076] LATIN SMALL LETTER V' onClick='cp("v")'>&#x76;</a>
+<a class='box' title='[U+0077] LATIN SMALL LETTER W' onClick='cp("w")'>&#x77;</a>
+<a class='box' title='[U+0078] LATIN SMALL LETTER X' onClick='cp("x")'>&#x78;</a>
+<a class='box' title='[U+0079] LATIN SMALL LETTER Y' onClick='cp("y")'>&#x79;</a>
+<a class='box' title='[U+007A] LATIN SMALL LETTER Z' onClick='cp("z")'>&#x7A;</a>
+<a class='box' title='[U+007B] LEFT CURLY BRACKET
+= OPENING CURLY BRACKET' onClick='cp("{")'>&#x7B;</a>
+<a class='box' title='[U+007C] VERTICAL LINE
+= VERTICAL BAR' onClick='cp("|")'>&#x7C;</a>
+<a class='box' title='[U+007D] RIGHT CURLY BRACKET
+= CLOSING CURLY BRACKET' onClick='cp("}")'>&#x7D;</a>
+<a class='box' title='[U+007E] TILDE' onClick='cp("~")'>&#x7E;</a>
+<a class='box' title='[U+007F] <control>
+= DELETE' onClick='cp("")'>&#x7F;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: orangered; id=#;'>Halfwidth and Fullwidth Forms (U+FF00 - U+FFEF)</h2>
+<div class='margined'>
+<a class='box' title='[U+FF01] FULLWIDTH EXCLAMATION MARK' onClick='cp("！")'>&#xFF01;</a>
+<a class='box' title='[U+FF02] FULLWIDTH QUOTATION MARK' onClick='cp("＂")'>&#xFF02;</a>
+<a class='box' title='[U+FF03] FULLWIDTH NUMBER SIGN' onClick='cp("＃")'>&#xFF03;</a>
+<a class='box' title='[U+FF04] FULLWIDTH DOLLAR SIGN' onClick='cp("＄")'>&#xFF04;</a>
+<a class='box' title='[U+FF05] FULLWIDTH PERCENT SIGN' onClick='cp("％")'>&#xFF05;</a>
+<a class='box' title='[U+FF06] FULLWIDTH AMPERSAND' onClick='cp("＆")'>&#xFF06;</a>
+<a class='box' title='[U+FF07] FULLWIDTH APOSTROPHE' onClick='cp("＇")'>&#xFF07;</a>
+<a class='box' title='[U+FF08] FULLWIDTH LEFT PARENTHESIS
+= FULLWIDTH OPENING PARENTHESIS' onClick='cp("（")'>&#xFF08;</a>
+<a class='box' title='[U+FF09] FULLWIDTH RIGHT PARENTHESIS
+= FULLWIDTH CLOSING PARENTHESIS' onClick='cp("）")'>&#xFF09;</a>
+<a class='box' title='[U+FF0A] FULLWIDTH ASTERISK' onClick='cp("＊")'>&#xFF0A;</a>
+<a class='box' title='[U+FF0B] FULLWIDTH PLUS SIGN' onClick='cp("＋")'>&#xFF0B;</a>
+<a class='box' title='[U+FF0C] FULLWIDTH COMMA' onClick='cp("，")'>&#xFF0C;</a>
+<a class='box' title='[U+FF0D] FULLWIDTH HYPHEN-MINUS' onClick='cp("－")'>&#xFF0D;</a>
+<a class='box' title='[U+FF0E] FULLWIDTH FULL STOP
+= FULLWIDTH PERIOD' onClick='cp("．")'>&#xFF0E;</a>
+<a class='box' title='[U+FF0F] FULLWIDTH SOLIDUS
+= FULLWIDTH SLASH' onClick='cp("／")'>&#xFF0F;</a>
+<a class='box' title='[U+FF10] FULLWIDTH DIGIT ZERO' onClick='cp("０")'>&#xFF10;</a>
+<a class='box' title='[U+FF11] FULLWIDTH DIGIT ONE' onClick='cp("１")'>&#xFF11;</a>
+<a class='box' title='[U+FF12] FULLWIDTH DIGIT TWO' onClick='cp("２")'>&#xFF12;</a>
+<a class='box' title='[U+FF13] FULLWIDTH DIGIT THREE' onClick='cp("３")'>&#xFF13;</a>
+<a class='box' title='[U+FF14] FULLWIDTH DIGIT FOUR' onClick='cp("４")'>&#xFF14;</a>
+<a class='box' title='[U+FF15] FULLWIDTH DIGIT FIVE' onClick='cp("５")'>&#xFF15;</a>
+<a class='box' title='[U+FF16] FULLWIDTH DIGIT SIX' onClick='cp("６")'>&#xFF16;</a>
+<a class='box' title='[U+FF17] FULLWIDTH DIGIT SEVEN' onClick='cp("７")'>&#xFF17;</a>
+<a class='box' title='[U+FF18] FULLWIDTH DIGIT EIGHT' onClick='cp("８")'>&#xFF18;</a>
+<a class='box' title='[U+FF19] FULLWIDTH DIGIT NINE' onClick='cp("９")'>&#xFF19;</a>
+<a class='box' title='[U+FF1A] FULLWIDTH COLON' onClick='cp("：")'>&#xFF1A;</a>
+<a class='box' title='[U+FF1B] FULLWIDTH SEMICOLON' onClick='cp("；")'>&#xFF1B;</a>
+<a class='box' title='[U+FF1C] FULLWIDTH LESS-THAN SIGN' onClick='cp("＜")'>&#xFF1C;</a>
+<a class='box' title='[U+FF1D] FULLWIDTH EQUALS SIGN' onClick='cp("＝")'>&#xFF1D;</a>
+<a class='box' title='[U+FF1E] FULLWIDTH GREATER-THAN SIGN' onClick='cp("＞")'>&#xFF1E;</a>
+<a class='box' title='[U+FF1F] FULLWIDTH QUESTION MARK' onClick='cp("？")'>&#xFF1F;</a>
+<a class='box' title='[U+FF20] FULLWIDTH COMMERCIAL AT' onClick='cp("＠")'>&#xFF20;</a>
+<a class='box' title='[U+FF21] FULLWIDTH LATIN CAPITAL LETTER A' onClick='cp("Ａ")'>&#xFF21;</a>
+<a class='box' title='[U+FF22] FULLWIDTH LATIN CAPITAL LETTER B' onClick='cp("Ｂ")'>&#xFF22;</a>
+<a class='box' title='[U+FF23] FULLWIDTH LATIN CAPITAL LETTER C' onClick='cp("Ｃ")'>&#xFF23;</a>
+<a class='box' title='[U+FF24] FULLWIDTH LATIN CAPITAL LETTER D' onClick='cp("Ｄ")'>&#xFF24;</a>
+<a class='box' title='[U+FF25] FULLWIDTH LATIN CAPITAL LETTER E' onClick='cp("Ｅ")'>&#xFF25;</a>
+<a class='box' title='[U+FF26] FULLWIDTH LATIN CAPITAL LETTER F' onClick='cp("Ｆ")'>&#xFF26;</a>
+<a class='box' title='[U+FF27] FULLWIDTH LATIN CAPITAL LETTER G' onClick='cp("Ｇ")'>&#xFF27;</a>
+<a class='box' title='[U+FF28] FULLWIDTH LATIN CAPITAL LETTER H' onClick='cp("Ｈ")'>&#xFF28;</a>
+<a class='box' title='[U+FF29] FULLWIDTH LATIN CAPITAL LETTER I' onClick='cp("Ｉ")'>&#xFF29;</a>
+<a class='box' title='[U+FF2A] FULLWIDTH LATIN CAPITAL LETTER J' onClick='cp("Ｊ")'>&#xFF2A;</a>
+<a class='box' title='[U+FF2B] FULLWIDTH LATIN CAPITAL LETTER K' onClick='cp("Ｋ")'>&#xFF2B;</a>
+<a class='box' title='[U+FF2C] FULLWIDTH LATIN CAPITAL LETTER L' onClick='cp("Ｌ")'>&#xFF2C;</a>
+<a class='box' title='[U+FF2D] FULLWIDTH LATIN CAPITAL LETTER M' onClick='cp("Ｍ")'>&#xFF2D;</a>
+<a class='box' title='[U+FF2E] FULLWIDTH LATIN CAPITAL LETTER N' onClick='cp("Ｎ")'>&#xFF2E;</a>
+<a class='box' title='[U+FF2F] FULLWIDTH LATIN CAPITAL LETTER O' onClick='cp("Ｏ")'>&#xFF2F;</a>
+<a class='box' title='[U+FF30] FULLWIDTH LATIN CAPITAL LETTER P' onClick='cp("Ｐ")'>&#xFF30;</a>
+<a class='box' title='[U+FF31] FULLWIDTH LATIN CAPITAL LETTER Q' onClick='cp("Ｑ")'>&#xFF31;</a>
+<a class='box' title='[U+FF32] FULLWIDTH LATIN CAPITAL LETTER R' onClick='cp("Ｒ")'>&#xFF32;</a>
+<a class='box' title='[U+FF33] FULLWIDTH LATIN CAPITAL LETTER S' onClick='cp("Ｓ")'>&#xFF33;</a>
+<a class='box' title='[U+FF34] FULLWIDTH LATIN CAPITAL LETTER T' onClick='cp("Ｔ")'>&#xFF34;</a>
+<a class='box' title='[U+FF35] FULLWIDTH LATIN CAPITAL LETTER U' onClick='cp("Ｕ")'>&#xFF35;</a>
+<a class='box' title='[U+FF36] FULLWIDTH LATIN CAPITAL LETTER V' onClick='cp("Ｖ")'>&#xFF36;</a>
+<a class='box' title='[U+FF37] FULLWIDTH LATIN CAPITAL LETTER W' onClick='cp("Ｗ")'>&#xFF37;</a>
+<a class='box' title='[U+FF38] FULLWIDTH LATIN CAPITAL LETTER X' onClick='cp("Ｘ")'>&#xFF38;</a>
+<a class='box' title='[U+FF39] FULLWIDTH LATIN CAPITAL LETTER Y' onClick='cp("Ｙ")'>&#xFF39;</a>
+<a class='box' title='[U+FF3A] FULLWIDTH LATIN CAPITAL LETTER Z' onClick='cp("Ｚ")'>&#xFF3A;</a>
+<a class='box' title='[U+FF3B] FULLWIDTH LEFT SQUARE BRACKET
+= FULLWIDTH OPENING SQUARE BRACKET' onClick='cp("［")'>&#xFF3B;</a>
+<a class='box' title='[U+FF3C] FULLWIDTH REVERSE SOLIDUS
+= FULLWIDTH BACKSLASH' onClick='cp("＼")'>&#xFF3C;</a>
+<a class='box' title='[U+FF3D] FULLWIDTH RIGHT SQUARE BRACKET
+= FULLWIDTH CLOSING SQUARE BRACKET' onClick='cp("］")'>&#xFF3D;</a>
+<a class='box' title='[U+FF3E] FULLWIDTH CIRCUMFLEX ACCENT
+= FULLWIDTH SPACING CIRCUMFLEX' onClick='cp("＾")'>&#xFF3E;</a>
+<a class='box' title='[U+FF3F] FULLWIDTH LOW LINE
+= FULLWIDTH SPACING UNDERSCORE' onClick='cp("＿")'>&#xFF3F;</a>
+<a class='box' title='[U+FF40] FULLWIDTH GRAVE ACCENT
+= FULLWIDTH SPACING GRAVE' onClick='cp("｀")'>&#xFF40;</a>
+<a class='box' title='[U+FF41] FULLWIDTH LATIN SMALL LETTER A' onClick='cp("ａ")'>&#xFF41;</a>
+<a class='box' title='[U+FF42] FULLWIDTH LATIN SMALL LETTER B' onClick='cp("ｂ")'>&#xFF42;</a>
+<a class='box' title='[U+FF43] FULLWIDTH LATIN SMALL LETTER C' onClick='cp("ｃ")'>&#xFF43;</a>
+<a class='box' title='[U+FF44] FULLWIDTH LATIN SMALL LETTER D' onClick='cp("ｄ")'>&#xFF44;</a>
+<a class='box' title='[U+FF45] FULLWIDTH LATIN SMALL LETTER E' onClick='cp("ｅ")'>&#xFF45;</a>
+<a class='box' title='[U+FF46] FULLWIDTH LATIN SMALL LETTER F' onClick='cp("ｆ")'>&#xFF46;</a>
+<a class='box' title='[U+FF47] FULLWIDTH LATIN SMALL LETTER G' onClick='cp("ｇ")'>&#xFF47;</a>
+<a class='box' title='[U+FF48] FULLWIDTH LATIN SMALL LETTER H' onClick='cp("ｈ")'>&#xFF48;</a>
+<a class='box' title='[U+FF49] FULLWIDTH LATIN SMALL LETTER I' onClick='cp("ｉ")'>&#xFF49;</a>
+<a class='box' title='[U+FF4A] FULLWIDTH LATIN SMALL LETTER J' onClick='cp("ｊ")'>&#xFF4A;</a>
+<a class='box' title='[U+FF4B] FULLWIDTH LATIN SMALL LETTER K' onClick='cp("ｋ")'>&#xFF4B;</a>
+<a class='box' title='[U+FF4C] FULLWIDTH LATIN SMALL LETTER L' onClick='cp("ｌ")'>&#xFF4C;</a>
+<a class='box' title='[U+FF4D] FULLWIDTH LATIN SMALL LETTER M' onClick='cp("ｍ")'>&#xFF4D;</a>
+<a class='box' title='[U+FF4E] FULLWIDTH LATIN SMALL LETTER N' onClick='cp("ｎ")'>&#xFF4E;</a>
+<a class='box' title='[U+FF4F] FULLWIDTH LATIN SMALL LETTER O' onClick='cp("ｏ")'>&#xFF4F;</a>
+<a class='box' title='[U+FF50] FULLWIDTH LATIN SMALL LETTER P' onClick='cp("ｐ")'>&#xFF50;</a>
+<a class='box' title='[U+FF51] FULLWIDTH LATIN SMALL LETTER Q' onClick='cp("ｑ")'>&#xFF51;</a>
+<a class='box' title='[U+FF52] FULLWIDTH LATIN SMALL LETTER R' onClick='cp("ｒ")'>&#xFF52;</a>
+<a class='box' title='[U+FF53] FULLWIDTH LATIN SMALL LETTER S' onClick='cp("ｓ")'>&#xFF53;</a>
+<a class='box' title='[U+FF54] FULLWIDTH LATIN SMALL LETTER T' onClick='cp("ｔ")'>&#xFF54;</a>
+<a class='box' title='[U+FF55] FULLWIDTH LATIN SMALL LETTER U' onClick='cp("ｕ")'>&#xFF55;</a>
+<a class='box' title='[U+FF56] FULLWIDTH LATIN SMALL LETTER V' onClick='cp("ｖ")'>&#xFF56;</a>
+<a class='box' title='[U+FF57] FULLWIDTH LATIN SMALL LETTER W' onClick='cp("ｗ")'>&#xFF57;</a>
+<a class='box' title='[U+FF58] FULLWIDTH LATIN SMALL LETTER X' onClick='cp("ｘ")'>&#xFF58;</a>
+<a class='box' title='[U+FF59] FULLWIDTH LATIN SMALL LETTER Y' onClick='cp("ｙ")'>&#xFF59;</a>
+<a class='box' title='[U+FF5A] FULLWIDTH LATIN SMALL LETTER Z' onClick='cp("ｚ")'>&#xFF5A;</a>
+<a class='box' title='[U+FF5B] FULLWIDTH LEFT CURLY BRACKET
+= FULLWIDTH OPENING CURLY BRACKET' onClick='cp("｛")'>&#xFF5B;</a>
+<a class='box' title='[U+FF5C] FULLWIDTH VERTICAL LINE
+= FULLWIDTH VERTICAL BAR' onClick='cp("｜")'>&#xFF5C;</a>
+<a class='box' title='[U+FF5D] FULLWIDTH RIGHT CURLY BRACKET
+= FULLWIDTH CLOSING CURLY BRACKET' onClick='cp("｝")'>&#xFF5D;</a>
+<a class='box' title='[U+FF5E] FULLWIDTH TILDE
+= FULLWIDTH SPACING TILDE' onClick='cp("～")'>&#xFF5E;</a>
+<a class='box' title='[U+FF5F] FULLWIDTH LEFT WHITE PARENTHESIS' onClick='cp("｟")'>&#xFF5F;</a>
+<a class='box' title='[U+FF60] FULLWIDTH RIGHT WHITE PARENTHESIS' onClick='cp("｠")'>&#xFF60;</a>
+<a class='box' title='[U+FF61] HALFWIDTH IDEOGRAPHIC FULL STOP
+= HALFWIDTH IDEOGRAPHIC PERIOD' onClick='cp("｡")'>&#xFF61;</a>
+<a class='box' title='[U+FF62] HALFWIDTH LEFT CORNER BRACKET
+= HALFWIDTH OPENING CORNER BRACKET' onClick='cp("｢")'>&#xFF62;</a>
+<a class='box' title='[U+FF63] HALFWIDTH RIGHT CORNER BRACKET
+= HALFWIDTH CLOSING CORNER BRACKET' onClick='cp("｣")'>&#xFF63;</a>
+<a class='box' title='[U+FF64] HALFWIDTH IDEOGRAPHIC COMMA' onClick='cp("､")'>&#xFF64;</a>
+<a class='box' title='[U+FF65] HALFWIDTH KATAKANA MIDDLE DOT' onClick='cp("･")'>&#xFF65;</a>
+<a class='box' title='[U+FF66] HALFWIDTH KATAKANA LETTER WO' onClick='cp("ｦ")'>&#xFF66;</a>
+<a class='box' title='[U+FF67] HALFWIDTH KATAKANA LETTER SMALL A' onClick='cp("ｧ")'>&#xFF67;</a>
+<a class='box' title='[U+FF68] HALFWIDTH KATAKANA LETTER SMALL I' onClick='cp("ｨ")'>&#xFF68;</a>
+<a class='box' title='[U+FF69] HALFWIDTH KATAKANA LETTER SMALL U' onClick='cp("ｩ")'>&#xFF69;</a>
+<a class='box' title='[U+FF6A] HALFWIDTH KATAKANA LETTER SMALL E' onClick='cp("ｪ")'>&#xFF6A;</a>
+<a class='box' title='[U+FF6B] HALFWIDTH KATAKANA LETTER SMALL O' onClick='cp("ｫ")'>&#xFF6B;</a>
+<a class='box' title='[U+FF6C] HALFWIDTH KATAKANA LETTER SMALL YA' onClick='cp("ｬ")'>&#xFF6C;</a>
+<a class='box' title='[U+FF6D] HALFWIDTH KATAKANA LETTER SMALL YU' onClick='cp("ｭ")'>&#xFF6D;</a>
+<a class='box' title='[U+FF6E] HALFWIDTH KATAKANA LETTER SMALL YO' onClick='cp("ｮ")'>&#xFF6E;</a>
+<a class='box' title='[U+FF6F] HALFWIDTH KATAKANA LETTER SMALL TU' onClick='cp("ｯ")'>&#xFF6F;</a>
+<a class='box' title='[U+FF70] HALFWIDTH KATAKANA-HIRAGANA PROLONGED SOUND MARK' onClick='cp("ｰ")'>&#xFF70;</a>
+<a class='box' title='[U+FF71] HALFWIDTH KATAKANA LETTER A' onClick='cp("ｱ")'>&#xFF71;</a>
+<a class='box' title='[U+FF72] HALFWIDTH KATAKANA LETTER I' onClick='cp("ｲ")'>&#xFF72;</a>
+<a class='box' title='[U+FF73] HALFWIDTH KATAKANA LETTER U' onClick='cp("ｳ")'>&#xFF73;</a>
+<a class='box' title='[U+FF74] HALFWIDTH KATAKANA LETTER E' onClick='cp("ｴ")'>&#xFF74;</a>
+<a class='box' title='[U+FF75] HALFWIDTH KATAKANA LETTER O' onClick='cp("ｵ")'>&#xFF75;</a>
+<a class='box' title='[U+FF76] HALFWIDTH KATAKANA LETTER KA' onClick='cp("ｶ")'>&#xFF76;</a>
+<a class='box' title='[U+FF77] HALFWIDTH KATAKANA LETTER KI' onClick='cp("ｷ")'>&#xFF77;</a>
+<a class='box' title='[U+FF78] HALFWIDTH KATAKANA LETTER KU' onClick='cp("ｸ")'>&#xFF78;</a>
+<a class='box' title='[U+FF79] HALFWIDTH KATAKANA LETTER KE' onClick='cp("ｹ")'>&#xFF79;</a>
+<a class='box' title='[U+FF7A] HALFWIDTH KATAKANA LETTER KO' onClick='cp("ｺ")'>&#xFF7A;</a>
+<a class='box' title='[U+FF7B] HALFWIDTH KATAKANA LETTER SA' onClick='cp("ｻ")'>&#xFF7B;</a>
+<a class='box' title='[U+FF7C] HALFWIDTH KATAKANA LETTER SI' onClick='cp("ｼ")'>&#xFF7C;</a>
+<a class='box' title='[U+FF7D] HALFWIDTH KATAKANA LETTER SU' onClick='cp("ｽ")'>&#xFF7D;</a>
+<a class='box' title='[U+FF7E] HALFWIDTH KATAKANA LETTER SE' onClick='cp("ｾ")'>&#xFF7E;</a>
+<a class='box' title='[U+FF7F] HALFWIDTH KATAKANA LETTER SO' onClick='cp("ｿ")'>&#xFF7F;</a>
+<a class='box' title='[U+FF80] HALFWIDTH KATAKANA LETTER TA' onClick='cp("ﾀ")'>&#xFF80;</a>
+<a class='box' title='[U+FF81] HALFWIDTH KATAKANA LETTER TI' onClick='cp("ﾁ")'>&#xFF81;</a>
+<a class='box' title='[U+FF82] HALFWIDTH KATAKANA LETTER TU' onClick='cp("ﾂ")'>&#xFF82;</a>
+<a class='box' title='[U+FF83] HALFWIDTH KATAKANA LETTER TE' onClick='cp("ﾃ")'>&#xFF83;</a>
+<a class='box' title='[U+FF84] HALFWIDTH KATAKANA LETTER TO' onClick='cp("ﾄ")'>&#xFF84;</a>
+<a class='box' title='[U+FF85] HALFWIDTH KATAKANA LETTER NA' onClick='cp("ﾅ")'>&#xFF85;</a>
+<a class='box' title='[U+FF86] HALFWIDTH KATAKANA LETTER NI' onClick='cp("ﾆ")'>&#xFF86;</a>
+<a class='box' title='[U+FF87] HALFWIDTH KATAKANA LETTER NU' onClick='cp("ﾇ")'>&#xFF87;</a>
+<a class='box' title='[U+FF88] HALFWIDTH KATAKANA LETTER NE' onClick='cp("ﾈ")'>&#xFF88;</a>
+<a class='box' title='[U+FF89] HALFWIDTH KATAKANA LETTER NO' onClick='cp("ﾉ")'>&#xFF89;</a>
+<a class='box' title='[U+FF8A] HALFWIDTH KATAKANA LETTER HA' onClick='cp("ﾊ")'>&#xFF8A;</a>
+<a class='box' title='[U+FF8B] HALFWIDTH KATAKANA LETTER HI' onClick='cp("ﾋ")'>&#xFF8B;</a>
+<a class='box' title='[U+FF8C] HALFWIDTH KATAKANA LETTER HU' onClick='cp("ﾌ")'>&#xFF8C;</a>
+<a class='box' title='[U+FF8D] HALFWIDTH KATAKANA LETTER HE' onClick='cp("ﾍ")'>&#xFF8D;</a>
+<a class='box' title='[U+FF8E] HALFWIDTH KATAKANA LETTER HO' onClick='cp("ﾎ")'>&#xFF8E;</a>
+<a class='box' title='[U+FF8F] HALFWIDTH KATAKANA LETTER MA' onClick='cp("ﾏ")'>&#xFF8F;</a>
+<a class='box' title='[U+FF90] HALFWIDTH KATAKANA LETTER MI' onClick='cp("ﾐ")'>&#xFF90;</a>
+<a class='box' title='[U+FF91] HALFWIDTH KATAKANA LETTER MU' onClick='cp("ﾑ")'>&#xFF91;</a>
+<a class='box' title='[U+FF92] HALFWIDTH KATAKANA LETTER ME' onClick='cp("ﾒ")'>&#xFF92;</a>
+<a class='box' title='[U+FF93] HALFWIDTH KATAKANA LETTER MO' onClick='cp("ﾓ")'>&#xFF93;</a>
+<a class='box' title='[U+FF94] HALFWIDTH KATAKANA LETTER YA' onClick='cp("ﾔ")'>&#xFF94;</a>
+<a class='box' title='[U+FF95] HALFWIDTH KATAKANA LETTER YU' onClick='cp("ﾕ")'>&#xFF95;</a>
+<a class='box' title='[U+FF96] HALFWIDTH KATAKANA LETTER YO' onClick='cp("ﾖ")'>&#xFF96;</a>
+<a class='box' title='[U+FF97] HALFWIDTH KATAKANA LETTER RA' onClick='cp("ﾗ")'>&#xFF97;</a>
+<a class='box' title='[U+FF98] HALFWIDTH KATAKANA LETTER RI' onClick='cp("ﾘ")'>&#xFF98;</a>
+<a class='box' title='[U+FF99] HALFWIDTH KATAKANA LETTER RU' onClick='cp("ﾙ")'>&#xFF99;</a>
+<a class='box' title='[U+FF9A] HALFWIDTH KATAKANA LETTER RE' onClick='cp("ﾚ")'>&#xFF9A;</a>
+<a class='box' title='[U+FF9B] HALFWIDTH KATAKANA LETTER RO' onClick='cp("ﾛ")'>&#xFF9B;</a>
+<a class='box' title='[U+FF9C] HALFWIDTH KATAKANA LETTER WA' onClick='cp("ﾜ")'>&#xFF9C;</a>
+<a class='box' title='[U+FF9D] HALFWIDTH KATAKANA LETTER N' onClick='cp("ﾝ")'>&#xFF9D;</a>
+<a class='box' title='[U+FF9E] HALFWIDTH KATAKANA VOICED SOUND MARK' onClick='cp("ﾞ")'>&#xFF9E;</a>
+<a class='box' title='[U+FF9F] HALFWIDTH KATAKANA SEMI-VOICED SOUND MARK' onClick='cp("ﾟ")'>&#xFF9F;</a>
+<a class='box' title='[U+FFA0] HALFWIDTH HANGUL FILLER
+= HALFWIDTH HANGUL CAE OM' onClick='cp("ﾠ")'>&#xFFA0;</a>
+<a class='box' title='[U+FFA1] HALFWIDTH HANGUL LETTER KIYEOK
+= HALFWIDTH HANGUL LETTER GIYEOG' onClick='cp("ﾡ")'>&#xFFA1;</a>
+<a class='box' title='[U+FFA2] HALFWIDTH HANGUL LETTER SSANGKIYEOK
+= HALFWIDTH HANGUL LETTER SSANG GIYEOG' onClick='cp("ﾢ")'>&#xFFA2;</a>
+<a class='box' title='[U+FFA3] HALFWIDTH HANGUL LETTER KIYEOK-SIOS
+= HALFWIDTH HANGUL LETTER GIYEOG SIOS' onClick='cp("ﾣ")'>&#xFFA3;</a>
+<a class='box' title='[U+FFA4] HALFWIDTH HANGUL LETTER NIEUN' onClick='cp("ﾤ")'>&#xFFA4;</a>
+<a class='box' title='[U+FFA5] HALFWIDTH HANGUL LETTER NIEUN-CIEUC
+= HALFWIDTH HANGUL LETTER NIEUN JIEUJ' onClick='cp("ﾥ")'>&#xFFA5;</a>
+<a class='box' title='[U+FFA6] HALFWIDTH HANGUL LETTER NIEUN-HIEUH
+= HALFWIDTH HANGUL LETTER NIEUN HIEUH' onClick='cp("ﾦ")'>&#xFFA6;</a>
+<a class='box' title='[U+FFA7] HALFWIDTH HANGUL LETTER TIKEUT
+= HALFWIDTH HANGUL LETTER DIGEUD' onClick='cp("ﾧ")'>&#xFFA7;</a>
+<a class='box' title='[U+FFA8] HALFWIDTH HANGUL LETTER SSANGTIKEUT
+= HALFWIDTH HANGUL LETTER SSANG DIGEUD' onClick='cp("ﾨ")'>&#xFFA8;</a>
+<a class='box' title='[U+FFA9] HALFWIDTH HANGUL LETTER RIEUL
+= HALFWIDTH HANGUL LETTER LIEUL' onClick='cp("ﾩ")'>&#xFFA9;</a>
+<a class='box' title='[U+FFAA] HALFWIDTH HANGUL LETTER RIEUL-KIYEOK
+= HALFWIDTH HANGUL LETTER LIEUL GIYEOG' onClick='cp("ﾪ")'>&#xFFAA;</a>
+<a class='box' title='[U+FFAB] HALFWIDTH HANGUL LETTER RIEUL-MIEUM
+= HALFWIDTH HANGUL LETTER LIEUL MIEUM' onClick='cp("ﾫ")'>&#xFFAB;</a>
+<a class='box' title='[U+FFAC] HALFWIDTH HANGUL LETTER RIEUL-PIEUP
+= HALFWIDTH HANGUL LETTER LIEUL BIEUB' onClick='cp("ﾬ")'>&#xFFAC;</a>
+<a class='box' title='[U+FFAD] HALFWIDTH HANGUL LETTER RIEUL-SIOS
+= HALFWIDTH HANGUL LETTER LIEUL SIOS' onClick='cp("ﾭ")'>&#xFFAD;</a>
+<a class='box' title='[U+FFAE] HALFWIDTH HANGUL LETTER RIEUL-THIEUTH
+= HALFWIDTH HANGUL LETTER LIEUL TIEUT' onClick='cp("ﾮ")'>&#xFFAE;</a>
+<a class='box' title='[U+FFAF] HALFWIDTH HANGUL LETTER RIEUL-PHIEUPH
+= HALFWIDTH HANGUL LETTER LIEUL PIEUP' onClick='cp("ﾯ")'>&#xFFAF;</a>
+<a class='box' title='[U+FFB0] HALFWIDTH HANGUL LETTER RIEUL-HIEUH
+= HALFWIDTH HANGUL LETTER LIEUL HIEUH' onClick='cp("ﾰ")'>&#xFFB0;</a>
+<a class='box' title='[U+FFB1] HALFWIDTH HANGUL LETTER MIEUM' onClick='cp("ﾱ")'>&#xFFB1;</a>
+<a class='box' title='[U+FFB2] HALFWIDTH HANGUL LETTER PIEUP
+= HALFWIDTH HANGUL LETTER BIEUB' onClick='cp("ﾲ")'>&#xFFB2;</a>
+<a class='box' title='[U+FFB3] HALFWIDTH HANGUL LETTER SSANGPIEUP
+= HALFWIDTH HANGUL LETTER SSANG BIEUB' onClick='cp("ﾳ")'>&#xFFB3;</a>
+<a class='box' title='[U+FFB4] HALFWIDTH HANGUL LETTER PIEUP-SIOS
+= HALFWIDTH HANGUL LETTER BIEUB SIOS' onClick='cp("ﾴ")'>&#xFFB4;</a>
+<a class='box' title='[U+FFB5] HALFWIDTH HANGUL LETTER SIOS' onClick='cp("ﾵ")'>&#xFFB5;</a>
+<a class='box' title='[U+FFB6] HALFWIDTH HANGUL LETTER SSANGSIOS
+= HALFWIDTH HANGUL LETTER SSANG SIOS' onClick='cp("ﾶ")'>&#xFFB6;</a>
+<a class='box' title='[U+FFB7] HALFWIDTH HANGUL LETTER IEUNG' onClick='cp("ﾷ")'>&#xFFB7;</a>
+<a class='box' title='[U+FFB8] HALFWIDTH HANGUL LETTER CIEUC
+= HALFWIDTH HANGUL LETTER JIEUJ' onClick='cp("ﾸ")'>&#xFFB8;</a>
+<a class='box' title='[U+FFB9] HALFWIDTH HANGUL LETTER SSANGCIEUC
+= HALFWIDTH HANGUL LETTER SSANG JIEUJ' onClick='cp("ﾹ")'>&#xFFB9;</a>
+<a class='box' title='[U+FFBA] HALFWIDTH HANGUL LETTER CHIEUCH
+= HALFWIDTH HANGUL LETTER CIEUC' onClick='cp("ﾺ")'>&#xFFBA;</a>
+<a class='box' title='[U+FFBB] HALFWIDTH HANGUL LETTER KHIEUKH
+= HALFWIDTH HANGUL LETTER KIYEOK' onClick='cp("ﾻ")'>&#xFFBB;</a>
+<a class='box' title='[U+FFBC] HALFWIDTH HANGUL LETTER THIEUTH
+= HALFWIDTH HANGUL LETTER TIEUT' onClick='cp("ﾼ")'>&#xFFBC;</a>
+<a class='box' title='[U+FFBD] HALFWIDTH HANGUL LETTER PHIEUPH
+= HALFWIDTH HANGUL LETTER PIEUP' onClick='cp("ﾽ")'>&#xFFBD;</a>
+<a class='box' title='[U+FFBE] HALFWIDTH HANGUL LETTER HIEUH' onClick='cp("ﾾ")'>&#xFFBE;</a>
+<a class='box' title='[U+FFC2] HALFWIDTH HANGUL LETTER A' onClick='cp("ￂ")'>&#xFFC2;</a>
+<a class='box' title='[U+FFC3] HALFWIDTH HANGUL LETTER AE' onClick='cp("ￃ")'>&#xFFC3;</a>
+<a class='box' title='[U+FFC4] HALFWIDTH HANGUL LETTER YA' onClick='cp("ￄ")'>&#xFFC4;</a>
+<a class='box' title='[U+FFC5] HALFWIDTH HANGUL LETTER YAE' onClick='cp("ￅ")'>&#xFFC5;</a>
+<a class='box' title='[U+FFC6] HALFWIDTH HANGUL LETTER EO' onClick='cp("ￆ")'>&#xFFC6;</a>
+<a class='box' title='[U+FFC7] HALFWIDTH HANGUL LETTER E' onClick='cp("ￇ")'>&#xFFC7;</a>
+<a class='box' title='[U+FFCA] HALFWIDTH HANGUL LETTER YEO' onClick='cp("ￊ")'>&#xFFCA;</a>
+<a class='box' title='[U+FFCB] HALFWIDTH HANGUL LETTER YE' onClick='cp("ￋ")'>&#xFFCB;</a>
+<a class='box' title='[U+FFCC] HALFWIDTH HANGUL LETTER O' onClick='cp("ￌ")'>&#xFFCC;</a>
+<a class='box' title='[U+FFCD] HALFWIDTH HANGUL LETTER WA' onClick='cp("ￍ")'>&#xFFCD;</a>
+<a class='box' title='[U+FFCE] HALFWIDTH HANGUL LETTER WAE' onClick='cp("ￎ")'>&#xFFCE;</a>
+<a class='box' title='[U+FFCF] HALFWIDTH HANGUL LETTER OE' onClick='cp("ￏ")'>&#xFFCF;</a>
+<a class='box' title='[U+FFD2] HALFWIDTH HANGUL LETTER YO' onClick='cp("ￒ")'>&#xFFD2;</a>
+<a class='box' title='[U+FFD3] HALFWIDTH HANGUL LETTER U' onClick='cp("ￓ")'>&#xFFD3;</a>
+<a class='box' title='[U+FFD4] HALFWIDTH HANGUL LETTER WEO' onClick='cp("ￔ")'>&#xFFD4;</a>
+<a class='box' title='[U+FFD5] HALFWIDTH HANGUL LETTER WE' onClick='cp("ￕ")'>&#xFFD5;</a>
+<a class='box' title='[U+FFD6] HALFWIDTH HANGUL LETTER WI' onClick='cp("ￖ")'>&#xFFD6;</a>
+<a class='box' title='[U+FFD7] HALFWIDTH HANGUL LETTER YU' onClick='cp("ￗ")'>&#xFFD7;</a>
+<a class='box' title='[U+FFDA] HALFWIDTH HANGUL LETTER EU' onClick='cp("ￚ")'>&#xFFDA;</a>
+<a class='box' title='[U+FFDB] HALFWIDTH HANGUL LETTER YI' onClick='cp("ￛ")'>&#xFFDB;</a>
+<a class='box' title='[U+FFDC] HALFWIDTH HANGUL LETTER I' onClick='cp("ￜ")'>&#xFFDC;</a>
+<a class='box' title='[U+FFE0] FULLWIDTH CENT SIGN' onClick='cp("￠")'>&#xFFE0;</a>
+<a class='box' title='[U+FFE1] FULLWIDTH POUND SIGN' onClick='cp("￡")'>&#xFFE1;</a>
+<a class='box' title='[U+FFE2] FULLWIDTH NOT SIGN' onClick='cp("￢")'>&#xFFE2;</a>
+<a class='box' title='[U+FFE3] FULLWIDTH MACRON
+= FULLWIDTH SPACING MACRON' onClick='cp("￣")'>&#xFFE3;</a>
+<a class='box' title='[U+FFE4] FULLWIDTH BROKEN BAR
+= FULLWIDTH BROKEN VERTICAL BAR' onClick='cp("￤")'>&#xFFE4;</a>
+<a class='box' title='[U+FFE5] FULLWIDTH YEN SIGN' onClick='cp("￥")'>&#xFFE5;</a>
+<a class='box' title='[U+FFE6] FULLWIDTH WON SIGN' onClick='cp("￦")'>&#xFFE6;</a>
+<a class='box' title='[U+FFE8] HALFWIDTH FORMS LIGHT VERTICAL' onClick='cp("￨")'>&#xFFE8;</a>
+<a class='box' title='[U+FFE9] HALFWIDTH LEFTWARDS ARROW' onClick='cp("￩")'>&#xFFE9;</a>
+<a class='box' title='[U+FFEA] HALFWIDTH UPWARDS ARROW' onClick='cp("￪")'>&#xFFEA;</a>
+<a class='box' title='[U+FFEB] HALFWIDTH RIGHTWARDS ARROW' onClick='cp("￫")'>&#xFFEB;</a>
+<a class='box' title='[U+FFEC] HALFWIDTH DOWNWARDS ARROW' onClick='cp("￬")'>&#xFFEC;</a>
+<a class='box' title='[U+FFED] HALFWIDTH BLACK SQUARE' onClick='cp("￭")'>&#xFFED;</a>
+<a class='box' title='[U+FFEE] HALFWIDTH WHITE CIRCLE' onClick='cp("￮")'>&#xFFEE;</a>
+<div style='clear:left;'></div>
+</div> <!-- margined -->
+
+   </div>
+  </div>
+  <hr/>
+  <a href='javascript:history.back()'>
+   Back
+  </a>
+  <div>
+   <br/>
+   <br/>
+   <div style='font-size: 80%; text-align: center'>
+    Copyright &copy; 2020 emojipicker.com
+    <a href='../about/disclaimer.html' class='disclaimer'>
+     Disclaimer
+    </a>
+    <a href='../about/privacypolicy.html' class='disclaimer'>
+     Privacy Policy
+    </a>
+   </div>
+  </div>
+ </body>
+</html>

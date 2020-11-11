@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset='utf-8'/>
+  <title>
+   Technical Symbols
+  </title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<style type="text/css">
+		table,th,tr,td	{	padding:			0px;
+							border:				solid black 1px;
+							border-spacing:		0px;
+						}
+		td+td			{
+							padding-left:		4px;
+							padding-right:		4px;
+							font-family:		sans-serif;	
+						}
+		td+td+td		{
+							word-break:			break-all;
+							font-family:		serif;	
+						}
+		body			{
+							margin-left:		0px;
+							margin-right:		0px;
+							padding-left:		0px;
+							padding-right:		0px;
+							background-color:	#fcfcfc;
+						}
+		.margined_hdr	{
+							margin:				10px;
+						}
+		.margined		{
+							margin:				10px;
+						}
+		.wholearea		{
+							margin:				0px;
+							padding:			0px;
+						}
+		.wholearea		{	line-height: 		1em;	font-family:	sans-serif;	font-family: 'Segoe UI Emoji'; }
+		.titlearea		{	line-height: 		1.4em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.hbar_area		{	line-height: 		1em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.xcopyarea		{	line-height: 		1.2em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.main			{	line-height:		30px;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+
+		.box			{
+							float:				left;
+
+							line-height:		1;
+						/*	line-spacing:		0;	*/
+
+						/*	height:				30px; */
+							height:				50px;
+							min-width:			50px;
+						}
+		.box, .xbutton
+						{
+							box-sizing:			border-box;
+
+							font-family:		'Segoe UI Emoji';
+
+						    cursor:				pointer;
+						    text-decoration:	none;
+
+						    background-color:	#eeeeee;
+						    color:				black;
+
+						    text-align:			center;
+							vertical-align:		middle;
+						    font-size:			24px;
+
+						    border:				1px solid #000000;
+						    margin:				0px 0px 0px 0px;
+						    padding:			5px 5px 5px 5px;
+
+						    border:				1px solid #aaa;
+						    padding:			10px 5px;
+						}
+		.box:hover, .xbutton:hover
+						{
+							background-color: #ffffff
+						}
+		.box:active, .xbutton:active
+						{
+							background-color:	#eeeeee;
+							box-shadow:			0 4px #666;
+							transform:			translateY(-4px);
+						}
+		.testsvg		{
+							text-align:			center;
+							vertical-align:		middle;
+						}
+		/* -------------------------------------------------*/
+		/* CATEGORY HEADERS									*/
+		/* -------------------------------------------------*/
+		h1					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				black;
+								background-color:	cyan;
+
+								left:				0;
+								text-align:			center;
+
+								margin-top:			10px;
+								padding-top:		12px;
+								padding-bottom:		12px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		h2					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				white;
+								background-color:	#202020;
+
+								left:				0;
+								text-align:			center;
+								text-align:			left;
+
+								margin-top:			10px;
+								padding-top:		8px;
+								padding-bottom:		8px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		/* SUBCATEGORY */
+		h3					{ 
+							/*	font-family:		serif; */
+								font-family:		'Segoe UI Emoji';
+								font-family:		sans-serif;
+								font-weight:		normal;
+
+								margin-top:			10px;
+								padding-top:		0px;
+								padding-bottom:		0px;
+								margin-bottom:		4px;
+							}
+		.catlink			{
+								display:			inline-block;
+								padding:			5px 4px;
+								color:				#FCFCFC;
+								background:			#5050A0;
+								text-align:			center;
+								cursor:				pointer;
+								margin-left:		10px;
+							}
+		.catlink:hover		{
+								font-weight:		bold;
+							}
+		.codevalue			{
+								font-size:			20px;
+							}
+</style>
+	<script>
+		function goback()
+		{
+			window.history.back();
+		}
+		function cp(txt)
+		{
+			var a							= document.createElement ('textarea');
+			a.style.position				= 'fixed';
+			a.style.left					= '-100%';
+			a.value							= txt;
+			a.selectionStart				= 0;
+			a.selectionEnd					= a.value.length;
+
+			document.body.appendChild		(a);
+		//	a.focus							();		// 2017-11-02 del
+			a.select						();		// 2017-11-02 add
+			document.execCommand			('copy');
+			document.body.removeChild		(a);
+			var e							= document.getElementById ('copybuf');
+			e.value							+= txt;
+		};
+
+		function areacopy()
+		{
+			var a							= document.activeElement;
+			var box							= document.getElementById	('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function areaerase()
+		{
+			var a = document.activeElement;
+			var box							= document.getElementById ('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+			box.value						= '';
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function jmpl(location)
+		{
+			var old_name	= document.getElementById (location).getAttribute('name');
+			document.getElementById (location).setAttribute('name', location);
+			window.location.hash			= location;
+			var ret = window.scrollBy		(0, -62);
+			document.getElementById (location).setAttribute('name', old_name);
+		}
+		function jmphome()
+		{
+			window.location.hash				= '';
+		    document.body.scrollTop				= 0; // For Chrome, Safari and Opera
+		    document.documentElement.scrollTop	= 0; // For IE and Firefox
+		}
+	</script>
+ </head>
+ <body>
+  <div class='wholearea'>
+    <div class='testsvg'>
+     <svg class='testsvg' xmlns='http://www.w3.org/2000/svg' version='1.1' width='100%' height='100' stroke='black' stroke-width='0px' style='font-size:32px; text-align:center; font-family: serif; font-family:Segoe UI Emoji;'>
+      <defs>
+       <linearGradient id='grad1'>
+        <stop offset='0%' stop-color='cyan'/>
+        <stop offset='40%' stop-color='cyan'/>
+        <stop offset='70%' stop-color='#777777'/>
+        <stop offset='100%' stop-color='#333333'/>
+       </linearGradient>
+      </defs>
+      <rect x='0' y='0' width='100%' height='100' fill='url(#grad1)'/>
+      <text x='5%' y='55%'>
+       Technical Symbols
+      </text>
+     </svg>
+    </div>
+   <a href='javascript:history.back()'>
+    Back
+   </a>
+   <hr/>
+   <div>
+    <h2 style='color: white; background-color: #25f; id=#;'>APL symbols (U+2336 - U+237A)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+2336] APL FUNCTIONAL SYMBOL I-BEAM' onClick='cp("⌶")'>&#x2336;</a>
+</td><td>U+2336</td><td class='codevalue'>APL FUNCTIONAL SYMBOL I-BEAM</td></tr>
+<tr><td><a class='box' title='[U+2337] APL FUNCTIONAL SYMBOL SQUISH QUAD' onClick='cp("⌷")'>&#x2337;</a>
+</td><td>U+2337</td><td class='codevalue'>APL FUNCTIONAL SYMBOL SQUISH QUAD</td></tr>
+<tr><td><a class='box' title='[U+2338] APL FUNCTIONAL SYMBOL QUAD EQUAL' onClick='cp("⌸")'>&#x2338;</a>
+</td><td>U+2338</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD EQUAL</td></tr>
+<tr><td><a class='box' title='[U+2339] APL FUNCTIONAL SYMBOL QUAD DIVIDE' onClick='cp("⌹")'>&#x2339;</a>
+</td><td>U+2339</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DIVIDE</td></tr>
+<tr><td><a class='box' title='[U+233A] APL FUNCTIONAL SYMBOL QUAD DIAMOND' onClick='cp("⌺")'>&#x233A;</a>
+</td><td>U+233A</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DIAMOND</td></tr>
+<tr><td><a class='box' title='[U+233B] APL FUNCTIONAL SYMBOL QUAD JOT' onClick='cp("⌻")'>&#x233B;</a>
+</td><td>U+233B</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD JOT</td></tr>
+<tr><td><a class='box' title='[U+233C] APL FUNCTIONAL SYMBOL QUAD CIRCLE' onClick='cp("⌼")'>&#x233C;</a>
+</td><td>U+233C</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD CIRCLE</td></tr>
+<tr><td><a class='box' title='[U+233D] APL FUNCTIONAL SYMBOL CIRCLE STILE' onClick='cp("⌽")'>&#x233D;</a>
+</td><td>U+233D</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE STILE</td></tr>
+<tr><td><a class='box' title='[U+233E] APL FUNCTIONAL SYMBOL CIRCLE JOT' onClick='cp("⌾")'>&#x233E;</a>
+</td><td>U+233E</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE JOT</td></tr>
+<tr><td><a class='box' title='[U+233F] APL FUNCTIONAL SYMBOL SLASH BAR' onClick='cp("⌿")'>&#x233F;</a>
+</td><td>U+233F</td><td class='codevalue'>APL FUNCTIONAL SYMBOL SLASH BAR</td></tr>
+<tr><td><a class='box' title='[U+2340] APL FUNCTIONAL SYMBOL BACKSLASH BAR' onClick='cp("⍀")'>&#x2340;</a>
+</td><td>U+2340</td><td class='codevalue'>APL FUNCTIONAL SYMBOL BACKSLASH BAR</td></tr>
+<tr><td><a class='box' title='[U+2341] APL FUNCTIONAL SYMBOL QUAD SLASH' onClick='cp("⍁")'>&#x2341;</a>
+</td><td>U+2341</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD SLASH</td></tr>
+<tr><td><a class='box' title='[U+2342] APL FUNCTIONAL SYMBOL QUAD BACKSLASH' onClick='cp("⍂")'>&#x2342;</a>
+</td><td>U+2342</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD BACKSLASH</td></tr>
+<tr><td><a class='box' title='[U+2343] APL FUNCTIONAL SYMBOL QUAD LESS-THAN' onClick='cp("⍃")'>&#x2343;</a>
+</td><td>U+2343</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD LESS-THAN</td></tr>
+<tr><td><a class='box' title='[U+2344] APL FUNCTIONAL SYMBOL QUAD GREATER-THAN' onClick='cp("⍄")'>&#x2344;</a>
+</td><td>U+2344</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD GREATER-THAN</td></tr>
+<tr><td><a class='box' title='[U+2345] APL FUNCTIONAL SYMBOL LEFTWARDS VANE' onClick='cp("⍅")'>&#x2345;</a>
+</td><td>U+2345</td><td class='codevalue'>APL FUNCTIONAL SYMBOL LEFTWARDS VANE</td></tr>
+<tr><td><a class='box' title='[U+2346] APL FUNCTIONAL SYMBOL RIGHTWARDS VANE' onClick='cp("⍆")'>&#x2346;</a>
+</td><td>U+2346</td><td class='codevalue'>APL FUNCTIONAL SYMBOL RIGHTWARDS VANE</td></tr>
+<tr><td><a class='box' title='[U+2347] APL FUNCTIONAL SYMBOL QUAD LEFTWARDS ARROW' onClick='cp("⍇")'>&#x2347;</a>
+</td><td>U+2347</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD LEFTWARDS ARROW</td></tr>
+<tr><td><a class='box' title='[U+2348] APL FUNCTIONAL SYMBOL QUAD RIGHTWARDS ARROW' onClick='cp("⍈")'>&#x2348;</a>
+</td><td>U+2348</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD RIGHTWARDS ARROW</td></tr>
+<tr><td><a class='box' title='[U+2349] APL FUNCTIONAL SYMBOL CIRCLE BACKSLASH' onClick='cp("⍉")'>&#x2349;</a>
+</td><td>U+2349</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE BACKSLASH</td></tr>
+<tr><td><a class='box' title='[U+234A] APL FUNCTIONAL SYMBOL DOWN TACK UNDERBAR' onClick='cp("⍊")'>&#x234A;</a>
+</td><td>U+234A</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DOWN TACK UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+234B] APL FUNCTIONAL SYMBOL DELTA STILE' onClick='cp("⍋")'>&#x234B;</a>
+</td><td>U+234B</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DELTA STILE</td></tr>
+<tr><td><a class='box' title='[U+234C] APL FUNCTIONAL SYMBOL QUAD DOWN CARET' onClick='cp("⍌")'>&#x234C;</a>
+</td><td>U+234C</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DOWN CARET</td></tr>
+<tr><td><a class='box' title='[U+234D] APL FUNCTIONAL SYMBOL QUAD DELTA' onClick='cp("⍍")'>&#x234D;</a>
+</td><td>U+234D</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DELTA</td></tr>
+<tr><td><a class='box' title='[U+234E] APL FUNCTIONAL SYMBOL DOWN TACK JOT' onClick='cp("⍎")'>&#x234E;</a>
+</td><td>U+234E</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DOWN TACK JOT</td></tr>
+<tr><td><a class='box' title='[U+234F] APL FUNCTIONAL SYMBOL UPWARDS VANE' onClick='cp("⍏")'>&#x234F;</a>
+</td><td>U+234F</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UPWARDS VANE</td></tr>
+<tr><td><a class='box' title='[U+2350] APL FUNCTIONAL SYMBOL QUAD UPWARDS ARROW' onClick='cp("⍐")'>&#x2350;</a>
+</td><td>U+2350</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD UPWARDS ARROW</td></tr>
+<tr><td><a class='box' title='[U+2351] APL FUNCTIONAL SYMBOL UP TACK OVERBAR' onClick='cp("⍑")'>&#x2351;</a>
+</td><td>U+2351</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UP TACK OVERBAR</td></tr>
+<tr><td><a class='box' title='[U+2352] APL FUNCTIONAL SYMBOL DEL STILE' onClick='cp("⍒")'>&#x2352;</a>
+</td><td>U+2352</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DEL STILE</td></tr>
+<tr><td><a class='box' title='[U+2353] APL FUNCTIONAL SYMBOL QUAD UP CARET' onClick='cp("⍓")'>&#x2353;</a>
+</td><td>U+2353</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD UP CARET</td></tr>
+<tr><td><a class='box' title='[U+2354] APL FUNCTIONAL SYMBOL QUAD DEL' onClick='cp("⍔")'>&#x2354;</a>
+</td><td>U+2354</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DEL</td></tr>
+<tr><td><a class='box' title='[U+2355] APL FUNCTIONAL SYMBOL UP TACK JOT' onClick='cp("⍕")'>&#x2355;</a>
+</td><td>U+2355</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UP TACK JOT</td></tr>
+<tr><td><a class='box' title='[U+2356] APL FUNCTIONAL SYMBOL DOWNWARDS VANE' onClick='cp("⍖")'>&#x2356;</a>
+</td><td>U+2356</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DOWNWARDS VANE</td></tr>
+<tr><td><a class='box' title='[U+2357] APL FUNCTIONAL SYMBOL QUAD DOWNWARDS ARROW' onClick='cp("⍗")'>&#x2357;</a>
+</td><td>U+2357</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DOWNWARDS ARROW</td></tr>
+<tr><td><a class='box' title='[U+2358] APL FUNCTIONAL SYMBOL QUOTE UNDERBAR' onClick='cp("⍘")'>&#x2358;</a>
+</td><td>U+2358</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUOTE UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+2359] APL FUNCTIONAL SYMBOL DELTA UNDERBAR' onClick='cp("⍙")'>&#x2359;</a>
+</td><td>U+2359</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DELTA UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+235A] APL FUNCTIONAL SYMBOL DIAMOND UNDERBAR' onClick='cp("⍚")'>&#x235A;</a>
+</td><td>U+235A</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DIAMOND UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+235B] APL FUNCTIONAL SYMBOL JOT UNDERBAR' onClick='cp("⍛")'>&#x235B;</a>
+</td><td>U+235B</td><td class='codevalue'>APL FUNCTIONAL SYMBOL JOT UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+235C] APL FUNCTIONAL SYMBOL CIRCLE UNDERBAR' onClick='cp("⍜")'>&#x235C;</a>
+</td><td>U+235C</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+235D] APL FUNCTIONAL SYMBOL UP SHOE JOT' onClick='cp("⍝")'>&#x235D;</a>
+</td><td>U+235D</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UP SHOE JOT</td></tr>
+<tr><td><a class='box' title='[U+235E] APL FUNCTIONAL SYMBOL QUOTE QUAD' onClick='cp("⍞")'>&#x235E;</a>
+</td><td>U+235E</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUOTE QUAD</td></tr>
+<tr><td><a class='box' title='[U+235F] APL FUNCTIONAL SYMBOL CIRCLE STAR' onClick='cp("⍟")'>&#x235F;</a>
+</td><td>U+235F</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE STAR</td></tr>
+<tr><td><a class='box' title='[U+2360] APL FUNCTIONAL SYMBOL QUAD COLON' onClick='cp("⍠")'>&#x2360;</a>
+</td><td>U+2360</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD COLON</td></tr>
+<tr><td><a class='box' title='[U+2361] APL FUNCTIONAL SYMBOL UP TACK DIAERESIS' onClick='cp("⍡")'>&#x2361;</a>
+</td><td>U+2361</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UP TACK DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2362] APL FUNCTIONAL SYMBOL DEL DIAERESIS' onClick='cp("⍢")'>&#x2362;</a>
+</td><td>U+2362</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DEL DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2363] APL FUNCTIONAL SYMBOL STAR DIAERESIS' onClick='cp("⍣")'>&#x2363;</a>
+</td><td>U+2363</td><td class='codevalue'>APL FUNCTIONAL SYMBOL STAR DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2364] APL FUNCTIONAL SYMBOL JOT DIAERESIS' onClick='cp("⍤")'>&#x2364;</a>
+</td><td>U+2364</td><td class='codevalue'>APL FUNCTIONAL SYMBOL JOT DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2365] APL FUNCTIONAL SYMBOL CIRCLE DIAERESIS' onClick='cp("⍥")'>&#x2365;</a>
+</td><td>U+2365</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2366] APL FUNCTIONAL SYMBOL DOWN SHOE STILE' onClick='cp("⍦")'>&#x2366;</a>
+</td><td>U+2366</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DOWN SHOE STILE</td></tr>
+<tr><td><a class='box' title='[U+2367] APL FUNCTIONAL SYMBOL LEFT SHOE STILE' onClick='cp("⍧")'>&#x2367;</a>
+</td><td>U+2367</td><td class='codevalue'>APL FUNCTIONAL SYMBOL LEFT SHOE STILE</td></tr>
+<tr><td><a class='box' title='[U+2368] APL FUNCTIONAL SYMBOL TILDE DIAERESIS' onClick='cp("⍨")'>&#x2368;</a>
+</td><td>U+2368</td><td class='codevalue'>APL FUNCTIONAL SYMBOL TILDE DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2369] APL FUNCTIONAL SYMBOL GREATER-THAN DIAERESIS' onClick='cp("⍩")'>&#x2369;</a>
+</td><td>U+2369</td><td class='codevalue'>APL FUNCTIONAL SYMBOL GREATER-THAN DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+236A] APL FUNCTIONAL SYMBOL COMMA BAR' onClick='cp("⍪")'>&#x236A;</a>
+</td><td>U+236A</td><td class='codevalue'>APL FUNCTIONAL SYMBOL COMMA BAR</td></tr>
+<tr><td><a class='box' title='[U+236B] APL FUNCTIONAL SYMBOL DEL TILDE' onClick='cp("⍫")'>&#x236B;</a>
+</td><td>U+236B</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DEL TILDE</td></tr>
+<tr><td><a class='box' title='[U+236C] APL FUNCTIONAL SYMBOL ZILDE' onClick='cp("⍬")'>&#x236C;</a>
+</td><td>U+236C</td><td class='codevalue'>APL FUNCTIONAL SYMBOL ZILDE</td></tr>
+<tr><td><a class='box' title='[U+236D] APL FUNCTIONAL SYMBOL STILE TILDE' onClick='cp("⍭")'>&#x236D;</a>
+</td><td>U+236D</td><td class='codevalue'>APL FUNCTIONAL SYMBOL STILE TILDE</td></tr>
+<tr><td><a class='box' title='[U+236E] APL FUNCTIONAL SYMBOL SEMICOLON UNDERBAR' onClick='cp("⍮")'>&#x236E;</a>
+</td><td>U+236E</td><td class='codevalue'>APL FUNCTIONAL SYMBOL SEMICOLON UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+236F] APL FUNCTIONAL SYMBOL QUAD NOT EQUAL' onClick='cp("⍯")'>&#x236F;</a>
+</td><td>U+236F</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD NOT EQUAL</td></tr>
+<tr><td><a class='box' title='[U+2370] APL FUNCTIONAL SYMBOL QUAD QUESTION' onClick='cp("⍰")'>&#x2370;</a>
+</td><td>U+2370</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD QUESTION</td></tr>
+<tr><td><a class='box' title='[U+2371] APL FUNCTIONAL SYMBOL DOWN CARET TILDE' onClick='cp("⍱")'>&#x2371;</a>
+</td><td>U+2371</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DOWN CARET TILDE</td></tr>
+<tr><td><a class='box' title='[U+2372] APL FUNCTIONAL SYMBOL UP CARET TILDE' onClick='cp("⍲")'>&#x2372;</a>
+</td><td>U+2372</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UP CARET TILDE</td></tr>
+<tr><td><a class='box' title='[U+2373] APL FUNCTIONAL SYMBOL IOTA' onClick='cp("⍳")'>&#x2373;</a>
+</td><td>U+2373</td><td class='codevalue'>APL FUNCTIONAL SYMBOL IOTA</td></tr>
+<tr><td><a class='box' title='[U+2374] APL FUNCTIONAL SYMBOL RHO' onClick='cp("⍴")'>&#x2374;</a>
+</td><td>U+2374</td><td class='codevalue'>APL FUNCTIONAL SYMBOL RHO</td></tr>
+<tr><td><a class='box' title='[U+2375] APL FUNCTIONAL SYMBOL OMEGA' onClick='cp("⍵")'>&#x2375;</a>
+</td><td>U+2375</td><td class='codevalue'>APL FUNCTIONAL SYMBOL OMEGA</td></tr>
+<tr><td><a class='box' title='[U+2376] APL FUNCTIONAL SYMBOL ALPHA UNDERBAR' onClick='cp("⍶")'>&#x2376;</a>
+</td><td>U+2376</td><td class='codevalue'>APL FUNCTIONAL SYMBOL ALPHA UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+2377] APL FUNCTIONAL SYMBOL EPSILON UNDERBAR' onClick='cp("⍷")'>&#x2377;</a>
+</td><td>U+2377</td><td class='codevalue'>APL FUNCTIONAL SYMBOL EPSILON UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+2378] APL FUNCTIONAL SYMBOL IOTA UNDERBAR' onClick='cp("⍸")'>&#x2378;</a>
+</td><td>U+2378</td><td class='codevalue'>APL FUNCTIONAL SYMBOL IOTA UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+2379] APL FUNCTIONAL SYMBOL OMEGA UNDERBAR' onClick='cp("⍹")'>&#x2379;</a>
+</td><td>U+2379</td><td class='codevalue'>APL FUNCTIONAL SYMBOL OMEGA UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+237A] APL FUNCTIONAL SYMBOL ALPHA' onClick='cp("⍺")'>&#x237A;</a>
+</td><td>U+237A</td><td class='codevalue'>APL FUNCTIONAL SYMBOL ALPHA</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: green; id=#;'>Control Pictures (U+2400 - U+243F)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+2400] SYMBOL FOR NULL
+= GRAPHIC FOR NULL' onClick='cp("␀")'>&#x2400;</a>
+</td><td>U+2400</td><td class='codevalue'>SYMBOL FOR NULL<br>= GRAPHIC FOR NULL</td></tr>
+<tr><td><a class='box' title='[U+2401] SYMBOL FOR START OF HEADING
+= GRAPHIC FOR START OF HEADING' onClick='cp("␁")'>&#x2401;</a>
+</td><td>U+2401</td><td class='codevalue'>SYMBOL FOR START OF HEADING<br>= GRAPHIC FOR START OF HEADING</td></tr>
+<tr><td><a class='box' title='[U+2402] SYMBOL FOR START OF TEXT
+= GRAPHIC FOR START OF TEXT' onClick='cp("␂")'>&#x2402;</a>
+</td><td>U+2402</td><td class='codevalue'>SYMBOL FOR START OF TEXT<br>= GRAPHIC FOR START OF TEXT</td></tr>
+<tr><td><a class='box' title='[U+2403] SYMBOL FOR END OF TEXT
+= GRAPHIC FOR END OF TEXT' onClick='cp("␃")'>&#x2403;</a>
+</td><td>U+2403</td><td class='codevalue'>SYMBOL FOR END OF TEXT<br>= GRAPHIC FOR END OF TEXT</td></tr>
+<tr><td><a class='box' title='[U+2404] SYMBOL FOR END OF TRANSMISSION
+= GRAPHIC FOR END OF TRANSMISSION' onClick='cp("␄")'>&#x2404;</a>
+</td><td>U+2404</td><td class='codevalue'>SYMBOL FOR END OF TRANSMISSION<br>= GRAPHIC FOR END OF TRANSMISSION</td></tr>
+<tr><td><a class='box' title='[U+2405] SYMBOL FOR ENQUIRY
+= GRAPHIC FOR ENQUIRY' onClick='cp("␅")'>&#x2405;</a>
+</td><td>U+2405</td><td class='codevalue'>SYMBOL FOR ENQUIRY<br>= GRAPHIC FOR ENQUIRY</td></tr>
+<tr><td><a class='box' title='[U+2406] SYMBOL FOR ACKNOWLEDGE
+= GRAPHIC FOR ACKNOWLEDGE' onClick='cp("␆")'>&#x2406;</a>
+</td><td>U+2406</td><td class='codevalue'>SYMBOL FOR ACKNOWLEDGE<br>= GRAPHIC FOR ACKNOWLEDGE</td></tr>
+<tr><td><a class='box' title='[U+2407] SYMBOL FOR BELL
+= GRAPHIC FOR BELL' onClick='cp("␇")'>&#x2407;</a>
+</td><td>U+2407</td><td class='codevalue'>SYMBOL FOR BELL<br>= GRAPHIC FOR BELL</td></tr>
+<tr><td><a class='box' title='[U+2408] SYMBOL FOR BACKSPACE
+= GRAPHIC FOR BACKSPACE' onClick='cp("␈")'>&#x2408;</a>
+</td><td>U+2408</td><td class='codevalue'>SYMBOL FOR BACKSPACE<br>= GRAPHIC FOR BACKSPACE</td></tr>
+<tr><td><a class='box' title='[U+2409] SYMBOL FOR HORIZONTAL TABULATION
+= GRAPHIC FOR HORIZONTAL TABULATION' onClick='cp("␉")'>&#x2409;</a>
+</td><td>U+2409</td><td class='codevalue'>SYMBOL FOR HORIZONTAL TABULATION<br>= GRAPHIC FOR HORIZONTAL TABULATION</td></tr>
+<tr><td><a class='box' title='[U+240A] SYMBOL FOR LINE FEED
+= GRAPHIC FOR LINE FEED' onClick='cp("␊")'>&#x240A;</a>
+</td><td>U+240A</td><td class='codevalue'>SYMBOL FOR LINE FEED<br>= GRAPHIC FOR LINE FEED</td></tr>
+<tr><td><a class='box' title='[U+240B] SYMBOL FOR VERTICAL TABULATION
+= GRAPHIC FOR VERTICAL TABULATION' onClick='cp("␋")'>&#x240B;</a>
+</td><td>U+240B</td><td class='codevalue'>SYMBOL FOR VERTICAL TABULATION<br>= GRAPHIC FOR VERTICAL TABULATION</td></tr>
+<tr><td><a class='box' title='[U+240C] SYMBOL FOR FORM FEED
+= GRAPHIC FOR FORM FEED' onClick='cp("␌")'>&#x240C;</a>
+</td><td>U+240C</td><td class='codevalue'>SYMBOL FOR FORM FEED<br>= GRAPHIC FOR FORM FEED</td></tr>
+<tr><td><a class='box' title='[U+240D] SYMBOL FOR CARRIAGE RETURN
+= GRAPHIC FOR CARRIAGE RETURN' onClick='cp("␍")'>&#x240D;</a>
+</td><td>U+240D</td><td class='codevalue'>SYMBOL FOR CARRIAGE RETURN<br>= GRAPHIC FOR CARRIAGE RETURN</td></tr>
+<tr><td><a class='box' title='[U+240E] SYMBOL FOR SHIFT OUT
+= GRAPHIC FOR SHIFT OUT' onClick='cp("␎")'>&#x240E;</a>
+</td><td>U+240E</td><td class='codevalue'>SYMBOL FOR SHIFT OUT<br>= GRAPHIC FOR SHIFT OUT</td></tr>
+<tr><td><a class='box' title='[U+240F] SYMBOL FOR SHIFT IN
+= GRAPHIC FOR SHIFT IN' onClick='cp("␏")'>&#x240F;</a>
+</td><td>U+240F</td><td class='codevalue'>SYMBOL FOR SHIFT IN<br>= GRAPHIC FOR SHIFT IN</td></tr>
+<tr><td><a class='box' title='[U+2410] SYMBOL FOR DATA LINK ESCAPE
+= GRAPHIC FOR DATA LINK ESCAPE' onClick='cp("␐")'>&#x2410;</a>
+</td><td>U+2410</td><td class='codevalue'>SYMBOL FOR DATA LINK ESCAPE<br>= GRAPHIC FOR DATA LINK ESCAPE</td></tr>
+<tr><td><a class='box' title='[U+2411] SYMBOL FOR DEVICE CONTROL ONE
+= GRAPHIC FOR DEVICE CONTROL ONE' onClick='cp("␑")'>&#x2411;</a>
+</td><td>U+2411</td><td class='codevalue'>SYMBOL FOR DEVICE CONTROL ONE<br>= GRAPHIC FOR DEVICE CONTROL ONE</td></tr>
+<tr><td><a class='box' title='[U+2412] SYMBOL FOR DEVICE CONTROL TWO
+= GRAPHIC FOR DEVICE CONTROL TWO' onClick='cp("␒")'>&#x2412;</a>
+</td><td>U+2412</td><td class='codevalue'>SYMBOL FOR DEVICE CONTROL TWO<br>= GRAPHIC FOR DEVICE CONTROL TWO</td></tr>
+<tr><td><a class='box' title='[U+2413] SYMBOL FOR DEVICE CONTROL THREE
+= GRAPHIC FOR DEVICE CONTROL THREE' onClick='cp("␓")'>&#x2413;</a>
+</td><td>U+2413</td><td class='codevalue'>SYMBOL FOR DEVICE CONTROL THREE<br>= GRAPHIC FOR DEVICE CONTROL THREE</td></tr>
+<tr><td><a class='box' title='[U+2414] SYMBOL FOR DEVICE CONTROL FOUR
+= GRAPHIC FOR DEVICE CONTROL FOUR' onClick='cp("␔")'>&#x2414;</a>
+</td><td>U+2414</td><td class='codevalue'>SYMBOL FOR DEVICE CONTROL FOUR<br>= GRAPHIC FOR DEVICE CONTROL FOUR</td></tr>
+<tr><td><a class='box' title='[U+2415] SYMBOL FOR NEGATIVE ACKNOWLEDGE
+= GRAPHIC FOR NEGATIVE ACKNOWLEDGE' onClick='cp("␕")'>&#x2415;</a>
+</td><td>U+2415</td><td class='codevalue'>SYMBOL FOR NEGATIVE ACKNOWLEDGE<br>= GRAPHIC FOR NEGATIVE ACKNOWLEDGE</td></tr>
+<tr><td><a class='box' title='[U+2416] SYMBOL FOR SYNCHRONOUS IDLE
+= GRAPHIC FOR SYNCHRONOUS IDLE' onClick='cp("␖")'>&#x2416;</a>
+</td><td>U+2416</td><td class='codevalue'>SYMBOL FOR SYNCHRONOUS IDLE<br>= GRAPHIC FOR SYNCHRONOUS IDLE</td></tr>
+<tr><td><a class='box' title='[U+2417] SYMBOL FOR END OF TRANSMISSION BLOCK
+= GRAPHIC FOR END OF TRANSMISSION BLOCK' onClick='cp("␗")'>&#x2417;</a>
+</td><td>U+2417</td><td class='codevalue'>SYMBOL FOR END OF TRANSMISSION BLOCK<br>= GRAPHIC FOR END OF TRANSMISSION BLOCK</td></tr>
+<tr><td><a class='box' title='[U+2418] SYMBOL FOR CANCEL
+= GRAPHIC FOR CANCEL' onClick='cp("␘")'>&#x2418;</a>
+</td><td>U+2418</td><td class='codevalue'>SYMBOL FOR CANCEL<br>= GRAPHIC FOR CANCEL</td></tr>
+<tr><td><a class='box' title='[U+2419] SYMBOL FOR END OF MEDIUM
+= GRAPHIC FOR END OF MEDIUM' onClick='cp("␙")'>&#x2419;</a>
+</td><td>U+2419</td><td class='codevalue'>SYMBOL FOR END OF MEDIUM<br>= GRAPHIC FOR END OF MEDIUM</td></tr>
+<tr><td><a class='box' title='[U+241A] SYMBOL FOR SUBSTITUTE
+= GRAPHIC FOR SUBSTITUTE' onClick='cp("␚")'>&#x241A;</a>
+</td><td>U+241A</td><td class='codevalue'>SYMBOL FOR SUBSTITUTE<br>= GRAPHIC FOR SUBSTITUTE</td></tr>
+<tr><td><a class='box' title='[U+241B] SYMBOL FOR ESCAPE
+= GRAPHIC FOR ESCAPE' onClick='cp("␛")'>&#x241B;</a>
+</td><td>U+241B</td><td class='codevalue'>SYMBOL FOR ESCAPE<br>= GRAPHIC FOR ESCAPE</td></tr>
+<tr><td><a class='box' title='[U+241C] SYMBOL FOR FILE SEPARATOR
+= GRAPHIC FOR FILE SEPARATOR' onClick='cp("␜")'>&#x241C;</a>
+</td><td>U+241C</td><td class='codevalue'>SYMBOL FOR FILE SEPARATOR<br>= GRAPHIC FOR FILE SEPARATOR</td></tr>
+<tr><td><a class='box' title='[U+241D] SYMBOL FOR GROUP SEPARATOR
+= GRAPHIC FOR GROUP SEPARATOR' onClick='cp("␝")'>&#x241D;</a>
+</td><td>U+241D</td><td class='codevalue'>SYMBOL FOR GROUP SEPARATOR<br>= GRAPHIC FOR GROUP SEPARATOR</td></tr>
+<tr><td><a class='box' title='[U+241E] SYMBOL FOR RECORD SEPARATOR
+= GRAPHIC FOR RECORD SEPARATOR' onClick='cp("␞")'>&#x241E;</a>
+</td><td>U+241E</td><td class='codevalue'>SYMBOL FOR RECORD SEPARATOR<br>= GRAPHIC FOR RECORD SEPARATOR</td></tr>
+<tr><td><a class='box' title='[U+241F] SYMBOL FOR UNIT SEPARATOR
+= GRAPHIC FOR UNIT SEPARATOR' onClick='cp("␟")'>&#x241F;</a>
+</td><td>U+241F</td><td class='codevalue'>SYMBOL FOR UNIT SEPARATOR<br>= GRAPHIC FOR UNIT SEPARATOR</td></tr>
+<tr><td><a class='box' title='[U+2420] SYMBOL FOR SPACE
+= GRAPHIC FOR SPACE' onClick='cp("␠")'>&#x2420;</a>
+</td><td>U+2420</td><td class='codevalue'>SYMBOL FOR SPACE<br>= GRAPHIC FOR SPACE</td></tr>
+<tr><td><a class='box' title='[U+2421] SYMBOL FOR DELETE
+= GRAPHIC FOR DELETE' onClick='cp("␡")'>&#x2421;</a>
+</td><td>U+2421</td><td class='codevalue'>SYMBOL FOR DELETE<br>= GRAPHIC FOR DELETE</td></tr>
+<tr><td><a class='box' title='[U+2422] BLANK SYMBOL
+= BLANK' onClick='cp("␢")'>&#x2422;</a>
+</td><td>U+2422</td><td class='codevalue'>BLANK SYMBOL<br>= BLANK</td></tr>
+<tr><td><a class='box' title='[U+2423] OPEN BOX' onClick='cp("␣")'>&#x2423;</a>
+</td><td>U+2423</td><td class='codevalue'>OPEN BOX</td></tr>
+<tr><td><a class='box' title='[U+2424] SYMBOL FOR NEWLINE
+= GRAPHIC FOR NEWLINE' onClick='cp("␤")'>&#x2424;</a>
+</td><td>U+2424</td><td class='codevalue'>SYMBOL FOR NEWLINE<br>= GRAPHIC FOR NEWLINE</td></tr>
+<tr><td><a class='box' title='[U+2425] SYMBOL FOR DELETE FORM TWO' onClick='cp("␥")'>&#x2425;</a>
+</td><td>U+2425</td><td class='codevalue'>SYMBOL FOR DELETE FORM TWO</td></tr>
+<tr><td><a class='box' title='[U+2426] SYMBOL FOR SUBSTITUTE FORM TWO' onClick='cp("␦")'>&#x2426;</a>
+</td><td>U+2426</td><td class='codevalue'>SYMBOL FOR SUBSTITUTE FORM TWO</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: orangered; id=#;'>Miscellaneous Technical (U+2300 - U+23FF)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+2300] DIAMETER SIGN' onClick='cp("⌀")'>&#x2300;</a>
+</td><td>U+2300</td><td class='codevalue'>DIAMETER SIGN</td></tr>
+<tr><td><a class='box' title='[U+2301] ELECTRIC ARROW' onClick='cp("⌁")'>&#x2301;</a>
+</td><td>U+2301</td><td class='codevalue'>ELECTRIC ARROW</td></tr>
+<tr><td><a class='box' title='[U+2302] HOUSE' onClick='cp("⌂")'>&#x2302;</a>
+</td><td>U+2302</td><td class='codevalue'>HOUSE</td></tr>
+<tr><td><a class='box' title='[U+2303] UP ARROWHEAD' onClick='cp("⌃")'>&#x2303;</a>
+</td><td>U+2303</td><td class='codevalue'>UP ARROWHEAD</td></tr>
+<tr><td><a class='box' title='[U+2304] DOWN ARROWHEAD' onClick='cp("⌄")'>&#x2304;</a>
+</td><td>U+2304</td><td class='codevalue'>DOWN ARROWHEAD</td></tr>
+<tr><td><a class='box' title='[U+2305] PROJECTIVE' onClick='cp("⌅")'>&#x2305;</a>
+</td><td>U+2305</td><td class='codevalue'>PROJECTIVE</td></tr>
+<tr><td><a class='box' title='[U+2306] PERSPECTIVE' onClick='cp("⌆")'>&#x2306;</a>
+</td><td>U+2306</td><td class='codevalue'>PERSPECTIVE</td></tr>
+<tr><td><a class='box' title='[U+2307] WAVY LINE' onClick='cp("⌇")'>&#x2307;</a>
+</td><td>U+2307</td><td class='codevalue'>WAVY LINE</td></tr>
+<tr><td><a class='box' title='[U+2308] LEFT CEILING' onClick='cp("⌈")'>&#x2308;</a>
+</td><td>U+2308</td><td class='codevalue'>LEFT CEILING</td></tr>
+<tr><td><a class='box' title='[U+2309] RIGHT CEILING' onClick='cp("⌉")'>&#x2309;</a>
+</td><td>U+2309</td><td class='codevalue'>RIGHT CEILING</td></tr>
+<tr><td><a class='box' title='[U+230A] LEFT FLOOR' onClick='cp("⌊")'>&#x230A;</a>
+</td><td>U+230A</td><td class='codevalue'>LEFT FLOOR</td></tr>
+<tr><td><a class='box' title='[U+230B] RIGHT FLOOR' onClick='cp("⌋")'>&#x230B;</a>
+</td><td>U+230B</td><td class='codevalue'>RIGHT FLOOR</td></tr>
+<tr><td><a class='box' title='[U+230C] BOTTOM RIGHT CROP' onClick='cp("⌌")'>&#x230C;</a>
+</td><td>U+230C</td><td class='codevalue'>BOTTOM RIGHT CROP</td></tr>
+<tr><td><a class='box' title='[U+230D] BOTTOM LEFT CROP' onClick='cp("⌍")'>&#x230D;</a>
+</td><td>U+230D</td><td class='codevalue'>BOTTOM LEFT CROP</td></tr>
+<tr><td><a class='box' title='[U+230E] TOP RIGHT CROP' onClick='cp("⌎")'>&#x230E;</a>
+</td><td>U+230E</td><td class='codevalue'>TOP RIGHT CROP</td></tr>
+<tr><td><a class='box' title='[U+230F] TOP LEFT CROP' onClick='cp("⌏")'>&#x230F;</a>
+</td><td>U+230F</td><td class='codevalue'>TOP LEFT CROP</td></tr>
+<tr><td><a class='box' title='[U+2310] REVERSED NOT SIGN' onClick='cp("⌐")'>&#x2310;</a>
+</td><td>U+2310</td><td class='codevalue'>REVERSED NOT SIGN</td></tr>
+<tr><td><a class='box' title='[U+2311] SQUARE LOZENGE' onClick='cp("⌑")'>&#x2311;</a>
+</td><td>U+2311</td><td class='codevalue'>SQUARE LOZENGE</td></tr>
+<tr><td><a class='box' title='[U+2312] ARC' onClick='cp("⌒")'>&#x2312;</a>
+</td><td>U+2312</td><td class='codevalue'>ARC</td></tr>
+<tr><td><a class='box' title='[U+2313] SEGMENT' onClick='cp("⌓")'>&#x2313;</a>
+</td><td>U+2313</td><td class='codevalue'>SEGMENT</td></tr>
+<tr><td><a class='box' title='[U+2314] SECTOR' onClick='cp("⌔")'>&#x2314;</a>
+</td><td>U+2314</td><td class='codevalue'>SECTOR</td></tr>
+<tr><td><a class='box' title='[U+2315] TELEPHONE RECORDER' onClick='cp("⌕")'>&#x2315;</a>
+</td><td>U+2315</td><td class='codevalue'>TELEPHONE RECORDER</td></tr>
+<tr><td><a class='box' title='[U+2316] POSITION INDICATOR' onClick='cp("⌖")'>&#x2316;</a>
+</td><td>U+2316</td><td class='codevalue'>POSITION INDICATOR</td></tr>
+<tr><td><a class='box' title='[U+2317] VIEWDATA SQUARE' onClick='cp("⌗")'>&#x2317;</a>
+</td><td>U+2317</td><td class='codevalue'>VIEWDATA SQUARE</td></tr>
+<tr><td><a class='box' title='[U+2318] PLACE OF INTEREST SIGN
+= COMMAND KEY' onClick='cp("⌘")'>&#x2318;</a>
+</td><td>U+2318</td><td class='codevalue'>PLACE OF INTEREST SIGN<br>= COMMAND KEY</td></tr>
+<tr><td><a class='box' title='[U+2319] TURNED NOT SIGN' onClick='cp("⌙")'>&#x2319;</a>
+</td><td>U+2319</td><td class='codevalue'>TURNED NOT SIGN</td></tr>
+<tr><td><a class='box' title='[U+231A] WATCH' onClick='cp("⌚")'>&#x231A;</a>
+</td><td>U+231A</td><td class='codevalue'>WATCH</td></tr>
+<tr><td><a class='box' title='[U+231B] HOURGLASS' onClick='cp("⌛")'>&#x231B;</a>
+</td><td>U+231B</td><td class='codevalue'>HOURGLASS</td></tr>
+<tr><td><a class='box' title='[U+231C] TOP LEFT CORNER' onClick='cp("⌜")'>&#x231C;</a>
+</td><td>U+231C</td><td class='codevalue'>TOP LEFT CORNER</td></tr>
+<tr><td><a class='box' title='[U+231D] TOP RIGHT CORNER' onClick='cp("⌝")'>&#x231D;</a>
+</td><td>U+231D</td><td class='codevalue'>TOP RIGHT CORNER</td></tr>
+<tr><td><a class='box' title='[U+231E] BOTTOM LEFT CORNER' onClick='cp("⌞")'>&#x231E;</a>
+</td><td>U+231E</td><td class='codevalue'>BOTTOM LEFT CORNER</td></tr>
+<tr><td><a class='box' title='[U+231F] BOTTOM RIGHT CORNER' onClick='cp("⌟")'>&#x231F;</a>
+</td><td>U+231F</td><td class='codevalue'>BOTTOM RIGHT CORNER</td></tr>
+<tr><td><a class='box' title='[U+2320] TOP HALF INTEGRAL' onClick='cp("⌠")'>&#x2320;</a>
+</td><td>U+2320</td><td class='codevalue'>TOP HALF INTEGRAL</td></tr>
+<tr><td><a class='box' title='[U+2321] BOTTOM HALF INTEGRAL' onClick='cp("⌡")'>&#x2321;</a>
+</td><td>U+2321</td><td class='codevalue'>BOTTOM HALF INTEGRAL</td></tr>
+<tr><td><a class='box' title='[U+2322] FROWN' onClick='cp("⌢")'>&#x2322;</a>
+</td><td>U+2322</td><td class='codevalue'>FROWN</td></tr>
+<tr><td><a class='box' title='[U+2323] SMILE' onClick='cp("⌣")'>&#x2323;</a>
+</td><td>U+2323</td><td class='codevalue'>SMILE</td></tr>
+<tr><td><a class='box' title='[U+2324] UP ARROWHEAD BETWEEN TWO HORIZONTAL BARS
+= ENTER KEY' onClick='cp("⌤")'>&#x2324;</a>
+</td><td>U+2324</td><td class='codevalue'>UP ARROWHEAD BETWEEN TWO HORIZONTAL BARS<br>= ENTER KEY</td></tr>
+<tr><td><a class='box' title='[U+2325] OPTION KEY' onClick='cp("⌥")'>&#x2325;</a>
+</td><td>U+2325</td><td class='codevalue'>OPTION KEY</td></tr>
+<tr><td><a class='box' title='[U+2326] ERASE TO THE RIGHT
+= DELETE TO THE RIGHT KEY' onClick='cp("⌦")'>&#x2326;</a>
+</td><td>U+2326</td><td class='codevalue'>ERASE TO THE RIGHT<br>= DELETE TO THE RIGHT KEY</td></tr>
+<tr><td><a class='box' title='[U+2327] X IN A RECTANGLE BOX
+= CLEAR KEY' onClick='cp("⌧")'>&#x2327;</a>
+</td><td>U+2327</td><td class='codevalue'>X IN A RECTANGLE BOX<br>= CLEAR KEY</td></tr>
+<tr><td><a class='box' title='[U+2328] KEYBOARD' onClick='cp("⌨")'>&#x2328;</a>
+</td><td>U+2328</td><td class='codevalue'>KEYBOARD</td></tr>
+<tr><td><a class='box' title='[U+2329] LEFT-POINTING ANGLE BRACKET
+= BRA' onClick='cp("〈")'>&#x2329;</a>
+</td><td>U+2329</td><td class='codevalue'>LEFT-POINTING ANGLE BRACKET<br>= BRA</td></tr>
+<tr><td><a class='box' title='[U+232A] RIGHT-POINTING ANGLE BRACKET
+= KET' onClick='cp("〉")'>&#x232A;</a>
+</td><td>U+232A</td><td class='codevalue'>RIGHT-POINTING ANGLE BRACKET<br>= KET</td></tr>
+<tr><td><a class='box' title='[U+232B] ERASE TO THE LEFT
+= DELETE TO THE LEFT KEY' onClick='cp("⌫")'>&#x232B;</a>
+</td><td>U+232B</td><td class='codevalue'>ERASE TO THE LEFT<br>= DELETE TO THE LEFT KEY</td></tr>
+<tr><td><a class='box' title='[U+232C] BENZENE RING' onClick='cp("⌬")'>&#x232C;</a>
+</td><td>U+232C</td><td class='codevalue'>BENZENE RING</td></tr>
+<tr><td><a class='box' title='[U+232D] CYLINDRICITY' onClick='cp("⌭")'>&#x232D;</a>
+</td><td>U+232D</td><td class='codevalue'>CYLINDRICITY</td></tr>
+<tr><td><a class='box' title='[U+232E] ALL AROUND-PROFILE' onClick='cp("⌮")'>&#x232E;</a>
+</td><td>U+232E</td><td class='codevalue'>ALL AROUND-PROFILE</td></tr>
+<tr><td><a class='box' title='[U+232F] SYMMETRY' onClick='cp("⌯")'>&#x232F;</a>
+</td><td>U+232F</td><td class='codevalue'>SYMMETRY</td></tr>
+<tr><td><a class='box' title='[U+2330] TOTAL RUNOUT' onClick='cp("⌰")'>&#x2330;</a>
+</td><td>U+2330</td><td class='codevalue'>TOTAL RUNOUT</td></tr>
+<tr><td><a class='box' title='[U+2331] DIMENSION ORIGIN' onClick='cp("⌱")'>&#x2331;</a>
+</td><td>U+2331</td><td class='codevalue'>DIMENSION ORIGIN</td></tr>
+<tr><td><a class='box' title='[U+2332] CONICAL TAPER' onClick='cp("⌲")'>&#x2332;</a>
+</td><td>U+2332</td><td class='codevalue'>CONICAL TAPER</td></tr>
+<tr><td><a class='box' title='[U+2333] SLOPE' onClick='cp("⌳")'>&#x2333;</a>
+</td><td>U+2333</td><td class='codevalue'>SLOPE</td></tr>
+<tr><td><a class='box' title='[U+2334] COUNTERBORE' onClick='cp("⌴")'>&#x2334;</a>
+</td><td>U+2334</td><td class='codevalue'>COUNTERBORE</td></tr>
+<tr><td><a class='box' title='[U+2335] COUNTERSINK' onClick='cp("⌵")'>&#x2335;</a>
+</td><td>U+2335</td><td class='codevalue'>COUNTERSINK</td></tr>
+<tr><td><a class='box' title='[U+2336] APL FUNCTIONAL SYMBOL I-BEAM' onClick='cp("⌶")'>&#x2336;</a>
+</td><td>U+2336</td><td class='codevalue'>APL FUNCTIONAL SYMBOL I-BEAM</td></tr>
+<tr><td><a class='box' title='[U+2337] APL FUNCTIONAL SYMBOL SQUISH QUAD' onClick='cp("⌷")'>&#x2337;</a>
+</td><td>U+2337</td><td class='codevalue'>APL FUNCTIONAL SYMBOL SQUISH QUAD</td></tr>
+<tr><td><a class='box' title='[U+2338] APL FUNCTIONAL SYMBOL QUAD EQUAL' onClick='cp("⌸")'>&#x2338;</a>
+</td><td>U+2338</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD EQUAL</td></tr>
+<tr><td><a class='box' title='[U+2339] APL FUNCTIONAL SYMBOL QUAD DIVIDE' onClick='cp("⌹")'>&#x2339;</a>
+</td><td>U+2339</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DIVIDE</td></tr>
+<tr><td><a class='box' title='[U+233A] APL FUNCTIONAL SYMBOL QUAD DIAMOND' onClick='cp("⌺")'>&#x233A;</a>
+</td><td>U+233A</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DIAMOND</td></tr>
+<tr><td><a class='box' title='[U+233B] APL FUNCTIONAL SYMBOL QUAD JOT' onClick='cp("⌻")'>&#x233B;</a>
+</td><td>U+233B</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD JOT</td></tr>
+<tr><td><a class='box' title='[U+233C] APL FUNCTIONAL SYMBOL QUAD CIRCLE' onClick='cp("⌼")'>&#x233C;</a>
+</td><td>U+233C</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD CIRCLE</td></tr>
+<tr><td><a class='box' title='[U+233D] APL FUNCTIONAL SYMBOL CIRCLE STILE' onClick='cp("⌽")'>&#x233D;</a>
+</td><td>U+233D</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE STILE</td></tr>
+<tr><td><a class='box' title='[U+233E] APL FUNCTIONAL SYMBOL CIRCLE JOT' onClick='cp("⌾")'>&#x233E;</a>
+</td><td>U+233E</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE JOT</td></tr>
+<tr><td><a class='box' title='[U+233F] APL FUNCTIONAL SYMBOL SLASH BAR' onClick='cp("⌿")'>&#x233F;</a>
+</td><td>U+233F</td><td class='codevalue'>APL FUNCTIONAL SYMBOL SLASH BAR</td></tr>
+<tr><td><a class='box' title='[U+2340] APL FUNCTIONAL SYMBOL BACKSLASH BAR' onClick='cp("⍀")'>&#x2340;</a>
+</td><td>U+2340</td><td class='codevalue'>APL FUNCTIONAL SYMBOL BACKSLASH BAR</td></tr>
+<tr><td><a class='box' title='[U+2341] APL FUNCTIONAL SYMBOL QUAD SLASH' onClick='cp("⍁")'>&#x2341;</a>
+</td><td>U+2341</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD SLASH</td></tr>
+<tr><td><a class='box' title='[U+2342] APL FUNCTIONAL SYMBOL QUAD BACKSLASH' onClick='cp("⍂")'>&#x2342;</a>
+</td><td>U+2342</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD BACKSLASH</td></tr>
+<tr><td><a class='box' title='[U+2343] APL FUNCTIONAL SYMBOL QUAD LESS-THAN' onClick='cp("⍃")'>&#x2343;</a>
+</td><td>U+2343</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD LESS-THAN</td></tr>
+<tr><td><a class='box' title='[U+2344] APL FUNCTIONAL SYMBOL QUAD GREATER-THAN' onClick='cp("⍄")'>&#x2344;</a>
+</td><td>U+2344</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD GREATER-THAN</td></tr>
+<tr><td><a class='box' title='[U+2345] APL FUNCTIONAL SYMBOL LEFTWARDS VANE' onClick='cp("⍅")'>&#x2345;</a>
+</td><td>U+2345</td><td class='codevalue'>APL FUNCTIONAL SYMBOL LEFTWARDS VANE</td></tr>
+<tr><td><a class='box' title='[U+2346] APL FUNCTIONAL SYMBOL RIGHTWARDS VANE' onClick='cp("⍆")'>&#x2346;</a>
+</td><td>U+2346</td><td class='codevalue'>APL FUNCTIONAL SYMBOL RIGHTWARDS VANE</td></tr>
+<tr><td><a class='box' title='[U+2347] APL FUNCTIONAL SYMBOL QUAD LEFTWARDS ARROW' onClick='cp("⍇")'>&#x2347;</a>
+</td><td>U+2347</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD LEFTWARDS ARROW</td></tr>
+<tr><td><a class='box' title='[U+2348] APL FUNCTIONAL SYMBOL QUAD RIGHTWARDS ARROW' onClick='cp("⍈")'>&#x2348;</a>
+</td><td>U+2348</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD RIGHTWARDS ARROW</td></tr>
+<tr><td><a class='box' title='[U+2349] APL FUNCTIONAL SYMBOL CIRCLE BACKSLASH' onClick='cp("⍉")'>&#x2349;</a>
+</td><td>U+2349</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE BACKSLASH</td></tr>
+<tr><td><a class='box' title='[U+234A] APL FUNCTIONAL SYMBOL DOWN TACK UNDERBAR' onClick='cp("⍊")'>&#x234A;</a>
+</td><td>U+234A</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DOWN TACK UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+234B] APL FUNCTIONAL SYMBOL DELTA STILE' onClick='cp("⍋")'>&#x234B;</a>
+</td><td>U+234B</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DELTA STILE</td></tr>
+<tr><td><a class='box' title='[U+234C] APL FUNCTIONAL SYMBOL QUAD DOWN CARET' onClick='cp("⍌")'>&#x234C;</a>
+</td><td>U+234C</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DOWN CARET</td></tr>
+<tr><td><a class='box' title='[U+234D] APL FUNCTIONAL SYMBOL QUAD DELTA' onClick='cp("⍍")'>&#x234D;</a>
+</td><td>U+234D</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DELTA</td></tr>
+<tr><td><a class='box' title='[U+234E] APL FUNCTIONAL SYMBOL DOWN TACK JOT' onClick='cp("⍎")'>&#x234E;</a>
+</td><td>U+234E</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DOWN TACK JOT</td></tr>
+<tr><td><a class='box' title='[U+234F] APL FUNCTIONAL SYMBOL UPWARDS VANE' onClick='cp("⍏")'>&#x234F;</a>
+</td><td>U+234F</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UPWARDS VANE</td></tr>
+<tr><td><a class='box' title='[U+2350] APL FUNCTIONAL SYMBOL QUAD UPWARDS ARROW' onClick='cp("⍐")'>&#x2350;</a>
+</td><td>U+2350</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD UPWARDS ARROW</td></tr>
+<tr><td><a class='box' title='[U+2351] APL FUNCTIONAL SYMBOL UP TACK OVERBAR' onClick='cp("⍑")'>&#x2351;</a>
+</td><td>U+2351</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UP TACK OVERBAR</td></tr>
+<tr><td><a class='box' title='[U+2352] APL FUNCTIONAL SYMBOL DEL STILE' onClick='cp("⍒")'>&#x2352;</a>
+</td><td>U+2352</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DEL STILE</td></tr>
+<tr><td><a class='box' title='[U+2353] APL FUNCTIONAL SYMBOL QUAD UP CARET' onClick='cp("⍓")'>&#x2353;</a>
+</td><td>U+2353</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD UP CARET</td></tr>
+<tr><td><a class='box' title='[U+2354] APL FUNCTIONAL SYMBOL QUAD DEL' onClick='cp("⍔")'>&#x2354;</a>
+</td><td>U+2354</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DEL</td></tr>
+<tr><td><a class='box' title='[U+2355] APL FUNCTIONAL SYMBOL UP TACK JOT' onClick='cp("⍕")'>&#x2355;</a>
+</td><td>U+2355</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UP TACK JOT</td></tr>
+<tr><td><a class='box' title='[U+2356] APL FUNCTIONAL SYMBOL DOWNWARDS VANE' onClick='cp("⍖")'>&#x2356;</a>
+</td><td>U+2356</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DOWNWARDS VANE</td></tr>
+<tr><td><a class='box' title='[U+2357] APL FUNCTIONAL SYMBOL QUAD DOWNWARDS ARROW' onClick='cp("⍗")'>&#x2357;</a>
+</td><td>U+2357</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD DOWNWARDS ARROW</td></tr>
+<tr><td><a class='box' title='[U+2358] APL FUNCTIONAL SYMBOL QUOTE UNDERBAR' onClick='cp("⍘")'>&#x2358;</a>
+</td><td>U+2358</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUOTE UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+2359] APL FUNCTIONAL SYMBOL DELTA UNDERBAR' onClick='cp("⍙")'>&#x2359;</a>
+</td><td>U+2359</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DELTA UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+235A] APL FUNCTIONAL SYMBOL DIAMOND UNDERBAR' onClick='cp("⍚")'>&#x235A;</a>
+</td><td>U+235A</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DIAMOND UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+235B] APL FUNCTIONAL SYMBOL JOT UNDERBAR' onClick='cp("⍛")'>&#x235B;</a>
+</td><td>U+235B</td><td class='codevalue'>APL FUNCTIONAL SYMBOL JOT UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+235C] APL FUNCTIONAL SYMBOL CIRCLE UNDERBAR' onClick='cp("⍜")'>&#x235C;</a>
+</td><td>U+235C</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+235D] APL FUNCTIONAL SYMBOL UP SHOE JOT' onClick='cp("⍝")'>&#x235D;</a>
+</td><td>U+235D</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UP SHOE JOT</td></tr>
+<tr><td><a class='box' title='[U+235E] APL FUNCTIONAL SYMBOL QUOTE QUAD' onClick='cp("⍞")'>&#x235E;</a>
+</td><td>U+235E</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUOTE QUAD</td></tr>
+<tr><td><a class='box' title='[U+235F] APL FUNCTIONAL SYMBOL CIRCLE STAR' onClick='cp("⍟")'>&#x235F;</a>
+</td><td>U+235F</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE STAR</td></tr>
+<tr><td><a class='box' title='[U+2360] APL FUNCTIONAL SYMBOL QUAD COLON' onClick='cp("⍠")'>&#x2360;</a>
+</td><td>U+2360</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD COLON</td></tr>
+<tr><td><a class='box' title='[U+2361] APL FUNCTIONAL SYMBOL UP TACK DIAERESIS' onClick='cp("⍡")'>&#x2361;</a>
+</td><td>U+2361</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UP TACK DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2362] APL FUNCTIONAL SYMBOL DEL DIAERESIS' onClick='cp("⍢")'>&#x2362;</a>
+</td><td>U+2362</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DEL DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2363] APL FUNCTIONAL SYMBOL STAR DIAERESIS' onClick='cp("⍣")'>&#x2363;</a>
+</td><td>U+2363</td><td class='codevalue'>APL FUNCTIONAL SYMBOL STAR DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2364] APL FUNCTIONAL SYMBOL JOT DIAERESIS' onClick='cp("⍤")'>&#x2364;</a>
+</td><td>U+2364</td><td class='codevalue'>APL FUNCTIONAL SYMBOL JOT DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2365] APL FUNCTIONAL SYMBOL CIRCLE DIAERESIS' onClick='cp("⍥")'>&#x2365;</a>
+</td><td>U+2365</td><td class='codevalue'>APL FUNCTIONAL SYMBOL CIRCLE DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2366] APL FUNCTIONAL SYMBOL DOWN SHOE STILE' onClick='cp("⍦")'>&#x2366;</a>
+</td><td>U+2366</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DOWN SHOE STILE</td></tr>
+<tr><td><a class='box' title='[U+2367] APL FUNCTIONAL SYMBOL LEFT SHOE STILE' onClick='cp("⍧")'>&#x2367;</a>
+</td><td>U+2367</td><td class='codevalue'>APL FUNCTIONAL SYMBOL LEFT SHOE STILE</td></tr>
+<tr><td><a class='box' title='[U+2368] APL FUNCTIONAL SYMBOL TILDE DIAERESIS' onClick='cp("⍨")'>&#x2368;</a>
+</td><td>U+2368</td><td class='codevalue'>APL FUNCTIONAL SYMBOL TILDE DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+2369] APL FUNCTIONAL SYMBOL GREATER-THAN DIAERESIS' onClick='cp("⍩")'>&#x2369;</a>
+</td><td>U+2369</td><td class='codevalue'>APL FUNCTIONAL SYMBOL GREATER-THAN DIAERESIS</td></tr>
+<tr><td><a class='box' title='[U+236A] APL FUNCTIONAL SYMBOL COMMA BAR' onClick='cp("⍪")'>&#x236A;</a>
+</td><td>U+236A</td><td class='codevalue'>APL FUNCTIONAL SYMBOL COMMA BAR</td></tr>
+<tr><td><a class='box' title='[U+236B] APL FUNCTIONAL SYMBOL DEL TILDE' onClick='cp("⍫")'>&#x236B;</a>
+</td><td>U+236B</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DEL TILDE</td></tr>
+<tr><td><a class='box' title='[U+236C] APL FUNCTIONAL SYMBOL ZILDE' onClick='cp("⍬")'>&#x236C;</a>
+</td><td>U+236C</td><td class='codevalue'>APL FUNCTIONAL SYMBOL ZILDE</td></tr>
+<tr><td><a class='box' title='[U+236D] APL FUNCTIONAL SYMBOL STILE TILDE' onClick='cp("⍭")'>&#x236D;</a>
+</td><td>U+236D</td><td class='codevalue'>APL FUNCTIONAL SYMBOL STILE TILDE</td></tr>
+<tr><td><a class='box' title='[U+236E] APL FUNCTIONAL SYMBOL SEMICOLON UNDERBAR' onClick='cp("⍮")'>&#x236E;</a>
+</td><td>U+236E</td><td class='codevalue'>APL FUNCTIONAL SYMBOL SEMICOLON UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+236F] APL FUNCTIONAL SYMBOL QUAD NOT EQUAL' onClick='cp("⍯")'>&#x236F;</a>
+</td><td>U+236F</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD NOT EQUAL</td></tr>
+<tr><td><a class='box' title='[U+2370] APL FUNCTIONAL SYMBOL QUAD QUESTION' onClick='cp("⍰")'>&#x2370;</a>
+</td><td>U+2370</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD QUESTION</td></tr>
+<tr><td><a class='box' title='[U+2371] APL FUNCTIONAL SYMBOL DOWN CARET TILDE' onClick='cp("⍱")'>&#x2371;</a>
+</td><td>U+2371</td><td class='codevalue'>APL FUNCTIONAL SYMBOL DOWN CARET TILDE</td></tr>
+<tr><td><a class='box' title='[U+2372] APL FUNCTIONAL SYMBOL UP CARET TILDE' onClick='cp("⍲")'>&#x2372;</a>
+</td><td>U+2372</td><td class='codevalue'>APL FUNCTIONAL SYMBOL UP CARET TILDE</td></tr>
+<tr><td><a class='box' title='[U+2373] APL FUNCTIONAL SYMBOL IOTA' onClick='cp("⍳")'>&#x2373;</a>
+</td><td>U+2373</td><td class='codevalue'>APL FUNCTIONAL SYMBOL IOTA</td></tr>
+<tr><td><a class='box' title='[U+2374] APL FUNCTIONAL SYMBOL RHO' onClick='cp("⍴")'>&#x2374;</a>
+</td><td>U+2374</td><td class='codevalue'>APL FUNCTIONAL SYMBOL RHO</td></tr>
+<tr><td><a class='box' title='[U+2375] APL FUNCTIONAL SYMBOL OMEGA' onClick='cp("⍵")'>&#x2375;</a>
+</td><td>U+2375</td><td class='codevalue'>APL FUNCTIONAL SYMBOL OMEGA</td></tr>
+<tr><td><a class='box' title='[U+2376] APL FUNCTIONAL SYMBOL ALPHA UNDERBAR' onClick='cp("⍶")'>&#x2376;</a>
+</td><td>U+2376</td><td class='codevalue'>APL FUNCTIONAL SYMBOL ALPHA UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+2377] APL FUNCTIONAL SYMBOL EPSILON UNDERBAR' onClick='cp("⍷")'>&#x2377;</a>
+</td><td>U+2377</td><td class='codevalue'>APL FUNCTIONAL SYMBOL EPSILON UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+2378] APL FUNCTIONAL SYMBOL IOTA UNDERBAR' onClick='cp("⍸")'>&#x2378;</a>
+</td><td>U+2378</td><td class='codevalue'>APL FUNCTIONAL SYMBOL IOTA UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+2379] APL FUNCTIONAL SYMBOL OMEGA UNDERBAR' onClick='cp("⍹")'>&#x2379;</a>
+</td><td>U+2379</td><td class='codevalue'>APL FUNCTIONAL SYMBOL OMEGA UNDERBAR</td></tr>
+<tr><td><a class='box' title='[U+237A] APL FUNCTIONAL SYMBOL ALPHA' onClick='cp("⍺")'>&#x237A;</a>
+</td><td>U+237A</td><td class='codevalue'>APL FUNCTIONAL SYMBOL ALPHA</td></tr>
+<tr><td><a class='box' title='[U+237B] NOT CHECK MARK' onClick='cp("⍻")'>&#x237B;</a>
+</td><td>U+237B</td><td class='codevalue'>NOT CHECK MARK</td></tr>
+<tr><td><a class='box' title='[U+237C] RIGHT ANGLE WITH DOWNWARDS ZIGZAG ARROW' onClick='cp("⍼")'>&#x237C;</a>
+</td><td>U+237C</td><td class='codevalue'>RIGHT ANGLE WITH DOWNWARDS ZIGZAG ARROW</td></tr>
+<tr><td><a class='box' title='[U+237D] SHOULDERED OPEN BOX' onClick='cp("⍽")'>&#x237D;</a>
+</td><td>U+237D</td><td class='codevalue'>SHOULDERED OPEN BOX</td></tr>
+<tr><td><a class='box' title='[U+237E] BELL SYMBOL' onClick='cp("⍾")'>&#x237E;</a>
+</td><td>U+237E</td><td class='codevalue'>BELL SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+237F] VERTICAL LINE WITH MIDDLE DOT' onClick='cp("⍿")'>&#x237F;</a>
+</td><td>U+237F</td><td class='codevalue'>VERTICAL LINE WITH MIDDLE DOT</td></tr>
+<tr><td><a class='box' title='[U+2380] INSERTION SYMBOL' onClick='cp("⎀")'>&#x2380;</a>
+</td><td>U+2380</td><td class='codevalue'>INSERTION SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2381] CONTINUOUS UNDERLINE SYMBOL' onClick='cp("⎁")'>&#x2381;</a>
+</td><td>U+2381</td><td class='codevalue'>CONTINUOUS UNDERLINE SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2382] DISCONTINUOUS UNDERLINE SYMBOL' onClick='cp("⎂")'>&#x2382;</a>
+</td><td>U+2382</td><td class='codevalue'>DISCONTINUOUS UNDERLINE SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2383] EMPHASIS SYMBOL' onClick='cp("⎃")'>&#x2383;</a>
+</td><td>U+2383</td><td class='codevalue'>EMPHASIS SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2384] COMPOSITION SYMBOL' onClick='cp("⎄")'>&#x2384;</a>
+</td><td>U+2384</td><td class='codevalue'>COMPOSITION SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2385] WHITE SQUARE WITH CENTRE VERTICAL LINE' onClick='cp("⎅")'>&#x2385;</a>
+</td><td>U+2385</td><td class='codevalue'>WHITE SQUARE WITH CENTRE VERTICAL LINE</td></tr>
+<tr><td><a class='box' title='[U+2386] ENTER SYMBOL' onClick='cp("⎆")'>&#x2386;</a>
+</td><td>U+2386</td><td class='codevalue'>ENTER SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2387] ALTERNATIVE KEY SYMBOL' onClick='cp("⎇")'>&#x2387;</a>
+</td><td>U+2387</td><td class='codevalue'>ALTERNATIVE KEY SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2388] HELM SYMBOL' onClick='cp("⎈")'>&#x2388;</a>
+</td><td>U+2388</td><td class='codevalue'>HELM SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2389] CIRCLED HORIZONTAL BAR WITH NOTCH' onClick='cp("⎉")'>&#x2389;</a>
+</td><td>U+2389</td><td class='codevalue'>CIRCLED HORIZONTAL BAR WITH NOTCH</td></tr>
+<tr><td><a class='box' title='[U+238A] CIRCLED TRIANGLE DOWN' onClick='cp("⎊")'>&#x238A;</a>
+</td><td>U+238A</td><td class='codevalue'>CIRCLED TRIANGLE DOWN</td></tr>
+<tr><td><a class='box' title='[U+238B] BROKEN CIRCLE WITH NORTHWEST ARROW' onClick='cp("⎋")'>&#x238B;</a>
+</td><td>U+238B</td><td class='codevalue'>BROKEN CIRCLE WITH NORTHWEST ARROW</td></tr>
+<tr><td><a class='box' title='[U+238C] UNDO SYMBOL' onClick='cp("⎌")'>&#x238C;</a>
+</td><td>U+238C</td><td class='codevalue'>UNDO SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+238D] MONOSTABLE SYMBOL' onClick='cp("⎍")'>&#x238D;</a>
+</td><td>U+238D</td><td class='codevalue'>MONOSTABLE SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+238E] HYSTERESIS SYMBOL' onClick='cp("⎎")'>&#x238E;</a>
+</td><td>U+238E</td><td class='codevalue'>HYSTERESIS SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+238F] OPEN-CIRCUIT-OUTPUT H-TYPE SYMBOL' onClick='cp("⎏")'>&#x238F;</a>
+</td><td>U+238F</td><td class='codevalue'>OPEN-CIRCUIT-OUTPUT H-TYPE SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2390] OPEN-CIRCUIT-OUTPUT L-TYPE SYMBOL' onClick='cp("⎐")'>&#x2390;</a>
+</td><td>U+2390</td><td class='codevalue'>OPEN-CIRCUIT-OUTPUT L-TYPE SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2391] PASSIVE-PULL-DOWN-OUTPUT SYMBOL' onClick='cp("⎑")'>&#x2391;</a>
+</td><td>U+2391</td><td class='codevalue'>PASSIVE-PULL-DOWN-OUTPUT SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2392] PASSIVE-PULL-UP-OUTPUT SYMBOL' onClick='cp("⎒")'>&#x2392;</a>
+</td><td>U+2392</td><td class='codevalue'>PASSIVE-PULL-UP-OUTPUT SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2393] DIRECT CURRENT SYMBOL FORM TWO' onClick='cp("⎓")'>&#x2393;</a>
+</td><td>U+2393</td><td class='codevalue'>DIRECT CURRENT SYMBOL FORM TWO</td></tr>
+<tr><td><a class='box' title='[U+2394] SOFTWARE-FUNCTION SYMBOL' onClick='cp("⎔")'>&#x2394;</a>
+</td><td>U+2394</td><td class='codevalue'>SOFTWARE-FUNCTION SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2395] APL FUNCTIONAL SYMBOL QUAD' onClick='cp("⎕")'>&#x2395;</a>
+</td><td>U+2395</td><td class='codevalue'>APL FUNCTIONAL SYMBOL QUAD</td></tr>
+<tr><td><a class='box' title='[U+2396] DECIMAL SEPARATOR KEY SYMBOL' onClick='cp("⎖")'>&#x2396;</a>
+</td><td>U+2396</td><td class='codevalue'>DECIMAL SEPARATOR KEY SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+2397] PREVIOUS PAGE' onClick='cp("⎗")'>&#x2397;</a>
+</td><td>U+2397</td><td class='codevalue'>PREVIOUS PAGE</td></tr>
+<tr><td><a class='box' title='[U+2398] NEXT PAGE' onClick='cp("⎘")'>&#x2398;</a>
+</td><td>U+2398</td><td class='codevalue'>NEXT PAGE</td></tr>
+<tr><td><a class='box' title='[U+2399] PRINT SCREEN SYMBOL' onClick='cp("⎙")'>&#x2399;</a>
+</td><td>U+2399</td><td class='codevalue'>PRINT SCREEN SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+239A] CLEAR SCREEN SYMBOL' onClick='cp("⎚")'>&#x239A;</a>
+</td><td>U+239A</td><td class='codevalue'>CLEAR SCREEN SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+239B] LEFT PARENTHESIS UPPER HOOK' onClick='cp("⎛")'>&#x239B;</a>
+</td><td>U+239B</td><td class='codevalue'>LEFT PARENTHESIS UPPER HOOK</td></tr>
+<tr><td><a class='box' title='[U+239C] LEFT PARENTHESIS EXTENSION' onClick='cp("⎜")'>&#x239C;</a>
+</td><td>U+239C</td><td class='codevalue'>LEFT PARENTHESIS EXTENSION</td></tr>
+<tr><td><a class='box' title='[U+239D] LEFT PARENTHESIS LOWER HOOK' onClick='cp("⎝")'>&#x239D;</a>
+</td><td>U+239D</td><td class='codevalue'>LEFT PARENTHESIS LOWER HOOK</td></tr>
+<tr><td><a class='box' title='[U+239E] RIGHT PARENTHESIS UPPER HOOK' onClick='cp("⎞")'>&#x239E;</a>
+</td><td>U+239E</td><td class='codevalue'>RIGHT PARENTHESIS UPPER HOOK</td></tr>
+<tr><td><a class='box' title='[U+239F] RIGHT PARENTHESIS EXTENSION' onClick='cp("⎟")'>&#x239F;</a>
+</td><td>U+239F</td><td class='codevalue'>RIGHT PARENTHESIS EXTENSION</td></tr>
+<tr><td><a class='box' title='[U+23A0] RIGHT PARENTHESIS LOWER HOOK' onClick='cp("⎠")'>&#x23A0;</a>
+</td><td>U+23A0</td><td class='codevalue'>RIGHT PARENTHESIS LOWER HOOK</td></tr>
+<tr><td><a class='box' title='[U+23A1] LEFT SQUARE BRACKET UPPER CORNER' onClick='cp("⎡")'>&#x23A1;</a>
+</td><td>U+23A1</td><td class='codevalue'>LEFT SQUARE BRACKET UPPER CORNER</td></tr>
+<tr><td><a class='box' title='[U+23A2] LEFT SQUARE BRACKET EXTENSION' onClick='cp("⎢")'>&#x23A2;</a>
+</td><td>U+23A2</td><td class='codevalue'>LEFT SQUARE BRACKET EXTENSION</td></tr>
+<tr><td><a class='box' title='[U+23A3] LEFT SQUARE BRACKET LOWER CORNER' onClick='cp("⎣")'>&#x23A3;</a>
+</td><td>U+23A3</td><td class='codevalue'>LEFT SQUARE BRACKET LOWER CORNER</td></tr>
+<tr><td><a class='box' title='[U+23A4] RIGHT SQUARE BRACKET UPPER CORNER' onClick='cp("⎤")'>&#x23A4;</a>
+</td><td>U+23A4</td><td class='codevalue'>RIGHT SQUARE BRACKET UPPER CORNER</td></tr>
+<tr><td><a class='box' title='[U+23A5] RIGHT SQUARE BRACKET EXTENSION' onClick='cp("⎥")'>&#x23A5;</a>
+</td><td>U+23A5</td><td class='codevalue'>RIGHT SQUARE BRACKET EXTENSION</td></tr>
+<tr><td><a class='box' title='[U+23A6] RIGHT SQUARE BRACKET LOWER CORNER' onClick='cp("⎦")'>&#x23A6;</a>
+</td><td>U+23A6</td><td class='codevalue'>RIGHT SQUARE BRACKET LOWER CORNER</td></tr>
+<tr><td><a class='box' title='[U+23A7] LEFT CURLY BRACKET UPPER HOOK' onClick='cp("⎧")'>&#x23A7;</a>
+</td><td>U+23A7</td><td class='codevalue'>LEFT CURLY BRACKET UPPER HOOK</td></tr>
+<tr><td><a class='box' title='[U+23A8] LEFT CURLY BRACKET MIDDLE PIECE' onClick='cp("⎨")'>&#x23A8;</a>
+</td><td>U+23A8</td><td class='codevalue'>LEFT CURLY BRACKET MIDDLE PIECE</td></tr>
+<tr><td><a class='box' title='[U+23A9] LEFT CURLY BRACKET LOWER HOOK' onClick='cp("⎩")'>&#x23A9;</a>
+</td><td>U+23A9</td><td class='codevalue'>LEFT CURLY BRACKET LOWER HOOK</td></tr>
+<tr><td><a class='box' title='[U+23AA] CURLY BRACKET EXTENSION' onClick='cp("⎪")'>&#x23AA;</a>
+</td><td>U+23AA</td><td class='codevalue'>CURLY BRACKET EXTENSION</td></tr>
+<tr><td><a class='box' title='[U+23AB] RIGHT CURLY BRACKET UPPER HOOK' onClick='cp("⎫")'>&#x23AB;</a>
+</td><td>U+23AB</td><td class='codevalue'>RIGHT CURLY BRACKET UPPER HOOK</td></tr>
+<tr><td><a class='box' title='[U+23AC] RIGHT CURLY BRACKET MIDDLE PIECE' onClick='cp("⎬")'>&#x23AC;</a>
+</td><td>U+23AC</td><td class='codevalue'>RIGHT CURLY BRACKET MIDDLE PIECE</td></tr>
+<tr><td><a class='box' title='[U+23AD] RIGHT CURLY BRACKET LOWER HOOK' onClick='cp("⎭")'>&#x23AD;</a>
+</td><td>U+23AD</td><td class='codevalue'>RIGHT CURLY BRACKET LOWER HOOK</td></tr>
+<tr><td><a class='box' title='[U+23AE] INTEGRAL EXTENSION' onClick='cp("⎮")'>&#x23AE;</a>
+</td><td>U+23AE</td><td class='codevalue'>INTEGRAL EXTENSION</td></tr>
+<tr><td><a class='box' title='[U+23AF] HORIZONTAL LINE EXTENSION' onClick='cp("⎯")'>&#x23AF;</a>
+</td><td>U+23AF</td><td class='codevalue'>HORIZONTAL LINE EXTENSION</td></tr>
+<tr><td><a class='box' title='[U+23B0] UPPER LEFT OR LOWER RIGHT CURLY BRACKET SECTION' onClick='cp("⎰")'>&#x23B0;</a>
+</td><td>U+23B0</td><td class='codevalue'>UPPER LEFT OR LOWER RIGHT CURLY BRACKET SECTION</td></tr>
+<tr><td><a class='box' title='[U+23B1] UPPER RIGHT OR LOWER LEFT CURLY BRACKET SECTION' onClick='cp("⎱")'>&#x23B1;</a>
+</td><td>U+23B1</td><td class='codevalue'>UPPER RIGHT OR LOWER LEFT CURLY BRACKET SECTION</td></tr>
+<tr><td><a class='box' title='[U+23B2] SUMMATION TOP' onClick='cp("⎲")'>&#x23B2;</a>
+</td><td>U+23B2</td><td class='codevalue'>SUMMATION TOP</td></tr>
+<tr><td><a class='box' title='[U+23B3] SUMMATION BOTTOM' onClick='cp("⎳")'>&#x23B3;</a>
+</td><td>U+23B3</td><td class='codevalue'>SUMMATION BOTTOM</td></tr>
+<tr><td><a class='box' title='[U+23B4] TOP SQUARE BRACKET' onClick='cp("⎴")'>&#x23B4;</a>
+</td><td>U+23B4</td><td class='codevalue'>TOP SQUARE BRACKET</td></tr>
+<tr><td><a class='box' title='[U+23B5] BOTTOM SQUARE BRACKET' onClick='cp("⎵")'>&#x23B5;</a>
+</td><td>U+23B5</td><td class='codevalue'>BOTTOM SQUARE BRACKET</td></tr>
+<tr><td><a class='box' title='[U+23B6] BOTTOM SQUARE BRACKET OVER TOP SQUARE BRACKET' onClick='cp("⎶")'>&#x23B6;</a>
+</td><td>U+23B6</td><td class='codevalue'>BOTTOM SQUARE BRACKET OVER TOP SQUARE BRACKET</td></tr>
+<tr><td><a class='box' title='[U+23B7] RADICAL SYMBOL BOTTOM' onClick='cp("⎷")'>&#x23B7;</a>
+</td><td>U+23B7</td><td class='codevalue'>RADICAL SYMBOL BOTTOM</td></tr>
+<tr><td><a class='box' title='[U+23B8] LEFT VERTICAL BOX LINE' onClick='cp("⎸")'>&#x23B8;</a>
+</td><td>U+23B8</td><td class='codevalue'>LEFT VERTICAL BOX LINE</td></tr>
+<tr><td><a class='box' title='[U+23B9] RIGHT VERTICAL BOX LINE' onClick='cp("⎹")'>&#x23B9;</a>
+</td><td>U+23B9</td><td class='codevalue'>RIGHT VERTICAL BOX LINE</td></tr>
+<tr><td><a class='box' title='[U+23BA] HORIZONTAL SCAN LINE-1' onClick='cp("⎺")'>&#x23BA;</a>
+</td><td>U+23BA</td><td class='codevalue'>HORIZONTAL SCAN LINE-1</td></tr>
+<tr><td><a class='box' title='[U+23BB] HORIZONTAL SCAN LINE-3' onClick='cp("⎻")'>&#x23BB;</a>
+</td><td>U+23BB</td><td class='codevalue'>HORIZONTAL SCAN LINE-3</td></tr>
+<tr><td><a class='box' title='[U+23BC] HORIZONTAL SCAN LINE-7' onClick='cp("⎼")'>&#x23BC;</a>
+</td><td>U+23BC</td><td class='codevalue'>HORIZONTAL SCAN LINE-7</td></tr>
+<tr><td><a class='box' title='[U+23BD] HORIZONTAL SCAN LINE-9' onClick='cp("⎽")'>&#x23BD;</a>
+</td><td>U+23BD</td><td class='codevalue'>HORIZONTAL SCAN LINE-9</td></tr>
+<tr><td><a class='box' title='[U+23BE] DENTISTRY SYMBOL LIGHT VERTICAL AND TOP RIGHT' onClick='cp("⎾")'>&#x23BE;</a>
+</td><td>U+23BE</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT VERTICAL AND TOP RIGHT</td></tr>
+<tr><td><a class='box' title='[U+23BF] DENTISTRY SYMBOL LIGHT VERTICAL AND BOTTOM RIGHT' onClick='cp("⎿")'>&#x23BF;</a>
+</td><td>U+23BF</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT VERTICAL AND BOTTOM RIGHT</td></tr>
+<tr><td><a class='box' title='[U+23C0] DENTISTRY SYMBOL LIGHT VERTICAL WITH CIRCLE' onClick='cp("⏀")'>&#x23C0;</a>
+</td><td>U+23C0</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT VERTICAL WITH CIRCLE</td></tr>
+<tr><td><a class='box' title='[U+23C1] DENTISTRY SYMBOL LIGHT DOWN AND HORIZONTAL WITH CIRCLE' onClick='cp("⏁")'>&#x23C1;</a>
+</td><td>U+23C1</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT DOWN AND HORIZONTAL WITH CIRCLE</td></tr>
+<tr><td><a class='box' title='[U+23C2] DENTISTRY SYMBOL LIGHT UP AND HORIZONTAL WITH CIRCLE' onClick='cp("⏂")'>&#x23C2;</a>
+</td><td>U+23C2</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT UP AND HORIZONTAL WITH CIRCLE</td></tr>
+<tr><td><a class='box' title='[U+23C3] DENTISTRY SYMBOL LIGHT VERTICAL WITH TRIANGLE' onClick='cp("⏃")'>&#x23C3;</a>
+</td><td>U+23C3</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT VERTICAL WITH TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23C4] DENTISTRY SYMBOL LIGHT DOWN AND HORIZONTAL WITH TRIANGLE' onClick='cp("⏄")'>&#x23C4;</a>
+</td><td>U+23C4</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT DOWN AND HORIZONTAL WITH TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23C5] DENTISTRY SYMBOL LIGHT UP AND HORIZONTAL WITH TRIANGLE' onClick='cp("⏅")'>&#x23C5;</a>
+</td><td>U+23C5</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT UP AND HORIZONTAL WITH TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23C6] DENTISTRY SYMBOL LIGHT VERTICAL AND WAVE' onClick='cp("⏆")'>&#x23C6;</a>
+</td><td>U+23C6</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT VERTICAL AND WAVE</td></tr>
+<tr><td><a class='box' title='[U+23C7] DENTISTRY SYMBOL LIGHT DOWN AND HORIZONTAL WITH WAVE' onClick='cp("⏇")'>&#x23C7;</a>
+</td><td>U+23C7</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT DOWN AND HORIZONTAL WITH WAVE</td></tr>
+<tr><td><a class='box' title='[U+23C8] DENTISTRY SYMBOL LIGHT UP AND HORIZONTAL WITH WAVE' onClick='cp("⏈")'>&#x23C8;</a>
+</td><td>U+23C8</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT UP AND HORIZONTAL WITH WAVE</td></tr>
+<tr><td><a class='box' title='[U+23C9] DENTISTRY SYMBOL LIGHT DOWN AND HORIZONTAL' onClick='cp("⏉")'>&#x23C9;</a>
+</td><td>U+23C9</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT DOWN AND HORIZONTAL</td></tr>
+<tr><td><a class='box' title='[U+23CA] DENTISTRY SYMBOL LIGHT UP AND HORIZONTAL' onClick='cp("⏊")'>&#x23CA;</a>
+</td><td>U+23CA</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT UP AND HORIZONTAL</td></tr>
+<tr><td><a class='box' title='[U+23CB] DENTISTRY SYMBOL LIGHT VERTICAL AND TOP LEFT' onClick='cp("⏋")'>&#x23CB;</a>
+</td><td>U+23CB</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT VERTICAL AND TOP LEFT</td></tr>
+<tr><td><a class='box' title='[U+23CC] DENTISTRY SYMBOL LIGHT VERTICAL AND BOTTOM LEFT' onClick='cp("⏌")'>&#x23CC;</a>
+</td><td>U+23CC</td><td class='codevalue'>DENTISTRY SYMBOL LIGHT VERTICAL AND BOTTOM LEFT</td></tr>
+<tr><td><a class='box' title='[U+23CD] SQUARE FOOT' onClick='cp("⏍")'>&#x23CD;</a>
+</td><td>U+23CD</td><td class='codevalue'>SQUARE FOOT</td></tr>
+<tr><td><a class='box' title='[U+23CE] RETURN SYMBOL' onClick='cp("⏎")'>&#x23CE;</a>
+</td><td>U+23CE</td><td class='codevalue'>RETURN SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+23CF] EJECT SYMBOL' onClick='cp("⏏")'>&#x23CF;</a>
+</td><td>U+23CF</td><td class='codevalue'>EJECT SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+23D0] VERTICAL LINE EXTENSION' onClick='cp("⏐")'>&#x23D0;</a>
+</td><td>U+23D0</td><td class='codevalue'>VERTICAL LINE EXTENSION</td></tr>
+<tr><td><a class='box' title='[U+23D1] METRICAL BREVE' onClick='cp("⏑")'>&#x23D1;</a>
+</td><td>U+23D1</td><td class='codevalue'>METRICAL BREVE</td></tr>
+<tr><td><a class='box' title='[U+23D2] METRICAL LONG OVER SHORT' onClick='cp("⏒")'>&#x23D2;</a>
+</td><td>U+23D2</td><td class='codevalue'>METRICAL LONG OVER SHORT</td></tr>
+<tr><td><a class='box' title='[U+23D3] METRICAL SHORT OVER LONG' onClick='cp("⏓")'>&#x23D3;</a>
+</td><td>U+23D3</td><td class='codevalue'>METRICAL SHORT OVER LONG</td></tr>
+<tr><td><a class='box' title='[U+23D4] METRICAL LONG OVER TWO SHORTS' onClick='cp("⏔")'>&#x23D4;</a>
+</td><td>U+23D4</td><td class='codevalue'>METRICAL LONG OVER TWO SHORTS</td></tr>
+<tr><td><a class='box' title='[U+23D5] METRICAL TWO SHORTS OVER LONG' onClick='cp("⏕")'>&#x23D5;</a>
+</td><td>U+23D5</td><td class='codevalue'>METRICAL TWO SHORTS OVER LONG</td></tr>
+<tr><td><a class='box' title='[U+23D6] METRICAL TWO SHORTS JOINED' onClick='cp("⏖")'>&#x23D6;</a>
+</td><td>U+23D6</td><td class='codevalue'>METRICAL TWO SHORTS JOINED</td></tr>
+<tr><td><a class='box' title='[U+23D7] METRICAL TRISEME' onClick='cp("⏗")'>&#x23D7;</a>
+</td><td>U+23D7</td><td class='codevalue'>METRICAL TRISEME</td></tr>
+<tr><td><a class='box' title='[U+23D8] METRICAL TETRASEME' onClick='cp("⏘")'>&#x23D8;</a>
+</td><td>U+23D8</td><td class='codevalue'>METRICAL TETRASEME</td></tr>
+<tr><td><a class='box' title='[U+23D9] METRICAL PENTASEME' onClick='cp("⏙")'>&#x23D9;</a>
+</td><td>U+23D9</td><td class='codevalue'>METRICAL PENTASEME</td></tr>
+<tr><td><a class='box' title='[U+23DA] EARTH GROUND' onClick='cp("⏚")'>&#x23DA;</a>
+</td><td>U+23DA</td><td class='codevalue'>EARTH GROUND</td></tr>
+<tr><td><a class='box' title='[U+23DB] FUSE' onClick='cp("⏛")'>&#x23DB;</a>
+</td><td>U+23DB</td><td class='codevalue'>FUSE</td></tr>
+<tr><td><a class='box' title='[U+23DC] TOP PARENTHESIS' onClick='cp("⏜")'>&#x23DC;</a>
+</td><td>U+23DC</td><td class='codevalue'>TOP PARENTHESIS</td></tr>
+<tr><td><a class='box' title='[U+23DD] BOTTOM PARENTHESIS' onClick='cp("⏝")'>&#x23DD;</a>
+</td><td>U+23DD</td><td class='codevalue'>BOTTOM PARENTHESIS</td></tr>
+<tr><td><a class='box' title='[U+23DE] TOP CURLY BRACKET' onClick='cp("⏞")'>&#x23DE;</a>
+</td><td>U+23DE</td><td class='codevalue'>TOP CURLY BRACKET</td></tr>
+<tr><td><a class='box' title='[U+23DF] BOTTOM CURLY BRACKET' onClick='cp("⏟")'>&#x23DF;</a>
+</td><td>U+23DF</td><td class='codevalue'>BOTTOM CURLY BRACKET</td></tr>
+<tr><td><a class='box' title='[U+23E0] TOP TORTOISE SHELL BRACKET' onClick='cp("⏠")'>&#x23E0;</a>
+</td><td>U+23E0</td><td class='codevalue'>TOP TORTOISE SHELL BRACKET</td></tr>
+<tr><td><a class='box' title='[U+23E1] BOTTOM TORTOISE SHELL BRACKET' onClick='cp("⏡")'>&#x23E1;</a>
+</td><td>U+23E1</td><td class='codevalue'>BOTTOM TORTOISE SHELL BRACKET</td></tr>
+<tr><td><a class='box' title='[U+23E2] WHITE TRAPEZIUM' onClick='cp("⏢")'>&#x23E2;</a>
+</td><td>U+23E2</td><td class='codevalue'>WHITE TRAPEZIUM</td></tr>
+<tr><td><a class='box' title='[U+23E3] BENZENE RING WITH CIRCLE' onClick='cp("⏣")'>&#x23E3;</a>
+</td><td>U+23E3</td><td class='codevalue'>BENZENE RING WITH CIRCLE</td></tr>
+<tr><td><a class='box' title='[U+23E4] STRAIGHTNESS' onClick='cp("⏤")'>&#x23E4;</a>
+</td><td>U+23E4</td><td class='codevalue'>STRAIGHTNESS</td></tr>
+<tr><td><a class='box' title='[U+23E5] FLATNESS' onClick='cp("⏥")'>&#x23E5;</a>
+</td><td>U+23E5</td><td class='codevalue'>FLATNESS</td></tr>
+<tr><td><a class='box' title='[U+23E6] AC CURRENT' onClick='cp("⏦")'>&#x23E6;</a>
+</td><td>U+23E6</td><td class='codevalue'>AC CURRENT</td></tr>
+<tr><td><a class='box' title='[U+23E7] ELECTRICAL INTERSECTION' onClick='cp("⏧")'>&#x23E7;</a>
+</td><td>U+23E7</td><td class='codevalue'>ELECTRICAL INTERSECTION</td></tr>
+<tr><td><a class='box' title='[U+23E8] DECIMAL EXPONENT SYMBOL' onClick='cp("⏨")'>&#x23E8;</a>
+</td><td>U+23E8</td><td class='codevalue'>DECIMAL EXPONENT SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+23E9] BLACK RIGHT-POINTING DOUBLE TRIANGLE' onClick='cp("⏩")'>&#x23E9;</a>
+</td><td>U+23E9</td><td class='codevalue'>BLACK RIGHT-POINTING DOUBLE TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23EA] BLACK LEFT-POINTING DOUBLE TRIANGLE' onClick='cp("⏪")'>&#x23EA;</a>
+</td><td>U+23EA</td><td class='codevalue'>BLACK LEFT-POINTING DOUBLE TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23EB] BLACK UP-POINTING DOUBLE TRIANGLE' onClick='cp("⏫")'>&#x23EB;</a>
+</td><td>U+23EB</td><td class='codevalue'>BLACK UP-POINTING DOUBLE TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23EC] BLACK DOWN-POINTING DOUBLE TRIANGLE' onClick='cp("⏬")'>&#x23EC;</a>
+</td><td>U+23EC</td><td class='codevalue'>BLACK DOWN-POINTING DOUBLE TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23ED] BLACK RIGHT-POINTING DOUBLE TRIANGLE WITH VERTICAL BAR' onClick='cp("⏭")'>&#x23ED;</a>
+</td><td>U+23ED</td><td class='codevalue'>BLACK RIGHT-POINTING DOUBLE TRIANGLE WITH VERTICAL BAR</td></tr>
+<tr><td><a class='box' title='[U+23EE] BLACK LEFT-POINTING DOUBLE TRIANGLE WITH VERTICAL BAR' onClick='cp("⏮")'>&#x23EE;</a>
+</td><td>U+23EE</td><td class='codevalue'>BLACK LEFT-POINTING DOUBLE TRIANGLE WITH VERTICAL BAR</td></tr>
+<tr><td><a class='box' title='[U+23EF] BLACK RIGHT-POINTING TRIANGLE WITH DOUBLE VERTICAL BAR' onClick='cp("⏯")'>&#x23EF;</a>
+</td><td>U+23EF</td><td class='codevalue'>BLACK RIGHT-POINTING TRIANGLE WITH DOUBLE VERTICAL BAR</td></tr>
+<tr><td><a class='box' title='[U+23F0] ALARM CLOCK' onClick='cp("⏰")'>&#x23F0;</a>
+</td><td>U+23F0</td><td class='codevalue'>ALARM CLOCK</td></tr>
+<tr><td><a class='box' title='[U+23F1] STOPWATCH' onClick='cp("⏱")'>&#x23F1;</a>
+</td><td>U+23F1</td><td class='codevalue'>STOPWATCH</td></tr>
+<tr><td><a class='box' title='[U+23F2] TIMER CLOCK' onClick='cp("⏲")'>&#x23F2;</a>
+</td><td>U+23F2</td><td class='codevalue'>TIMER CLOCK</td></tr>
+<tr><td><a class='box' title='[U+23F3] HOURGLASS WITH FLOWING SAND' onClick='cp("⏳")'>&#x23F3;</a>
+</td><td>U+23F3</td><td class='codevalue'>HOURGLASS WITH FLOWING SAND</td></tr>
+<tr><td><a class='box' title='[U+23F4] BLACK MEDIUM LEFT-POINTING TRIANGLE' onClick='cp("⏴")'>&#x23F4;</a>
+</td><td>U+23F4</td><td class='codevalue'>BLACK MEDIUM LEFT-POINTING TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23F5] BLACK MEDIUM RIGHT-POINTING TRIANGLE' onClick='cp("⏵")'>&#x23F5;</a>
+</td><td>U+23F5</td><td class='codevalue'>BLACK MEDIUM RIGHT-POINTING TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23F6] BLACK MEDIUM UP-POINTING TRIANGLE' onClick='cp("⏶")'>&#x23F6;</a>
+</td><td>U+23F6</td><td class='codevalue'>BLACK MEDIUM UP-POINTING TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23F7] BLACK MEDIUM DOWN-POINTING TRIANGLE' onClick='cp("⏷")'>&#x23F7;</a>
+</td><td>U+23F7</td><td class='codevalue'>BLACK MEDIUM DOWN-POINTING TRIANGLE</td></tr>
+<tr><td><a class='box' title='[U+23F8] DOUBLE VERTICAL BAR' onClick='cp("⏸")'>&#x23F8;</a>
+</td><td>U+23F8</td><td class='codevalue'>DOUBLE VERTICAL BAR</td></tr>
+<tr><td><a class='box' title='[U+23F9] BLACK SQUARE FOR STOP' onClick='cp("⏹")'>&#x23F9;</a>
+</td><td>U+23F9</td><td class='codevalue'>BLACK SQUARE FOR STOP</td></tr>
+<tr><td><a class='box' title='[U+23FA] BLACK CIRCLE FOR RECORD' onClick='cp("⏺")'>&#x23FA;</a>
+</td><td>U+23FA</td><td class='codevalue'>BLACK CIRCLE FOR RECORD</td></tr>
+<tr><td><a class='box' title='[U+23FB] POWER SYMBOL' onClick='cp("⏻")'>&#x23FB;</a>
+</td><td>U+23FB</td><td class='codevalue'>POWER SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+23FC] POWER ON-OFF SYMBOL' onClick='cp("⏼")'>&#x23FC;</a>
+</td><td>U+23FC</td><td class='codevalue'>POWER ON-OFF SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+23FD] POWER ON SYMBOL' onClick='cp("⏽")'>&#x23FD;</a>
+</td><td>U+23FD</td><td class='codevalue'>POWER ON SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+23FE] POWER SLEEP SYMBOL' onClick='cp("⏾")'>&#x23FE;</a>
+</td><td>U+23FE</td><td class='codevalue'>POWER SLEEP SYMBOL</td></tr>
+<tr><td><a class='box' title='[U+23FF] OBSERVER EYE SYMBOL' onClick='cp("⏿")'>&#x23FF;</a>
+</td><td>U+23FF</td><td class='codevalue'>OBSERVER EYE SYMBOL</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #27e; id=#;'>Optical Character Recognition (OCR) (U+2440 - U+245F)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+2440] OCR HOOK' onClick='cp("⑀")'>&#x2440;</a>
+</td><td>U+2440</td><td class='codevalue'>OCR HOOK</td></tr>
+<tr><td><a class='box' title='[U+2441] OCR CHAIR' onClick='cp("⑁")'>&#x2441;</a>
+</td><td>U+2441</td><td class='codevalue'>OCR CHAIR</td></tr>
+<tr><td><a class='box' title='[U+2442] OCR FORK' onClick='cp("⑂")'>&#x2442;</a>
+</td><td>U+2442</td><td class='codevalue'>OCR FORK</td></tr>
+<tr><td><a class='box' title='[U+2443] OCR INVERTED FORK' onClick='cp("⑃")'>&#x2443;</a>
+</td><td>U+2443</td><td class='codevalue'>OCR INVERTED FORK</td></tr>
+<tr><td><a class='box' title='[U+2444] OCR BELT BUCKLE' onClick='cp("⑄")'>&#x2444;</a>
+</td><td>U+2444</td><td class='codevalue'>OCR BELT BUCKLE</td></tr>
+<tr><td><a class='box' title='[U+2445] OCR BOW TIE' onClick='cp("⑅")'>&#x2445;</a>
+</td><td>U+2445</td><td class='codevalue'>OCR BOW TIE</td></tr>
+<tr><td><a class='box' title='[U+2446] OCR BRANCH BANK IDENTIFICATION' onClick='cp("⑆")'>&#x2446;</a>
+</td><td>U+2446</td><td class='codevalue'>OCR BRANCH BANK IDENTIFICATION</td></tr>
+<tr><td><a class='box' title='[U+2447] OCR AMOUNT OF CHECK' onClick='cp("⑇")'>&#x2447;</a>
+</td><td>U+2447</td><td class='codevalue'>OCR AMOUNT OF CHECK</td></tr>
+<tr><td><a class='box' title='[U+2448] OCR DASH' onClick='cp("⑈")'>&#x2448;</a>
+</td><td>U+2448</td><td class='codevalue'>OCR DASH</td></tr>
+<tr><td><a class='box' title='[U+2449] OCR CUSTOMER ACCOUNT NUMBER' onClick='cp("⑉")'>&#x2449;</a>
+</td><td>U+2449</td><td class='codevalue'>OCR CUSTOMER ACCOUNT NUMBER</td></tr>
+<tr><td><a class='box' title='[U+244A] OCR DOUBLE BACKSLASH' onClick='cp("⑊")'>&#x244A;</a>
+</td><td>U+244A</td><td class='codevalue'>OCR DOUBLE BACKSLASH</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+
+   </div>
+  </div>
+  <hr/>
+  <a href='javascript:history.back()'>
+   Back
+  </a>
+  <div>
+   <br/>
+   <br/>
+   <div style='font-size: 80%; text-align: center'>
+    Copyright &copy; 2020 emojipicker.com
+    <a href='../about/disclaimer.html' class='disclaimer'>
+     Disclaimer
+    </a>
+    <a href='../about/privacypolicy.html' class='disclaimer'>
+     Privacy Policy
+    </a>
+   </div>
+  </div>
+ </body>
+</html>

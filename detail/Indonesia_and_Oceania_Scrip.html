@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset='utf-8'/>
+  <title>
+   Indonesia & Oceania Scripts
+  </title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<style type="text/css">
+		table,th,tr,td	{	padding:			0px;
+							border:				solid black 1px;
+							border-spacing:		0px;
+						}
+		td+td			{
+							padding-left:		4px;
+							padding-right:		4px;
+							font-family:		sans-serif;	
+						}
+		td+td+td		{
+							word-break:			break-all;
+							font-family:		serif;	
+						}
+		body			{
+							margin-left:		0px;
+							margin-right:		0px;
+							padding-left:		0px;
+							padding-right:		0px;
+							background-color:	#fcfcfc;
+						}
+		.margined_hdr	{
+							margin:				10px;
+						}
+		.margined		{
+							margin:				10px;
+						}
+		.wholearea		{
+							margin:				0px;
+							padding:			0px;
+						}
+		.wholearea		{	line-height: 		1em;	font-family:	sans-serif;	font-family: 'Segoe UI Emoji'; }
+		.titlearea		{	line-height: 		1.4em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.hbar_area		{	line-height: 		1em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.xcopyarea		{	line-height: 		1.2em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.main			{	line-height:		30px;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+
+		.box			{
+							float:				left;
+
+							line-height:		1;
+						/*	line-spacing:		0;	*/
+
+						/*	height:				30px; */
+							height:				50px;
+							min-width:			50px;
+						}
+		.box, .xbutton
+						{
+							box-sizing:			border-box;
+
+							font-family:		'Segoe UI Emoji';
+
+						    cursor:				pointer;
+						    text-decoration:	none;
+
+						    background-color:	#eeeeee;
+						    color:				black;
+
+						    text-align:			center;
+							vertical-align:		middle;
+						    font-size:			24px;
+
+						    border:				1px solid #000000;
+						    margin:				0px 0px 0px 0px;
+						    padding:			5px 5px 5px 5px;
+
+						    border:				1px solid #aaa;
+						    padding:			10px 5px;
+						}
+		.box:hover, .xbutton:hover
+						{
+							background-color: #ffffff
+						}
+		.box:active, .xbutton:active
+						{
+							background-color:	#eeeeee;
+							box-shadow:			0 4px #666;
+							transform:			translateY(-4px);
+						}
+		.testsvg		{
+							text-align:			center;
+							vertical-align:		middle;
+						}
+		/* -------------------------------------------------*/
+		/* CATEGORY HEADERS									*/
+		/* -------------------------------------------------*/
+		h1					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				black;
+								background-color:	cyan;
+
+								left:				0;
+								text-align:			center;
+
+								margin-top:			10px;
+								padding-top:		12px;
+								padding-bottom:		12px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		h2					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				white;
+								background-color:	blue;
+
+								left:				0;
+								text-align:			center;
+								text-align:			left;
+
+								margin-top:			10px;
+								padding-top:		8px;
+								padding-bottom:		8px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		/* SUBCATEGORY */
+		h3					{ 
+							/*	font-family:		serif; */
+								font-family:		'Segoe UI Emoji';
+								font-family:		sans-serif;
+
+								margin-top:			10px;
+								padding-top:		0px;
+								padding-bottom:		0px;
+								margin-bottom:		4px;
+							}
+
+</style>
+	<script>
+		function goback()
+		{
+			window.history.back();
+		}
+		function cp(txt)
+		{
+			var a							= document.createElement ('textarea');
+			a.style.position				= 'fixed';
+			a.style.left					= '-100%';
+			a.value							= txt;
+			a.selectionStart				= 0;
+			a.selectionEnd					= a.value.length;
+
+			document.body.appendChild		(a);
+		//	a.focus							();		// 2017-11-02 del
+			a.select						();		// 2017-11-02 add
+			document.execCommand			('copy');
+			document.body.removeChild		(a);
+			var e							= document.getElementById ('copybuf');
+			e.value							+= txt;
+		};
+
+		function areacopy()
+		{
+			var a							= document.activeElement;
+			var box							= document.getElementById	('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function areaerase()
+		{
+			var a = document.activeElement;
+			var box							= document.getElementById ('copybuf');
+			box.readOnly					= true;
+			box.select						();
+			document.execCommand			('copy');
+			box.value						= '';
+		/*	document.body.focus				(); */
+			a.focus							();
+			box.readOnly					= false;
+		}
+		function jmpl(location)
+		{
+			var old_name	= document.getElementById (location).getAttribute('name');
+			document.getElementById (location).setAttribute('name', location);
+			window.location.hash			= location;
+			var ret = window.scrollBy		(0, -62);
+			document.getElementById (location).setAttribute('name', old_name);
+		}
+		function jmphome()
+		{
+			window.location.hash				= '';
+		    document.body.scrollTop				= 0; // For Chrome, Safari and Opera
+		    document.documentElement.scrollTop	= 0; // For IE and Firefox
+		}
+	</script>
+ </head>
+ <body>
+  <div class='wholearea'>
+    <div class='testsvg'>
+     <svg class='testsvg' xmlns='http://www.w3.org/2000/svg' version='1.1' width='100%' height='100' stroke='black' stroke-width='0px' style='font-size:32px; text-align:center; font-family: serif; font-family:Segoe UI Emoji;'>
+      <defs>
+       <linearGradient id='grad1'>
+        <stop offset='0%' stop-color='cyan'/>
+        <stop offset='40%' stop-color='cyan'/>
+        <stop offset='70%' stop-color='#777777'/>
+        <stop offset='100%' stop-color='#333333'/>
+       </linearGradient>
+      </defs>
+      <rect x='0' y='0' width='100%' height='100' fill='url(#grad1)'/>
+      <text x='5%' y='55%'>
+       Indonesia & Oceania Scripts
+      </text>
+     </svg>
+    </div>
+   <a href='javascript:history.back()'>
+    Back
+   </a>
+   <hr/>
+   <div>
+    <h2 style='color: white; background-color: #25f; id=#;'>Balinese (U+1B00 - U+1B7F)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+1B00] BALINESE SIGN ULU RICEM' onClick='cp("ᬀ")'>&#x1B00;</a>
+</td><td>U+1B00</td><td>BALINESE SIGN ULU RICEM</td></tr>
+<tr><td><a class='box' title='[U+1B01] BALINESE SIGN ULU CANDRA' onClick='cp("ᬁ")'>&#x1B01;</a>
+</td><td>U+1B01</td><td>BALINESE SIGN ULU CANDRA</td></tr>
+<tr><td><a class='box' title='[U+1B02] BALINESE SIGN CECEK' onClick='cp("ᬂ")'>&#x1B02;</a>
+</td><td>U+1B02</td><td>BALINESE SIGN CECEK</td></tr>
+<tr><td><a class='box' title='[U+1B03] BALINESE SIGN SURANG' onClick='cp("ᬃ")'>&#x1B03;</a>
+</td><td>U+1B03</td><td>BALINESE SIGN SURANG</td></tr>
+<tr><td><a class='box' title='[U+1B04] BALINESE SIGN BISAH' onClick='cp("ᬄ")'>&#x1B04;</a>
+</td><td>U+1B04</td><td>BALINESE SIGN BISAH</td></tr>
+<tr><td><a class='box' title='[U+1B05] BALINESE LETTER AKARA' onClick='cp("ᬅ")'>&#x1B05;</a>
+</td><td>U+1B05</td><td>BALINESE LETTER AKARA</td></tr>
+<tr><td><a class='box' title='[U+1B06] BALINESE LETTER AKARA TEDUNG' onClick='cp("ᬆ")'>&#x1B06;</a>
+</td><td>U+1B06</td><td>BALINESE LETTER AKARA TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B07] BALINESE LETTER IKARA' onClick='cp("ᬇ")'>&#x1B07;</a>
+</td><td>U+1B07</td><td>BALINESE LETTER IKARA</td></tr>
+<tr><td><a class='box' title='[U+1B08] BALINESE LETTER IKARA TEDUNG' onClick='cp("ᬈ")'>&#x1B08;</a>
+</td><td>U+1B08</td><td>BALINESE LETTER IKARA TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B09] BALINESE LETTER UKARA' onClick='cp("ᬉ")'>&#x1B09;</a>
+</td><td>U+1B09</td><td>BALINESE LETTER UKARA</td></tr>
+<tr><td><a class='box' title='[U+1B0A] BALINESE LETTER UKARA TEDUNG' onClick='cp("ᬊ")'>&#x1B0A;</a>
+</td><td>U+1B0A</td><td>BALINESE LETTER UKARA TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B0B] BALINESE LETTER RA REPA' onClick='cp("ᬋ")'>&#x1B0B;</a>
+</td><td>U+1B0B</td><td>BALINESE LETTER RA REPA</td></tr>
+<tr><td><a class='box' title='[U+1B0C] BALINESE LETTER RA REPA TEDUNG' onClick='cp("ᬌ")'>&#x1B0C;</a>
+</td><td>U+1B0C</td><td>BALINESE LETTER RA REPA TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B0D] BALINESE LETTER LA LENGA' onClick='cp("ᬍ")'>&#x1B0D;</a>
+</td><td>U+1B0D</td><td>BALINESE LETTER LA LENGA</td></tr>
+<tr><td><a class='box' title='[U+1B0E] BALINESE LETTER LA LENGA TEDUNG' onClick='cp("ᬎ")'>&#x1B0E;</a>
+</td><td>U+1B0E</td><td>BALINESE LETTER LA LENGA TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B0F] BALINESE LETTER EKARA' onClick='cp("ᬏ")'>&#x1B0F;</a>
+</td><td>U+1B0F</td><td>BALINESE LETTER EKARA</td></tr>
+<tr><td><a class='box' title='[U+1B10] BALINESE LETTER AIKARA' onClick='cp("ᬐ")'>&#x1B10;</a>
+</td><td>U+1B10</td><td>BALINESE LETTER AIKARA</td></tr>
+<tr><td><a class='box' title='[U+1B11] BALINESE LETTER OKARA' onClick='cp("ᬑ")'>&#x1B11;</a>
+</td><td>U+1B11</td><td>BALINESE LETTER OKARA</td></tr>
+<tr><td><a class='box' title='[U+1B12] BALINESE LETTER OKARA TEDUNG' onClick='cp("ᬒ")'>&#x1B12;</a>
+</td><td>U+1B12</td><td>BALINESE LETTER OKARA TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B13] BALINESE LETTER KA' onClick='cp("ᬓ")'>&#x1B13;</a>
+</td><td>U+1B13</td><td>BALINESE LETTER KA</td></tr>
+<tr><td><a class='box' title='[U+1B14] BALINESE LETTER KA MAHAPRANA' onClick='cp("ᬔ")'>&#x1B14;</a>
+</td><td>U+1B14</td><td>BALINESE LETTER KA MAHAPRANA</td></tr>
+<tr><td><a class='box' title='[U+1B15] BALINESE LETTER GA' onClick='cp("ᬕ")'>&#x1B15;</a>
+</td><td>U+1B15</td><td>BALINESE LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+1B16] BALINESE LETTER GA GORA' onClick='cp("ᬖ")'>&#x1B16;</a>
+</td><td>U+1B16</td><td>BALINESE LETTER GA GORA</td></tr>
+<tr><td><a class='box' title='[U+1B17] BALINESE LETTER NGA' onClick='cp("ᬗ")'>&#x1B17;</a>
+</td><td>U+1B17</td><td>BALINESE LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+1B18] BALINESE LETTER CA' onClick='cp("ᬘ")'>&#x1B18;</a>
+</td><td>U+1B18</td><td>BALINESE LETTER CA</td></tr>
+<tr><td><a class='box' title='[U+1B19] BALINESE LETTER CA LACA' onClick='cp("ᬙ")'>&#x1B19;</a>
+</td><td>U+1B19</td><td>BALINESE LETTER CA LACA</td></tr>
+<tr><td><a class='box' title='[U+1B1A] BALINESE LETTER JA' onClick='cp("ᬚ")'>&#x1B1A;</a>
+</td><td>U+1B1A</td><td>BALINESE LETTER JA</td></tr>
+<tr><td><a class='box' title='[U+1B1B] BALINESE LETTER JA JERA' onClick='cp("ᬛ")'>&#x1B1B;</a>
+</td><td>U+1B1B</td><td>BALINESE LETTER JA JERA</td></tr>
+<tr><td><a class='box' title='[U+1B1C] BALINESE LETTER NYA' onClick='cp("ᬜ")'>&#x1B1C;</a>
+</td><td>U+1B1C</td><td>BALINESE LETTER NYA</td></tr>
+<tr><td><a class='box' title='[U+1B1D] BALINESE LETTER TA LATIK' onClick='cp("ᬝ")'>&#x1B1D;</a>
+</td><td>U+1B1D</td><td>BALINESE LETTER TA LATIK</td></tr>
+<tr><td><a class='box' title='[U+1B1E] BALINESE LETTER TA MURDA MAHAPRANA' onClick='cp("ᬞ")'>&#x1B1E;</a>
+</td><td>U+1B1E</td><td>BALINESE LETTER TA MURDA MAHAPRANA</td></tr>
+<tr><td><a class='box' title='[U+1B1F] BALINESE LETTER DA MURDA ALPAPRANA' onClick='cp("ᬟ")'>&#x1B1F;</a>
+</td><td>U+1B1F</td><td>BALINESE LETTER DA MURDA ALPAPRANA</td></tr>
+<tr><td><a class='box' title='[U+1B20] BALINESE LETTER DA MURDA MAHAPRANA' onClick='cp("ᬠ")'>&#x1B20;</a>
+</td><td>U+1B20</td><td>BALINESE LETTER DA MURDA MAHAPRANA</td></tr>
+<tr><td><a class='box' title='[U+1B21] BALINESE LETTER NA RAMBAT' onClick='cp("ᬡ")'>&#x1B21;</a>
+</td><td>U+1B21</td><td>BALINESE LETTER NA RAMBAT</td></tr>
+<tr><td><a class='box' title='[U+1B22] BALINESE LETTER TA' onClick='cp("ᬢ")'>&#x1B22;</a>
+</td><td>U+1B22</td><td>BALINESE LETTER TA</td></tr>
+<tr><td><a class='box' title='[U+1B23] BALINESE LETTER TA TAWA' onClick='cp("ᬣ")'>&#x1B23;</a>
+</td><td>U+1B23</td><td>BALINESE LETTER TA TAWA</td></tr>
+<tr><td><a class='box' title='[U+1B24] BALINESE LETTER DA' onClick='cp("ᬤ")'>&#x1B24;</a>
+</td><td>U+1B24</td><td>BALINESE LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+1B25] BALINESE LETTER DA MADU' onClick='cp("ᬥ")'>&#x1B25;</a>
+</td><td>U+1B25</td><td>BALINESE LETTER DA MADU</td></tr>
+<tr><td><a class='box' title='[U+1B26] BALINESE LETTER NA' onClick='cp("ᬦ")'>&#x1B26;</a>
+</td><td>U+1B26</td><td>BALINESE LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+1B27] BALINESE LETTER PA' onClick='cp("ᬧ")'>&#x1B27;</a>
+</td><td>U+1B27</td><td>BALINESE LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+1B28] BALINESE LETTER PA KAPAL' onClick='cp("ᬨ")'>&#x1B28;</a>
+</td><td>U+1B28</td><td>BALINESE LETTER PA KAPAL</td></tr>
+<tr><td><a class='box' title='[U+1B29] BALINESE LETTER BA' onClick='cp("ᬩ")'>&#x1B29;</a>
+</td><td>U+1B29</td><td>BALINESE LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+1B2A] BALINESE LETTER BA KEMBANG' onClick='cp("ᬪ")'>&#x1B2A;</a>
+</td><td>U+1B2A</td><td>BALINESE LETTER BA KEMBANG</td></tr>
+<tr><td><a class='box' title='[U+1B2B] BALINESE LETTER MA' onClick='cp("ᬫ")'>&#x1B2B;</a>
+</td><td>U+1B2B</td><td>BALINESE LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+1B2C] BALINESE LETTER YA' onClick='cp("ᬬ")'>&#x1B2C;</a>
+</td><td>U+1B2C</td><td>BALINESE LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+1B2D] BALINESE LETTER RA' onClick='cp("ᬭ")'>&#x1B2D;</a>
+</td><td>U+1B2D</td><td>BALINESE LETTER RA</td></tr>
+<tr><td><a class='box' title='[U+1B2E] BALINESE LETTER LA' onClick='cp("ᬮ")'>&#x1B2E;</a>
+</td><td>U+1B2E</td><td>BALINESE LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+1B2F] BALINESE LETTER WA' onClick='cp("ᬯ")'>&#x1B2F;</a>
+</td><td>U+1B2F</td><td>BALINESE LETTER WA</td></tr>
+<tr><td><a class='box' title='[U+1B30] BALINESE LETTER SA SAGA' onClick='cp("ᬰ")'>&#x1B30;</a>
+</td><td>U+1B30</td><td>BALINESE LETTER SA SAGA</td></tr>
+<tr><td><a class='box' title='[U+1B31] BALINESE LETTER SA SAPA' onClick='cp("ᬱ")'>&#x1B31;</a>
+</td><td>U+1B31</td><td>BALINESE LETTER SA SAPA</td></tr>
+<tr><td><a class='box' title='[U+1B32] BALINESE LETTER SA' onClick='cp("ᬲ")'>&#x1B32;</a>
+</td><td>U+1B32</td><td>BALINESE LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+1B33] BALINESE LETTER HA' onClick='cp("ᬳ")'>&#x1B33;</a>
+</td><td>U+1B33</td><td>BALINESE LETTER HA</td></tr>
+<tr><td><a class='box' title='[U+1B34] BALINESE SIGN REREKAN' onClick='cp("᬴")'>&#x1B34;</a>
+</td><td>U+1B34</td><td>BALINESE SIGN REREKAN</td></tr>
+<tr><td><a class='box' title='[U+1B35] BALINESE VOWEL SIGN TEDUNG' onClick='cp("ᬵ")'>&#x1B35;</a>
+</td><td>U+1B35</td><td>BALINESE VOWEL SIGN TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B36] BALINESE VOWEL SIGN ULU' onClick='cp("ᬶ")'>&#x1B36;</a>
+</td><td>U+1B36</td><td>BALINESE VOWEL SIGN ULU</td></tr>
+<tr><td><a class='box' title='[U+1B37] BALINESE VOWEL SIGN ULU SARI' onClick='cp("ᬷ")'>&#x1B37;</a>
+</td><td>U+1B37</td><td>BALINESE VOWEL SIGN ULU SARI</td></tr>
+<tr><td><a class='box' title='[U+1B38] BALINESE VOWEL SIGN SUKU' onClick='cp("ᬸ")'>&#x1B38;</a>
+</td><td>U+1B38</td><td>BALINESE VOWEL SIGN SUKU</td></tr>
+<tr><td><a class='box' title='[U+1B39] BALINESE VOWEL SIGN SUKU ILUT' onClick='cp("ᬹ")'>&#x1B39;</a>
+</td><td>U+1B39</td><td>BALINESE VOWEL SIGN SUKU ILUT</td></tr>
+<tr><td><a class='box' title='[U+1B3A] BALINESE VOWEL SIGN RA REPA' onClick='cp("ᬺ")'>&#x1B3A;</a>
+</td><td>U+1B3A</td><td>BALINESE VOWEL SIGN RA REPA</td></tr>
+<tr><td><a class='box' title='[U+1B3B] BALINESE VOWEL SIGN RA REPA TEDUNG' onClick='cp("ᬻ")'>&#x1B3B;</a>
+</td><td>U+1B3B</td><td>BALINESE VOWEL SIGN RA REPA TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B3C] BALINESE VOWEL SIGN LA LENGA' onClick='cp("ᬼ")'>&#x1B3C;</a>
+</td><td>U+1B3C</td><td>BALINESE VOWEL SIGN LA LENGA</td></tr>
+<tr><td><a class='box' title='[U+1B3D] BALINESE VOWEL SIGN LA LENGA TEDUNG' onClick='cp("ᬽ")'>&#x1B3D;</a>
+</td><td>U+1B3D</td><td>BALINESE VOWEL SIGN LA LENGA TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B3E] BALINESE VOWEL SIGN TALING' onClick='cp("ᬾ")'>&#x1B3E;</a>
+</td><td>U+1B3E</td><td>BALINESE VOWEL SIGN TALING</td></tr>
+<tr><td><a class='box' title='[U+1B3F] BALINESE VOWEL SIGN TALING REPA' onClick='cp("ᬿ")'>&#x1B3F;</a>
+</td><td>U+1B3F</td><td>BALINESE VOWEL SIGN TALING REPA</td></tr>
+<tr><td><a class='box' title='[U+1B40] BALINESE VOWEL SIGN TALING TEDUNG' onClick='cp("ᭀ")'>&#x1B40;</a>
+</td><td>U+1B40</td><td>BALINESE VOWEL SIGN TALING TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B41] BALINESE VOWEL SIGN TALING REPA TEDUNG' onClick='cp("ᭁ")'>&#x1B41;</a>
+</td><td>U+1B41</td><td>BALINESE VOWEL SIGN TALING REPA TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B42] BALINESE VOWEL SIGN PEPET' onClick='cp("ᭂ")'>&#x1B42;</a>
+</td><td>U+1B42</td><td>BALINESE VOWEL SIGN PEPET</td></tr>
+<tr><td><a class='box' title='[U+1B43] BALINESE VOWEL SIGN PEPET TEDUNG' onClick='cp("ᭃ")'>&#x1B43;</a>
+</td><td>U+1B43</td><td>BALINESE VOWEL SIGN PEPET TEDUNG</td></tr>
+<tr><td><a class='box' title='[U+1B44] BALINESE ADEG ADEG' onClick='cp("᭄")'>&#x1B44;</a>
+</td><td>U+1B44</td><td>BALINESE ADEG ADEG</td></tr>
+<tr><td><a class='box' title='[U+1B45] BALINESE LETTER KAF SASAK' onClick='cp("ᭅ")'>&#x1B45;</a>
+</td><td>U+1B45</td><td>BALINESE LETTER KAF SASAK</td></tr>
+<tr><td><a class='box' title='[U+1B46] BALINESE LETTER KHOT SASAK' onClick='cp("ᭆ")'>&#x1B46;</a>
+</td><td>U+1B46</td><td>BALINESE LETTER KHOT SASAK</td></tr>
+<tr><td><a class='box' title='[U+1B47] BALINESE LETTER TZIR SASAK' onClick='cp("ᭇ")'>&#x1B47;</a>
+</td><td>U+1B47</td><td>BALINESE LETTER TZIR SASAK</td></tr>
+<tr><td><a class='box' title='[U+1B48] BALINESE LETTER EF SASAK' onClick='cp("ᭈ")'>&#x1B48;</a>
+</td><td>U+1B48</td><td>BALINESE LETTER EF SASAK</td></tr>
+<tr><td><a class='box' title='[U+1B49] BALINESE LETTER VE SASAK' onClick='cp("ᭉ")'>&#x1B49;</a>
+</td><td>U+1B49</td><td>BALINESE LETTER VE SASAK</td></tr>
+<tr><td><a class='box' title='[U+1B4A] BALINESE LETTER ZAL SASAK' onClick='cp("ᭊ")'>&#x1B4A;</a>
+</td><td>U+1B4A</td><td>BALINESE LETTER ZAL SASAK</td></tr>
+<tr><td><a class='box' title='[U+1B4B] BALINESE LETTER ASYURA SASAK' onClick='cp("ᭋ")'>&#x1B4B;</a>
+</td><td>U+1B4B</td><td>BALINESE LETTER ASYURA SASAK</td></tr>
+<tr><td><a class='box' title='[U+1B50] BALINESE DIGIT ZERO' onClick='cp("᭐")'>&#x1B50;</a>
+</td><td>U+1B50</td><td>BALINESE DIGIT ZERO</td></tr>
+<tr><td><a class='box' title='[U+1B51] BALINESE DIGIT ONE' onClick='cp("᭑")'>&#x1B51;</a>
+</td><td>U+1B51</td><td>BALINESE DIGIT ONE</td></tr>
+<tr><td><a class='box' title='[U+1B52] BALINESE DIGIT TWO' onClick='cp("᭒")'>&#x1B52;</a>
+</td><td>U+1B52</td><td>BALINESE DIGIT TWO</td></tr>
+<tr><td><a class='box' title='[U+1B53] BALINESE DIGIT THREE' onClick='cp("᭓")'>&#x1B53;</a>
+</td><td>U+1B53</td><td>BALINESE DIGIT THREE</td></tr>
+<tr><td><a class='box' title='[U+1B54] BALINESE DIGIT FOUR' onClick='cp("᭔")'>&#x1B54;</a>
+</td><td>U+1B54</td><td>BALINESE DIGIT FOUR</td></tr>
+<tr><td><a class='box' title='[U+1B55] BALINESE DIGIT FIVE' onClick='cp("᭕")'>&#x1B55;</a>
+</td><td>U+1B55</td><td>BALINESE DIGIT FIVE</td></tr>
+<tr><td><a class='box' title='[U+1B56] BALINESE DIGIT SIX' onClick='cp("᭖")'>&#x1B56;</a>
+</td><td>U+1B56</td><td>BALINESE DIGIT SIX</td></tr>
+<tr><td><a class='box' title='[U+1B57] BALINESE DIGIT SEVEN' onClick='cp("᭗")'>&#x1B57;</a>
+</td><td>U+1B57</td><td>BALINESE DIGIT SEVEN</td></tr>
+<tr><td><a class='box' title='[U+1B58] BALINESE DIGIT EIGHT' onClick='cp("᭘")'>&#x1B58;</a>
+</td><td>U+1B58</td><td>BALINESE DIGIT EIGHT</td></tr>
+<tr><td><a class='box' title='[U+1B59] BALINESE DIGIT NINE' onClick='cp("᭙")'>&#x1B59;</a>
+</td><td>U+1B59</td><td>BALINESE DIGIT NINE</td></tr>
+<tr><td><a class='box' title='[U+1B5A] BALINESE PANTI' onClick='cp("᭚")'>&#x1B5A;</a>
+</td><td>U+1B5A</td><td>BALINESE PANTI</td></tr>
+<tr><td><a class='box' title='[U+1B5B] BALINESE PAMADA' onClick='cp("᭛")'>&#x1B5B;</a>
+</td><td>U+1B5B</td><td>BALINESE PAMADA</td></tr>
+<tr><td><a class='box' title='[U+1B5C] BALINESE WINDU' onClick='cp("᭜")'>&#x1B5C;</a>
+</td><td>U+1B5C</td><td>BALINESE WINDU</td></tr>
+<tr><td><a class='box' title='[U+1B5D] BALINESE CARIK PAMUNGKAH' onClick='cp("᭝")'>&#x1B5D;</a>
+</td><td>U+1B5D</td><td>BALINESE CARIK PAMUNGKAH</td></tr>
+<tr><td><a class='box' title='[U+1B5E] BALINESE CARIK SIKI' onClick='cp("᭞")'>&#x1B5E;</a>
+</td><td>U+1B5E</td><td>BALINESE CARIK SIKI</td></tr>
+<tr><td><a class='box' title='[U+1B5F] BALINESE CARIK PAREREN' onClick='cp("᭟")'>&#x1B5F;</a>
+</td><td>U+1B5F</td><td>BALINESE CARIK PAREREN</td></tr>
+<tr><td><a class='box' title='[U+1B60] BALINESE PAMENENG' onClick='cp("᭠")'>&#x1B60;</a>
+</td><td>U+1B60</td><td>BALINESE PAMENENG</td></tr>
+<tr><td><a class='box' title='[U+1B61] BALINESE MUSICAL SYMBOL DONG' onClick='cp("᭡")'>&#x1B61;</a>
+</td><td>U+1B61</td><td>BALINESE MUSICAL SYMBOL DONG</td></tr>
+<tr><td><a class='box' title='[U+1B62] BALINESE MUSICAL SYMBOL DENG' onClick='cp("᭢")'>&#x1B62;</a>
+</td><td>U+1B62</td><td>BALINESE MUSICAL SYMBOL DENG</td></tr>
+<tr><td><a class='box' title='[U+1B63] BALINESE MUSICAL SYMBOL DUNG' onClick='cp("᭣")'>&#x1B63;</a>
+</td><td>U+1B63</td><td>BALINESE MUSICAL SYMBOL DUNG</td></tr>
+<tr><td><a class='box' title='[U+1B64] BALINESE MUSICAL SYMBOL DANG' onClick='cp("᭤")'>&#x1B64;</a>
+</td><td>U+1B64</td><td>BALINESE MUSICAL SYMBOL DANG</td></tr>
+<tr><td><a class='box' title='[U+1B65] BALINESE MUSICAL SYMBOL DANG SURANG' onClick='cp("᭥")'>&#x1B65;</a>
+</td><td>U+1B65</td><td>BALINESE MUSICAL SYMBOL DANG SURANG</td></tr>
+<tr><td><a class='box' title='[U+1B66] BALINESE MUSICAL SYMBOL DING' onClick='cp("᭦")'>&#x1B66;</a>
+</td><td>U+1B66</td><td>BALINESE MUSICAL SYMBOL DING</td></tr>
+<tr><td><a class='box' title='[U+1B67] BALINESE MUSICAL SYMBOL DAENG' onClick='cp("᭧")'>&#x1B67;</a>
+</td><td>U+1B67</td><td>BALINESE MUSICAL SYMBOL DAENG</td></tr>
+<tr><td><a class='box' title='[U+1B68] BALINESE MUSICAL SYMBOL DEUNG' onClick='cp("᭨")'>&#x1B68;</a>
+</td><td>U+1B68</td><td>BALINESE MUSICAL SYMBOL DEUNG</td></tr>
+<tr><td><a class='box' title='[U+1B69] BALINESE MUSICAL SYMBOL DAING' onClick='cp("᭩")'>&#x1B69;</a>
+</td><td>U+1B69</td><td>BALINESE MUSICAL SYMBOL DAING</td></tr>
+<tr><td><a class='box' title='[U+1B6A] BALINESE MUSICAL SYMBOL DANG GEDE' onClick='cp("᭪")'>&#x1B6A;</a>
+</td><td>U+1B6A</td><td>BALINESE MUSICAL SYMBOL DANG GEDE</td></tr>
+<tr><td><a class='box' title='[U+1B6B] BALINESE MUSICAL SYMBOL COMBINING TEGEH' onClick='cp("᭫")'>&#x1B6B;</a>
+</td><td>U+1B6B</td><td>BALINESE MUSICAL SYMBOL COMBINING TEGEH</td></tr>
+<tr><td><a class='box' title='[U+1B6C] BALINESE MUSICAL SYMBOL COMBINING ENDEP' onClick='cp("᭬")'>&#x1B6C;</a>
+</td><td>U+1B6C</td><td>BALINESE MUSICAL SYMBOL COMBINING ENDEP</td></tr>
+<tr><td><a class='box' title='[U+1B6D] BALINESE MUSICAL SYMBOL COMBINING KEMPUL' onClick='cp("᭭")'>&#x1B6D;</a>
+</td><td>U+1B6D</td><td>BALINESE MUSICAL SYMBOL COMBINING KEMPUL</td></tr>
+<tr><td><a class='box' title='[U+1B6E] BALINESE MUSICAL SYMBOL COMBINING KEMPLI' onClick='cp("᭮")'>&#x1B6E;</a>
+</td><td>U+1B6E</td><td>BALINESE MUSICAL SYMBOL COMBINING KEMPLI</td></tr>
+<tr><td><a class='box' title='[U+1B6F] BALINESE MUSICAL SYMBOL COMBINING JEGOGAN' onClick='cp("᭯")'>&#x1B6F;</a>
+</td><td>U+1B6F</td><td>BALINESE MUSICAL SYMBOL COMBINING JEGOGAN</td></tr>
+<tr><td><a class='box' title='[U+1B70] BALINESE MUSICAL SYMBOL COMBINING KEMPUL WITH JEGOGAN' onClick='cp("᭰")'>&#x1B70;</a>
+</td><td>U+1B70</td><td>BALINESE MUSICAL SYMBOL COMBINING KEMPUL WITH JEGOGAN</td></tr>
+<tr><td><a class='box' title='[U+1B71] BALINESE MUSICAL SYMBOL COMBINING KEMPLI WITH JEGOGAN' onClick='cp("᭱")'>&#x1B71;</a>
+</td><td>U+1B71</td><td>BALINESE MUSICAL SYMBOL COMBINING KEMPLI WITH JEGOGAN</td></tr>
+<tr><td><a class='box' title='[U+1B72] BALINESE MUSICAL SYMBOL COMBINING BENDE' onClick='cp("᭲")'>&#x1B72;</a>
+</td><td>U+1B72</td><td>BALINESE MUSICAL SYMBOL COMBINING BENDE</td></tr>
+<tr><td><a class='box' title='[U+1B73] BALINESE MUSICAL SYMBOL COMBINING GONG' onClick='cp("᭳")'>&#x1B73;</a>
+</td><td>U+1B73</td><td>BALINESE MUSICAL SYMBOL COMBINING GONG</td></tr>
+<tr><td><a class='box' title='[U+1B74] BALINESE MUSICAL SYMBOL RIGHT-HAND OPEN DUG' onClick='cp("᭴")'>&#x1B74;</a>
+</td><td>U+1B74</td><td>BALINESE MUSICAL SYMBOL RIGHT-HAND OPEN DUG</td></tr>
+<tr><td><a class='box' title='[U+1B75] BALINESE MUSICAL SYMBOL RIGHT-HAND OPEN DAG' onClick='cp("᭵")'>&#x1B75;</a>
+</td><td>U+1B75</td><td>BALINESE MUSICAL SYMBOL RIGHT-HAND OPEN DAG</td></tr>
+<tr><td><a class='box' title='[U+1B76] BALINESE MUSICAL SYMBOL RIGHT-HAND CLOSED TUK' onClick='cp("᭶")'>&#x1B76;</a>
+</td><td>U+1B76</td><td>BALINESE MUSICAL SYMBOL RIGHT-HAND CLOSED TUK</td></tr>
+<tr><td><a class='box' title='[U+1B77] BALINESE MUSICAL SYMBOL RIGHT-HAND CLOSED TAK' onClick='cp("᭷")'>&#x1B77;</a>
+</td><td>U+1B77</td><td>BALINESE MUSICAL SYMBOL RIGHT-HAND CLOSED TAK</td></tr>
+<tr><td><a class='box' title='[U+1B78] BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PANG' onClick='cp("᭸")'>&#x1B78;</a>
+</td><td>U+1B78</td><td>BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PANG</td></tr>
+<tr><td><a class='box' title='[U+1B79] BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PUNG' onClick='cp("᭹")'>&#x1B79;</a>
+</td><td>U+1B79</td><td>BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PUNG</td></tr>
+<tr><td><a class='box' title='[U+1B7A] BALINESE MUSICAL SYMBOL LEFT-HAND CLOSED PLAK' onClick='cp("᭺")'>&#x1B7A;</a>
+</td><td>U+1B7A</td><td>BALINESE MUSICAL SYMBOL LEFT-HAND CLOSED PLAK</td></tr>
+<tr><td><a class='box' title='[U+1B7B] BALINESE MUSICAL SYMBOL LEFT-HAND CLOSED PLUK' onClick='cp("᭻")'>&#x1B7B;</a>
+</td><td>U+1B7B</td><td>BALINESE MUSICAL SYMBOL LEFT-HAND CLOSED PLUK</td></tr>
+<tr><td><a class='box' title='[U+1B7C] BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PING' onClick='cp("᭼")'>&#x1B7C;</a>
+</td><td>U+1B7C</td><td>BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PING</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: green; id=#;'>Batak (U+1BC0 - U+1BFF)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+1BC0] BATAK LETTER A' onClick='cp("ᯀ")'>&#x1BC0;</a>
+</td><td>U+1BC0</td><td>BATAK LETTER A</td></tr>
+<tr><td><a class='box' title='[U+1BC1] BATAK LETTER SIMALUNGUN A' onClick='cp("ᯁ")'>&#x1BC1;</a>
+</td><td>U+1BC1</td><td>BATAK LETTER SIMALUNGUN A</td></tr>
+<tr><td><a class='box' title='[U+1BC2] BATAK LETTER HA' onClick='cp("ᯂ")'>&#x1BC2;</a>
+</td><td>U+1BC2</td><td>BATAK LETTER HA</td></tr>
+<tr><td><a class='box' title='[U+1BC3] BATAK LETTER SIMALUNGUN HA' onClick='cp("ᯃ")'>&#x1BC3;</a>
+</td><td>U+1BC3</td><td>BATAK LETTER SIMALUNGUN HA</td></tr>
+<tr><td><a class='box' title='[U+1BC4] BATAK LETTER MANDAILING HA' onClick='cp("ᯄ")'>&#x1BC4;</a>
+</td><td>U+1BC4</td><td>BATAK LETTER MANDAILING HA</td></tr>
+<tr><td><a class='box' title='[U+1BC5] BATAK LETTER BA' onClick='cp("ᯅ")'>&#x1BC5;</a>
+</td><td>U+1BC5</td><td>BATAK LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+1BC6] BATAK LETTER KARO BA' onClick='cp("ᯆ")'>&#x1BC6;</a>
+</td><td>U+1BC6</td><td>BATAK LETTER KARO BA</td></tr>
+<tr><td><a class='box' title='[U+1BC7] BATAK LETTER PA' onClick='cp("ᯇ")'>&#x1BC7;</a>
+</td><td>U+1BC7</td><td>BATAK LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+1BC8] BATAK LETTER SIMALUNGUN PA' onClick='cp("ᯈ")'>&#x1BC8;</a>
+</td><td>U+1BC8</td><td>BATAK LETTER SIMALUNGUN PA</td></tr>
+<tr><td><a class='box' title='[U+1BC9] BATAK LETTER NA' onClick='cp("ᯉ")'>&#x1BC9;</a>
+</td><td>U+1BC9</td><td>BATAK LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+1BCA] BATAK LETTER MANDAILING NA' onClick='cp("ᯊ")'>&#x1BCA;</a>
+</td><td>U+1BCA</td><td>BATAK LETTER MANDAILING NA</td></tr>
+<tr><td><a class='box' title='[U+1BCB] BATAK LETTER WA' onClick='cp("ᯋ")'>&#x1BCB;</a>
+</td><td>U+1BCB</td><td>BATAK LETTER WA</td></tr>
+<tr><td><a class='box' title='[U+1BCC] BATAK LETTER SIMALUNGUN WA' onClick='cp("ᯌ")'>&#x1BCC;</a>
+</td><td>U+1BCC</td><td>BATAK LETTER SIMALUNGUN WA</td></tr>
+<tr><td><a class='box' title='[U+1BCD] BATAK LETTER PAKPAK WA' onClick='cp("ᯍ")'>&#x1BCD;</a>
+</td><td>U+1BCD</td><td>BATAK LETTER PAKPAK WA</td></tr>
+<tr><td><a class='box' title='[U+1BCE] BATAK LETTER GA' onClick='cp("ᯎ")'>&#x1BCE;</a>
+</td><td>U+1BCE</td><td>BATAK LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+1BCF] BATAK LETTER SIMALUNGUN GA' onClick='cp("ᯏ")'>&#x1BCF;</a>
+</td><td>U+1BCF</td><td>BATAK LETTER SIMALUNGUN GA</td></tr>
+<tr><td><a class='box' title='[U+1BD0] BATAK LETTER JA' onClick='cp("ᯐ")'>&#x1BD0;</a>
+</td><td>U+1BD0</td><td>BATAK LETTER JA</td></tr>
+<tr><td><a class='box' title='[U+1BD1] BATAK LETTER DA' onClick='cp("ᯑ")'>&#x1BD1;</a>
+</td><td>U+1BD1</td><td>BATAK LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+1BD2] BATAK LETTER RA' onClick='cp("ᯒ")'>&#x1BD2;</a>
+</td><td>U+1BD2</td><td>BATAK LETTER RA</td></tr>
+<tr><td><a class='box' title='[U+1BD3] BATAK LETTER SIMALUNGUN RA' onClick='cp("ᯓ")'>&#x1BD3;</a>
+</td><td>U+1BD3</td><td>BATAK LETTER SIMALUNGUN RA</td></tr>
+<tr><td><a class='box' title='[U+1BD4] BATAK LETTER MA' onClick='cp("ᯔ")'>&#x1BD4;</a>
+</td><td>U+1BD4</td><td>BATAK LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+1BD5] BATAK LETTER SIMALUNGUN MA' onClick='cp("ᯕ")'>&#x1BD5;</a>
+</td><td>U+1BD5</td><td>BATAK LETTER SIMALUNGUN MA</td></tr>
+<tr><td><a class='box' title='[U+1BD6] BATAK LETTER SOUTHERN TA' onClick='cp("ᯖ")'>&#x1BD6;</a>
+</td><td>U+1BD6</td><td>BATAK LETTER SOUTHERN TA</td></tr>
+<tr><td><a class='box' title='[U+1BD7] BATAK LETTER NORTHERN TA' onClick='cp("ᯗ")'>&#x1BD7;</a>
+</td><td>U+1BD7</td><td>BATAK LETTER NORTHERN TA</td></tr>
+<tr><td><a class='box' title='[U+1BD8] BATAK LETTER SA' onClick='cp("ᯘ")'>&#x1BD8;</a>
+</td><td>U+1BD8</td><td>BATAK LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+1BD9] BATAK LETTER SIMALUNGUN SA' onClick='cp("ᯙ")'>&#x1BD9;</a>
+</td><td>U+1BD9</td><td>BATAK LETTER SIMALUNGUN SA</td></tr>
+<tr><td><a class='box' title='[U+1BDA] BATAK LETTER MANDAILING SA' onClick='cp("ᯚ")'>&#x1BDA;</a>
+</td><td>U+1BDA</td><td>BATAK LETTER MANDAILING SA</td></tr>
+<tr><td><a class='box' title='[U+1BDB] BATAK LETTER YA' onClick='cp("ᯛ")'>&#x1BDB;</a>
+</td><td>U+1BDB</td><td>BATAK LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+1BDC] BATAK LETTER SIMALUNGUN YA' onClick='cp("ᯜ")'>&#x1BDC;</a>
+</td><td>U+1BDC</td><td>BATAK LETTER SIMALUNGUN YA</td></tr>
+<tr><td><a class='box' title='[U+1BDD] BATAK LETTER NGA' onClick='cp("ᯝ")'>&#x1BDD;</a>
+</td><td>U+1BDD</td><td>BATAK LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+1BDE] BATAK LETTER LA' onClick='cp("ᯞ")'>&#x1BDE;</a>
+</td><td>U+1BDE</td><td>BATAK LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+1BDF] BATAK LETTER SIMALUNGUN LA' onClick='cp("ᯟ")'>&#x1BDF;</a>
+</td><td>U+1BDF</td><td>BATAK LETTER SIMALUNGUN LA</td></tr>
+<tr><td><a class='box' title='[U+1BE0] BATAK LETTER NYA' onClick='cp("ᯠ")'>&#x1BE0;</a>
+</td><td>U+1BE0</td><td>BATAK LETTER NYA</td></tr>
+<tr><td><a class='box' title='[U+1BE1] BATAK LETTER CA' onClick='cp("ᯡ")'>&#x1BE1;</a>
+</td><td>U+1BE1</td><td>BATAK LETTER CA</td></tr>
+<tr><td><a class='box' title='[U+1BE2] BATAK LETTER NDA' onClick='cp("ᯢ")'>&#x1BE2;</a>
+</td><td>U+1BE2</td><td>BATAK LETTER NDA</td></tr>
+<tr><td><a class='box' title='[U+1BE3] BATAK LETTER MBA' onClick='cp("ᯣ")'>&#x1BE3;</a>
+</td><td>U+1BE3</td><td>BATAK LETTER MBA</td></tr>
+<tr><td><a class='box' title='[U+1BE4] BATAK LETTER I' onClick='cp("ᯤ")'>&#x1BE4;</a>
+</td><td>U+1BE4</td><td>BATAK LETTER I</td></tr>
+<tr><td><a class='box' title='[U+1BE5] BATAK LETTER U' onClick='cp("ᯥ")'>&#x1BE5;</a>
+</td><td>U+1BE5</td><td>BATAK LETTER U</td></tr>
+<tr><td><a class='box' title='[U+1BE6] BATAK SIGN TOMPI' onClick='cp("᯦")'>&#x1BE6;</a>
+</td><td>U+1BE6</td><td>BATAK SIGN TOMPI</td></tr>
+<tr><td><a class='box' title='[U+1BE7] BATAK VOWEL SIGN E' onClick='cp("ᯧ")'>&#x1BE7;</a>
+</td><td>U+1BE7</td><td>BATAK VOWEL SIGN E</td></tr>
+<tr><td><a class='box' title='[U+1BE8] BATAK VOWEL SIGN PAKPAK E' onClick='cp("ᯨ")'>&#x1BE8;</a>
+</td><td>U+1BE8</td><td>BATAK VOWEL SIGN PAKPAK E</td></tr>
+<tr><td><a class='box' title='[U+1BE9] BATAK VOWEL SIGN EE' onClick='cp("ᯩ")'>&#x1BE9;</a>
+</td><td>U+1BE9</td><td>BATAK VOWEL SIGN EE</td></tr>
+<tr><td><a class='box' title='[U+1BEA] BATAK VOWEL SIGN I' onClick='cp("ᯪ")'>&#x1BEA;</a>
+</td><td>U+1BEA</td><td>BATAK VOWEL SIGN I</td></tr>
+<tr><td><a class='box' title='[U+1BEB] BATAK VOWEL SIGN KARO I' onClick='cp("ᯫ")'>&#x1BEB;</a>
+</td><td>U+1BEB</td><td>BATAK VOWEL SIGN KARO I</td></tr>
+<tr><td><a class='box' title='[U+1BEC] BATAK VOWEL SIGN O' onClick='cp("ᯬ")'>&#x1BEC;</a>
+</td><td>U+1BEC</td><td>BATAK VOWEL SIGN O</td></tr>
+<tr><td><a class='box' title='[U+1BED] BATAK VOWEL SIGN KARO O' onClick='cp("ᯭ")'>&#x1BED;</a>
+</td><td>U+1BED</td><td>BATAK VOWEL SIGN KARO O</td></tr>
+<tr><td><a class='box' title='[U+1BEE] BATAK VOWEL SIGN U' onClick='cp("ᯮ")'>&#x1BEE;</a>
+</td><td>U+1BEE</td><td>BATAK VOWEL SIGN U</td></tr>
+<tr><td><a class='box' title='[U+1BEF] BATAK VOWEL SIGN U FOR SIMALUNGUN SA' onClick='cp("ᯯ")'>&#x1BEF;</a>
+</td><td>U+1BEF</td><td>BATAK VOWEL SIGN U FOR SIMALUNGUN SA</td></tr>
+<tr><td><a class='box' title='[U+1BF0] BATAK CONSONANT SIGN NG' onClick='cp("ᯰ")'>&#x1BF0;</a>
+</td><td>U+1BF0</td><td>BATAK CONSONANT SIGN NG</td></tr>
+<tr><td><a class='box' title='[U+1BF1] BATAK CONSONANT SIGN H' onClick='cp("ᯱ")'>&#x1BF1;</a>
+</td><td>U+1BF1</td><td>BATAK CONSONANT SIGN H</td></tr>
+<tr><td><a class='box' title='[U+1BF2] BATAK PANGOLAT' onClick='cp("᯲")'>&#x1BF2;</a>
+</td><td>U+1BF2</td><td>BATAK PANGOLAT</td></tr>
+<tr><td><a class='box' title='[U+1BF3] BATAK PANONGONAN' onClick='cp("᯳")'>&#x1BF3;</a>
+</td><td>U+1BF3</td><td>BATAK PANONGONAN</td></tr>
+<tr><td><a class='box' title='[U+1BFC] BATAK SYMBOL BINDU NA METEK' onClick='cp("᯼")'>&#x1BFC;</a>
+</td><td>U+1BFC</td><td>BATAK SYMBOL BINDU NA METEK</td></tr>
+<tr><td><a class='box' title='[U+1BFD] BATAK SYMBOL BINDU PINARBORAS' onClick='cp("᯽")'>&#x1BFD;</a>
+</td><td>U+1BFD</td><td>BATAK SYMBOL BINDU PINARBORAS</td></tr>
+<tr><td><a class='box' title='[U+1BFE] BATAK SYMBOL BINDU JUDUL' onClick='cp("᯾")'>&#x1BFE;</a>
+</td><td>U+1BFE</td><td>BATAK SYMBOL BINDU JUDUL</td></tr>
+<tr><td><a class='box' title='[U+1BFF] BATAK SYMBOL BINDU PANGOLAT' onClick='cp("᯿")'>&#x1BFF;</a>
+</td><td>U+1BFF</td><td>BATAK SYMBOL BINDU PANGOLAT</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: orangered; id=#;'>Buginese (U+1A00 - U+1A1F)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+1A00] BUGINESE LETTER KA' onClick='cp("ᨀ")'>&#x1A00;</a>
+</td><td>U+1A00</td><td>BUGINESE LETTER KA</td></tr>
+<tr><td><a class='box' title='[U+1A01] BUGINESE LETTER GA' onClick='cp("ᨁ")'>&#x1A01;</a>
+</td><td>U+1A01</td><td>BUGINESE LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+1A02] BUGINESE LETTER NGA' onClick='cp("ᨂ")'>&#x1A02;</a>
+</td><td>U+1A02</td><td>BUGINESE LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+1A03] BUGINESE LETTER NGKA' onClick='cp("ᨃ")'>&#x1A03;</a>
+</td><td>U+1A03</td><td>BUGINESE LETTER NGKA</td></tr>
+<tr><td><a class='box' title='[U+1A04] BUGINESE LETTER PA' onClick='cp("ᨄ")'>&#x1A04;</a>
+</td><td>U+1A04</td><td>BUGINESE LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+1A05] BUGINESE LETTER BA' onClick='cp("ᨅ")'>&#x1A05;</a>
+</td><td>U+1A05</td><td>BUGINESE LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+1A06] BUGINESE LETTER MA' onClick='cp("ᨆ")'>&#x1A06;</a>
+</td><td>U+1A06</td><td>BUGINESE LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+1A07] BUGINESE LETTER MPA' onClick='cp("ᨇ")'>&#x1A07;</a>
+</td><td>U+1A07</td><td>BUGINESE LETTER MPA</td></tr>
+<tr><td><a class='box' title='[U+1A08] BUGINESE LETTER TA' onClick='cp("ᨈ")'>&#x1A08;</a>
+</td><td>U+1A08</td><td>BUGINESE LETTER TA</td></tr>
+<tr><td><a class='box' title='[U+1A09] BUGINESE LETTER DA' onClick='cp("ᨉ")'>&#x1A09;</a>
+</td><td>U+1A09</td><td>BUGINESE LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+1A0A] BUGINESE LETTER NA' onClick='cp("ᨊ")'>&#x1A0A;</a>
+</td><td>U+1A0A</td><td>BUGINESE LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+1A0B] BUGINESE LETTER NRA' onClick='cp("ᨋ")'>&#x1A0B;</a>
+</td><td>U+1A0B</td><td>BUGINESE LETTER NRA</td></tr>
+<tr><td><a class='box' title='[U+1A0C] BUGINESE LETTER CA' onClick='cp("ᨌ")'>&#x1A0C;</a>
+</td><td>U+1A0C</td><td>BUGINESE LETTER CA</td></tr>
+<tr><td><a class='box' title='[U+1A0D] BUGINESE LETTER JA' onClick='cp("ᨍ")'>&#x1A0D;</a>
+</td><td>U+1A0D</td><td>BUGINESE LETTER JA</td></tr>
+<tr><td><a class='box' title='[U+1A0E] BUGINESE LETTER NYA' onClick='cp("ᨎ")'>&#x1A0E;</a>
+</td><td>U+1A0E</td><td>BUGINESE LETTER NYA</td></tr>
+<tr><td><a class='box' title='[U+1A0F] BUGINESE LETTER NYCA' onClick='cp("ᨏ")'>&#x1A0F;</a>
+</td><td>U+1A0F</td><td>BUGINESE LETTER NYCA</td></tr>
+<tr><td><a class='box' title='[U+1A10] BUGINESE LETTER YA' onClick='cp("ᨐ")'>&#x1A10;</a>
+</td><td>U+1A10</td><td>BUGINESE LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+1A11] BUGINESE LETTER RA' onClick='cp("ᨑ")'>&#x1A11;</a>
+</td><td>U+1A11</td><td>BUGINESE LETTER RA</td></tr>
+<tr><td><a class='box' title='[U+1A12] BUGINESE LETTER LA' onClick='cp("ᨒ")'>&#x1A12;</a>
+</td><td>U+1A12</td><td>BUGINESE LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+1A13] BUGINESE LETTER VA' onClick='cp("ᨓ")'>&#x1A13;</a>
+</td><td>U+1A13</td><td>BUGINESE LETTER VA</td></tr>
+<tr><td><a class='box' title='[U+1A14] BUGINESE LETTER SA' onClick='cp("ᨔ")'>&#x1A14;</a>
+</td><td>U+1A14</td><td>BUGINESE LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+1A15] BUGINESE LETTER A' onClick='cp("ᨕ")'>&#x1A15;</a>
+</td><td>U+1A15</td><td>BUGINESE LETTER A</td></tr>
+<tr><td><a class='box' title='[U+1A16] BUGINESE LETTER HA' onClick='cp("ᨖ")'>&#x1A16;</a>
+</td><td>U+1A16</td><td>BUGINESE LETTER HA</td></tr>
+<tr><td><a class='box' title='[U+1A17] BUGINESE VOWEL SIGN I' onClick='cp("ᨗ")'>&#x1A17;</a>
+</td><td>U+1A17</td><td>BUGINESE VOWEL SIGN I</td></tr>
+<tr><td><a class='box' title='[U+1A18] BUGINESE VOWEL SIGN U' onClick='cp("ᨘ")'>&#x1A18;</a>
+</td><td>U+1A18</td><td>BUGINESE VOWEL SIGN U</td></tr>
+<tr><td><a class='box' title='[U+1A19] BUGINESE VOWEL SIGN E' onClick='cp("ᨙ")'>&#x1A19;</a>
+</td><td>U+1A19</td><td>BUGINESE VOWEL SIGN E</td></tr>
+<tr><td><a class='box' title='[U+1A1A] BUGINESE VOWEL SIGN O' onClick='cp("ᨚ")'>&#x1A1A;</a>
+</td><td>U+1A1A</td><td>BUGINESE VOWEL SIGN O</td></tr>
+<tr><td><a class='box' title='[U+1A1B] BUGINESE VOWEL SIGN AE' onClick='cp("ᨛ")'>&#x1A1B;</a>
+</td><td>U+1A1B</td><td>BUGINESE VOWEL SIGN AE</td></tr>
+<tr><td><a class='box' title='[U+1A1E] BUGINESE PALLAWA' onClick='cp("᨞")'>&#x1A1E;</a>
+</td><td>U+1A1E</td><td>BUGINESE PALLAWA</td></tr>
+<tr><td><a class='box' title='[U+1A1F] BUGINESE END OF SECTION' onClick='cp("᨟")'>&#x1A1F;</a>
+</td><td>U+1A1F</td><td>BUGINESE END OF SECTION</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #27e; id=#;'>Buhid (U+1740 - U+175F)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+1740] BUHID LETTER A' onClick='cp("ᝀ")'>&#x1740;</a>
+</td><td>U+1740</td><td>BUHID LETTER A</td></tr>
+<tr><td><a class='box' title='[U+1741] BUHID LETTER I' onClick='cp("ᝁ")'>&#x1741;</a>
+</td><td>U+1741</td><td>BUHID LETTER I</td></tr>
+<tr><td><a class='box' title='[U+1742] BUHID LETTER U' onClick='cp("ᝂ")'>&#x1742;</a>
+</td><td>U+1742</td><td>BUHID LETTER U</td></tr>
+<tr><td><a class='box' title='[U+1743] BUHID LETTER KA' onClick='cp("ᝃ")'>&#x1743;</a>
+</td><td>U+1743</td><td>BUHID LETTER KA</td></tr>
+<tr><td><a class='box' title='[U+1744] BUHID LETTER GA' onClick='cp("ᝄ")'>&#x1744;</a>
+</td><td>U+1744</td><td>BUHID LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+1745] BUHID LETTER NGA' onClick='cp("ᝅ")'>&#x1745;</a>
+</td><td>U+1745</td><td>BUHID LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+1746] BUHID LETTER TA' onClick='cp("ᝆ")'>&#x1746;</a>
+</td><td>U+1746</td><td>BUHID LETTER TA</td></tr>
+<tr><td><a class='box' title='[U+1747] BUHID LETTER DA' onClick='cp("ᝇ")'>&#x1747;</a>
+</td><td>U+1747</td><td>BUHID LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+1748] BUHID LETTER NA' onClick='cp("ᝈ")'>&#x1748;</a>
+</td><td>U+1748</td><td>BUHID LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+1749] BUHID LETTER PA' onClick='cp("ᝉ")'>&#x1749;</a>
+</td><td>U+1749</td><td>BUHID LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+174A] BUHID LETTER BA' onClick='cp("ᝊ")'>&#x174A;</a>
+</td><td>U+174A</td><td>BUHID LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+174B] BUHID LETTER MA' onClick='cp("ᝋ")'>&#x174B;</a>
+</td><td>U+174B</td><td>BUHID LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+174C] BUHID LETTER YA' onClick='cp("ᝌ")'>&#x174C;</a>
+</td><td>U+174C</td><td>BUHID LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+174D] BUHID LETTER RA' onClick='cp("ᝍ")'>&#x174D;</a>
+</td><td>U+174D</td><td>BUHID LETTER RA</td></tr>
+<tr><td><a class='box' title='[U+174E] BUHID LETTER LA' onClick='cp("ᝎ")'>&#x174E;</a>
+</td><td>U+174E</td><td>BUHID LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+174F] BUHID LETTER WA' onClick='cp("ᝏ")'>&#x174F;</a>
+</td><td>U+174F</td><td>BUHID LETTER WA</td></tr>
+<tr><td><a class='box' title='[U+1750] BUHID LETTER SA' onClick='cp("ᝐ")'>&#x1750;</a>
+</td><td>U+1750</td><td>BUHID LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+1751] BUHID LETTER HA' onClick='cp("ᝑ")'>&#x1751;</a>
+</td><td>U+1751</td><td>BUHID LETTER HA</td></tr>
+<tr><td><a class='box' title='[U+1752] BUHID VOWEL SIGN I' onClick='cp("ᝒ")'>&#x1752;</a>
+</td><td>U+1752</td><td>BUHID VOWEL SIGN I</td></tr>
+<tr><td><a class='box' title='[U+1753] BUHID VOWEL SIGN U' onClick='cp("ᝓ")'>&#x1753;</a>
+</td><td>U+1753</td><td>BUHID VOWEL SIGN U</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #f44; id=#;'>Hanunoo (U+1720 - U+173F)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+1720] HANUNOO LETTER A' onClick='cp("ᜠ")'>&#x1720;</a>
+</td><td>U+1720</td><td>HANUNOO LETTER A</td></tr>
+<tr><td><a class='box' title='[U+1721] HANUNOO LETTER I' onClick='cp("ᜡ")'>&#x1721;</a>
+</td><td>U+1721</td><td>HANUNOO LETTER I</td></tr>
+<tr><td><a class='box' title='[U+1722] HANUNOO LETTER U' onClick='cp("ᜢ")'>&#x1722;</a>
+</td><td>U+1722</td><td>HANUNOO LETTER U</td></tr>
+<tr><td><a class='box' title='[U+1723] HANUNOO LETTER KA' onClick='cp("ᜣ")'>&#x1723;</a>
+</td><td>U+1723</td><td>HANUNOO LETTER KA</td></tr>
+<tr><td><a class='box' title='[U+1724] HANUNOO LETTER GA' onClick='cp("ᜤ")'>&#x1724;</a>
+</td><td>U+1724</td><td>HANUNOO LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+1725] HANUNOO LETTER NGA' onClick='cp("ᜥ")'>&#x1725;</a>
+</td><td>U+1725</td><td>HANUNOO LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+1726] HANUNOO LETTER TA' onClick='cp("ᜦ")'>&#x1726;</a>
+</td><td>U+1726</td><td>HANUNOO LETTER TA</td></tr>
+<tr><td><a class='box' title='[U+1727] HANUNOO LETTER DA' onClick='cp("ᜧ")'>&#x1727;</a>
+</td><td>U+1727</td><td>HANUNOO LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+1728] HANUNOO LETTER NA' onClick='cp("ᜨ")'>&#x1728;</a>
+</td><td>U+1728</td><td>HANUNOO LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+1729] HANUNOO LETTER PA' onClick='cp("ᜩ")'>&#x1729;</a>
+</td><td>U+1729</td><td>HANUNOO LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+172A] HANUNOO LETTER BA' onClick='cp("ᜪ")'>&#x172A;</a>
+</td><td>U+172A</td><td>HANUNOO LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+172B] HANUNOO LETTER MA' onClick='cp("ᜫ")'>&#x172B;</a>
+</td><td>U+172B</td><td>HANUNOO LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+172C] HANUNOO LETTER YA' onClick='cp("ᜬ")'>&#x172C;</a>
+</td><td>U+172C</td><td>HANUNOO LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+172D] HANUNOO LETTER RA' onClick='cp("ᜭ")'>&#x172D;</a>
+</td><td>U+172D</td><td>HANUNOO LETTER RA</td></tr>
+<tr><td><a class='box' title='[U+172E] HANUNOO LETTER LA' onClick='cp("ᜮ")'>&#x172E;</a>
+</td><td>U+172E</td><td>HANUNOO LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+172F] HANUNOO LETTER WA' onClick='cp("ᜯ")'>&#x172F;</a>
+</td><td>U+172F</td><td>HANUNOO LETTER WA</td></tr>
+<tr><td><a class='box' title='[U+1730] HANUNOO LETTER SA' onClick='cp("ᜰ")'>&#x1730;</a>
+</td><td>U+1730</td><td>HANUNOO LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+1731] HANUNOO LETTER HA' onClick='cp("ᜱ")'>&#x1731;</a>
+</td><td>U+1731</td><td>HANUNOO LETTER HA</td></tr>
+<tr><td><a class='box' title='[U+1732] HANUNOO VOWEL SIGN I' onClick='cp("ᜲ")'>&#x1732;</a>
+</td><td>U+1732</td><td>HANUNOO VOWEL SIGN I</td></tr>
+<tr><td><a class='box' title='[U+1733] HANUNOO VOWEL SIGN U' onClick='cp("ᜳ")'>&#x1733;</a>
+</td><td>U+1733</td><td>HANUNOO VOWEL SIGN U</td></tr>
+<tr><td><a class='box' title='[U+1734] HANUNOO SIGN PAMUDPOD' onClick='cp("᜴")'>&#x1734;</a>
+</td><td>U+1734</td><td>HANUNOO SIGN PAMUDPOD</td></tr>
+<tr><td><a class='box' title='[U+1735] PHILIPPINE SINGLE PUNCTUATION' onClick='cp("᜵")'>&#x1735;</a>
+</td><td>U+1735</td><td>PHILIPPINE SINGLE PUNCTUATION</td></tr>
+<tr><td><a class='box' title='[U+1736] PHILIPPINE DOUBLE PUNCTUATION' onClick='cp("᜶")'>&#x1736;</a>
+</td><td>U+1736</td><td>PHILIPPINE DOUBLE PUNCTUATION</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #222; id=#;'>Javanese (U+A980 - U+A9DF)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+A980] JAVANESE SIGN PANYANGGA' onClick='cp("ꦀ")'>&#xA980;</a>
+</td><td>U+A980</td><td>JAVANESE SIGN PANYANGGA</td></tr>
+<tr><td><a class='box' title='[U+A981] JAVANESE SIGN CECAK' onClick='cp("ꦁ")'>&#xA981;</a>
+</td><td>U+A981</td><td>JAVANESE SIGN CECAK</td></tr>
+<tr><td><a class='box' title='[U+A982] JAVANESE SIGN LAYAR' onClick='cp("ꦂ")'>&#xA982;</a>
+</td><td>U+A982</td><td>JAVANESE SIGN LAYAR</td></tr>
+<tr><td><a class='box' title='[U+A983] JAVANESE SIGN WIGNYAN' onClick='cp("ꦃ")'>&#xA983;</a>
+</td><td>U+A983</td><td>JAVANESE SIGN WIGNYAN</td></tr>
+<tr><td><a class='box' title='[U+A984] JAVANESE LETTER A' onClick='cp("ꦄ")'>&#xA984;</a>
+</td><td>U+A984</td><td>JAVANESE LETTER A</td></tr>
+<tr><td><a class='box' title='[U+A985] JAVANESE LETTER I KAWI' onClick='cp("ꦅ")'>&#xA985;</a>
+</td><td>U+A985</td><td>JAVANESE LETTER I KAWI</td></tr>
+<tr><td><a class='box' title='[U+A986] JAVANESE LETTER I' onClick='cp("ꦆ")'>&#xA986;</a>
+</td><td>U+A986</td><td>JAVANESE LETTER I</td></tr>
+<tr><td><a class='box' title='[U+A987] JAVANESE LETTER II' onClick='cp("ꦇ")'>&#xA987;</a>
+</td><td>U+A987</td><td>JAVANESE LETTER II</td></tr>
+<tr><td><a class='box' title='[U+A988] JAVANESE LETTER U' onClick='cp("ꦈ")'>&#xA988;</a>
+</td><td>U+A988</td><td>JAVANESE LETTER U</td></tr>
+<tr><td><a class='box' title='[U+A989] JAVANESE LETTER PA CEREK' onClick='cp("ꦉ")'>&#xA989;</a>
+</td><td>U+A989</td><td>JAVANESE LETTER PA CEREK</td></tr>
+<tr><td><a class='box' title='[U+A98A] JAVANESE LETTER NGA LELET' onClick='cp("ꦊ")'>&#xA98A;</a>
+</td><td>U+A98A</td><td>JAVANESE LETTER NGA LELET</td></tr>
+<tr><td><a class='box' title='[U+A98B] JAVANESE LETTER NGA LELET RASWADI' onClick='cp("ꦋ")'>&#xA98B;</a>
+</td><td>U+A98B</td><td>JAVANESE LETTER NGA LELET RASWADI</td></tr>
+<tr><td><a class='box' title='[U+A98C] JAVANESE LETTER E' onClick='cp("ꦌ")'>&#xA98C;</a>
+</td><td>U+A98C</td><td>JAVANESE LETTER E</td></tr>
+<tr><td><a class='box' title='[U+A98D] JAVANESE LETTER AI' onClick='cp("ꦍ")'>&#xA98D;</a>
+</td><td>U+A98D</td><td>JAVANESE LETTER AI</td></tr>
+<tr><td><a class='box' title='[U+A98E] JAVANESE LETTER O' onClick='cp("ꦎ")'>&#xA98E;</a>
+</td><td>U+A98E</td><td>JAVANESE LETTER O</td></tr>
+<tr><td><a class='box' title='[U+A98F] JAVANESE LETTER KA' onClick='cp("ꦏ")'>&#xA98F;</a>
+</td><td>U+A98F</td><td>JAVANESE LETTER KA</td></tr>
+<tr><td><a class='box' title='[U+A990] JAVANESE LETTER KA SASAK' onClick='cp("ꦐ")'>&#xA990;</a>
+</td><td>U+A990</td><td>JAVANESE LETTER KA SASAK</td></tr>
+<tr><td><a class='box' title='[U+A991] JAVANESE LETTER KA MURDA' onClick='cp("ꦑ")'>&#xA991;</a>
+</td><td>U+A991</td><td>JAVANESE LETTER KA MURDA</td></tr>
+<tr><td><a class='box' title='[U+A992] JAVANESE LETTER GA' onClick='cp("ꦒ")'>&#xA992;</a>
+</td><td>U+A992</td><td>JAVANESE LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+A993] JAVANESE LETTER GA MURDA' onClick='cp("ꦓ")'>&#xA993;</a>
+</td><td>U+A993</td><td>JAVANESE LETTER GA MURDA</td></tr>
+<tr><td><a class='box' title='[U+A994] JAVANESE LETTER NGA' onClick='cp("ꦔ")'>&#xA994;</a>
+</td><td>U+A994</td><td>JAVANESE LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+A995] JAVANESE LETTER CA' onClick='cp("ꦕ")'>&#xA995;</a>
+</td><td>U+A995</td><td>JAVANESE LETTER CA</td></tr>
+<tr><td><a class='box' title='[U+A996] JAVANESE LETTER CA MURDA' onClick='cp("ꦖ")'>&#xA996;</a>
+</td><td>U+A996</td><td>JAVANESE LETTER CA MURDA</td></tr>
+<tr><td><a class='box' title='[U+A997] JAVANESE LETTER JA' onClick='cp("ꦗ")'>&#xA997;</a>
+</td><td>U+A997</td><td>JAVANESE LETTER JA</td></tr>
+<tr><td><a class='box' title='[U+A998] JAVANESE LETTER NYA MURDA' onClick='cp("ꦘ")'>&#xA998;</a>
+</td><td>U+A998</td><td>JAVANESE LETTER NYA MURDA</td></tr>
+<tr><td><a class='box' title='[U+A999] JAVANESE LETTER JA MAHAPRANA' onClick='cp("ꦙ")'>&#xA999;</a>
+</td><td>U+A999</td><td>JAVANESE LETTER JA MAHAPRANA</td></tr>
+<tr><td><a class='box' title='[U+A99A] JAVANESE LETTER NYA' onClick='cp("ꦚ")'>&#xA99A;</a>
+</td><td>U+A99A</td><td>JAVANESE LETTER NYA</td></tr>
+<tr><td><a class='box' title='[U+A99B] JAVANESE LETTER TTA' onClick='cp("ꦛ")'>&#xA99B;</a>
+</td><td>U+A99B</td><td>JAVANESE LETTER TTA</td></tr>
+<tr><td><a class='box' title='[U+A99C] JAVANESE LETTER TTA MAHAPRANA' onClick='cp("ꦜ")'>&#xA99C;</a>
+</td><td>U+A99C</td><td>JAVANESE LETTER TTA MAHAPRANA</td></tr>
+<tr><td><a class='box' title='[U+A99D] JAVANESE LETTER DDA' onClick='cp("ꦝ")'>&#xA99D;</a>
+</td><td>U+A99D</td><td>JAVANESE LETTER DDA</td></tr>
+<tr><td><a class='box' title='[U+A99E] JAVANESE LETTER DDA MAHAPRANA' onClick='cp("ꦞ")'>&#xA99E;</a>
+</td><td>U+A99E</td><td>JAVANESE LETTER DDA MAHAPRANA</td></tr>
+<tr><td><a class='box' title='[U+A99F] JAVANESE LETTER NA MURDA' onClick='cp("ꦟ")'>&#xA99F;</a>
+</td><td>U+A99F</td><td>JAVANESE LETTER NA MURDA</td></tr>
+<tr><td><a class='box' title='[U+A9A0] JAVANESE LETTER TA' onClick='cp("ꦠ")'>&#xA9A0;</a>
+</td><td>U+A9A0</td><td>JAVANESE LETTER TA</td></tr>
+<tr><td><a class='box' title='[U+A9A1] JAVANESE LETTER TA MURDA' onClick='cp("ꦡ")'>&#xA9A1;</a>
+</td><td>U+A9A1</td><td>JAVANESE LETTER TA MURDA</td></tr>
+<tr><td><a class='box' title='[U+A9A2] JAVANESE LETTER DA' onClick='cp("ꦢ")'>&#xA9A2;</a>
+</td><td>U+A9A2</td><td>JAVANESE LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+A9A3] JAVANESE LETTER DA MAHAPRANA' onClick='cp("ꦣ")'>&#xA9A3;</a>
+</td><td>U+A9A3</td><td>JAVANESE LETTER DA MAHAPRANA</td></tr>
+<tr><td><a class='box' title='[U+A9A4] JAVANESE LETTER NA' onClick='cp("ꦤ")'>&#xA9A4;</a>
+</td><td>U+A9A4</td><td>JAVANESE LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+A9A5] JAVANESE LETTER PA' onClick='cp("ꦥ")'>&#xA9A5;</a>
+</td><td>U+A9A5</td><td>JAVANESE LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+A9A6] JAVANESE LETTER PA MURDA' onClick='cp("ꦦ")'>&#xA9A6;</a>
+</td><td>U+A9A6</td><td>JAVANESE LETTER PA MURDA</td></tr>
+<tr><td><a class='box' title='[U+A9A7] JAVANESE LETTER BA' onClick='cp("ꦧ")'>&#xA9A7;</a>
+</td><td>U+A9A7</td><td>JAVANESE LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+A9A8] JAVANESE LETTER BA MURDA' onClick='cp("ꦨ")'>&#xA9A8;</a>
+</td><td>U+A9A8</td><td>JAVANESE LETTER BA MURDA</td></tr>
+<tr><td><a class='box' title='[U+A9A9] JAVANESE LETTER MA' onClick='cp("ꦩ")'>&#xA9A9;</a>
+</td><td>U+A9A9</td><td>JAVANESE LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+A9AA] JAVANESE LETTER YA' onClick='cp("ꦪ")'>&#xA9AA;</a>
+</td><td>U+A9AA</td><td>JAVANESE LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+A9AB] JAVANESE LETTER RA' onClick='cp("ꦫ")'>&#xA9AB;</a>
+</td><td>U+A9AB</td><td>JAVANESE LETTER RA</td></tr>
+<tr><td><a class='box' title='[U+A9AC] JAVANESE LETTER RA AGUNG' onClick='cp("ꦬ")'>&#xA9AC;</a>
+</td><td>U+A9AC</td><td>JAVANESE LETTER RA AGUNG</td></tr>
+<tr><td><a class='box' title='[U+A9AD] JAVANESE LETTER LA' onClick='cp("ꦭ")'>&#xA9AD;</a>
+</td><td>U+A9AD</td><td>JAVANESE LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+A9AE] JAVANESE LETTER WA' onClick='cp("ꦮ")'>&#xA9AE;</a>
+</td><td>U+A9AE</td><td>JAVANESE LETTER WA</td></tr>
+<tr><td><a class='box' title='[U+A9AF] JAVANESE LETTER SA MURDA' onClick='cp("ꦯ")'>&#xA9AF;</a>
+</td><td>U+A9AF</td><td>JAVANESE LETTER SA MURDA</td></tr>
+<tr><td><a class='box' title='[U+A9B0] JAVANESE LETTER SA MAHAPRANA' onClick='cp("ꦰ")'>&#xA9B0;</a>
+</td><td>U+A9B0</td><td>JAVANESE LETTER SA MAHAPRANA</td></tr>
+<tr><td><a class='box' title='[U+A9B1] JAVANESE LETTER SA' onClick='cp("ꦱ")'>&#xA9B1;</a>
+</td><td>U+A9B1</td><td>JAVANESE LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+A9B2] JAVANESE LETTER HA' onClick='cp("ꦲ")'>&#xA9B2;</a>
+</td><td>U+A9B2</td><td>JAVANESE LETTER HA</td></tr>
+<tr><td><a class='box' title='[U+A9B3] JAVANESE SIGN CECAK TELU' onClick='cp("꦳")'>&#xA9B3;</a>
+</td><td>U+A9B3</td><td>JAVANESE SIGN CECAK TELU</td></tr>
+<tr><td><a class='box' title='[U+A9B4] JAVANESE VOWEL SIGN TARUNG' onClick='cp("ꦴ")'>&#xA9B4;</a>
+</td><td>U+A9B4</td><td>JAVANESE VOWEL SIGN TARUNG</td></tr>
+<tr><td><a class='box' title='[U+A9B5] JAVANESE VOWEL SIGN TOLONG' onClick='cp("ꦵ")'>&#xA9B5;</a>
+</td><td>U+A9B5</td><td>JAVANESE VOWEL SIGN TOLONG</td></tr>
+<tr><td><a class='box' title='[U+A9B6] JAVANESE VOWEL SIGN WULU' onClick='cp("ꦶ")'>&#xA9B6;</a>
+</td><td>U+A9B6</td><td>JAVANESE VOWEL SIGN WULU</td></tr>
+<tr><td><a class='box' title='[U+A9B7] JAVANESE VOWEL SIGN WULU MELIK' onClick='cp("ꦷ")'>&#xA9B7;</a>
+</td><td>U+A9B7</td><td>JAVANESE VOWEL SIGN WULU MELIK</td></tr>
+<tr><td><a class='box' title='[U+A9B8] JAVANESE VOWEL SIGN SUKU' onClick='cp("ꦸ")'>&#xA9B8;</a>
+</td><td>U+A9B8</td><td>JAVANESE VOWEL SIGN SUKU</td></tr>
+<tr><td><a class='box' title='[U+A9B9] JAVANESE VOWEL SIGN SUKU MENDUT' onClick='cp("ꦹ")'>&#xA9B9;</a>
+</td><td>U+A9B9</td><td>JAVANESE VOWEL SIGN SUKU MENDUT</td></tr>
+<tr><td><a class='box' title='[U+A9BA] JAVANESE VOWEL SIGN TALING' onClick='cp("ꦺ")'>&#xA9BA;</a>
+</td><td>U+A9BA</td><td>JAVANESE VOWEL SIGN TALING</td></tr>
+<tr><td><a class='box' title='[U+A9BB] JAVANESE VOWEL SIGN DIRGA MURE' onClick='cp("ꦻ")'>&#xA9BB;</a>
+</td><td>U+A9BB</td><td>JAVANESE VOWEL SIGN DIRGA MURE</td></tr>
+<tr><td><a class='box' title='[U+A9BC] JAVANESE VOWEL SIGN PEPET' onClick='cp("ꦼ")'>&#xA9BC;</a>
+</td><td>U+A9BC</td><td>JAVANESE VOWEL SIGN PEPET</td></tr>
+<tr><td><a class='box' title='[U+A9BD] JAVANESE CONSONANT SIGN KERET' onClick='cp("ꦽ")'>&#xA9BD;</a>
+</td><td>U+A9BD</td><td>JAVANESE CONSONANT SIGN KERET</td></tr>
+<tr><td><a class='box' title='[U+A9BE] JAVANESE CONSONANT SIGN PENGKAL' onClick='cp("ꦾ")'>&#xA9BE;</a>
+</td><td>U+A9BE</td><td>JAVANESE CONSONANT SIGN PENGKAL</td></tr>
+<tr><td><a class='box' title='[U+A9BF] JAVANESE CONSONANT SIGN CAKRA' onClick='cp("ꦿ")'>&#xA9BF;</a>
+</td><td>U+A9BF</td><td>JAVANESE CONSONANT SIGN CAKRA</td></tr>
+<tr><td><a class='box' title='[U+A9C0] JAVANESE PANGKON' onClick='cp("꧀")'>&#xA9C0;</a>
+</td><td>U+A9C0</td><td>JAVANESE PANGKON</td></tr>
+<tr><td><a class='box' title='[U+A9C1] JAVANESE LEFT RERENGGAN' onClick='cp("꧁")'>&#xA9C1;</a>
+</td><td>U+A9C1</td><td>JAVANESE LEFT RERENGGAN</td></tr>
+<tr><td><a class='box' title='[U+A9C2] JAVANESE RIGHT RERENGGAN' onClick='cp("꧂")'>&#xA9C2;</a>
+</td><td>U+A9C2</td><td>JAVANESE RIGHT RERENGGAN</td></tr>
+<tr><td><a class='box' title='[U+A9C3] JAVANESE PADA ANDAP' onClick='cp("꧃")'>&#xA9C3;</a>
+</td><td>U+A9C3</td><td>JAVANESE PADA ANDAP</td></tr>
+<tr><td><a class='box' title='[U+A9C4] JAVANESE PADA MADYA' onClick='cp("꧄")'>&#xA9C4;</a>
+</td><td>U+A9C4</td><td>JAVANESE PADA MADYA</td></tr>
+<tr><td><a class='box' title='[U+A9C5] JAVANESE PADA LUHUR' onClick='cp("꧅")'>&#xA9C5;</a>
+</td><td>U+A9C5</td><td>JAVANESE PADA LUHUR</td></tr>
+<tr><td><a class='box' title='[U+A9C6] JAVANESE PADA WINDU' onClick='cp("꧆")'>&#xA9C6;</a>
+</td><td>U+A9C6</td><td>JAVANESE PADA WINDU</td></tr>
+<tr><td><a class='box' title='[U+A9C7] JAVANESE PADA PANGKAT' onClick='cp("꧇")'>&#xA9C7;</a>
+</td><td>U+A9C7</td><td>JAVANESE PADA PANGKAT</td></tr>
+<tr><td><a class='box' title='[U+A9C8] JAVANESE PADA LINGSA' onClick='cp("꧈")'>&#xA9C8;</a>
+</td><td>U+A9C8</td><td>JAVANESE PADA LINGSA</td></tr>
+<tr><td><a class='box' title='[U+A9C9] JAVANESE PADA LUNGSI' onClick='cp("꧉")'>&#xA9C9;</a>
+</td><td>U+A9C9</td><td>JAVANESE PADA LUNGSI</td></tr>
+<tr><td><a class='box' title='[U+A9CA] JAVANESE PADA ADEG' onClick='cp("꧊")'>&#xA9CA;</a>
+</td><td>U+A9CA</td><td>JAVANESE PADA ADEG</td></tr>
+<tr><td><a class='box' title='[U+A9CB] JAVANESE PADA ADEG ADEG' onClick='cp("꧋")'>&#xA9CB;</a>
+</td><td>U+A9CB</td><td>JAVANESE PADA ADEG ADEG</td></tr>
+<tr><td><a class='box' title='[U+A9CC] JAVANESE PADA PISELEH' onClick='cp("꧌")'>&#xA9CC;</a>
+</td><td>U+A9CC</td><td>JAVANESE PADA PISELEH</td></tr>
+<tr><td><a class='box' title='[U+A9CD] JAVANESE TURNED PADA PISELEH' onClick='cp("꧍")'>&#xA9CD;</a>
+</td><td>U+A9CD</td><td>JAVANESE TURNED PADA PISELEH</td></tr>
+<tr><td><a class='box' title='[U+A9CF] JAVANESE PANGRANGKEP' onClick='cp("ꧏ")'>&#xA9CF;</a>
+</td><td>U+A9CF</td><td>JAVANESE PANGRANGKEP</td></tr>
+<tr><td><a class='box' title='[U+A9D0] JAVANESE DIGIT ZERO' onClick='cp("꧐")'>&#xA9D0;</a>
+</td><td>U+A9D0</td><td>JAVANESE DIGIT ZERO</td></tr>
+<tr><td><a class='box' title='[U+A9D1] JAVANESE DIGIT ONE' onClick='cp("꧑")'>&#xA9D1;</a>
+</td><td>U+A9D1</td><td>JAVANESE DIGIT ONE</td></tr>
+<tr><td><a class='box' title='[U+A9D2] JAVANESE DIGIT TWO' onClick='cp("꧒")'>&#xA9D2;</a>
+</td><td>U+A9D2</td><td>JAVANESE DIGIT TWO</td></tr>
+<tr><td><a class='box' title='[U+A9D3] JAVANESE DIGIT THREE' onClick='cp("꧓")'>&#xA9D3;</a>
+</td><td>U+A9D3</td><td>JAVANESE DIGIT THREE</td></tr>
+<tr><td><a class='box' title='[U+A9D4] JAVANESE DIGIT FOUR' onClick='cp("꧔")'>&#xA9D4;</a>
+</td><td>U+A9D4</td><td>JAVANESE DIGIT FOUR</td></tr>
+<tr><td><a class='box' title='[U+A9D5] JAVANESE DIGIT FIVE' onClick='cp("꧕")'>&#xA9D5;</a>
+</td><td>U+A9D5</td><td>JAVANESE DIGIT FIVE</td></tr>
+<tr><td><a class='box' title='[U+A9D6] JAVANESE DIGIT SIX' onClick='cp("꧖")'>&#xA9D6;</a>
+</td><td>U+A9D6</td><td>JAVANESE DIGIT SIX</td></tr>
+<tr><td><a class='box' title='[U+A9D7] JAVANESE DIGIT SEVEN' onClick='cp("꧗")'>&#xA9D7;</a>
+</td><td>U+A9D7</td><td>JAVANESE DIGIT SEVEN</td></tr>
+<tr><td><a class='box' title='[U+A9D8] JAVANESE DIGIT EIGHT' onClick='cp("꧘")'>&#xA9D8;</a>
+</td><td>U+A9D8</td><td>JAVANESE DIGIT EIGHT</td></tr>
+<tr><td><a class='box' title='[U+A9D9] JAVANESE DIGIT NINE' onClick='cp("꧙")'>&#xA9D9;</a>
+</td><td>U+A9D9</td><td>JAVANESE DIGIT NINE</td></tr>
+<tr><td><a class='box' title='[U+A9DE] JAVANESE PADA TIRTA TUMETES' onClick='cp("꧞")'>&#xA9DE;</a>
+</td><td>U+A9DE</td><td>JAVANESE PADA TIRTA TUMETES</td></tr>
+<tr><td><a class='box' title='[U+A9DF] JAVANESE PADA ISEN-ISEN' onClick='cp("꧟")'>&#xA9DF;</a>
+</td><td>U+A9DF</td><td>JAVANESE PADA ISEN-ISEN</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #666; id=#;'>Makasar (U+11EE0 - U+11EFF)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+11EE0] MAKASAR LETTER KA' onClick='cp("𑻠")'>&#x11EE0;</a>
+</td><td>U+11EE0</td><td>MAKASAR LETTER KA</td></tr>
+<tr><td><a class='box' title='[U+11EE1] MAKASAR LETTER GA' onClick='cp("𑻡")'>&#x11EE1;</a>
+</td><td>U+11EE1</td><td>MAKASAR LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+11EE2] MAKASAR LETTER NGA' onClick='cp("𑻢")'>&#x11EE2;</a>
+</td><td>U+11EE2</td><td>MAKASAR LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+11EE3] MAKASAR LETTER PA' onClick='cp("𑻣")'>&#x11EE3;</a>
+</td><td>U+11EE3</td><td>MAKASAR LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+11EE4] MAKASAR LETTER BA' onClick='cp("𑻤")'>&#x11EE4;</a>
+</td><td>U+11EE4</td><td>MAKASAR LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+11EE5] MAKASAR LETTER MA' onClick='cp("𑻥")'>&#x11EE5;</a>
+</td><td>U+11EE5</td><td>MAKASAR LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+11EE6] MAKASAR LETTER TA' onClick='cp("𑻦")'>&#x11EE6;</a>
+</td><td>U+11EE6</td><td>MAKASAR LETTER TA</td></tr>
+<tr><td><a class='box' title='[U+11EE7] MAKASAR LETTER DA' onClick='cp("𑻧")'>&#x11EE7;</a>
+</td><td>U+11EE7</td><td>MAKASAR LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+11EE8] MAKASAR LETTER NA' onClick='cp("𑻨")'>&#x11EE8;</a>
+</td><td>U+11EE8</td><td>MAKASAR LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+11EE9] MAKASAR LETTER CA' onClick='cp("𑻩")'>&#x11EE9;</a>
+</td><td>U+11EE9</td><td>MAKASAR LETTER CA</td></tr>
+<tr><td><a class='box' title='[U+11EEA] MAKASAR LETTER JA' onClick='cp("𑻪")'>&#x11EEA;</a>
+</td><td>U+11EEA</td><td>MAKASAR LETTER JA</td></tr>
+<tr><td><a class='box' title='[U+11EEB] MAKASAR LETTER NYA' onClick='cp("𑻫")'>&#x11EEB;</a>
+</td><td>U+11EEB</td><td>MAKASAR LETTER NYA</td></tr>
+<tr><td><a class='box' title='[U+11EEC] MAKASAR LETTER YA' onClick='cp("𑻬")'>&#x11EEC;</a>
+</td><td>U+11EEC</td><td>MAKASAR LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+11EED] MAKASAR LETTER RA' onClick='cp("𑻭")'>&#x11EED;</a>
+</td><td>U+11EED</td><td>MAKASAR LETTER RA</td></tr>
+<tr><td><a class='box' title='[U+11EEE] MAKASAR LETTER LA' onClick='cp("𑻮")'>&#x11EEE;</a>
+</td><td>U+11EEE</td><td>MAKASAR LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+11EEF] MAKASAR LETTER VA' onClick='cp("𑻯")'>&#x11EEF;</a>
+</td><td>U+11EEF</td><td>MAKASAR LETTER VA</td></tr>
+<tr><td><a class='box' title='[U+11EF0] MAKASAR LETTER SA' onClick='cp("𑻰")'>&#x11EF0;</a>
+</td><td>U+11EF0</td><td>MAKASAR LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+11EF1] MAKASAR LETTER A' onClick='cp("𑻱")'>&#x11EF1;</a>
+</td><td>U+11EF1</td><td>MAKASAR LETTER A</td></tr>
+<tr><td><a class='box' title='[U+11EF2] MAKASAR ANGKA' onClick='cp("𑻲")'>&#x11EF2;</a>
+</td><td>U+11EF2</td><td>MAKASAR ANGKA</td></tr>
+<tr><td><a class='box' title='[U+11EF3] MAKASAR VOWEL SIGN I' onClick='cp("𑻳")'>&#x11EF3;</a>
+</td><td>U+11EF3</td><td>MAKASAR VOWEL SIGN I</td></tr>
+<tr><td><a class='box' title='[U+11EF4] MAKASAR VOWEL SIGN U' onClick='cp("𑻴")'>&#x11EF4;</a>
+</td><td>U+11EF4</td><td>MAKASAR VOWEL SIGN U</td></tr>
+<tr><td><a class='box' title='[U+11EF5] MAKASAR VOWEL SIGN E' onClick='cp("𑻵")'>&#x11EF5;</a>
+</td><td>U+11EF5</td><td>MAKASAR VOWEL SIGN E</td></tr>
+<tr><td><a class='box' title='[U+11EF6] MAKASAR VOWEL SIGN O' onClick='cp("𑻶")'>&#x11EF6;</a>
+</td><td>U+11EF6</td><td>MAKASAR VOWEL SIGN O</td></tr>
+<tr><td><a class='box' title='[U+11EF7] MAKASAR PASSIMBANG' onClick='cp("𑻷")'>&#x11EF7;</a>
+</td><td>U+11EF7</td><td>MAKASAR PASSIMBANG</td></tr>
+<tr><td><a class='box' title='[U+11EF8] MAKASAR END OF SECTION' onClick='cp("𑻸")'>&#x11EF8;</a>
+</td><td>U+11EF8</td><td>MAKASAR END OF SECTION</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #63a; id=#;'>Rejang (U+A930 - U+A95F)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+A930] REJANG LETTER KA' onClick='cp("ꤰ")'>&#xA930;</a>
+</td><td>U+A930</td><td>REJANG LETTER KA</td></tr>
+<tr><td><a class='box' title='[U+A931] REJANG LETTER GA' onClick='cp("ꤱ")'>&#xA931;</a>
+</td><td>U+A931</td><td>REJANG LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+A932] REJANG LETTER NGA' onClick='cp("ꤲ")'>&#xA932;</a>
+</td><td>U+A932</td><td>REJANG LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+A933] REJANG LETTER TA' onClick='cp("ꤳ")'>&#xA933;</a>
+</td><td>U+A933</td><td>REJANG LETTER TA</td></tr>
+<tr><td><a class='box' title='[U+A934] REJANG LETTER DA' onClick='cp("ꤴ")'>&#xA934;</a>
+</td><td>U+A934</td><td>REJANG LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+A935] REJANG LETTER NA' onClick='cp("ꤵ")'>&#xA935;</a>
+</td><td>U+A935</td><td>REJANG LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+A936] REJANG LETTER PA' onClick='cp("ꤶ")'>&#xA936;</a>
+</td><td>U+A936</td><td>REJANG LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+A937] REJANG LETTER BA' onClick='cp("ꤷ")'>&#xA937;</a>
+</td><td>U+A937</td><td>REJANG LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+A938] REJANG LETTER MA' onClick='cp("ꤸ")'>&#xA938;</a>
+</td><td>U+A938</td><td>REJANG LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+A939] REJANG LETTER CA' onClick='cp("ꤹ")'>&#xA939;</a>
+</td><td>U+A939</td><td>REJANG LETTER CA</td></tr>
+<tr><td><a class='box' title='[U+A93A] REJANG LETTER JA' onClick='cp("ꤺ")'>&#xA93A;</a>
+</td><td>U+A93A</td><td>REJANG LETTER JA</td></tr>
+<tr><td><a class='box' title='[U+A93B] REJANG LETTER NYA' onClick='cp("ꤻ")'>&#xA93B;</a>
+</td><td>U+A93B</td><td>REJANG LETTER NYA</td></tr>
+<tr><td><a class='box' title='[U+A93C] REJANG LETTER SA' onClick='cp("ꤼ")'>&#xA93C;</a>
+</td><td>U+A93C</td><td>REJANG LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+A93D] REJANG LETTER RA' onClick='cp("ꤽ")'>&#xA93D;</a>
+</td><td>U+A93D</td><td>REJANG LETTER RA</td></tr>
+<tr><td><a class='box' title='[U+A93E] REJANG LETTER LA' onClick='cp("ꤾ")'>&#xA93E;</a>
+</td><td>U+A93E</td><td>REJANG LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+A93F] REJANG LETTER YA' onClick='cp("ꤿ")'>&#xA93F;</a>
+</td><td>U+A93F</td><td>REJANG LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+A940] REJANG LETTER WA' onClick='cp("ꥀ")'>&#xA940;</a>
+</td><td>U+A940</td><td>REJANG LETTER WA</td></tr>
+<tr><td><a class='box' title='[U+A941] REJANG LETTER HA' onClick='cp("ꥁ")'>&#xA941;</a>
+</td><td>U+A941</td><td>REJANG LETTER HA</td></tr>
+<tr><td><a class='box' title='[U+A942] REJANG LETTER MBA' onClick='cp("ꥂ")'>&#xA942;</a>
+</td><td>U+A942</td><td>REJANG LETTER MBA</td></tr>
+<tr><td><a class='box' title='[U+A943] REJANG LETTER NGGA' onClick='cp("ꥃ")'>&#xA943;</a>
+</td><td>U+A943</td><td>REJANG LETTER NGGA</td></tr>
+<tr><td><a class='box' title='[U+A944] REJANG LETTER NDA' onClick='cp("ꥄ")'>&#xA944;</a>
+</td><td>U+A944</td><td>REJANG LETTER NDA</td></tr>
+<tr><td><a class='box' title='[U+A945] REJANG LETTER NYJA' onClick='cp("ꥅ")'>&#xA945;</a>
+</td><td>U+A945</td><td>REJANG LETTER NYJA</td></tr>
+<tr><td><a class='box' title='[U+A946] REJANG LETTER A' onClick='cp("ꥆ")'>&#xA946;</a>
+</td><td>U+A946</td><td>REJANG LETTER A</td></tr>
+<tr><td><a class='box' title='[U+A947] REJANG VOWEL SIGN I' onClick='cp("ꥇ")'>&#xA947;</a>
+</td><td>U+A947</td><td>REJANG VOWEL SIGN I</td></tr>
+<tr><td><a class='box' title='[U+A948] REJANG VOWEL SIGN U' onClick='cp("ꥈ")'>&#xA948;</a>
+</td><td>U+A948</td><td>REJANG VOWEL SIGN U</td></tr>
+<tr><td><a class='box' title='[U+A949] REJANG VOWEL SIGN E' onClick='cp("ꥉ")'>&#xA949;</a>
+</td><td>U+A949</td><td>REJANG VOWEL SIGN E</td></tr>
+<tr><td><a class='box' title='[U+A94A] REJANG VOWEL SIGN AI' onClick='cp("ꥊ")'>&#xA94A;</a>
+</td><td>U+A94A</td><td>REJANG VOWEL SIGN AI</td></tr>
+<tr><td><a class='box' title='[U+A94B] REJANG VOWEL SIGN O' onClick='cp("ꥋ")'>&#xA94B;</a>
+</td><td>U+A94B</td><td>REJANG VOWEL SIGN O</td></tr>
+<tr><td><a class='box' title='[U+A94C] REJANG VOWEL SIGN AU' onClick='cp("ꥌ")'>&#xA94C;</a>
+</td><td>U+A94C</td><td>REJANG VOWEL SIGN AU</td></tr>
+<tr><td><a class='box' title='[U+A94D] REJANG VOWEL SIGN EU' onClick='cp("ꥍ")'>&#xA94D;</a>
+</td><td>U+A94D</td><td>REJANG VOWEL SIGN EU</td></tr>
+<tr><td><a class='box' title='[U+A94E] REJANG VOWEL SIGN EA' onClick='cp("ꥎ")'>&#xA94E;</a>
+</td><td>U+A94E</td><td>REJANG VOWEL SIGN EA</td></tr>
+<tr><td><a class='box' title='[U+A94F] REJANG CONSONANT SIGN NG' onClick='cp("ꥏ")'>&#xA94F;</a>
+</td><td>U+A94F</td><td>REJANG CONSONANT SIGN NG</td></tr>
+<tr><td><a class='box' title='[U+A950] REJANG CONSONANT SIGN N' onClick='cp("ꥐ")'>&#xA950;</a>
+</td><td>U+A950</td><td>REJANG CONSONANT SIGN N</td></tr>
+<tr><td><a class='box' title='[U+A951] REJANG CONSONANT SIGN R' onClick='cp("ꥑ")'>&#xA951;</a>
+</td><td>U+A951</td><td>REJANG CONSONANT SIGN R</td></tr>
+<tr><td><a class='box' title='[U+A952] REJANG CONSONANT SIGN H' onClick='cp("ꥒ")'>&#xA952;</a>
+</td><td>U+A952</td><td>REJANG CONSONANT SIGN H</td></tr>
+<tr><td><a class='box' title='[U+A953] REJANG VIRAMA' onClick='cp("꥓")'>&#xA953;</a>
+</td><td>U+A953</td><td>REJANG VIRAMA</td></tr>
+<tr><td><a class='box' title='[U+A95F] REJANG SECTION MARK' onClick='cp("꥟")'>&#xA95F;</a>
+</td><td>U+A95F</td><td>REJANG SECTION MARK</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #25f; id=#;'>Sundanese (U+1B80 - U+1BBF)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+1B80] SUNDANESE SIGN PANYECEK' onClick='cp("ᮀ")'>&#x1B80;</a>
+</td><td>U+1B80</td><td>SUNDANESE SIGN PANYECEK</td></tr>
+<tr><td><a class='box' title='[U+1B81] SUNDANESE SIGN PANGLAYAR' onClick='cp("ᮁ")'>&#x1B81;</a>
+</td><td>U+1B81</td><td>SUNDANESE SIGN PANGLAYAR</td></tr>
+<tr><td><a class='box' title='[U+1B82] SUNDANESE SIGN PANGWISAD' onClick='cp("ᮂ")'>&#x1B82;</a>
+</td><td>U+1B82</td><td>SUNDANESE SIGN PANGWISAD</td></tr>
+<tr><td><a class='box' title='[U+1B83] SUNDANESE LETTER A' onClick='cp("ᮃ")'>&#x1B83;</a>
+</td><td>U+1B83</td><td>SUNDANESE LETTER A</td></tr>
+<tr><td><a class='box' title='[U+1B84] SUNDANESE LETTER I' onClick='cp("ᮄ")'>&#x1B84;</a>
+</td><td>U+1B84</td><td>SUNDANESE LETTER I</td></tr>
+<tr><td><a class='box' title='[U+1B85] SUNDANESE LETTER U' onClick='cp("ᮅ")'>&#x1B85;</a>
+</td><td>U+1B85</td><td>SUNDANESE LETTER U</td></tr>
+<tr><td><a class='box' title='[U+1B86] SUNDANESE LETTER AE' onClick='cp("ᮆ")'>&#x1B86;</a>
+</td><td>U+1B86</td><td>SUNDANESE LETTER AE</td></tr>
+<tr><td><a class='box' title='[U+1B87] SUNDANESE LETTER O' onClick='cp("ᮇ")'>&#x1B87;</a>
+</td><td>U+1B87</td><td>SUNDANESE LETTER O</td></tr>
+<tr><td><a class='box' title='[U+1B88] SUNDANESE LETTER E' onClick='cp("ᮈ")'>&#x1B88;</a>
+</td><td>U+1B88</td><td>SUNDANESE LETTER E</td></tr>
+<tr><td><a class='box' title='[U+1B89] SUNDANESE LETTER EU' onClick='cp("ᮉ")'>&#x1B89;</a>
+</td><td>U+1B89</td><td>SUNDANESE LETTER EU</td></tr>
+<tr><td><a class='box' title='[U+1B8A] SUNDANESE LETTER KA' onClick='cp("ᮊ")'>&#x1B8A;</a>
+</td><td>U+1B8A</td><td>SUNDANESE LETTER KA</td></tr>
+<tr><td><a class='box' title='[U+1B8B] SUNDANESE LETTER QA' onClick='cp("ᮋ")'>&#x1B8B;</a>
+</td><td>U+1B8B</td><td>SUNDANESE LETTER QA</td></tr>
+<tr><td><a class='box' title='[U+1B8C] SUNDANESE LETTER GA' onClick='cp("ᮌ")'>&#x1B8C;</a>
+</td><td>U+1B8C</td><td>SUNDANESE LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+1B8D] SUNDANESE LETTER NGA' onClick='cp("ᮍ")'>&#x1B8D;</a>
+</td><td>U+1B8D</td><td>SUNDANESE LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+1B8E] SUNDANESE LETTER CA' onClick='cp("ᮎ")'>&#x1B8E;</a>
+</td><td>U+1B8E</td><td>SUNDANESE LETTER CA</td></tr>
+<tr><td><a class='box' title='[U+1B8F] SUNDANESE LETTER JA' onClick='cp("ᮏ")'>&#x1B8F;</a>
+</td><td>U+1B8F</td><td>SUNDANESE LETTER JA</td></tr>
+<tr><td><a class='box' title='[U+1B90] SUNDANESE LETTER ZA' onClick='cp("ᮐ")'>&#x1B90;</a>
+</td><td>U+1B90</td><td>SUNDANESE LETTER ZA</td></tr>
+<tr><td><a class='box' title='[U+1B91] SUNDANESE LETTER NYA' onClick='cp("ᮑ")'>&#x1B91;</a>
+</td><td>U+1B91</td><td>SUNDANESE LETTER NYA</td></tr>
+<tr><td><a class='box' title='[U+1B92] SUNDANESE LETTER TA' onClick='cp("ᮒ")'>&#x1B92;</a>
+</td><td>U+1B92</td><td>SUNDANESE LETTER TA</td></tr>
+<tr><td><a class='box' title='[U+1B93] SUNDANESE LETTER DA' onClick='cp("ᮓ")'>&#x1B93;</a>
+</td><td>U+1B93</td><td>SUNDANESE LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+1B94] SUNDANESE LETTER NA' onClick='cp("ᮔ")'>&#x1B94;</a>
+</td><td>U+1B94</td><td>SUNDANESE LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+1B95] SUNDANESE LETTER PA' onClick='cp("ᮕ")'>&#x1B95;</a>
+</td><td>U+1B95</td><td>SUNDANESE LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+1B96] SUNDANESE LETTER FA' onClick='cp("ᮖ")'>&#x1B96;</a>
+</td><td>U+1B96</td><td>SUNDANESE LETTER FA</td></tr>
+<tr><td><a class='box' title='[U+1B97] SUNDANESE LETTER VA' onClick='cp("ᮗ")'>&#x1B97;</a>
+</td><td>U+1B97</td><td>SUNDANESE LETTER VA</td></tr>
+<tr><td><a class='box' title='[U+1B98] SUNDANESE LETTER BA' onClick='cp("ᮘ")'>&#x1B98;</a>
+</td><td>U+1B98</td><td>SUNDANESE LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+1B99] SUNDANESE LETTER MA' onClick='cp("ᮙ")'>&#x1B99;</a>
+</td><td>U+1B99</td><td>SUNDANESE LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+1B9A] SUNDANESE LETTER YA' onClick='cp("ᮚ")'>&#x1B9A;</a>
+</td><td>U+1B9A</td><td>SUNDANESE LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+1B9B] SUNDANESE LETTER RA' onClick='cp("ᮛ")'>&#x1B9B;</a>
+</td><td>U+1B9B</td><td>SUNDANESE LETTER RA</td></tr>
+<tr><td><a class='box' title='[U+1B9C] SUNDANESE LETTER LA' onClick='cp("ᮜ")'>&#x1B9C;</a>
+</td><td>U+1B9C</td><td>SUNDANESE LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+1B9D] SUNDANESE LETTER WA' onClick='cp("ᮝ")'>&#x1B9D;</a>
+</td><td>U+1B9D</td><td>SUNDANESE LETTER WA</td></tr>
+<tr><td><a class='box' title='[U+1B9E] SUNDANESE LETTER SA' onClick='cp("ᮞ")'>&#x1B9E;</a>
+</td><td>U+1B9E</td><td>SUNDANESE LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+1B9F] SUNDANESE LETTER XA' onClick='cp("ᮟ")'>&#x1B9F;</a>
+</td><td>U+1B9F</td><td>SUNDANESE LETTER XA</td></tr>
+<tr><td><a class='box' title='[U+1BA0] SUNDANESE LETTER HA' onClick='cp("ᮠ")'>&#x1BA0;</a>
+</td><td>U+1BA0</td><td>SUNDANESE LETTER HA</td></tr>
+<tr><td><a class='box' title='[U+1BA1] SUNDANESE CONSONANT SIGN PAMINGKAL' onClick='cp("ᮡ")'>&#x1BA1;</a>
+</td><td>U+1BA1</td><td>SUNDANESE CONSONANT SIGN PAMINGKAL</td></tr>
+<tr><td><a class='box' title='[U+1BA2] SUNDANESE CONSONANT SIGN PANYAKRA' onClick='cp("ᮢ")'>&#x1BA2;</a>
+</td><td>U+1BA2</td><td>SUNDANESE CONSONANT SIGN PANYAKRA</td></tr>
+<tr><td><a class='box' title='[U+1BA3] SUNDANESE CONSONANT SIGN PANYIKU' onClick='cp("ᮣ")'>&#x1BA3;</a>
+</td><td>U+1BA3</td><td>SUNDANESE CONSONANT SIGN PANYIKU</td></tr>
+<tr><td><a class='box' title='[U+1BA4] SUNDANESE VOWEL SIGN PANGHULU' onClick='cp("ᮤ")'>&#x1BA4;</a>
+</td><td>U+1BA4</td><td>SUNDANESE VOWEL SIGN PANGHULU</td></tr>
+<tr><td><a class='box' title='[U+1BA5] SUNDANESE VOWEL SIGN PANYUKU' onClick='cp("ᮥ")'>&#x1BA5;</a>
+</td><td>U+1BA5</td><td>SUNDANESE VOWEL SIGN PANYUKU</td></tr>
+<tr><td><a class='box' title='[U+1BA6] SUNDANESE VOWEL SIGN PANAELAENG' onClick='cp("ᮦ")'>&#x1BA6;</a>
+</td><td>U+1BA6</td><td>SUNDANESE VOWEL SIGN PANAELAENG</td></tr>
+<tr><td><a class='box' title='[U+1BA7] SUNDANESE VOWEL SIGN PANOLONG' onClick='cp("ᮧ")'>&#x1BA7;</a>
+</td><td>U+1BA7</td><td>SUNDANESE VOWEL SIGN PANOLONG</td></tr>
+<tr><td><a class='box' title='[U+1BA8] SUNDANESE VOWEL SIGN PAMEPET' onClick='cp("ᮨ")'>&#x1BA8;</a>
+</td><td>U+1BA8</td><td>SUNDANESE VOWEL SIGN PAMEPET</td></tr>
+<tr><td><a class='box' title='[U+1BA9] SUNDANESE VOWEL SIGN PANEULEUNG' onClick='cp("ᮩ")'>&#x1BA9;</a>
+</td><td>U+1BA9</td><td>SUNDANESE VOWEL SIGN PANEULEUNG</td></tr>
+<tr><td><a class='box' title='[U+1BAA] SUNDANESE SIGN PAMAAEH' onClick='cp("᮪")'>&#x1BAA;</a>
+</td><td>U+1BAA</td><td>SUNDANESE SIGN PAMAAEH</td></tr>
+<tr><td><a class='box' title='[U+1BAB] SUNDANESE SIGN VIRAMA' onClick='cp("᮫")'>&#x1BAB;</a>
+</td><td>U+1BAB</td><td>SUNDANESE SIGN VIRAMA</td></tr>
+<tr><td><a class='box' title='[U+1BAC] SUNDANESE CONSONANT SIGN PASANGAN MA' onClick='cp("ᮬ")'>&#x1BAC;</a>
+</td><td>U+1BAC</td><td>SUNDANESE CONSONANT SIGN PASANGAN MA</td></tr>
+<tr><td><a class='box' title='[U+1BAD] SUNDANESE CONSONANT SIGN PASANGAN WA' onClick='cp("ᮭ")'>&#x1BAD;</a>
+</td><td>U+1BAD</td><td>SUNDANESE CONSONANT SIGN PASANGAN WA</td></tr>
+<tr><td><a class='box' title='[U+1BAE] SUNDANESE LETTER KHA' onClick='cp("ᮮ")'>&#x1BAE;</a>
+</td><td>U+1BAE</td><td>SUNDANESE LETTER KHA</td></tr>
+<tr><td><a class='box' title='[U+1BAF] SUNDANESE LETTER SYA' onClick='cp("ᮯ")'>&#x1BAF;</a>
+</td><td>U+1BAF</td><td>SUNDANESE LETTER SYA</td></tr>
+<tr><td><a class='box' title='[U+1BB0] SUNDANESE DIGIT ZERO' onClick='cp("᮰")'>&#x1BB0;</a>
+</td><td>U+1BB0</td><td>SUNDANESE DIGIT ZERO</td></tr>
+<tr><td><a class='box' title='[U+1BB1] SUNDANESE DIGIT ONE' onClick='cp("᮱")'>&#x1BB1;</a>
+</td><td>U+1BB1</td><td>SUNDANESE DIGIT ONE</td></tr>
+<tr><td><a class='box' title='[U+1BB2] SUNDANESE DIGIT TWO' onClick='cp("᮲")'>&#x1BB2;</a>
+</td><td>U+1BB2</td><td>SUNDANESE DIGIT TWO</td></tr>
+<tr><td><a class='box' title='[U+1BB3] SUNDANESE DIGIT THREE' onClick='cp("᮳")'>&#x1BB3;</a>
+</td><td>U+1BB3</td><td>SUNDANESE DIGIT THREE</td></tr>
+<tr><td><a class='box' title='[U+1BB4] SUNDANESE DIGIT FOUR' onClick='cp("᮴")'>&#x1BB4;</a>
+</td><td>U+1BB4</td><td>SUNDANESE DIGIT FOUR</td></tr>
+<tr><td><a class='box' title='[U+1BB5] SUNDANESE DIGIT FIVE' onClick='cp("᮵")'>&#x1BB5;</a>
+</td><td>U+1BB5</td><td>SUNDANESE DIGIT FIVE</td></tr>
+<tr><td><a class='box' title='[U+1BB6] SUNDANESE DIGIT SIX' onClick='cp("᮶")'>&#x1BB6;</a>
+</td><td>U+1BB6</td><td>SUNDANESE DIGIT SIX</td></tr>
+<tr><td><a class='box' title='[U+1BB7] SUNDANESE DIGIT SEVEN' onClick='cp("᮷")'>&#x1BB7;</a>
+</td><td>U+1BB7</td><td>SUNDANESE DIGIT SEVEN</td></tr>
+<tr><td><a class='box' title='[U+1BB8] SUNDANESE DIGIT EIGHT' onClick='cp("᮸")'>&#x1BB8;</a>
+</td><td>U+1BB8</td><td>SUNDANESE DIGIT EIGHT</td></tr>
+<tr><td><a class='box' title='[U+1BB9] SUNDANESE DIGIT NINE' onClick='cp("᮹")'>&#x1BB9;</a>
+</td><td>U+1BB9</td><td>SUNDANESE DIGIT NINE</td></tr>
+<tr><td><a class='box' title='[U+1BBA] SUNDANESE AVAGRAHA' onClick='cp("ᮺ")'>&#x1BBA;</a>
+</td><td>U+1BBA</td><td>SUNDANESE AVAGRAHA</td></tr>
+<tr><td><a class='box' title='[U+1BBB] SUNDANESE LETTER REU' onClick='cp("ᮻ")'>&#x1BBB;</a>
+</td><td>U+1BBB</td><td>SUNDANESE LETTER REU</td></tr>
+<tr><td><a class='box' title='[U+1BBC] SUNDANESE LETTER LEU' onClick='cp("ᮼ")'>&#x1BBC;</a>
+</td><td>U+1BBC</td><td>SUNDANESE LETTER LEU</td></tr>
+<tr><td><a class='box' title='[U+1BBD] SUNDANESE LETTER BHA' onClick='cp("ᮽ")'>&#x1BBD;</a>
+</td><td>U+1BBD</td><td>SUNDANESE LETTER BHA</td></tr>
+<tr><td><a class='box' title='[U+1BBE] SUNDANESE LETTER FINAL K' onClick='cp("ᮾ")'>&#x1BBE;</a>
+</td><td>U+1BBE</td><td>SUNDANESE LETTER FINAL K</td></tr>
+<tr><td><a class='box' title='[U+1BBF] SUNDANESE LETTER FINAL M' onClick='cp("ᮿ")'>&#x1BBF;</a>
+</td><td>U+1BBF</td><td>SUNDANESE LETTER FINAL M</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: green; id=#;'>Sundanese Supplement (U+1CC0 - U+1CCF)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+1CC0] SUNDANESE PUNCTUATION BINDU SURYA' onClick='cp("᳀")'>&#x1CC0;</a>
+</td><td>U+1CC0</td><td>SUNDANESE PUNCTUATION BINDU SURYA</td></tr>
+<tr><td><a class='box' title='[U+1CC1] SUNDANESE PUNCTUATION BINDU PANGLONG' onClick='cp("᳁")'>&#x1CC1;</a>
+</td><td>U+1CC1</td><td>SUNDANESE PUNCTUATION BINDU PANGLONG</td></tr>
+<tr><td><a class='box' title='[U+1CC2] SUNDANESE PUNCTUATION BINDU PURNAMA' onClick='cp("᳂")'>&#x1CC2;</a>
+</td><td>U+1CC2</td><td>SUNDANESE PUNCTUATION BINDU PURNAMA</td></tr>
+<tr><td><a class='box' title='[U+1CC3] SUNDANESE PUNCTUATION BINDU CAKRA' onClick='cp("᳃")'>&#x1CC3;</a>
+</td><td>U+1CC3</td><td>SUNDANESE PUNCTUATION BINDU CAKRA</td></tr>
+<tr><td><a class='box' title='[U+1CC4] SUNDANESE PUNCTUATION BINDU LEU SATANGA' onClick='cp("᳄")'>&#x1CC4;</a>
+</td><td>U+1CC4</td><td>SUNDANESE PUNCTUATION BINDU LEU SATANGA</td></tr>
+<tr><td><a class='box' title='[U+1CC5] SUNDANESE PUNCTUATION BINDU KA SATANGA' onClick='cp("᳅")'>&#x1CC5;</a>
+</td><td>U+1CC5</td><td>SUNDANESE PUNCTUATION BINDU KA SATANGA</td></tr>
+<tr><td><a class='box' title='[U+1CC6] SUNDANESE PUNCTUATION BINDU DA SATANGA' onClick='cp("᳆")'>&#x1CC6;</a>
+</td><td>U+1CC6</td><td>SUNDANESE PUNCTUATION BINDU DA SATANGA</td></tr>
+<tr><td><a class='box' title='[U+1CC7] SUNDANESE PUNCTUATION BINDU BA SATANGA' onClick='cp("᳇")'>&#x1CC7;</a>
+</td><td>U+1CC7</td><td>SUNDANESE PUNCTUATION BINDU BA SATANGA</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: orangered; id=#;'>Tagalog (U+1700 - U+171F)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+1700] TAGALOG LETTER A' onClick='cp("ᜀ")'>&#x1700;</a>
+</td><td>U+1700</td><td>TAGALOG LETTER A</td></tr>
+<tr><td><a class='box' title='[U+1701] TAGALOG LETTER I' onClick='cp("ᜁ")'>&#x1701;</a>
+</td><td>U+1701</td><td>TAGALOG LETTER I</td></tr>
+<tr><td><a class='box' title='[U+1702] TAGALOG LETTER U' onClick='cp("ᜂ")'>&#x1702;</a>
+</td><td>U+1702</td><td>TAGALOG LETTER U</td></tr>
+<tr><td><a class='box' title='[U+1703] TAGALOG LETTER KA' onClick='cp("ᜃ")'>&#x1703;</a>
+</td><td>U+1703</td><td>TAGALOG LETTER KA</td></tr>
+<tr><td><a class='box' title='[U+1704] TAGALOG LETTER GA' onClick='cp("ᜄ")'>&#x1704;</a>
+</td><td>U+1704</td><td>TAGALOG LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+1705] TAGALOG LETTER NGA' onClick='cp("ᜅ")'>&#x1705;</a>
+</td><td>U+1705</td><td>TAGALOG LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+1706] TAGALOG LETTER TA' onClick='cp("ᜆ")'>&#x1706;</a>
+</td><td>U+1706</td><td>TAGALOG LETTER TA</td></tr>
+<tr><td><a class='box' title='[U+1707] TAGALOG LETTER DA' onClick='cp("ᜇ")'>&#x1707;</a>
+</td><td>U+1707</td><td>TAGALOG LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+1708] TAGALOG LETTER NA' onClick='cp("ᜈ")'>&#x1708;</a>
+</td><td>U+1708</td><td>TAGALOG LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+1709] TAGALOG LETTER PA' onClick='cp("ᜉ")'>&#x1709;</a>
+</td><td>U+1709</td><td>TAGALOG LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+170A] TAGALOG LETTER BA' onClick='cp("ᜊ")'>&#x170A;</a>
+</td><td>U+170A</td><td>TAGALOG LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+170B] TAGALOG LETTER MA' onClick='cp("ᜋ")'>&#x170B;</a>
+</td><td>U+170B</td><td>TAGALOG LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+170C] TAGALOG LETTER YA' onClick='cp("ᜌ")'>&#x170C;</a>
+</td><td>U+170C</td><td>TAGALOG LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+170E] TAGALOG LETTER LA' onClick='cp("ᜎ")'>&#x170E;</a>
+</td><td>U+170E</td><td>TAGALOG LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+170F] TAGALOG LETTER WA' onClick='cp("ᜏ")'>&#x170F;</a>
+</td><td>U+170F</td><td>TAGALOG LETTER WA</td></tr>
+<tr><td><a class='box' title='[U+1710] TAGALOG LETTER SA' onClick='cp("ᜐ")'>&#x1710;</a>
+</td><td>U+1710</td><td>TAGALOG LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+1711] TAGALOG LETTER HA' onClick='cp("ᜑ")'>&#x1711;</a>
+</td><td>U+1711</td><td>TAGALOG LETTER HA</td></tr>
+<tr><td><a class='box' title='[U+1712] TAGALOG VOWEL SIGN I' onClick='cp("ᜒ")'>&#x1712;</a>
+</td><td>U+1712</td><td>TAGALOG VOWEL SIGN I</td></tr>
+<tr><td><a class='box' title='[U+1713] TAGALOG VOWEL SIGN U' onClick='cp("ᜓ")'>&#x1713;</a>
+</td><td>U+1713</td><td>TAGALOG VOWEL SIGN U</td></tr>
+<tr><td><a class='box' title='[U+1714] TAGALOG SIGN VIRAMA' onClick='cp("᜔")'>&#x1714;</a>
+</td><td>U+1714</td><td>TAGALOG SIGN VIRAMA</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+<h2 style='color: white; background-color: #27e; id=#;'>Tagbanwa (U+1760 - U+177F)</h2>
+<div class='margined'>
+<table cols='3' border='1'>
+<tr><td><a class='box' title='[U+1760] TAGBANWA LETTER A' onClick='cp("ᝠ")'>&#x1760;</a>
+</td><td>U+1760</td><td>TAGBANWA LETTER A</td></tr>
+<tr><td><a class='box' title='[U+1761] TAGBANWA LETTER I' onClick='cp("ᝡ")'>&#x1761;</a>
+</td><td>U+1761</td><td>TAGBANWA LETTER I</td></tr>
+<tr><td><a class='box' title='[U+1762] TAGBANWA LETTER U' onClick='cp("ᝢ")'>&#x1762;</a>
+</td><td>U+1762</td><td>TAGBANWA LETTER U</td></tr>
+<tr><td><a class='box' title='[U+1763] TAGBANWA LETTER KA' onClick='cp("ᝣ")'>&#x1763;</a>
+</td><td>U+1763</td><td>TAGBANWA LETTER KA</td></tr>
+<tr><td><a class='box' title='[U+1764] TAGBANWA LETTER GA' onClick='cp("ᝤ")'>&#x1764;</a>
+</td><td>U+1764</td><td>TAGBANWA LETTER GA</td></tr>
+<tr><td><a class='box' title='[U+1765] TAGBANWA LETTER NGA' onClick='cp("ᝥ")'>&#x1765;</a>
+</td><td>U+1765</td><td>TAGBANWA LETTER NGA</td></tr>
+<tr><td><a class='box' title='[U+1766] TAGBANWA LETTER TA' onClick='cp("ᝦ")'>&#x1766;</a>
+</td><td>U+1766</td><td>TAGBANWA LETTER TA</td></tr>
+<tr><td><a class='box' title='[U+1767] TAGBANWA LETTER DA' onClick='cp("ᝧ")'>&#x1767;</a>
+</td><td>U+1767</td><td>TAGBANWA LETTER DA</td></tr>
+<tr><td><a class='box' title='[U+1768] TAGBANWA LETTER NA' onClick='cp("ᝨ")'>&#x1768;</a>
+</td><td>U+1768</td><td>TAGBANWA LETTER NA</td></tr>
+<tr><td><a class='box' title='[U+1769] TAGBANWA LETTER PA' onClick='cp("ᝩ")'>&#x1769;</a>
+</td><td>U+1769</td><td>TAGBANWA LETTER PA</td></tr>
+<tr><td><a class='box' title='[U+176A] TAGBANWA LETTER BA' onClick='cp("ᝪ")'>&#x176A;</a>
+</td><td>U+176A</td><td>TAGBANWA LETTER BA</td></tr>
+<tr><td><a class='box' title='[U+176B] TAGBANWA LETTER MA' onClick='cp("ᝫ")'>&#x176B;</a>
+</td><td>U+176B</td><td>TAGBANWA LETTER MA</td></tr>
+<tr><td><a class='box' title='[U+176C] TAGBANWA LETTER YA' onClick='cp("ᝬ")'>&#x176C;</a>
+</td><td>U+176C</td><td>TAGBANWA LETTER YA</td></tr>
+<tr><td><a class='box' title='[U+176E] TAGBANWA LETTER LA' onClick='cp("ᝮ")'>&#x176E;</a>
+</td><td>U+176E</td><td>TAGBANWA LETTER LA</td></tr>
+<tr><td><a class='box' title='[U+176F] TAGBANWA LETTER WA' onClick='cp("ᝯ")'>&#x176F;</a>
+</td><td>U+176F</td><td>TAGBANWA LETTER WA</td></tr>
+<tr><td><a class='box' title='[U+1770] TAGBANWA LETTER SA' onClick='cp("ᝰ")'>&#x1770;</a>
+</td><td>U+1770</td><td>TAGBANWA LETTER SA</td></tr>
+<tr><td><a class='box' title='[U+1772] TAGBANWA VOWEL SIGN I' onClick='cp("ᝲ")'>&#x1772;</a>
+</td><td>U+1772</td><td>TAGBANWA VOWEL SIGN I</td></tr>
+<tr><td><a class='box' title='[U+1773] TAGBANWA VOWEL SIGN U' onClick='cp("ᝳ")'>&#x1773;</a>
+</td><td>U+1773</td><td>TAGBANWA VOWEL SIGN U</td></tr>
+<div style='clear:left;'></div>
+</table>
+</div> <!-- margined -->
+
+   </div>
+  </div>
+  <hr/>
+  <a href='javascript:history.back()'>
+   Back
+  </a>
+  <div>
+   <br/>
+   <br/>
+   <div style='font-size: 80%; text-align: center'>
+    Copyright &copy; 2020 emojipicker.com
+    <a href='../about/disclaimer.html' class='disclaimer'>
+     Disclaimer
+    </a>
+    <a href='../about/privacypolicy.html' class='disclaimer'>
+     Privacy Policy
+    </a>
+   </div>
+  </div>
+ </body>
+</html>

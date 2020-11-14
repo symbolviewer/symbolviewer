@@ -11,6 +11,8 @@
 							border:				solid black 1px;
 							border-spacing:		0px;
 						}
+		table			{	border-collapse:	collapse;
+						}
 		td+td			{
 							padding-left:		4px;
 							padding-right:		4px;
@@ -243,7 +245,7 @@
    <div>
     <h2 style='color: white; background-color: #25f;'>General Punctuation (U+2000 - U+206F)</h2>
 <div class='margined'>
-<table cols='3' border='1'>
+<table>
 <tr><td><a class='box' title='[U+2000] EN QUAD' onClick='cp(" ")'>&#x2000;</a>
 </td><td>U+2000</td><td class='codevalue'>EN QUAD</td></tr>
 <tr><td><a class='box' title='[U+2001] EM QUAD' onClick='cp(" ")'>&#x2001;</a>
@@ -485,7 +487,7 @@
 </div> <!-- margined -->
 <h2 style='color: white; background-color: green;'>ASCII Punctuation (U+0021 - U+007F)</h2>
 <div class='margined'>
-<table cols='3' border='1'>
+<table>
 <tr><td><a class='box' title='[U+0021] EXCLAMATION MARK' onClick='cp("!")'>&#x21;</a>
 </td><td>U+0021</td><td class='codevalue'>EXCLAMATION MARK</td></tr>
 <tr><td><a class='box' title='[U+0022] QUOTATION MARK' onClick='cp("&quot;")'>&#x22;</a>
@@ -696,7 +698,7 @@
 </div> <!-- margined -->
 <h2 style='color: white; background-color: orangered;'>Latin-1 Punctuation (U+00A1 - U+00BF)</h2>
 <div class='margined'>
-<table cols='3' border='1'>
+<table>
 <tr><td><a class='box' title='[U+00A1] INVERTED EXCLAMATION MARK' onClick='cp("¡")'>&#xA1;</a>
 </td><td>U+00A1</td><td class='codevalue'>INVERTED EXCLAMATION MARK</td></tr>
 <tr><td><a class='box' title='[U+00A2] CENT SIGN' onClick='cp("¢")'>&#xA2;</a>
@@ -780,7 +782,7 @@
 </div> <!-- margined -->
 <h2 style='color: white; background-color: #27e;'>Supplemental Punctuation (U+2E00 - U+2E7F)</h2>
 <div class='margined'>
-<table cols='3' border='1'>
+<table>
 <tr><td><a class='box' title='[U+2E00] RIGHT ANGLE SUBSTITUTION MARKER' onClick='cp("⸀")'>&#x2E00;</a>
 </td><td>U+2E00</td><td class='codevalue'>RIGHT ANGLE SUBSTITUTION MARKER</td></tr>
 <tr><td><a class='box' title='[U+2E01] RIGHT ANGLE DOTTED SUBSTITUTION MARKER' onClick='cp("⸁")'>&#x2E01;</a>
@@ -952,7 +954,7 @@
 </div> <!-- margined -->
 <h2 style='color: white; background-color: #f44;'>CJK Symbols and Punctuation (U+3000 - U+303F)</h2>
 <div class='margined'>
-<table cols='3' border='1'>
+<table>
 <tr><td><a class='box' title='[U+3000] IDEOGRAPHIC SPACE' onClick='cp("　")'>&#x3000;</a>
 </td><td>U+3000</td><td class='codevalue'>IDEOGRAPHIC SPACE</td></tr>
 <tr><td><a class='box' title='[U+3001] IDEOGRAPHIC COMMA' onClick='cp("、")'>&#x3001;</a>
@@ -1105,7 +1107,7 @@
 </div> <!-- margined -->
 <h2 style='color: white; background-color: #222;'>Ideographic Symbols and Punctuation (U+16FE0 - U+16FFF)</h2>
 <div class='margined'>
-<table cols='3' border='1'>
+<table>
 <tr><td><a class='box' title='[U+16FE0] TANGUT ITERATION MARK' onClick='cp("𖿠")'>&#x16FE0;</a>
 </td><td>U+16FE0</td><td class='codevalue'>TANGUT ITERATION MARK</td></tr>
 <tr><td><a class='box' title='[U+16FE1] NUSHU ITERATION MARK' onClick='cp("𖿡")'>&#x16FE1;</a>
@@ -1125,7 +1127,7 @@
 </div> <!-- margined -->
 <h2 style='color: white; background-color: #666;'>CJK Compatibility Forms (U+FE30 - U+FE4F)</h2>
 <div class='margined'>
-<table cols='3' border='1'>
+<table>
 <tr><td><a class='box' title='[U+FE30] PRESENTATION FORM FOR VERTICAL TWO DOT LEADER
 = GLYPH FOR VERTICAL TWO DOT LEADER' onClick='cp("︰")'>&#xFE30;</a>
 </td><td>U+FE30</td><td class='codevalue'>PRESENTATION FORM FOR VERTICAL TWO DOT LEADER<br>= GLYPH FOR VERTICAL TWO DOT LEADER</td></tr>
@@ -1223,7 +1225,7 @@
 </div> <!-- margined -->
 <h2 style='color: white; background-color: #63a;'>Halfwidth and Fullwidth Forms (U+FF00 - U+FFEF)</h2>
 <div class='margined'>
-<table cols='3' border='1'>
+<table>
 <tr><td><a class='box' title='[U+FF01] FULLWIDTH EXCLAMATION MARK' onClick='cp("！")'>&#xFF01;</a>
 </td><td>U+FF01</td><td class='codevalue'>FULLWIDTH EXCLAMATION MARK</td></tr>
 <tr><td><a class='box' title='[U+FF02] FULLWIDTH QUOTATION MARK' onClick='cp("＂")'>&#xFF02;</a>
@@ -1724,7 +1726,7 @@
 </div> <!-- margined -->
 <h2 style='color: white; background-color: #25f;'>Small Form Variants (U+FE50 - U+FE6F)</h2>
 <div class='margined'>
-<table cols='3' border='1'>
+<table>
 <tr><td><a class='box' title='[U+FE50] SMALL COMMA' onClick='cp("﹐")'>&#xFE50;</a>
 </td><td>U+FE50</td><td class='codevalue'>SMALL COMMA</td></tr>
 <tr><td><a class='box' title='[U+FE51] SMALL IDEOGRAPHIC COMMA' onClick='cp("﹑")'>&#xFE51;</a>
@@ -1790,7 +1792,7 @@
 </div> <!-- margined -->
 <h2 style='color: white; background-color: green;'>Vertical Forms (U+FE10 - U+FE1F)</h2>
 <div class='margined'>
-<table cols='3' border='1'>
+<table>
 <tr><td><a class='box' title='[U+FE10] PRESENTATION FORM FOR VERTICAL COMMA' onClick='cp("︐")'>&#xFE10;</a>
 </td><td>U+FE10</td><td class='codevalue'>PRESENTATION FORM FOR VERTICAL COMMA</td></tr>
 <tr><td><a class='box' title='[U+FE11] PRESENTATION FORM FOR VERTICAL IDEOGRAPHIC COMMA' onClick='cp("︑")'>&#xFE11;</a>

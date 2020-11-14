@@ -1,4 +1,5 @@
-### Hi there 👋
+This README file appears on our profile?
+OK, this is a webpage for listing most, if not all, of Unicode® characters and symbols, for easy pickups.
 
 <!--
 **symbolviewer/symbolviewer** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

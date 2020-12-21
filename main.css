@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* root ----------------------------------------------------------------------------------------------- */
+		*								{	margin				: 0;
+											padding				: 0;
+										}
+		:root							{	
+											--h1-color			: blue;
+											--hdr-shadow-color	: #DDDDDD;
+											--hdr-a-color		: #5A5C5F;
+											--hdr-bgcol			: white;
+											--hdr-a-hover-bgcol	: #E1F1FF;
+											--main-color		: #5A5C5F;
+
+											--hdr-cont-maxwidth	: 980px;
+											--hdr-height		: 56px;
+											--hdr-width			: 100%;
+											--hdr-logo-height	: 40px;
+											--h1-font-size		: 64px;
+											--h1sub-font-size	: 16px;
+											--h1sub-line-height	: 2;		/* line height = 2 x font-size */
+
+											--footer-font-size	: 80%;
+										}
+		html							{
+											font-size			: 18px;
+										}
+/* header --------------------------------------------------------------------------------------------- */
+		.header-class					{	position			: fixed;
+											top					: 0;
+											width				: var(--hdr-width);
+											height				: var(--hdr-height);
+											background-color	: var(--hdr-bgcol);
+											box-shadow			: 0 0 10px var(--hdr-shadow-color);
+										}
+		.header-container-class			{	max-width			: var(--hdr-cont-maxwidth);
+											padding				: 0 30px;
+											margin-left			: auto;		/* centering! */
+											margin-right		: auto;		/* centering! */
+										}
+		.header-left-div-class			{	float				: left;						}
+		.header-logo-img-class			{	margin-top			: 8px;
+											height				: var(--hdr-logo-height);
+										}
+		.header-right-div-class			{	float				: right;					}
+		.header-right-div-class *		{	margin-left			: 5px;
+											line-height			: var(--hdr-height);
+											color				: var(--hdr-a-color);
+										}
+		.header-right-div-class a:hover	{	background-color	: var(--hdr-a-hover-bgcol);
+											transition			: background-color 1s;
+										}
+		.clear-float-class				{	clear				: both;						}
+
+/* main ----------------------------------------------------------------------------------------------- */
+		main							{	/* background-image	: url("img/sky.jpg");	*/
+											/* background-size	: cover; */
+											color				: var(--main-color);
+										}
+		h1								{
+											margin				: 12px;
+											text-align			: center;
+										/*	font-size			: var(--h1-font-size);	*/
+											color				: var(--h1-color);
+										/*	text-shadow			: 4px 4px 10px #D0CEC6; */
+											text-shadow			: 5px 5px 10px #AAAAFF;
+										}
+		#title-h1-id					{	color				: var(--h1-color);
+										}
+		.h1sub-text-class				{
+										/*	font-size			: var(--h1sub-font-size);	*/
+											margin-bottom		: 12px;
+											line-height			: var(--h1sub-line-height);
+											text-align			: center;
+											font-family			: serif;
+											font-weight			: bold;
+										}
+
+		p								{	font-family			: serif;
+										}
+		.main-menu						{
+											text-align			: center;
+											list-style-type		: none;
+											background-color	: dodgerblue;
+											margin				: 0 5%;
+											padding				: 7px 5px;
+											border-radius		: 5px;
+										}
+		.main-menu > *:hover			{
+											background-color	: #FFF;
+										}
+		.main-menu > *					{
+											border				: solid 1px;
+											text-align			: center;
+											background-color	: #F1F1F1;
+											margin				: 14px 14px;
+											padding				: 5px 0;
+											border-radius		: 8px;
+										}
+		.main-menu > * > *				{
+										/*	font-family			: sans-serif;	*/
+											text-decoration		: none;
+										/*	color				: #FFF;			*/
+										}
+/* search --------------------------------------------------------------------------------------------- */
+		.searchbox						{
+											text-align			: center;
+											background-color	: cyan;
+											padding				: 16px 0;
+										}
+		.searchbox textarea				{	resize				: none;
+										}
+		.search-button					{
+											font-size			: 24px;
+											height				: 60px;
+											border				: solid 1px;
+											width				: 200px;
+											background-color	: #F9A;
+											border-radius		: 8px;
+											margin-bottom		: 20px;
+										}
+		.search-t1						{
+											font-size			: 24px;
+											height				: 40px;
+										}
+		.search-t2						{
+											font-size			: 24px;
+											height				: 32;
+										}
+/* footer --------------------------------------------------------------------------------------------- */
+		footer							{	text-align			: center;
+											font-size			: var(--footer-font-size);
+										}
+

@@ -11,40 +11,39 @@
 											--hdr-a-hover-bgcol	: #E1F1FF;
 											--main-color		: #5A5C5F;
 
-											--hdr-cont-maxwidth	: 980px;
-											--hdr-height		: 56px;
-											--hdr-width			: 100%;
-											--hdr-logo-height	: 40px;
-											--h1-font-size		: 64px;
-											--h1sub-font-size	: 16px;
-											--h1sub-line-height	: 2;		/* line height = 2 x font-size */
+											--hdr-padding-v		: 0px;
+											--hdr-padding-h		: 10px;
+											--hdr-logo-height	: 32px;
+											--hdr-logo-margin	: 6px;
+											--hdr-link-fontsize	: 16px;
+											--hdr-link-margin-t	: 14px;	/* logo-margin + (logo-height - link-fontsize) / 2 */
+											--hdr-link-margin-l	: 5px;
+											--hdr-shadow-size	: 10px;
 
+											--main-margin-top	: 60px;
+											--h1sub-line-height	: 1.2;		/* line height = 2 x font-size */
 											--footer-font-size	: 80%;
 										}
 		html							{
-											font-size			: 18px;
 										}
 /* header --------------------------------------------------------------------------------------------- */
 		.header-class					{	position			: fixed;
 											top					: 0;
-											width				: var(--hdr-width);
-											height				: var(--hdr-height);
+											width				: 100%;
 											background-color	: var(--hdr-bgcol);
-											box-shadow			: 0 0 10px var(--hdr-shadow-color);
 										}
-		.header-container-class			{	max-width			: var(--hdr-cont-maxwidth);
-											padding				: 0 30px;
-											margin-left			: auto;		/* centering! */
-											margin-right		: auto;		/* centering! */
+		.header-container-class			{	padding				: var(--hdr-padding-v) var(--hdr-padding-h);
+											box-shadow			: 0 0 var(--hdr-shadow-size) var(--hdr-shadow-color);
 										}
-		.header-left-div-class			{	float				: left;						}
-		.header-logo-img-class			{	margin-top			: 8px;
-											height				: var(--hdr-logo-height);
+		.header-img-class				{	height				: var(--hdr-logo-height);
+											margin				: var(--hdr-logo-margin);
 										}
-		.header-right-div-class			{	float				: right;					}
-		.header-right-div-class *		{	margin-left			: 5px;
-											line-height			: var(--hdr-height);
+		.header-right-div-class			{	float				: right;
+											margin-top			: var(--hdr-link-margin-t);
+											margin-right		: var(--hdr-link-margin-l);
 											color				: var(--hdr-a-color);
+										}
+		.header-right-div-class *		{	margin-left			: 5px;
 										}
 		.header-right-div-class a:hover	{	background-color	: var(--hdr-a-hover-bgcol);
 											transition			: background-color 1s;
@@ -52,27 +51,23 @@
 		.clear-float-class				{	clear				: both;						}
 
 /* main ----------------------------------------------------------------------------------------------- */
-		main							{	/* background-image	: url("img/sky.jpg");	*/
+		main							{	/* background-image	: url("img/sky.jpg"); */
 											/* background-size	: cover; */
 											color				: var(--main-color);
+											margin-top			: var(--main-margin-top);
 										}
 		h1								{
 											margin				: 12px;
 											text-align			: center;
-										/*	font-size			: var(--h1-font-size);	*/
 											color				: var(--h1-color);
-										/*	text-shadow			: 4px 4px 10px #D0CEC6; */
 											text-shadow			: 5px 5px 10px #AAAAFF;
 										}
-		#title-h1-id					{	color				: var(--h1-color);
-										}
 		.h1sub-text-class				{
-										/*	font-size			: var(--h1sub-font-size);	*/
-											margin-bottom		: 12px;
 											line-height			: var(--h1sub-line-height);
 											text-align			: center;
 											font-family			: serif;
 											font-weight			: bold;
+											margin-bottom		: 12px;
 										}
 
 		p								{	font-family			: serif;
@@ -82,11 +77,12 @@
 											list-style-type		: none;
 											background-color	: dodgerblue;
 											margin				: 0 5%;
-											padding				: 7px 5px;
+											padding				: 3px 5px;
 											border-radius		: 5px;
 										}
 		.main-menu > *:hover			{
-											background-color	: #FFF;
+											background-color	: #CCC;
+											color				: #447;
 										}
 		.main-menu > *					{
 											border				: solid 1px;
@@ -95,11 +91,11 @@
 											margin				: 14px 14px;
 											padding				: 5px 0;
 											border-radius		: 8px;
+											color				: #447;
 										}
 		.main-menu > * > *				{
 										/*	font-family			: sans-serif;	*/
 											text-decoration		: none;
-										/*	color				: #FFF;			*/
 										}
 /* search --------------------------------------------------------------------------------------------- */
 		.searchbox						{

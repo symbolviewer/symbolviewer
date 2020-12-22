@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset='utf-8'/>
+	<meta charset="UTF-8">
 	<title>
-		Symbol Viewer | Symbol/Codepoint Finder
+		Unicode Symbol Viewer | Symbol/Codepoint Finder
 	</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
 	<meta name='viewport' content='width=device-width, minimum-scale-1, initial-scale=1.0'/>
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="shapes.css">
@@ -25,22 +26,38 @@
 		{
 			txt				= document.getElementById	('symbol-input').value;
 			dst				= document.getElementById	('codepoint-output');
+			out				= "";
 
+			for (var i=0; i<txt.length; ++i)
+			{
+				cp			= txt.codePointAt			(i);
+				if (cp != txt.charCodeAt (i))
+					++i;
+				if (i != 0)
+					out		= out + " ";
+				out			= out + "U+" + cp.toString(16);
+			}
+			dst.innerHTML	= out.toUpperCase ( );
+/*
 			cp16			= txt.codePointAt			(0).toString(16);
 			cp10			= txt.codePointAt			(0).toString(10);
 
 		//	dst.innerHTML	= "0x" + cp16 + " (hex)<br>" + cp10 + " (dec)";
 			dst.innerHTML	= "U+" + cp16 + "<br>(=" + cp10 + ")";
+*/
 		}
 	</script>
 
 	<style>
 		.s-frame						{
 											display				: flex;
+											flex-wrap			: wrap;
 											text-align			: center;
 											justify-content		: center;
-										/*	background-color	: cyan;	*/
 											padding				: 8px;
+										}
+		.col-container					{
+											padding				: 0 10px;
 										}
 		.l-col							{
 											background-color	: #FAA;
@@ -67,7 +84,8 @@
 											font-size			: 32px;
 											height				: 96px;
 										}
-		.search-button					{
+		.s-frame button					{
+											font-size			: 20px;
 											height				: 60px;
 											border				: solid 1px;
 											width				: 200px;
@@ -87,7 +105,7 @@
 	<div class="header-container-class">
 
 		<a rel="top" href="index.html">
-			<img class="header-img-class" src="img/symview-logo.png" alt="Symbol Viewer | Home" />
+			<img class="header-img-class" src="img/symview-logo.png" alt="Unicode Symbol Viewer | Home" />
 		</a>
 
 		<div class="header-right-div-class">
@@ -106,34 +124,36 @@
 <h1 id="title-h1-id">Symbol/Codepoint Finder</h1>
 
 <p class="h1sub-text-class">
-Find a symbol by typing codepoint.<br>
-Start with 0x for a hexadecimal.<br>
+Find a symbol by codepoint, or a codepoint by symbol.<br>
+Type the codepoint as a decimal number or begin with 0x for a hexadecimal.<br>
 </p>
 
 <div class="s-frame">
 
-	<div class="l-col">
-		Codepoint &#x27A1; Symbol<br>
-		<textarea class="input-text" autofocus id="codepoint-input" cols="9" maxlength="9" rows="1" placeholder="Codepoint"></textarea>
-		<br>
-		<button class="search-button" onclick="cp_to_sym()">Show symbol<br>⬇</button>
-		<br>
-		<p class="output-symbol" id="symbol-output">
-			&nbsp;
-		</p>
+	<div class="col-container">
+		<div class="l-col">
+			Codepoint &#x27A1; Symbol<br>
+			<textarea class="input-text" autofocus id="codepoint-input" cols="9" maxlength="9" rows="1" placeholder="Codepoint"></textarea>
+			<br>
+			<button onclick="cp_to_sym()">Show symbol<br>⬇</button>
+			<br>
+			<p class="output-symbol" id="symbol-output">
+				&nbsp;
+			</p>
+		</div>
 	</div>
 
-	<div class="mid-col"></div>
-
-	<div class="r-col">
-		Symbol &#x27A1; Codepoint<br>
-		<textarea class="input-text" autofocus id="symbol-input" cols="9" maxlength="9" rows="1" placeholder="Symbol"></textarea>
-		<br>
-		<button class="search-button" onclick="sym_to_cp()">Show codepoint<br>⬇</button>
-		<br>
-		<p class="output-codepoint" id="codepoint-output">
-			&nbsp;
-		</p>
+	<div class="col-container">
+		<div class="r-col">
+			Symbol &#x27A1; Codepoint<br>
+			<textarea class="input-text" autofocus id="symbol-input" cols="9" maxlength="9" rows="1" placeholder="Symbol"></textarea>
+			<br>
+			<button onclick="sym_to_cp()">Show codepoint<br>⬇</button>
+			<br>
+			<p class="output-codepoint" id="codepoint-output">
+				&nbsp;
+			</p>
+		</div>
 	</div>
 
 </div>

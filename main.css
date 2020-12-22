@@ -98,31 +98,6 @@
 										/*	font-family			: sans-serif;	*/
 											text-decoration		: none;
 										}
-/* search --------------------------------------------------------------------------------------------- */
-		.searchbox						{
-											text-align			: center;
-											background-color	: cyan;
-											padding				: 16px 0;
-										}
-		.searchbox textarea				{	resize				: none;
-										}
-		.search-button					{
-											font-size			: 24px;
-											height				: 60px;
-											border				: solid 1px;
-											width				: 200px;
-											background-color	: #F9A;
-											border-radius		: 8px;
-											margin-bottom		: 20px;
-										}
-		.search-t1						{
-											font-size			: 24px;
-											height				: 40px;
-										}
-		.search-t2						{
-											font-size			: 24px;
-											height				: 32;
-										}
 /* footer --------------------------------------------------------------------------------------------- */
 		footer							{	text-align			: center;
 											font-size			: var(--footer-font-size);

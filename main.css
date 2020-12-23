@@ -25,8 +25,8 @@
 											--h1sub-line-height	: 1.2;		/* line height = 2 x font-size */
 											--footer-font-size	: 80%;
 										}
-		html							{
-										}
+		html							{ }
+		body							{ }
 /* header --------------------------------------------------------------------------------------------- */
 		.header-class					{	position			: fixed;
 											top					: 0;
@@ -51,6 +51,31 @@
 										}
 		.clear-float-class				{	clear				: both;						}
 
+/* breadcrumbs ---------------------------------------------------------------------------------------- */
+/*
+		ul.breadcrumb					{
+											padding				: 10px 16px;
+											list-style			: none;
+											background-color	: #eee;
+										}
+		ul.breadcrumb li				{
+											display				: inline;
+											font-size			: 18px;
+										}
+		ul.breadcrumb li+li:before		{
+											padding				: 8px;
+											color				: black;
+											content				: "/\00a0";
+										}
+		ul.breadcrumb li a				{
+											color				: #0275d8;
+											text-decoration		: none;
+										}
+		ul.breadcrumb li a:hover		{
+											color				: #01447e;
+											text-decoration		: underline;
+										}
+*/
 /* main ----------------------------------------------------------------------------------------------- */
 		main							{	/* background-image	: url("img/sky.jpg"); */
 											/* background-size	: cover; */
@@ -71,8 +96,6 @@
 											margin-bottom		: 12px;
 										}
 
-		p								{	font-family			: serif;
-										}
 		.main-menu						{
 											text-align			: center;
 											list-style-type		: none;
@@ -101,5 +124,7 @@
 /* footer --------------------------------------------------------------------------------------------- */
 		footer							{	text-align			: center;
 											font-size			: var(--footer-font-size);
+										}
+		footer p						{	font-family			: serif;
 										}
 

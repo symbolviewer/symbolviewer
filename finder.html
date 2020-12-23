@@ -2,13 +2,20 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>
-		Unicode Symbol Viewer | Symbol/Codepoint Finder
-	</title>
-	<link rel="shortcut icon" href="img/favicon.ico">
-	<meta name='viewport' content='width=device-width, minimum-scale-1, initial-scale=1.0'/>
-	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="shapes.css">
+	<title>Unicode Symbol Viewer | Symbol/Codepoint Finder</title>
+	<meta name='viewport' content='width=device-width, minimum-scale-1, initial-scale=1.0'>
+	<meta property="og:title"		content="Symbol Viewer | Home">
+	<meta property="og:site_name"	content="Unicode 13.0 Symbol Viewer">
+	<meta property="og:description"	content="Easily View/Copy/Search Unicode 13.0 Characters and Symbols by Category or Codepoint">
+	<meta property="og:type"		content="website">
+	<meta property="og:url"			content="https://symbolviewer.com/">
+	<meta property="og:image"		content="https://symbolviewer.com/img/preview.png">
+<!-- <meta property="twitter:card"	content="summary_large_image"> -->
+	<meta property="twitter:card"	content="summary">
+	<meta property="twitter:site"	content="@SymbolViewer">
+	<meta property="fb:app_id"		content="243199643822677">
+	<link rel="shortcut icon"		href="img/favicon.ico">
+	<link rel="stylesheet"			href="main.css">
 
 	<script type="text/javascript">
 		function cp_to_sym ( )
@@ -38,13 +45,6 @@
 				out			= out + "U+" + cp.toString(16);
 			}
 			dst.innerHTML	= out.toUpperCase ( );
-/*
-			cp16			= txt.codePointAt			(0).toString(16);
-			cp10			= txt.codePointAt			(0).toString(10);
-
-		//	dst.innerHTML	= "0x" + cp16 + " (hex)<br>" + cp10 + " (dec)";
-			dst.innerHTML	= "U+" + cp16 + "<br>(=" + cp10 + ")";
-*/
 		}
 	</script>
 
@@ -108,15 +108,16 @@
 			<img class="header-img-class" src="img/symview-logo.png" alt="Unicode Symbol Viewer | Home" />
 		</a>
 
-		<div class="header-right-div-class">
+		<nav class="header-right-div-class">
 			<a rel="top" href="index.html">Home</a>
-			<span>&nbsp; > &nbsp; Finder</span>
-		</div>
+			<span> / Finder</span>
+		</nav>
 
-		<div class="clear-float-class"></div>
+	<div class="clear-float-class"></div>
 
 	</div>
 </div>
+
 
 <!-- ----------------------------------------------------------- -->
 <main>
@@ -161,19 +162,17 @@ Type the codepoint as a decimal number or begin with 0x for a hexadecimal.<br>
 </main>
 <!-- ----------------------------------------------------------- -->
 <footer>
-   <br/>
-   <br/>
-<p>
-    Copyright &copy; 2020 symbolviewer.com
-    <a href='about/disclaimer.html' class='disclaimer'>
-     Disclaimer
-    </a>
+	<br/><br/><br/><br/><br/>
+	<p>
+		Copyright &copy; 2020 symbolviewer.com
+		<a href='about/disclaimer.html' class='disclaimer'>
+		Disclaimer
+		</a>
 		&nbsp;
-    <a href='about/privacypolicy.html' class='disclaimer'>
-     Privacy Policy
-    </a>
-</p>
-
+		<a href='about/privacypolicy.html' class='disclaimer'>
+		Privacy Policy
+		</a>
+	</p>
 </footer>
 
 </body>

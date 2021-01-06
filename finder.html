@@ -1,179 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Unicode Symbol Viewer | Symbol/Codepoint Finder</title>
+	<meta charset='UTF-8'>
+	<title>
+		Unicode Symbol Viewer | Symbol/Codepoint Converter
+	</title>
 	<meta name='viewport' content='width=device-width, minimum-scale-1, initial-scale=1.0'>
-	<meta property="og:title"		content="Symbol Viewer | Home">
-	<meta property="og:site_name"	content="Unicode 13.0 Symbol Viewer">
-	<meta property="og:description"	content="Easily View/Copy/Search Unicode 13.0 Characters and Symbols by Category or Codepoint">
-	<meta property="og:type"		content="website">
-	<meta property="og:url"			content="https://symbolviewer.com/">
-	<meta property="og:image"		content="https://symbolviewer.com/img/preview.png">
-<!-- <meta property="twitter:card"	content="summary_large_image"> -->
-	<meta property="twitter:card"	content="summary">
-	<meta property="twitter:site"	content="@SymbolViewer">
-	<meta property="fb:app_id"		content="243199643822677">
-	<link rel="shortcut icon"		href="img/favicon.ico">
-	<link rel="stylesheet"			href="main.css">
-
-	<script type="text/javascript">
-		function cp_to_sym ( )
-		{
-			txt				= document.getElementById	('codepoint-input').value;
-			dst				= document.getElementById	('symbol-output');
-
-			if (txt.substring(0,2)=="0x")
-					num 	= parseInt					(txt, 16);
-			else	num 	= parseInt					(txt);
-
-			dst.innerHTML	= String.fromCodePoint		(num);
-		}
-		function sym_to_cp ( )
-		{
-			txt				= document.getElementById	('symbol-input').value;
-			dst				= document.getElementById	('codepoint-output');
-			out				= "";
-
-			for (var i=0; i<txt.length; ++i)
-			{
-				cp			= txt.codePointAt			(i);
-				if (cp != txt.charCodeAt (i))
-					++i;
-				if (i != 0)
-					out		= out + " ";
-				out			= out + "U+" + cp.toString(16);
-			}
-			dst.innerHTML	= out.toUpperCase ( );
-		}
-	</script>
-
-	<style>
-		.s-frame						{
-											display				: flex;
-											flex-wrap			: wrap;
-											text-align			: center;
-											justify-content		: center;
-											padding				: 8px;
-										}
-		.col-container					{
-											padding				: 0 10px;
-										}
-		.l-col							{
-											background-color	: #FAA;
-										}
-		.mid-col						{
-											opacity				: 0;
-											width				: 20px;
-										}
-		.r-col							{
-											background-color	: #AAF;
-										}
-		.input-text						{
-											resize				: none;
-											margin-top			: 8px;
-											font-size			: 32px;
-										}
-		.output-symbol					{
-											margin				: 8px 12px;
-											font-size			: 48px;
-											height				: 96px;
-										}
-		.output-codepoint				{
-											margin				: 8px 12px;
-											font-size			: 32px;
-											height				: 96px;
-										}
-		.s-frame button					{
-											font-size			: 20px;
-											height				: 60px;
-											border				: solid 1px;
-											width				: 200px;
-											background-color	: #F9A;
-											border-radius		: 8px;
-											margin				: 20px 16px;
-											box-shadow			: 5px 8px 10px;
-										}
-	
-	</style>
-
+	<meta property='og:title' content='Unicode Symbol Viewer | Symbol/Codepoint Converter'>
+	<meta property='og:site_name' content='Unicode 13.0 Symbol Viewer'>
+	<meta property='og:description' content='Find a Unicode 13.0 symbol by a codepoint or vice versa'>
+	<meta property='og:type' content='website'>
+	<meta property='og:url' content='https://symbolviewer.com/finder.htm'>
+	<meta property='og:image' content='https://symbolviewer.com/img/preview.png'>
+	<meta property='twitter:card' content='summary'>
+	<meta property='twitter:site' content='@SymbolViewer'>
+	<meta property='fb:app_id' content='243199643822677'>
+	<link rel='shortcut icon' href='img/favicon.ico'>
+	<link rel='stylesheet' href='common.css'>
+	<link rel='stylesheet' href='finder.css'>
+	<script src='common.js'></script>
+	<script src='finder.js'></script>
 </head>
-<!-- ----------------------------------------------------------- -->
-<body> 
-
-<div class="header-class">
-	<div class="header-container-class">
-
-		<a rel="top" href="index.html">
-			<img class="header-img-class" src="img/symview-logo.png" alt="Unicode Symbol Viewer | Home" />
-		</a>
-
-		<nav class="header-right-div-class">
-			<a rel="top" href="index.html">Home</a>
-			<span> / Finder</span>
+<body>
+<div class='bar-class'>
+	<div class='bar-container-class'>
+		<a rel='top' href='index.html'><img class='bar-logo-class' src='img/symview-logo.png' alt='Unicode Symbol Viewer | Symbol/Codepoint Converter'></img></a>
+		<nav class='bar-right-div-class'>
+			#DT2021-01-06T09:48:14+0900
+			<a rel='top' href='index.html'>Home</a>
+			<span> / Symbol/Codepoint Converter</span>
 		</nav>
-
-	<div class="clear-float-class"></div>
-
+		<div class='bar-clear-class'></div>
 	</div>
+	<noscript>
+		<br>
+		⚠️Javascript is required to view this website. Please enable Javascript on your browser.💡
+		<br>
+	</noscript>
 </div>
-
-
-<!-- ----------------------------------------------------------- -->
 <main>
-
-<h1 id="title-h1-id">Symbol/Codepoint Finder</h1>
-
-<p class="h1sub-text-class">
-Find a symbol by codepoint, or a codepoint by symbol.<br>
-Type the codepoint as a decimal number or begin with 0x for a hexadecimal.<br>
-</p>
-
-<div class="s-frame">
-
-	<div class="col-container">
-		<div class="l-col">
-			Codepoint &#x27A1; Symbol<br>
-			<textarea class="input-text" autofocus id="codepoint-input" cols="9" maxlength="9" rows="1" placeholder="Codepoint"></textarea>
-			<br>
-			<button onclick="cp_to_sym()">Show symbol<br>⬇</button>
-			<br>
-			<p class="output-symbol" id="symbol-output">
-				&nbsp;
-			</p>
+<header>
+	<h1>Symbol/Codepoint Converter</h1>
+	<p>Find a Unicode 13.0 symbol by a codepoint, or vice versa.</p>
+	<br>
+</header>
+<article>
+	<div class='finder-frame'>
+		<div class='finder-col-container'>
+			<div class='finder-l-col'>
+				Codepoint &#x27A1; Symbol<br>
+				<textarea class='finder-input' autofocus id='input-cp-id' cols='9' maxlength='9' rows='1' placeholder='Codepoint'></textarea>
+				<br>
+				<button onclick='cp_to_sym()'>
+					Show symbol<br>
+					⬇
+				</button>
+				<br>
+				<p class='finder-output-sym' id='output-sym-id'>&nbsp;</p>
+			</div>
+		</div>
+		<div class='finder-col-container'>
+			<div class='finder-r-col'>
+				Symbol &#x27A1; Codepoint<br>
+				<textarea class='finder-input' autofocus id='input-sym-id' cols='9' maxlength='9' rows='1' placeholder='Symbol'></textarea>
+				<br>
+				<button onclick='sym_to_cp()'>
+					Show codepoint<br>
+					⬇
+				</button>
+				<br>
+				<p class='finder-output-cp' id='output-cp-id'>&nbsp;</p>
+			</div>
 		</div>
 	</div>
-
-	<div class="col-container">
-		<div class="r-col">
-			Symbol &#x27A1; Codepoint<br>
-			<textarea class="input-text" autofocus id="symbol-input" cols="9" maxlength="9" rows="1" placeholder="Symbol"></textarea>
-			<br>
-			<button onclick="sym_to_cp()">Show codepoint<br>⬇</button>
-			<br>
-			<p class="output-codepoint" id="codepoint-output">
-				&nbsp;
-			</p>
-		</div>
-	</div>
-
-</div>
-
+</article>
 </main>
-<!-- ----------------------------------------------------------- -->
 <footer>
-	<br/><br/><br/><br/><br/>
-	<p>
-		Copyright &copy; 2020 symbolviewer.com
-		<a href='about/disclaimer.html' class='disclaimer'>
-		Disclaimer
-		</a>
-		&nbsp;
-		<a href='about/privacypolicy.html' class='disclaimer'>
-		Privacy Policy
-		</a>
-	</p>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<p>Copyright &copy; 2020-2021&nbsp;symbolviewer.com
+<a class='disclaimer' href='about/disclaimer.html'>Disclaimer</a>&nbsp;<a class='disclaimer' href='about/privacypolicy.html'>Privacy Policy</a></p>
 </footer>
-
 </body>
 </html>

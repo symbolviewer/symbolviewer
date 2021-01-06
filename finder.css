@@ -1,0 +1,43 @@
+@charset "utf-8";
+		.finder-frame					{
+											display				: flex;
+											flex-wrap			: wrap;
+											text-align			: center;
+											justify-content		: center;
+											padding				: 8px;
+										}
+		.finder-col-container			{
+											padding				: 0 10px;
+										}
+		.finder-l-col					{
+											background-color	: #FAA;
+										}
+		.finder-r-col					{
+											background-color	: #AAF;
+										}
+		.finder-input					{
+											resize				: none;
+											margin-top			: 8px;
+											font-size			: 32px;
+										}
+		.finder-output-sym				{
+											margin				: 8px 12px;
+											font-size			: 48px;
+											height				: 96px;
+										}
+		.finder-output-cp				{
+											margin				: 8px 12px;
+											font-size			: 32px;
+											height				: 96px;
+										}
+		.finder-frame button			{
+											font-size			: 20px;
+											height				: 60px;
+											border				: solid 1px;
+											width				: 200px;
+											background-color	: #F9A;
+											border-radius		: 8px;
+											margin				: 20px 16px;
+											box-shadow			: 5px 8px 10px;
+										}
+	

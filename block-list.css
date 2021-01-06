@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+		table,th,tr,td	{	padding:			0px;
+							border:				solid black 1px;
+							border-spacing:		0px;
+						}
+		td+td			{
+							padding-left:		4px;
+							padding-right:		4px;
+							font-family:		sans-serif;	
+						}
+		td+td+td		{
+							word-break:			break-all;
+							font-family:		serif;	
+						}
+		/*
+		body			{
+							margin-left:		0px;
+							margin-right:		0px;
+							padding-left:		0px;
+							padding-right:		0px;
+							background-color:	#fcfcfc;
+						}
+		*/
+		.margined_hdr	{
+							margin:				10px;
+						}
+		.margined		{
+							margin:				10px;
+						}
+		.wholearea		{
+							margin:				0px;
+							padding:			0px;
+						}
+		.wholearea		{	line-height: 		1em;	font-family:	sans-serif;	font-family: 'Segoe UI Emoji'; }
+		.titlearea		{	line-height: 		1.4em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.hbar_area		{	line-height: 		1em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.xcopyarea		{	line-height: 		1.2em;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+		.main			{	line-height:		30px;	font-family:	sans-serif; font-family: 'Segoe UI Emoji'; }
+
+		.box			{
+							float:				left;
+
+							line-height:		1;
+						/*	line-spacing:		0;	*/
+
+						/*	height:				30px; */
+							height:				50px;
+							min-width:			50px;
+						}
+		.box, .xbutton
+						{
+							box-sizing:			border-box;
+
+							font-family:		'Segoe UI Emoji';
+
+						    cursor:				pointer;
+						    text-decoration:	none;
+
+						    background-color:	#eeeeee;
+						    color:				black;
+
+						    text-align:			center;
+							vertical-align:		middle;
+						    font-size:			24px;
+
+						    border:				1px solid #000000;
+						    margin:				0px 0px 0px 0px;
+						    padding:			5px 5px 5px 5px;
+
+						    border:				1px solid #aaa;
+						    padding:			10px 5px;
+						}
+		.box:hover, .xbutton:hover
+						{
+							background-color: #ffffff
+						}
+		.box:active, .xbutton:active
+						{
+							background-color:	#eeeeee;
+							box-shadow:			0 4px #666;
+							transform:			translateY(-4px);
+						}
+		.testsvg		{
+							text-align:			center;
+							vertical-align:		middle;
+						}
+		/* -------------------------------------------------*/
+		/* CATEGORY HEADERS									*/
+		/* -------------------------------------------------*/
+		h2					{
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								color:				white;
+								background-color:	blue;
+
+								left:				0;
+								text-align:			center;
+								text-align:			left;
+
+								margin-top:			10px;
+								padding-top:		8px;
+								padding-bottom:		8px;
+								margin-bottom:		0px;
+
+								padding-left:		10px;
+							}
+		/* SUBCATEGORY */
+		h3					{ 
+								font-family:		serif;
+								font-family:		'Segoe UI Emoji';
+
+								margin-top:			10px;
+								padding-top:		0px;
+								padding-bottom:		0px;
+								margin-bottom:		4px;
+							}
+

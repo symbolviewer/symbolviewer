@@ -1,0 +1,15 @@
+@charset "utf-8";
+		h2								{
+											background-color	: cyan;
+											color				: #202020;
+										}
+		.std-menu a						{
+											display				: inline-block;
+											font-family			: sans-serif;
+											cursor				: pointer;
+											text-align			: center;
+											margin-top			: 10px;
+											margin-bottom		: 4px;
+											margin-left			: 20px;
+											padding				: 5px 4px;
+										}

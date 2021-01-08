@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* root ----------------------------------------------------------------------------------------------- */
+		*								{	margin					: 0;
+											padding					: 0;
+											box-sizing				: border-box;
+										}
+		:root							{
+											/* -------------------------------------------------------- */
+											/* Top Bar */
+											/* -------------------------------------------------------- */
+											--bar-shadow-color		: #DDDDDD;
+											--bar-a-color			: #5A5C5F;
+											--bar-bgcol				: white;
+											--bar-a-hover-bgcol		: #E1F1FF;
+											--bar-padding-v			: 0px;
+											--bar-padding-h			: 10px;
+											--bar-logo-height		: 32px;
+											--bar-logo-margin		: 6px;
+											--bar-link-fontsize		: 16px;
+											--bar-link-margin-t		: 14px;		/* logo-margin + (logo-height - link-fontsize) / 2 */
+											--bar-link-margin-l		: 5px;
+											--bar-link-margin-left	: 5px;
+											--bar-shadow-size		: 10px;
+
+											/* -------------------------------------------------------- */
+											/* Title */
+											/* -------------------------------------------------------- */
+											--title-color			: blue;
+											--title-shadow-color	: #AAAAFF;
+											--title-margin-top		: 12px;
+											--title-padding-top		: 12px;
+											--subtitle-line-height	: 1.2;		/* line height = 2 x font-size */
+
+											/* -------------------------------------------------------- */
+											/* Main */
+											/* -------------------------------------------------------- */
+										/*	--main-margin-top		: 48px;	*/
+											--main-margin-top		: 72px;
+											--main-color			: #5A5C5F;
+
+											/* -------------------------------------------------------- */
+											/* Menu */
+											/* -------------------------------------------------------- */
+											--std-menu-bkcolor		: dodgerblue;
+											--std-menu-item-bkcolor	: #F1F1F1;
+											--std-menu-margin-x		: 8px;
+											--std-menu-margin-y		: 10px;
+
+											/* -------------------------------------------------------- */
+											/* Footer */
+											/* -------------------------------------------------------- */
+											--footer-font-size		: 80%;
+											--footer-margin-bottom	: 10px;
+										}
+		html							{ }
+		body							{ }
+/* header --------------------------------------------------------------------------------------------- */
+		.bar-class						{	position			: fixed;
+											top					: 0;
+											width				: 100%;
+											background-color	: var(--bar-bgcol);
+										}
+		.bar-container-class			{	padding				: var(--bar-padding-v) var(--bar-padding-h);
+											box-shadow			: 0 0 var(--bar-shadow-size) var(--bar-shadow-color);
+										}
+		.bar-logo-class					{	height				: var(--bar-logo-height);
+											margin				: var(--bar-logo-margin);
+											vertical-align		: bottom;
+										}
+		.bar-right-div-class			{	float				: right;
+											margin-top			: var(--bar-link-margin-t);
+											margin-right		: var(--bar-link-margin-l);
+											color				: var(--bar-a-color);
+										}
+		.bar-right-div-class *			{	margin-left			: var(--bar-link-margin-left);		}
+		.bar-right-div-class a:hover	{	background-color	: var(--bar-a-hover-bgcol);
+											transition			: background-color 1s;
+										}
+		.bar-clear-class				{	clear				: both;								}
+/* main ----------------------------------------------------------------------------------------------- */
+		main							{	/* background-image	: url("img/sky.jpg"); */
+											/* background-size	: cover; */
+											color				: var(--main-color);
+											margin-top			: var(--main-margin-top);
+										}
+		main > header h1				{	/* THE MAIN TITLE */
+											color				: var(--title-color);
+											text-align			: center;
+										/*	margin-top			: var(--title-margin-top);	*/
+											padding-top			: var(--title-padding-top);
+											text-shadow			: 5px 5px 8px var(--title-shadow-color)
+										}
+		main > header h1 + p			{	/* SUBTITLE to the MAIN TITLE */
+											font-family			: serif;
+											font-weight			: bold;
+											text-align			: center;
+											line-height			: var(--subtitle-line-height);
+											margin-top			: 12px;
+											margin-bottom		: 12px;
+										}
+		h2								{
+											background-color	: blue;
+											color				: white;
+											line-height			: 1.05;
+											margin				: 10px 0;
+											padding				: 4px;
+											padding-left		: 10px;
+										}
+/* menu ----------------------------------------------------------------------------------------------- */
+		.std-menu						{
+											text-align			: center;
+											list-style-type		: none;
+											background-color	: var(--std-menu-bkcolor);
+											margin				: 0 5%;
+											padding				: 2px 2px;
+											border-radius		: 5px;
+										}
+		.std-menu > *					{
+											border				: solid 1px;
+											text-align			: center;
+											color				: #447;
+											background-color	: var(--std-menu-item-bkcolor);
+											margin				: var(--std-menu-margin-y) var(--std-menu-margin-x);
+											padding				: 5px 0;
+											border-radius		: 8px;
+										}
+		.std-menu > *:hover				{
+											background-color	: #CCC;
+											color				: #447;
+										}
+		.std-menu a						{
+											text-decoration		: none;
+										}
+/* footer --------------------------------------------------------------------------------------------- */
+		footer							{	text-align			: center;
+											font-size			: var(--footer-font-size);
+											margin-bottom		: var(--footer-margin-bottom);
+										}
+		footer p						{	font-family			: serif;
+										}
+

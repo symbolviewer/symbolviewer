@@ -35,7 +35,7 @@
 											/* Main */
 											/* -------------------------------------------------------- */
 										/*	--main-margin-top		: 48px;	*/
-											--main-margin-top		: 72px;
+											--main-margin-top		: 56px;
 											--main-color			: #5A5C5F;
 
 											/* -------------------------------------------------------- */
@@ -55,6 +55,35 @@
 		html							{ }
 		body							{ }
 /* header --------------------------------------------------------------------------------------------- */
+		.logo-container					{	width				: 40px;
+										}
+		.logo-img						{	height				: var(--bar-logo-height);
+											margin				: var(--bar-logo-margin);
+											vertical-align		: bottom; */
+											top					: var(--bar-logo-margin);
+											left				: var(--bar-logo-margin);
+										}
+		.bar							{
+											box-shadow			: 0 0 var(--bar-shadow-size) var(--bar-shadow-color);
+										}
+		.bar > a, .bar > span			{	float				: left;
+											box-sizing			: border-box;
+											margin-top			: 6px;
+											margin-right		: var(--bar-link-margin-l);
+										}
+		.bar > span						{
+											color				: var(--bar-a-color);
+										}
+		.bar a:hover					{	background-color	: var(--bar-a-hover-bgcol);
+											transition			: background-color 1s;
+										}
+		.bar-clear						{	clear				: both;								}
+		.bar							{	position			: fixed;
+											top					: 0;
+											width				: 100%;
+											background-color	: var(--bar-bgcol);
+										}
+/*
 		.bar-class						{	position			: fixed;
 											top					: 0;
 											width				: 100%;
@@ -77,6 +106,7 @@
 											transition			: background-color 1s;
 										}
 		.bar-clear-class				{	clear				: both;								}
+*/
 /* main ----------------------------------------------------------------------------------------------- */
 		main							{	/* background-image	: url("img/sky.jpg"); */
 											/* background-size	: cover; */

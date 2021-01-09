@@ -21,25 +21,21 @@
 	<script src='../js/common.js'></script>
 </head>
 <body>
-<div class='bar-class'>
-	<div class='bar-container-class'>
-		<a rel='top' href='../index.html'><img class='bar-logo-class' src='../img/symview-logo.png' alt='Unicode Symbol Viewer'></img></a>
-		<nav class='bar-right-div-class'>
-			<a rel='top' href='../index.html'>Home</a>
-			<span> / </span>
-			<a rel='top' href='../block-list.html'>Block List</a>
-			<span> / </span>
-			<a rel='top' href='../blk-picker/100000-10FFFF.html'>Supplementary Private Use Area-B</a>
-			<span> / Detail</span>
-		</nav>
-		<div class='bar-clear-class'></div>
-	</div>
-	<noscript>
+<table class='bar'>
+	<tr>
+		<td class='logo-container'><a rel='top' href='../index.html'><img class='logo-img' src='../img/symview-logo.png' alt='Unicode Symbol Viewer'></img></a></td>
+		<td><nav class='bar-right-div-class'><a rel='top' href='../index.html'>Home</a><span> / </span><a rel='top' href='../block-list.html'>Block List</a><span> / </span><a rel='top' href='../blk-picker/100000-10FFFF.html'>Supplementary Private Use Area-B</a><span> / Detail</span></nav><span class='bar-clear'></span></td>
+	</tr>
+</table>
+<noscript>
+	<div>
+		<br>
+		<br>
 		<br>
 		⚠️Javascript is required to view this website. Please enable Javascript on your browser.💡
 		<br>
-	</noscript>
-</div>
+	</div>
+</noscript>
 <main>
 <header>
 	<h1>Supplementary Private Use Area-B</h1>
@@ -49,19 +45,19 @@
 <article>
 	<h2>Supplementary Private Use Area-B</h2>
 	<div class='codepoint'>
-		U+100000 - U+10FFFF
+		U+100000 ⁓ U+10FFFF
 	</div>
 	<div class='dtl-container'>
 		<table>
 			<tr>
 				<td><a onClick='cpz(this)'>&#x100000;</a></td>
 				<td>U+100000</td>
-				<td class='codevalue'><Plane 16 Private Use, First></td>
+				<td><Plane 16 Private Use, First></td>
 			</tr>
 			<tr>
 				<td><a onClick='cpz(this)'>&#x10FFFD;</a></td>
 				<td>U+10FFFD</td>
-				<td class='codevalue'><Plane 16 Private Use, Last></td>
+				<td><Plane 16 Private Use, Last></td>
 			</tr>
 		</table>
 	</div>

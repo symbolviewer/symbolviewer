@@ -9,16 +9,6 @@
 			window.getSelection().addRange			(r);
 			document.execCommand					('copy');
 			window.getSelection().removeAllRanges	( );
-			alert									('copied' + '  '+ obj.innerHTML);
+		//	alert									('copied' + '  '+ obj.innerHTML);
+			alert									('[ ' + obj.innerHTML + ' ]' + ' copied to clipboard.');
 		}
-		/*
-		function cp(obj)
-		{
-			var	r									= document.createRange ( );
-			r.selectNode							(obj);
-			window.getSelection().addRange			(r);
-			document.execCommand					('copy');
-			window.getSelection().removeAllRanges	( );
-		}
-		*/
-

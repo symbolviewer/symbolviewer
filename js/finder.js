@@ -4,7 +4,6 @@
 		{
 			txt				= document.getElementById	('input-cp-id').value;
 			dst				= document.getElementById	('output-sym-id');
-
 			num 			= parseInt					('0x' + txt, 16);
 
 		//	if (txt.substring(0,2)=="0x")

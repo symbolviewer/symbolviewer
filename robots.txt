@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+
+Sitemap: https://symbolviewer.com/sitemap.xml

@@ -37,6 +37,7 @@
 										/*	--main-margin-top		: 48px;	*/
 											--main-margin-top		: 56px;
 											--main-color			: #5A5C5F;
+											--body-margin-x			: 10px;
 
 											/* -------------------------------------------------------- */
 											/* Menu */
@@ -135,6 +136,10 @@
 											margin				: 10px 0;
 											padding				: 4px;
 											padding-left		: 10px;
+										}
+		.std-body						{
+											margin-left			: var(--body-margin-x);
+											margin-right		: var(--body-margin-x);
 										}
 /* menu ----------------------------------------------------------------------------------------------- */
 		.std-menu						{
